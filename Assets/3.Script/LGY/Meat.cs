@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Meat : Food
 {
-    protected override void StateEnter()
+    public override void OnEnter()
     {
+        base.OnEnter();
     }
 
-    protected override void StateExit()
+    public override void OnUpdate()
     {
+
     }
 
-    protected override void StateUpdate()
+    public override void OnExit()
     {
+
     }
+
+
 }
