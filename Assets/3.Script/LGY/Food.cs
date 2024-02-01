@@ -9,7 +9,7 @@ public interface IState
     void OnExit();
 }
 
-public enum Cook_State
+public enum Bake_State
 {
     Raw = 0,
     Cooked,
@@ -26,7 +26,7 @@ public enum Slice_State
 
 public abstract class Food : MonoBehaviour, IState
 {
-    public Cook_State cook_state;      // 굽기단계
+    public Bake_State cook_state;      // 굽기단계
     public Slice_State slice_state;    // 자르기단계
 
     [SerializeField] private GameObject[] next_slice_objs;
@@ -49,7 +49,7 @@ public abstract class Food : MonoBehaviour, IState
 
     private void Start()
     {
-        cook_state = Cook_State.Raw;
+        cook_state = Bake_State.Raw;
         OnEnter();
     }
 
@@ -63,7 +63,7 @@ public abstract class Food : MonoBehaviour, IState
         SliceObj();   
     }
 
-    public void ChangeCookState(Cook_State start_state)
+    public void ChangeCookState(Bake_State start_state)
     {
         OnExit();
 
