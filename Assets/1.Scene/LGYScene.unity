@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 375231042}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -424,10 +424,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cook_state: 0
-  slice_state: 0
+  slice_state: 1
   next_slice_objs: []
   max_slice_count: 3
   current_slice_count: 0
+  meat_type: 0
 --- !u!54 &375231042
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -471,7 +472,7 @@ GameObject:
   - component: {fileID: 484527558}
   m_Layer: 0
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -575,10 +576,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cook_state: 0
-  slice_state: 0
+  slice_state: 1
   next_slice_objs: []
   max_slice_count: 3
   current_slice_count: 0
+  meat_type: 0
 --- !u!54 &484527558
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -762,8 +764,9 @@ MonoBehaviour:
   next_slice_objs:
   - {fileID: 375231036}
   - {fileID: 484527552}
-  max_slice_count: 3
+  max_slice_count: 2
   current_slice_count: 0
+  meat_type: 0
 --- !u!65 &773327351
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1084,8 +1087,8 @@ Transform:
   m_GameObject: {fileID: 1645623349}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.43, z: 0}
+  m_LocalScale: {x: 1, y: 0.025465569, z: 0.029356439}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

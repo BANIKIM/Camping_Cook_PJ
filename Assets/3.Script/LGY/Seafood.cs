@@ -2,32 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Meat_Type
+public enum Seafood_Type
 {
-    Beef = 0,   //소고기
-    Tomahawk,   //토마호크
-    Lamb,       //양고기
-    Chicken,    //닭고기
-    Sausage,    //쟌슨빌 후랑크
+    Salmon = 0,  //연어
+    Shrimp,      //새우
+    Lobster,     //랍스터
 }
 
-public class Meat : Food
+public class Seafood : Food
 {
-    public Meat_Type meat_type;
+    public Seafood_Type seafood_type;
 
     public override void RoastOnEnter()
     {
-
     }
 
     public override void RoastOnUpdate()
     {
-
     }
 
     public override void RoastOnExit()
     {
-
     }
 
 

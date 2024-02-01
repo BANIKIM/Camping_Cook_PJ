@@ -4,12 +4,12 @@ using UnityEngine;
 
 public interface IState
 {
-    void OnEnter();
-    void OnUpdate();
-    void OnExit();
+    void RoastOnEnter();
+    void RoastOnUpdate();
+    void RoastOnExit();
 }
 
-public enum Bake_State
+public enum Roast_State
 {
     Raw = 0,
     Cooked,
@@ -26,8 +26,8 @@ public enum Slice_State
 
 public abstract class Food : MonoBehaviour, IState
 {
-    public Bake_State cook_state;      // 굽기단계
-    public Slice_State slice_state;    // 자르기단계
+    public Roast_State roast_state;      // 굽기단계
+    public Slice_State slice_state;     // 자르기단계
 
     [SerializeField] private GameObject[] next_slice_objs;
 
@@ -35,27 +35,24 @@ public abstract class Food : MonoBehaviour, IState
     [SerializeField] protected int max_slice_count = 1;
     public int current_slice_count = 0;
 
-    public virtual void OnEnter()
-    {
-        current_slice_count = 0;
-    }
+    public abstract void RoastOnEnter();
 
-    public abstract void OnUpdate();
+    public abstract void RoastOnUpdate();
 
-    public abstract void OnExit();
+    public abstract void RoastOnExit();
 
     private IEnumerator sliceobj_Co;
 
 
     private void Start()
     {
-        cook_state = Bake_State.Raw;
-        OnEnter();
+        roast_state = Roast_State.Raw;
+        RoastOnEnter();
     }
 
     private void Update()
     {
-        OnUpdate();
+        RoastOnUpdate();
     }
 
     private void FixedUpdate()
@@ -63,12 +60,12 @@ public abstract class Food : MonoBehaviour, IState
         SliceObj();   
     }
 
-    public void ChangeCookState(Bake_State start_state)
+    public void ChangeCookState(Roast_State start_state)
     {
-        OnExit();
+        RoastOnExit();
 
-        cook_state = start_state;
-        OnEnter();
+        roast_state = start_state;
+        RoastOnEnter();
     }
 
     private void SliceObj()     // FSM 패턴으로 
