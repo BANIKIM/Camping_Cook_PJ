@@ -19,7 +19,7 @@ public enum Vegetable_Type
     White_Mushroom,
 }
 
-public class Vegetable : Food
+public class Vegetable : Ingredient
 {
     public Vegetable_Type vegetable_type;
 

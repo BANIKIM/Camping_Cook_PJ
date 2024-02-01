@@ -24,7 +24,7 @@ public enum Slice_State
     Slice_Step3,
 }
 
-public abstract class Food : MonoBehaviour, IState
+public abstract class Ingredient : MonoBehaviour, IState
 {
     public Roast_State roast_state;      // 굽기단계
     public Slice_State slice_state;     // 자르기단계

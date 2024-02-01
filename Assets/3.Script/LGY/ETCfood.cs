@@ -8,7 +8,7 @@ public enum ETCfood_Type
 
 }
 
-public class ETCfood : Food
+public class ETCfood : Ingredient
 {
     public override void RoastOnEnter()
     {

@@ -10,7 +10,7 @@ public class Stick : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Food"))
         {
-            Food food = other.gameObject.GetComponent<Food>();
+            Ingredient food = other.gameObject.GetComponent<Ingredient>();
             if(food.slice_state.Equals(Slice_State.Slice_Step2) && !stickpos.Count.Equals(0))
             {
                 other.gameObject.transform.position = stickpos[0].position;   // ²¿Ä¡¿¡ ³¢¿ò

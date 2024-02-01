@@ -11,7 +11,7 @@ public enum Meat_Type
     Sausage,    //Àò½¼ºô ÈÄ¶ûÅ©
 }
 
-public class Meat : Food
+public class Meat : Ingredient
 {
     public Meat_Type meat_type;
 

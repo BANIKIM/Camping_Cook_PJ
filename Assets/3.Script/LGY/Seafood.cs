@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Seafood_Type
+public enum SeaFood_Type
 {
     Salmon = 0,  //연어
     Shrimp,      //새우
     Lobster,     //랍스터
 }
 
-public class Seafood : Food
+public class SeaFood : Ingredient
 {
-    public Seafood_Type seafood_type;
+    public SeaFood_Type seafood_type;
 
     public override void RoastOnEnter()
     {
