@@ -20,5 +20,17 @@ public class Network_Rig : NetworkBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        if (hardware_rig != null)
+        {
+            transform.SetPositionAndRotation(hardware_rig.transform.position, hardware_rig.transform.rotation);
+            leftNetworkHand.transform.SetPositionAndRotation(hardware_rig.left_Hand_Position, hardware_rig.left_Hand_Rotation);
+            rightNetworkHand.transform.SetPositionAndRotation(hardware_rig.right_Hand_Position, hardware_rig.right_Hand_Rotation);
+            networkHead.transform.SetPositionAndRotation(hardware_rig.head_Set_Position, hardware_rig.head_Set_Rotation);
+        }
+
+    }
+
 
 }
