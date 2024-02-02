@@ -699,7 +699,7 @@ MonoBehaviour:
   cooked_state: 0
   slice_state: 1
   next_slice_objs: []
-  max_slice_count: 3
+  max_slice_count: 1
   current_slice_count: 0
 --- !u!1 &620265829
 GameObject:
@@ -1188,7 +1188,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.2, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1645623351
 MeshRenderer:
