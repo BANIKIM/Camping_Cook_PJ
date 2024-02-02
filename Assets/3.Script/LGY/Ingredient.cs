@@ -9,14 +9,41 @@ public interface IState
     void RoastOnExit();
 }
 
-public enum Roast_State
+public enum Ingredient_Type
+{
+    Beef = 0,
+    Tomahawk,
+    Lamb,
+    Chicken,
+    Sausage,
+    Mashmellow,
+    Salmon,
+    Shrimp,
+    Lobster,
+    Tomato,
+    Potato = 10,
+    Carrot,
+    Onion,
+    Lemon,
+    Cabbage,
+    Corn,
+    Broccoli,
+    paprika,
+    Garlic,
+    GreenOnion,
+    Asparagus = 20,
+    White_Mushroom,
+}
+
+public enum Cooked_State    // 요리 상태
 {
     Raw = 0,
-    Cooked,
+    Roasted,    // 굽기
+    Boiled,     // 끓이기
     Burned,
 }
 
-public enum Slice_State
+public enum Slice_State    // 자르기
 {
     Default = 0,
     Slice_Step1,
@@ -24,10 +51,11 @@ public enum Slice_State
     Slice_Step3,
 }
 
-public abstract class Ingredient : MonoBehaviour, IState
+public class Ingredient : MonoBehaviour, IState
 {
-    public Roast_State roast_state;      // 굽기단계
-    public Slice_State slice_state;     // 자르기단계
+    public Ingredient_Type ingredient_type;
+    public Cooked_State cooked_state;      // 굽기단계
+    public Slice_State slice_state;        // 자르기단계
 
     [SerializeField] private GameObject[] next_slice_objs;
 
@@ -35,18 +63,26 @@ public abstract class Ingredient : MonoBehaviour, IState
     [SerializeField] protected int max_slice_count = 1;
     public int current_slice_count = 0;
 
-    public abstract void RoastOnEnter();
-
-    public abstract void RoastOnUpdate();
-
-    public abstract void RoastOnExit();
-
     private IEnumerator sliceobj_Co;
 
+    public void RoastOnEnter()
+    {
+
+    }
+
+    public void RoastOnUpdate()
+    {
+
+    }
+
+    public void RoastOnExit()
+    {
+
+    }
 
     private void Start()
     {
-        roast_state = Roast_State.Raw;
+        cooked_state = Cooked_State.Raw;
         RoastOnEnter();
     }
 
@@ -57,14 +93,14 @@ public abstract class Ingredient : MonoBehaviour, IState
 
     private void FixedUpdate()
     {
-        SliceObj();   
+        SliceObj();
     }
 
-    public void ChangeCookState(Roast_State start_state)
+    public void ChangeCookState(Cooked_State start_state)
     {
         RoastOnExit();
 
-        roast_state = start_state;
+        cooked_state = start_state;
         RoastOnEnter();
     }
 
@@ -98,7 +134,7 @@ public abstract class Ingredient : MonoBehaviour, IState
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Knife"))
+        if (other.gameObject.CompareTag("Knife"))
         {
             current_slice_count++;
         }
