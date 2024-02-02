@@ -12,25 +12,40 @@ public class Network_Rig : NetworkBehaviour
     public Network_Hand rightNetworkHand;
     public Network_Head networkHead;
 
-    private void Start()
+    public override void OnStartLocalPlayer()
     {
-        if(isLocalPlayer)
+        base.OnStartLocalPlayer();
+
+        hardware_rig = GameObject.FindWithTag("Player").GetComponent<Hardware_Rig>();
+    }
+
+    private void Update()
+    {
+        if (isLocalPlayer && hardware_rig != null)
         {
-            hardware_rig = GameObject.FindWithTag("Player").GetComponent<Hardware_Rig>();
+            CmdUpdateRigTransform(hardware_rig.transform.position, hardware_rig.transform.rotation,
+                hardware_rig.left_Hand_Position, hardware_rig.left_Hand_Rotation,
+                hardware_rig.right_Hand_Position, hardware_rig.right_Hand_Rotation,
+                hardware_rig.head_Set_Position, hardware_rig.head_Set_Rotation);
         }
     }
 
-    private void LateUpdate()
+    [Command]
+    void CmdUpdateRigTransform(Vector3 position, Quaternion rotation, Vector3 leftHandPosition, Quaternion leftHandRotation,
+        Vector3 rightHandPosition, Quaternion rightHandRotation, Vector3 headPosition, Quaternion headRotation)
     {
-        if (hardware_rig != null)
-        {
-            transform.SetPositionAndRotation(hardware_rig.transform.position, hardware_rig.transform.rotation);
-            leftNetworkHand.transform.SetPositionAndRotation(hardware_rig.left_Hand_Position, hardware_rig.left_Hand_Rotation);
-            rightNetworkHand.transform.SetPositionAndRotation(hardware_rig.right_Hand_Position, hardware_rig.right_Hand_Rotation);
-            networkHead.transform.SetPositionAndRotation(hardware_rig.head_Set_Position, hardware_rig.head_Set_Rotation);
-        }
-
+        RpcUpdateRigTransform(position, rotation, leftHandPosition, leftHandRotation,
+            rightHandPosition, rightHandRotation, headPosition, headRotation);
     }
 
-
+    [ClientRpc]
+    void RpcUpdateRigTransform(Vector3 position, Quaternion rotation, Vector3 leftHandPosition, Quaternion leftHandRotation,
+        Vector3 rightHandPosition, Quaternion rightHandRotation, Vector3 headPosition, Quaternion headRotation)
+    {
+        transform.position = position;
+        transform.rotation = rotation;
+        leftNetworkHand.transform.SetPositionAndRotation(leftHandPosition, leftHandRotation);
+        rightNetworkHand.transform.SetPositionAndRotation(rightHandPosition, rightHandRotation);
+        networkHead.transform.SetPositionAndRotation(headPosition, headRotation);
+    }
 }
