@@ -132,12 +132,6 @@ public class Ingredient : MonoBehaviour, IState
         yield return null;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Knife"))
-        {
-            current_slice_count++;
-        }
-    }
+
 
 }
