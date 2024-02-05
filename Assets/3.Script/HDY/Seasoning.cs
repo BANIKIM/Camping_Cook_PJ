@@ -20,17 +20,20 @@ public class Seasoning : MonoBehaviour
 
     private void CheckMeat()
     {
-        Debug.DrawRay(transform.position, transform.up * 1.5f, Color.green);
+        Debug.DrawRay(transform.position, transform.up*0.5f, Color.green);
 
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position, transform.up, out hit))
         {
-            //Debug.Log("이것은 " + hit.collider.gameObject.name + "다.");
 
-            if(hit.collider.gameObject.name == "Meat")
+            if(hit.collider.gameObject.name == "meat")
             {
                 Debug.Log("양념 시작");
+            }
+            else
+            {
+                Debug.Log("양념 끝");
             }
         }
     }
