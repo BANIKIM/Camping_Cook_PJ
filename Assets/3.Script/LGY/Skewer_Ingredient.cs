@@ -11,7 +11,6 @@ public enum Skewer_State
 public class Skewer_Ingredient : MonoBehaviour, IState
 {
     private Rigidbody rigid;
-    private Ingredient ingredient;
 
     private Skewer_State skewer_state;
 
@@ -20,7 +19,6 @@ public class Skewer_Ingredient : MonoBehaviour, IState
     {
         skewer_state = Skewer_State.Idle;
         TryGetComponent<Rigidbody>(out rigid);
-        TryGetComponent<Ingredient>(out ingredient);
     }
 
     public void OnEnter()
@@ -48,6 +46,8 @@ public class Skewer_Ingredient : MonoBehaviour, IState
 
     public void Change_Skewer_State(Skewer_State start_state)
     {
+        if (skewer_state.Equals(start_state)) return;
+
         OnExit();
         skewer_state = start_state;
 
