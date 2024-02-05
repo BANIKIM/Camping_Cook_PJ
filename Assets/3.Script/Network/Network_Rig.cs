@@ -21,6 +21,11 @@ public class Network_Rig : NetworkBehaviour
 
     private void Update()
     {
+        if(!isLocalPlayer)
+        {
+            return;
+        }
+
         if (isLocalPlayer && hardware_rig != null)
         {
             CmdUpdateRigTransform(hardware_rig.transform.position, hardware_rig.transform.rotation,
