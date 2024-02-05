@@ -136,8 +136,9 @@ GameObject:
   - component: {fileID: 9652360}
   - component: {fileID: 9652359}
   - component: {fileID: 9652363}
+  - component: {fileID: 9652364}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Knife
   m_TagString: Knife
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -258,6 +259,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &9652364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9652358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9748d37c1feae224785866fd5f74cfdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &233353192
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,9 +393,9 @@ GameObject:
   - component: {fileID: 375231037}
   - component: {fileID: 375231042}
   - component: {fileID: 375231043}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -563,9 +576,9 @@ GameObject:
   - component: {fileID: 484527553}
   - component: {fileID: 484527558}
   - component: {fileID: 484527559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere (1)
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -870,9 +883,9 @@ GameObject:
   - component: {fileID: 773327351}
   - component: {fileID: 773327355}
   - component: {fileID: 773327356}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Meat
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

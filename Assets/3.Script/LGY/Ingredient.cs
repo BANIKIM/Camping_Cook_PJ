@@ -4,9 +4,9 @@ using UnityEngine;
 
 public interface IState
 {
-    void RoastOnEnter();
-    void RoastOnUpdate();
-    void RoastOnExit();
+    void OnEnter();
+    void OnUpdate();
+    void OnExit();
 }
 
 public enum Ingredient_Type
@@ -53,6 +53,7 @@ public enum Slice_State    // 자르기
 
 public class Ingredient : MonoBehaviour, IState
 {
+    // 이거 다 밑으로 빼야함
     public Ingredient_Type ingredient_type;
     public Cooked_State cooked_state;      // 굽기단계
     public Slice_State slice_state;        // 자르기단계
@@ -65,17 +66,17 @@ public class Ingredient : MonoBehaviour, IState
 
     private IEnumerator sliceobj_Co;
 
-    public void RoastOnEnter()
+    public void OnEnter()
     {
 
     }
 
-    public void RoastOnUpdate()
+    public void OnUpdate()
     {
 
     }
 
-    public void RoastOnExit()
+    public void OnExit()
     {
 
     }
@@ -83,12 +84,12 @@ public class Ingredient : MonoBehaviour, IState
     private void Start()
     {
         cooked_state = Cooked_State.Raw;
-        RoastOnEnter();
+        OnEnter();
     }
 
     private void Update()
     {
-        RoastOnUpdate();
+        OnUpdate();
     }
 
     private void FixedUpdate()
@@ -98,10 +99,10 @@ public class Ingredient : MonoBehaviour, IState
 
     public void ChangeCookState(Cooked_State start_state)
     {
-        RoastOnExit();
+        OnExit();
 
         cooked_state = start_state;
-        RoastOnEnter();
+        OnEnter();
     }
 
     private void SliceObj()     // FSM 패턴으로 
@@ -132,12 +133,6 @@ public class Ingredient : MonoBehaviour, IState
         yield return null;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Knife"))
-        {
-            current_slice_count++;
-        }
-    }
+
 
 }
