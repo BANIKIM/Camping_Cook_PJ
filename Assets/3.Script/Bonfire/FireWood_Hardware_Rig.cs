@@ -15,7 +15,6 @@ public class FireWood_Hardware_Rig : NetworkBehaviour
     {
         if (isServer)
         {
-            // 서버에서만 실행
             syncedPosition = transform.position;
             syncedRotation = transform.rotation;
         }
@@ -24,11 +23,8 @@ public class FireWood_Hardware_Rig : NetworkBehaviour
     [ClientCallback]
     private void OnPositionChanged(Vector3 oldPosition, Vector3 newPosition)
     {
-        // 위치가 변경되었을 때 클라이언트에서 호출되는 콜백 함수
         if (!isServer)
         {
-            // 클라이언트에서만 실행
-            // 동기화된 위치값으로 wood 오브젝트의 transform을 업데이트
             transform.position = newPosition;
         }
     }
@@ -36,12 +32,25 @@ public class FireWood_Hardware_Rig : NetworkBehaviour
     [ClientCallback]
     private void OnRotationChanged(Quaternion oldRotation, Quaternion newRotation)
     {
-        // 회전이 변경되었을 때 클라이언트에서 호출되는 콜백 함수
         if (!isServer)
         {
-            // 클라이언트에서만 실행
-            // 동기화된 회전값으로 wood 오브젝트의 transform을 업데이트
             transform.rotation = newRotation;
         }
+    }
+
+    private void Update()
+    {
+        if (isLocalPlayer)
+        {
+            // 로컬 플레이어의 입력을 감지하여 위치 및 회전값 갱신
+            CmdUpdateRigTransform(transform.position, transform.rotation);
+        }
+    }
+
+    [Command]
+    private void CmdUpdateRigTransform(Vector3 position, Quaternion rotation)
+    {
+        syncedPosition = position;
+        syncedRotation = rotation;
     }
 }
