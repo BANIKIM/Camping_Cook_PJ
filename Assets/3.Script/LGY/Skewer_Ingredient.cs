@@ -14,7 +14,6 @@ public class Skewer_Ingredient : MonoBehaviour, IState
 
     private Skewer_State skewer_state;
 
-
     private void Start()
     {
         skewer_state = Skewer_State.Idle;

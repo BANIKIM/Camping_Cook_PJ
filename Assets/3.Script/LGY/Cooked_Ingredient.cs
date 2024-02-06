@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Cooked_State    // 요리 상태
-{
-    Raw = 0,
-    Roasted,    // 굽기
-    Boiled,     // 끓이기
-    Burned,
-}
-
 public class Cooked_Ingredient : MonoBehaviour, IState
 {
+    public enum Cooked_State    // 요리 상태
+    {
+        Raw = 0,
+        Roasted,    // 굽기
+        Boiled,     // 끓이기
+        Burned,
+    }
+
+    private void Update()
+    {
+    }
+
     private Cooked_State cooked_state;      // 굽기단계
 
     public void OnEnter()
