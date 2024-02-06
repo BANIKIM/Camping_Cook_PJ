@@ -12,7 +12,7 @@ public interface IState
 public enum Ingredient_Type
 {
     Beef = 0,
-    Tomahawk,
+    Fish,
     Lamb,
     Chicken,
     Sausage,
@@ -39,10 +39,10 @@ public class Ingredient : MonoBehaviour
 {
     [SerializeField] private Ingredient_Type ingredient_type;
 
-    public Slice_Obj slice_obj;
-    public Cooked_Ingredient cooked_ingred;
-    public Seasoning_Ingredient seasoning_ingred;
-    public Skewer_Ingredient skewer_ingred;
+    [HideInInspector] public Slice_Obj slice_obj;
+    [HideInInspector] public Cooked_Ingredient cooked_ingred;
+    [HideInInspector] public Seasoning_Ingredient seasoning_ingred;
+    [HideInInspector] public Skewer_Ingredient skewer_ingred;
 
     private void Start()
     {
@@ -57,7 +57,7 @@ public class Ingredient : MonoBehaviour
         slice_obj.SliceObj();
     }
 
-  
+
 
 
 
