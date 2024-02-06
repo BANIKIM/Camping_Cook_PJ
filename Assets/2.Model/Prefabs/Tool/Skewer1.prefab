@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 1686158203498345250}
   - component: {fileID: 6916515260795378430}
   m_Layer: 0
-  m_Name: Skewer
+  m_Name: Skewer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
