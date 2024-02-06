@@ -1,17 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GrilledSystem : MonoBehaviour
 {
-    public Material[] mat = new Material[3];
+    [SerializeField] private GameObject cube;
+    [SerializeField] private Texture[] textures;
 
-    //https://cagongman.tistory.com/64
-    private int grilled_stat = 0;
+    private Renderer cubeRenderer;
+    private int randomTextureIndex;
 
-    public void ChangeMat()
+    private void Start()
     {
-        grilled_stat = ++grilled_stat
+        cubeRenderer = cube.GetComponent<Renderer>();
+        gameObject.GetComponent<Button>().onClick.AddListener(ChangeCubeTexture);
     }
 
+    private void ChangeCubeTexture()
+    {
+        randomTextureIndex = Random.Range(0, textures.Length);
+        cubeRenderer.material.mainTexture = textures[randomTextureIndex];
+    }
 }
