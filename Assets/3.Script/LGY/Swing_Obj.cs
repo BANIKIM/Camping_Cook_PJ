@@ -11,6 +11,7 @@ public class Swing_Obj : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         RaycastHit hit;
         Debug.DrawRay(transform.position, transform.forward, Color.red, 5);
         if (Physics.Raycast(transform.position, transform.forward, out hit, 5, interaction_layer))

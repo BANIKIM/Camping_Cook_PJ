@@ -10,7 +10,7 @@ public class Seasoning_Ingredient : MonoBehaviour
     private void Start()
     {
         issalt = false;
-        ispepper = false;   
+        ispepper = false;
     }
 
     public void AddSeasoning(int idx)

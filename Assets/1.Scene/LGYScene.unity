@@ -425,7 +425,8 @@ Transform:
   m_LocalPosition: {x: -0.477, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1363791122}
   m_Father: {fileID: 773327354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &375231042
@@ -470,6 +471,8 @@ MonoBehaviour:
   ingredient_type: 0
   slice_obj: {fileID: 0}
   cooked_ingred: {fileID: 0}
+  seasoning_ingred: {fileID: 0}
+  skewer_ingred: {fileID: 0}
 --- !u!1 &484527552
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +622,8 @@ MonoBehaviour:
   ingredient_type: 0
   slice_obj: {fileID: 0}
   cooked_ingred: {fileID: 0}
+  seasoning_ingred: {fileID: 0}
+  skewer_ingred: {fileID: 0}
 --- !u!1 &587575937
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +675,8 @@ MonoBehaviour:
   ingredient_type: 0
   slice_obj: {fileID: 0}
   cooked_ingred: {fileID: 0}
+  seasoning_ingred: {fileID: 0}
+  skewer_ingred: {fileID: 0}
 --- !u!54 &587575940
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1041,6 +1048,8 @@ MonoBehaviour:
   ingredient_type: 0
   slice_obj: {fileID: 0}
   cooked_ingred: {fileID: 0}
+  seasoning_ingred: {fileID: 0}
+  skewer_ingred: {fileID: 0}
 --- !u!114 &773327357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,7 +1074,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227e89b688fe8a14185c33dd30b2062b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slice_state: 0
   next_slice_objs: []
   max_slice_count: 1
   current_slice_count: 0
@@ -1154,6 +1162,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ee81fef7a907db41ac6df43f76813d8, type: 3}
+--- !u!1 &1363791121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1363791122}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1363791122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363791121}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.2490406, y: 1.2739599, z: 0.6467334}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 375231040}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1488924098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,6 +1350,8 @@ MonoBehaviour:
   ingredient_type: 0
   slice_obj: {fileID: 0}
   cooked_ingred: {fileID: 0}
+  seasoning_ingred: {fileID: 0}
+  skewer_ingred: {fileID: 0}
 --- !u!54 &1651274789
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1448,6 +1489,8 @@ MonoBehaviour:
   ingredient_type: 0
   slice_obj: {fileID: 0}
   cooked_ingred: {fileID: 0}
+  seasoning_ingred: {fileID: 0}
+  skewer_ingred: {fileID: 0}
 --- !u!54 &1990465592
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1587,7 +1630,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227e89b688fe8a14185c33dd30b2062b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slice_state: 0
   next_slice_objs: []
   max_slice_count: 1
   current_slice_count: 0
@@ -3461,6 +3503,63 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!1001 &6771535037183978266
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7253399473092350453, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
+      propertyPath: m_Name
+      value: giantsteak
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519627671869689132, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519627671869689132, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519627671869689132, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519627671869689132, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519627671869689132, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519627671869689132, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519627671869689132, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519627671869689132, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519627671869689132, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7519627671869689132, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
 --- !u!114 &6835168761113028993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5401,3 +5500,4 @@ SceneRoots:
   - {fileID: 9652362}
   - {fileID: 1253368809}
   - {fileID: 48157948716541569}
+  - {fileID: 6771535037183978266}

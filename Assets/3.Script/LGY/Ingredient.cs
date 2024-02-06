@@ -42,17 +42,14 @@ public class Ingredient : MonoBehaviour
     public Slice_Obj slice_obj;
     public Cooked_Ingredient cooked_ingred;
     public Seasoning_Ingredient seasoning_ingred;
+    public Skewer_Ingredient skewer_ingred;
 
     private void Start()
     {
         TryGetComponent<Seasoning_Ingredient>(out seasoning_ingred);
         TryGetComponent<Slice_Obj>(out slice_obj);
         TryGetComponent<Cooked_Ingredient>(out cooked_ingred);
-    }
-
-    private void Update()
-    {
-
+        TryGetComponent<Skewer_Ingredient>(out skewer_ingred);
     }
 
     private void FixedUpdate()

@@ -12,7 +12,7 @@ public class Skewer_Ingredient : MonoBehaviour, IState
 {
     private Rigidbody rigid;
 
-    private Skewer_State skewer_state;
+    public Skewer_State skewer_state { get; private set; }
 
     private void Start()
     {

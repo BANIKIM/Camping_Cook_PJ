@@ -16,7 +16,7 @@ public class Cooked_Ingredient : MonoBehaviour, IState
     {
     }
 
-    private Cooked_State cooked_state;      // ±Á±â´Ü°è
+    public Cooked_State cooked_state { get; private set; }      // ±Á±â´Ü°è
 
     public void OnEnter()
     {
