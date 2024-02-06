@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Wood : MonoBehaviour
@@ -54,5 +56,5 @@ public class Wood : MonoBehaviour
             objRigidbody.isKinematic = false;
         }
     }
-
+ 
 }

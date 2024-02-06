@@ -7,6 +7,10 @@ TagManager:
   - Knife
   - Wood
   - Firewood
+  - FxTemporaire
+  - finished firewood 1
+  - Fire
+  - Campfire
   layers:
   - Default
   - TransparentFX
