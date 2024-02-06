@@ -50,7 +50,7 @@ public class Seasoning : MonoBehaviour
                 }
                 else if (seasonType == SeasonType.pepper)
                 {
-                    StartCoroutine(PepperOn());
+                    StartCoroutine(SaultOn());
                     meat.peppering = true;
                 }
                
