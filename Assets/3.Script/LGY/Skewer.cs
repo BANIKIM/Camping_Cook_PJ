@@ -14,7 +14,7 @@ public class Skewer : MonoBehaviour
             skewer_ingred.Change_Skewer_State(Skewer_State.Inserted);
 
             other.gameObject.transform.position = stickpos[0].position;        // ²¿Ä¡¿¡ ³¢¿ò
-            other.gameObject.transform.parent = gameObject.transform.root;     // ²¿Ä¡¿¡ »ó¼Ó
+            other.gameObject.transform.parent = gameObject.transform;     // ²¿Ä¡¿¡ »ó¼Ó
             stickpos.RemoveAt(0);
         }
     }

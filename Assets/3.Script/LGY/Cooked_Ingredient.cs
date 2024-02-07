@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Cooked_State    // ¿ä¸® »óÅÂ
-{
-    Raw = 0,
-    Roasted,    // ±Á±â
-    Boiled,     // ²úÀÌ±â
-    Burned,
-}
-
 public class Cooked_Ingredient : MonoBehaviour, IState
 {
-    private Cooked_State cooked_state;      // ±Á±â´Ü°è
+    public enum Cooked_State    // ¿ä¸® »óÅÂ
+    {
+        Raw = 0,
+        Roasted,    // ±Á±â
+        Boiled,     // ²úÀÌ±â
+        Burnt,
+    }
+
+    private void Update()
+    {
+    }
+
+    public Cooked_State cooked_state { get; private set; }      // ±Á±â´Ü°è
 
     public void OnEnter()
     {

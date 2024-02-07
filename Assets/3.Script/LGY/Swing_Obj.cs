@@ -11,7 +11,9 @@ public class Swing_Obj : MonoBehaviour
 
     private void FixedUpdate()
     {
-        RaycastHit hit; 
+        
+        RaycastHit hit;
+        Debug.DrawRay(transform.position, transform.forward, Color.red, 5);
         if (Physics.Raycast(transform.position, transform.forward, out hit, 5, interaction_layer))
         {
             // position으로 방향 벡터를 구하고, 방향벡터와 cube의 transfrom.up 각도를 비교
