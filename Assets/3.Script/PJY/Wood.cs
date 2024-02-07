@@ -10,7 +10,7 @@ public class Wood : MonoBehaviour
     private GameObject Cut_1;
     private GameObject Cut_2;
 
-    public float coolTime = 60f;  // 쿨타임
+    [SerializeField] private float coolTime = 60f;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -22,16 +22,16 @@ public class Wood : MonoBehaviour
     }
     private void Start()
     {
-        StartCoroutine(DestroyAfterCoolTime());
+        Destroy(gameObject, coolTime);
     }
 
-    private IEnumerator DestroyAfterCoolTime()
+  /*  private IEnumerator DestroyAfterCoolTime()
     {
         yield return new WaitForSeconds(coolTime); // 쿨타임 대기
 
         // 쿨타임 종료 후 자신 파괴
-        Destroy(gameObject);
-    }
+        
+    }*/
     private void CreatePrefabInstances()
     {
         Vector3 parentPosition = transform.position;

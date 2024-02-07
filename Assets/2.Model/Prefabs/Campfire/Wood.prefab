@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7608053334770681393}
   m_Layer: 0
   m_Name: Wood
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,3 +150,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   childObjPrefab: {fileID: 7395672210670078168, guid: 3a268d00ffa61604cabe47497fdea29d, type: 3}
   Cut_0: {fileID: 4807133548479733295}
+  coolTime: 10
