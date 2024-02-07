@@ -11,11 +11,8 @@ public class CampFire : MonoBehaviour
     public GameObject Camfire_1; //점화 1단계
     public GameObject Camfire_2; //점화 2단계
 
-    public  int HP = 0;
+    public  int HP = 10;
     public int maxHP = 60;
-
-    public float Exp;
-    public float expRange;
 
     public int maxFirewoodCount = 6; // 좌우 좌우 좌우 3단높이로 장작을 쌓기 위해서는 총 18개의 Firewood가 필요
 
@@ -33,11 +30,7 @@ public class CampFire : MonoBehaviour
     {
         if (other.CompareTag("Firewood") && firewoodList.Count < maxFirewoodCount)
         {
-            if (HP<maxHP)
-            {
-                Destroy(other.gameObject);
-            }
-         
+            Destroy(other.gameObject);
             ArrangeSingleFirewood();
         }
   
@@ -46,9 +39,8 @@ public class CampFire : MonoBehaviour
 
     private void ArrangeSingleFirewood()
     {
-        if (FirewoodPrefab != null && HP < maxHP)
+        if (FirewoodPrefab != null)
         {
-
             // 좌우 좌우 좌우 3단 높이로 장작을 쌓기 위해 각 레이어에 대한 개수를 계산
             int layerCount = 2;
             int firewoodPerLayer = maxFirewoodCount / layerCount;
@@ -56,7 +48,7 @@ public class CampFire : MonoBehaviour
             float newY = transform.position.y + yOffset * (firewoodList.Count / firewoodPerLayer); // 레이어별로 위로 쌓기
 
             float newX = transform.position.x + 1f - xOffset * (firewoodList.Count % firewoodPerLayer); // 각 레이어별로 옆으로 쌓기
-            
+
             // 로테이션을 변경할 간격에 맞게 로테이션을 조정합니다.
             Quaternion rotation = Quaternion.identity;
             if (firewoodList.Count % firewoodPerLayer == 0)
@@ -75,9 +67,9 @@ public class CampFire : MonoBehaviour
 
             firewoodList.Add(newFirewood);
 
-            int fillAmount = Mathf.Min(10, maxHP - HP);
-            HP += fillAmount;
-
+            // Update HP
+            HP += 10;
+    
             if (firewoodList.Count >= maxFirewoodCount)
             {
               
