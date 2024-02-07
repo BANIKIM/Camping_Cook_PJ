@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class GrilledSystem : MonoBehaviour
 {
-    public enum MeatState
-    {
-        raw, cooked, burnt
-    }
+    // 레시피 때 점수 추가
+    // 사운드 추가
 
-    public MeatState meat_state;
     private new MeshRenderer renderer;
-    public Material Burnt_mat;
     public Material Cooked_mat;
+    public Material Burnt_mat;
+
+    [SerializeField] private TMP_Text text; 
+
     public float time;
 
     private void Start()
@@ -43,6 +43,7 @@ public class GrilledSystem : MonoBehaviour
                 renderer.materials = materials; 
             }
         }
+
         if (transform.gameObject.CompareTag("UpMeat"))
         {
             time += Time.deltaTime;
