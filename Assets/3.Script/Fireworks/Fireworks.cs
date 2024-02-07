@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fireworks : MonoBehaviour
 {
-    public GameObject Firework;
+    public GameObject[] Firework;
     private Rigidbody rig;
     public float time;
     public float retime = 0f;
@@ -14,8 +14,8 @@ public class Fireworks : MonoBehaviour
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
-        if(!fountain)rig.AddForce(Vector3.up*1000);
-        time = Random.Range(2, 4);
+        if(fountain) rig.AddForce(Vector3.up * 900);
+        time = Random.Range(2, 4);//ÅÍÁö´Â ½Ã°£·£´ý
     }
 
     private void Update()
@@ -24,10 +24,12 @@ public class Fireworks : MonoBehaviour
 
         if (time < retime)
         {
+            int num = Random.Range(0, Firework.Length);
             rig.isKinematic = true;
-            Firework.SetActive(true);
+            Firework[num].SetActive(true); //·£´ýÀ¸·Î ´Ù¸¥ ÀÌÆåÆ®°¡ ÅÍÁü
             fire = true;
             retime = 0f;
+            Destroy(gameObject, 8f);
         }
     }
 }
