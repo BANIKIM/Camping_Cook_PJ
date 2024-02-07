@@ -5,87 +5,65 @@ using UnityEngine.UI;
 
 public class GrilledSystem : MonoBehaviour
 {
-    public Material[] mat = new Material[3];
-    //private int i = 1;
+    public enum MeatState
+    {
+        raw, cooked, burnt
+    }
 
-    public float time = 0f;
-    public float radius = 0f;
-    private bool turn = false;
+    public MeatState meat_state;
+    private new MeshRenderer renderer;
+    public Material Burnt_mat;
+    public Material Cooked_mat;
+    public float time;
 
     private void Start()
     {
-        gameObject.GetComponent<MeshRenderer>().material = mat[0];
-    }
-    private void Update()
-    {
-        MoreGrill();
+        renderer = GetComponent<MeshRenderer>();
 
+        if (renderer == null) Debug.Log("매쉬랜더 못찾음");
     }
 
-    private void MoreGrill()
+    private void OnTriggerStay(Collider other)
     {
-        Collider[] colliders = Physics.OverlapSphere(this.transform.position, radius);
-
-        foreach (Collider col in colliders)
+        if (transform.gameObject.CompareTag("DownMeat"))
         {
-            if (col.CompareTag("GrillGrate"))
+            time += Time.deltaTime;
+            Debug.Log("밑이 구워진다.");
+
+            if (time >= 8)
             {
-                //Debug.Log("그릴 태그 감지됨");
-
-                time += Time.deltaTime;
-
-                if (time >= 8)
-                {
-                    Debug.Log("turn여부1 " + turn);
-                    gameObject.GetComponent<MeshRenderer>().material = mat[1];
-                }
-                
-                //이건 맞음
-                if (time > 10)
-                {
-                    Debug.Log("turn여부2 " + turn);
-                    gameObject.GetComponent<MeshRenderer>().material = mat[2];
-                }
+                Material[] materials = renderer.materials;
+                materials[0] = Cooked_mat; // 원하는 매터리얼로 변경
+                renderer.materials = materials; // 변경된 매터리얼 적용
             }
-
+            if (time >= 10)
+            {
+                Material[] materials = renderer.materials;
+                materials[0] = Burnt_mat; 
+                renderer.materials = materials; 
+            }
         }
-    }
-
-    private void OnCollisionExit(Collision col)
-    {
-        if (col.gameObject.CompareTag("GrillGrate"))
+        if (transform.gameObject.CompareTag("UpMeat"))
         {
-            time = 0f;
+            time += Time.deltaTime;
+            Debug.Log("위가 구워진다.");
+           
+            if (time >= 8)
+            {
+                Material[] materials = renderer.materials;
+                materials[0] = Cooked_mat; 
+                renderer.materials = materials; 
+            }
+            if (time >= 10)
+            {
+                Material[] materials = renderer.materials;
+                materials[0] = Burnt_mat; 
+                renderer.materials = materials; 
+            }
         }
     }
-
-    //private void OnCollisionEnter(Collision col)
-    //{
-    //    if (col.gameObject.CompareTag("GrillGrate"))
-    //    {
-
-    //    }
-    //}
-
-    //private void OnCollisionStay(Collision col)
-    //{
-    //    if (col.gameObject.CompareTag("GrillGrate"))
-    //    {
-    //        time += Time.deltaTime;
-
-    //        if (gameObject.GetComponent<MeshRenderer>().material == mat[0])
-    //        {
-    //            Debug.Log("생고기");
-    //        }
-    //        if (gameObject.GetComponent<MeshRenderer>().material == mat[1])
-    //        {
-    //            Debug.Log("구운고기");
-    //        }
-    //        if (gameObject.GetComponent<MeshRenderer>().material == mat[2])
-    //        {
-    //            Debug.Log("탄고기");
-    //        }
-
-    //    }
-    //}
 }
+
+
+
+
