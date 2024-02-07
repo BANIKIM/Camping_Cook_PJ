@@ -54,6 +54,9 @@ public class Ingredient : MonoBehaviour
 
     private void FixedUpdate()
     {
+        cooked_ingred.OnUpdate();
+        skewer_ingred.OnUpdate();
+
         slice_obj.SliceObj();
     }
 
