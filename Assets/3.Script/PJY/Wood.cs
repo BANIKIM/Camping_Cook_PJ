@@ -6,37 +6,50 @@ public class Wood : MonoBehaviour
 {
     public GameObject childObjPrefab;  // 자식 프리팹
 
-    public GameObject parentObj;
-    private GameObject childObj1;
-    private GameObject childObj2;
+    public GameObject Cut_0;
+    private GameObject Cut_1;
+    private GameObject Cut_2;
 
+    public float coolTime = 60f;  // 쿨타임
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Knife"))
+        if (collision.collider.CompareTag("Axe"))
         {
             CreatePrefabInstances();
         }
 
+    }
+    private void Start()
+    {
+        StartCoroutine(DestroyAfterCoolTime());
+    }
+
+    private IEnumerator DestroyAfterCoolTime()
+    {
+        yield return new WaitForSeconds(coolTime); // 쿨타임 대기
+
+        // 쿨타임 종료 후 자신 파괴
+        Destroy(gameObject);
     }
     private void CreatePrefabInstances()
     {
         Vector3 parentPosition = transform.position;
 
         // 자식 프리팹을 이용하여 자식 오브젝트 생성
-        childObj1 = Instantiate(childObjPrefab, parentPosition + new Vector3(0, 0, 0), Quaternion.identity);
-        childObj2 = Instantiate(childObjPrefab, parentPosition + new Vector3(0, 0, 0), Quaternion.identity);
+        Cut_1 = Instantiate(childObjPrefab, parentPosition + new Vector3(0, 0, 0), Quaternion.identity);
+        Cut_2 = Instantiate(childObjPrefab, parentPosition + new Vector3(0, 0, 0), Quaternion.identity);
 
-        SetColliderProperties(childObj1);
-        SetColliderProperties(childObj2);
+        SetColliderProperties(Cut_1);
+        SetColliderProperties(Cut_2);
 
         // 부모-자식 관계 끊기
-        childObj1.transform.parent = null;
-        childObj2.transform.parent = null;
+        Cut_1.transform.parent = null;
+        Cut_2.transform.parent = null;
 
         // 부모 오브젝트 비활성화
       
-        Destroy(parentObj);
+        Destroy(Cut_0);
     }
     private void SetColliderProperties(GameObject obj)
     {
@@ -56,5 +69,8 @@ public class Wood : MonoBehaviour
             objRigidbody.isKinematic = false;
         }
     }
- 
+   
+
+
+
 }

@@ -149,5 +149,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   childObjPrefab: {fileID: 7395672210670078168, guid: 3a268d00ffa61604cabe47497fdea29d, type: 3}
-  coolTime: 10
-  parentObj: {fileID: 4807133548479733295}
+  Cut_0: {fileID: 4807133548479733295}

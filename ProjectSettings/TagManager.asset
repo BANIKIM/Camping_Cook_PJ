@@ -11,6 +11,7 @@ TagManager:
   - finished firewood 1
   - Fire
   - Campfire
+  - Axe
   layers:
   - Default
   - TransparentFX
