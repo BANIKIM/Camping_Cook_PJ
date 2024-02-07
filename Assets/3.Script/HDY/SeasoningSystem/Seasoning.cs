@@ -4,30 +4,25 @@ using UnityEngine;
 
 public class Seasoning : MonoBehaviour
 {
-    [SerializeField] Meat meat;
-
-    public enum SeasonType
+    public enum Season_Type
     {
-        sault, pepper
-    }
-   
-    [SerializeField] ParticleSystem particle;
-
-    public bool seasoning = false;
-    public SeasonType seasonType;
-
-    [Header("æÁ≥‰≈Î∞˙ ∞Ì±‚ ªÁ¿Ã ∞£∞›")]
-    public float lineSize = 1.5f;
-
-    [Header("æÁ≥‰ ª—∑¡¡ˆ¥¬ Ω√∞£")]
-    public float time = 0.8f;
-
-    private void Start()
-    {
-        meat = FindObjectOfType<Meat>();
+        salt = 0, 
+        pepper,
     }
 
-    private void Update()
+    [SerializeField] private ParticleSystem particle;
+
+    [SerializeField] private Season_Type season_type;
+
+    [Header("ÏñëÎÖêÌÜµÍ≥º Í≥†Í∏∞ ÏÇ¨Ïù¥ Í∞ÑÍ≤©")]
+    [SerializeField] private float lineSize = 1.5f;
+
+    [Header("ÏñëÎÖê ÎøåÎ†§ÏßÄÎäî ÏãúÍ∞Ñ")]
+    [SerializeField] private WaitForSeconds cool = new WaitForSeconds(0.8f);
+
+    private IEnumerator OnSeasoning_Temp;
+
+    private void FixedUpdate()
     {
         CheckMeat();
     }
@@ -39,42 +34,30 @@ public class Seasoning : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.up * lineSize, out hit, lineSize))
         {
-            if(hit.collider.tag == "Meat_hdy")
+            if (hit.collider.gameObject.layer.Equals(6))
             {
-                seasoning = true;
+                Seasoning_Ingredient seasoning_ingred = hit.collider.gameObject.GetComponent<Seasoning_Ingredient>();
 
-                if(seasonType == SeasonType.sault)
-                {
-                    StartCoroutine(SaultOn());
-                    meat.saulting = true;
-                }
-                else if (seasonType == SeasonType.pepper)
-                {
-                    StartCoroutine(SaultOn());
-                    meat.peppering = true;
-                }
-               
+
+                OnSeasoning();
+                seasoning_ingred.AddSeasoning((int)season_type);
+
             }
-            
         }
     }
 
-    IEnumerator SaultOn()
+    private void OnSeasoning()
+    {
+        OnSeasoning_Temp = OnSeasoning_co();
+        StartCoroutine(OnSeasoning_Temp);
+    }
+
+    IEnumerator OnSeasoning_co()
     {
         yield return new WaitForSeconds(0.1f);
         particle.Play();
-       
-        yield return new WaitForSeconds(time);
+
+        yield return cool;
         particle.Stop();
     }
-
-    IEnumerator PepperOn()
-    {
-        yield return new WaitForSeconds(0.1f);
-        particle.Play();
-
-        yield return new WaitForSeconds(time);
-        particle.Stop();
-    }
-
 }

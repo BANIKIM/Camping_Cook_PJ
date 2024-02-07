@@ -12,7 +12,7 @@ public enum Slice_State    // 자르기
 
 public class Slice_Obj : MonoBehaviour
 {
-    public Slice_State slice_state;        // 자르기단계
+    public Slice_State slice_state;       // 자르기단계
 
     [SerializeField] private GameObject[] next_slice_objs;
 
