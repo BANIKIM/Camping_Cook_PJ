@@ -156,6 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firing: 0
+  firing_pad: []
+  aa: {fileID: 0}
 --- !u!65 &2371298
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1682,6 +1684,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firing: 0
+  firing_pad: []
+  aa: {fileID: 0}
 --- !u!65 &1067315371
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2781,6 +2785,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firing: 0
+  firing_pad: []
+  aa: {fileID: 0}
 --- !u!1 &1621653889
 GameObject:
   m_ObjectHideFlags: 0
