@@ -5,6 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Knife
+  - Meat_hdy
+  - Hand
+  - Up
+  - Down
+  - Wood
+  - Axe
+  - Campfire
+  - Fire
+  - Firewood
   layers:
   - Default
   - TransparentFX
