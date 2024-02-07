@@ -71,8 +71,8 @@ namespace Mirror
                     manager.StartClient();
                 }
                 // This updates networkAddress every frame from the TextField
-                manager.networkAddress = "192.168.0.30"; //todo 20240202 mh 수정했음 원복하려면 밑에꺼로 바꾸면됨
-                //manager.networkAddress = GUILayout.TextField(manager.networkAddress);
+                //manager.networkAddress = "192.168.0.30"; //todo 20240202 mh 수정했음 원복하려면 밑에꺼로 바꾸면됨
+                manager.networkAddress = GUILayout.TextField(manager.networkAddress);
                 GUILayout.EndHorizontal();
 
                 // Server Only
