@@ -9,7 +9,7 @@ public class Cooked_Ingredient : MonoBehaviour, IState
         Raw = 0,
         Roasted,    // ±Á±â
         Boiled,     // ²úÀÌ±â
-        Burned,
+        Burnt,
     }
 
     private void Update()
