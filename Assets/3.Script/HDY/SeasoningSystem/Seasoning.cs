@@ -14,10 +14,10 @@ public class Seasoning : MonoBehaviour
 
     [SerializeField] private Season_Type season_type;
 
-    [Header("¾ç³äÅë°ú °í±â »çÀÌ °£°İ")]
+    [Header("ì–‘ë…í†µê³¼ ê³ ê¸° ì‚¬ì´ ê°„ê²©")]
     [SerializeField] private float lineSize = 1.5f;
 
-    [Header("¾ç³ä »Ñ·ÁÁö´Â ½Ã°£")]
+    [Header("ì–‘ë… ë¿Œë ¤ì§€ëŠ” ì‹œê°„")]
     [SerializeField] private WaitForSeconds cool = new WaitForSeconds(0.8f);
 
     private IEnumerator OnSeasoning_Temp;
@@ -38,8 +38,10 @@ public class Seasoning : MonoBehaviour
             {
                 Seasoning_Ingredient seasoning_ingred = hit.collider.gameObject.GetComponent<Seasoning_Ingredient>();
 
+
                 OnSeasoning();
                 seasoning_ingred.AddSeasoning((int)season_type);
+
             }
         }
     }

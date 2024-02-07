@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Knife
+  - Meat_hdy
+  - GrillGrate
+  - DownMeat
+  - UpMeat
+  - freshwater
   layers:
   - Default
   - TransparentFX
