@@ -10,12 +10,14 @@ public class Fireworks : MonoBehaviour
     public float retime = 0f;
     private bool fire = false;
     public bool fountain;
+    private int random_addForce;
 
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
-        if(fountain) rig.AddForce(Vector3.up * 900);
-        time = Random.Range(2, 4);//터지는 시간랜덤
+        random_addForce = Random.Range(900, 1100);
+        if (fountain) rig.AddForce(Vector3.up * random_addForce);//생성되고 위로 튀어간다
+        time = Random.Range(1, 2);//터지는 시간랜덤
     }
 
     private void Update()
