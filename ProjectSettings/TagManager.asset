@@ -5,10 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Knife
+
   - Wood
   - Hand
   - Up
   - Down
+  - Meat_hdy
+  - GrillGrate
+  - DownMeat
+  - UpMeat
+  - freshwater
   layers:
   - Default
   - TransparentFX
