@@ -9,6 +9,7 @@ TagManager:
   - GrillGrate
   - DownMeat
   - UpMeat
+  - freshwater
   layers:
   - Default
   - TransparentFX
