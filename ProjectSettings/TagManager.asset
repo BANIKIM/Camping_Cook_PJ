@@ -7,6 +7,8 @@ TagManager:
   - Knife
   - Wood
   - Hand
+  - Up
+  - Down
   layers:
   - Default
   - TransparentFX
