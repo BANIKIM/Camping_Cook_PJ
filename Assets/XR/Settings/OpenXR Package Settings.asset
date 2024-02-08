@@ -91,6 +91,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+
 --- !u!114 &-6979833520368238626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +112,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+
 --- !u!114 &-6577696786123511937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +133,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+
 --- !u!114 &-5771892538731049506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +370,7 @@ MonoBehaviour:
   Values:
   - {fileID: 395273062065476445}
 
+
   - {fileID: 3948045605936028794}
 --- !u!114 &395273062065476445
 MonoBehaviour:
@@ -400,6 +404,26 @@ MonoBehaviour:
   m_renderMode: 0
   m_depthSubmissionMode: 0
   m_symmetricProjection: 0
+--- !u!114 &516543856098934419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3cf79659a011bd419c7a2a30eb74e9a, type: 3}
+  m_Name: EyeGazeInteraction Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Eye Gaze Interaction Profile
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.eyetracking
+  openxrExtensionStrings: XR_EXT_eye_gaze_interaction
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &999445820030590712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +445,7 @@ MonoBehaviour:
   priority: 0
   required: 0
 
+
 --- !u!114 &1654060509879629441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,6 +455,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+
 
   m_Script: {fileID: 11500000, guid: 2a24be4b5ebfe5f4d8ed1de9b25cb7aa, type: 3}
   m_Name: HandCommonPosesInteraction Android
@@ -512,6 +538,26 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &3140959237781390477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feeef8d85de8db242bdda70cc7ff5acd, type: 3}
+  m_Name: OculusTouchControllerProfile Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Oculus Touch Controller Profile
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.oculustouch
+  openxrExtensionStrings: 
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &3563991690579266294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +629,7 @@ MonoBehaviour:
   priority: 0
   required: 0
 
+
 --- !u!114 &4605763746186892509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -592,6 +639,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+
 
   m_Script: {fileID: 11500000, guid: b3cf79659a011bd419c7a2a30eb74e9a, type: 3}
   m_Name: EyeGazeInteraction Android
@@ -624,6 +672,7 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+
 
   cacheSize: 1048576
   perThreadCacheSize: 51200
@@ -721,6 +770,7 @@ MonoBehaviour:
   priority: 0
   required: 0
   ignoreValidationErrors: 0
+
 --- !u!114 &6379780778287228528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,6 +780,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+
   m_Script: {fileID: 11500000, guid: 7de993716e042c6499d0c18eed3a773c, type: 3}
   m_Name: MockRuntime Android
   m_EditorClassIdentifier: 
@@ -785,6 +836,7 @@ MonoBehaviour:
   cacheSize: 1048576
   perThreadCacheSize: 51200
 
+
 --- !u!114 &8961167291108144246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,6 +846,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+
 
   m_Script: {fileID: 11500000, guid: 0f6bfdbcb316ed242b30a8798c9eb853, type: 3}
   m_Name: KHRSimpleControllerProfile Android
@@ -826,3 +879,25 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &9158763239324212795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056125dd64c0ed540b40a4af74f7b495, type: 3}
+  m_Name: RuntimeDebuggerOpenXRFeature Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Runtime Debugger
+  version: 1
+  featureIdInternal: com.unity.openxr.features.runtimedebugger
+  openxrExtensionStrings: 
+  company: Unity
+  priority: 0
+  required: 0
+  cacheSize: 1048576
+  perThreadCacheSize: 51200
