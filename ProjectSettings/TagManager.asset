@@ -14,6 +14,7 @@ TagManager:
   - Campfire
   - Fire
   - Firewood
+  - Group
   layers:
   - Default
   - TransparentFX

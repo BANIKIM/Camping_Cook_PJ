@@ -75,6 +75,7 @@ public class CampFire : MonoBehaviour
             int fillAmount = Mathf.Min(10, maxHP - HP);
             HP += fillAmount;
 
+            // Group 프리팹이 존재하지 않는 경우에만 새로운 그룹 생성
             if (firewoodList.Count >= maxFirewoodCount)
             {
                 foreach (GameObject firewood in firewoodList)
@@ -84,7 +85,11 @@ public class CampFire : MonoBehaviour
 
                 firewoodList.Clear();
 
-                Instantiate(Group, SpawnPosition.transform.position, Quaternion.identity);
+                if (GameObject.FindGameObjectsWithTag("Group").Length == 0)
+                {
+                    Instantiate(Group, SpawnPosition.transform.position, Quaternion.identity);
+                }
+                
             }
         }
     }

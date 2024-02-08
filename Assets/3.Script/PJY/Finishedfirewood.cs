@@ -50,7 +50,7 @@ public class Finishedfirewood : MonoBehaviour
     {
         if (other.CompareTag("Fire"))
         {
-           
+            OnFire = true;
             FireTime = Time.time;
         }
     }
@@ -58,7 +58,7 @@ public class Finishedfirewood : MonoBehaviour
     {
         if (OnFire && Time.time - FireTime >= fireDuration)
         {
-            OnFire = true;
+           
             if (!campFire.Camfire_1.activeSelf) // 이미 활성화되어 있지 않은 경우에만 실행
             {
                 campFire.Camfire_1.SetActive(true);
