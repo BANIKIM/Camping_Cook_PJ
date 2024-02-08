@@ -11,57 +11,37 @@ public class GrilledSystem : MonoBehaviour
     private new MeshRenderer renderer;
     public Material Cooked_mat;
     public Material Burnt_mat;
-
-    [SerializeField] private TMP_Text text; 
-
     public float time;
+
+    public Cooked_Ingredient meat_State;
 
     private void Start()
     {
         renderer = GetComponent<MeshRenderer>();
-
-        if (renderer == null) Debug.Log("매쉬랜더 못찾음");
+        meat_State = GetComponent<Cooked_Ingredient>();
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (transform.gameObject.CompareTag("DownMeat"))
-        {
-            time += Time.deltaTime;
-            Debug.Log("밑이 구워진다.");
 
-            if (time >= 8)
-            {
-                Material[] materials = renderer.materials;
-                materials[0] = Cooked_mat; // 원하는 매터리얼로 변경
-                renderer.materials = materials; // 변경된 매터리얼 적용
-            }
-            if (time >= 10)
-            {
-                Material[] materials = renderer.materials;
-                materials[0] = Burnt_mat; 
-                renderer.materials = materials; 
-            }
+        time += Time.deltaTime;
+
+        if (time >= 5)
+        {
+            Material[] materials = renderer.materials;
+            materials[0] = Cooked_mat; // 원하는 매터리얼로 변경
+            renderer.materials = materials; // 변경된 매터리얼 적용
+            meat_State.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Roasted); //구운거
+        }
+        if (time >= 15)
+        {
+            Material[] materials = renderer.materials;
+            materials[0] = Burnt_mat;
+            renderer.materials = materials;
+            meat_State.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Burnt);//탄거
+
         }
 
-        if (transform.gameObject.CompareTag("UpMeat"))
-        {
-            time += Time.deltaTime;
-            Debug.Log("위가 구워진다.");
-           
-            if (time >= 8)
-            {
-                Material[] materials = renderer.materials;
-                materials[0] = Cooked_mat; 
-                renderer.materials = materials; 
-            }
-            if (time >= 10)
-            {
-                Material[] materials = renderer.materials;
-                materials[0] = Burnt_mat; 
-                renderer.materials = materials; 
-            }
-        }
     }
 }
 
