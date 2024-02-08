@@ -47,7 +47,7 @@ public class BoilingSystem : MonoBehaviour
         {
             Pouring();
         }
-        if (Input.GetKeyDown(KeyCode.W) && pour_water) //재료 넣는 조건 바꿀 것
+        if (Input.GetKeyDown(KeyCode.W) && pour_water)
         {
             InputCarrot();
         }
