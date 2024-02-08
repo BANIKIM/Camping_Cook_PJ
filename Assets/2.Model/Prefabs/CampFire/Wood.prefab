@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2158836458628623988}
   - component: {fileID: -7209616592346695369}
   - component: {fileID: 2264645493614986022}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Wood
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -107,9 +107,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.06
-  m_Height: 0.5
+  m_Height: 0.46938035
   m_Direction: 2
-  m_Center: {x: -0.0010045115, y: 0.0020754077, z: 0.00043910742}
+  m_Center: {x: -0.0010045134, y: 0.0020754077, z: 0.0034927875}
 --- !u!54 &-2158836458628623988
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,7 +135,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &-7209616592346695369
 MonoBehaviour:
@@ -303,4 +303,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   childObjPrefab: {fileID: 3053445855453575817, guid: d359f1319201a774daf3c7a1101700cd, type: 3}
   Cut_0: {fileID: 8616861042016970933}
+  SpawnX: 0.5
+  SpawnY: 0.1
   coolTime: 60

@@ -15,6 +15,7 @@ TagManager:
   - Fire
   - Firewood
   - Group
+  - CampfireHP
   layers:
   - Default
   - TransparentFX
@@ -46,8 +47,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - SpawnObj
+  - Spawn
   m_SortingLayers:
   - name: Default
     uniqueID: 0

@@ -17,10 +17,14 @@ public class Finishedfirewood : MonoBehaviour
     public GameObject finishedfirewood1;
     public GameObject finishedfirewood2;
     public GameObject finishedfirewood3;
+ 
 
     public string campfireTag = "Campfire";
     [SerializeField]
     private CampFire campFire;
+
+   
+   
 
     // private IEnumerator timecheck_temp;
 
@@ -42,6 +46,7 @@ public class Finishedfirewood : MonoBehaviour
     {
         // 캠프파이어 오브젝트를 태그로 찾아 변수에 저장
         // 캠프파이어 오브젝트가 가지고 있는 CampFire 스크립트 컴포넌트를 가져옴
+      
         CampfireObj = GameObject.FindGameObjectWithTag(campfireTag);
         campFire = CampfireObj.GetComponent<CampFire>();
 
@@ -70,6 +75,17 @@ public class Finishedfirewood : MonoBehaviour
             // 1분이 지났으므로 HP 감소
             campFire.HP--;
             lastHPDecreaseTime = Time.time; // 마지막 HP 감소 시간 업데이트
+
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, campFire.expRange);
+            foreach (Collider collider in hitColliders)
+            {
+                if (collider.CompareTag("Hand"))
+                {
+                    campFire.Exp += 10;
+                    Debug.Log(campFire.Exp);
+                  
+                }
+            }
 
             // 5분이 지난 경우
             if (Time.time - startTime >= 60f) // 
@@ -109,6 +125,7 @@ public class Finishedfirewood : MonoBehaviour
 
 
     }
+ 
 
 
     /*  public void ChangeFireState(Fire_State startstate)
