@@ -30,6 +30,13 @@ public class BoilingSystem : MonoBehaviour
     public bool heat = false;
     private int add_food = 0;
 
+    private Slice_Obj sliceObj;
+
+    private void Start()
+    {
+        sliceObj = GetComponent<Slice_Obj>();
+    }
+
     private void Update()
     {
         MyInput();
@@ -43,21 +50,32 @@ public class BoilingSystem : MonoBehaviour
     
     private void MyInput()
     {
+        bool AddIngred = pour_water && (sliceObj.slice_state == Slice_State.Slice_Step1
+                                        || sliceObj.slice_state == Slice_State.Slice_Step2
+                                        || sliceObj.slice_state == Slice_State.Slice_Step3);
+
         if (Input.GetKeyDown(KeyCode.Q)) //재료 넣는 조건 바꿀 것
         {
             Pouring();
         }
-        if (Input.GetKeyDown(KeyCode.W) && pour_water)
+
+        if (AddIngred)
         {
-            InputCarrot();
-        }
-        if (Input.GetKeyDown(KeyCode.E) && pour_water) //재료 넣는 조건 바꿀 것
-        {
-            InputBeef();
-        }
-        if (Input.GetKeyDown(KeyCode.R) && pour_water) //재료 넣는 조건 바꿀 것
-        {
-            InputPotato();
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                SlicedCarrot.SetActive(true);
+                add_food++;
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                SlicedBeef.SetActive(true);
+                add_food++;
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SlicedPotato.SetActive(true);
+                add_food++;
+            }
         }
     }
 
@@ -65,21 +83,6 @@ public class BoilingSystem : MonoBehaviour
     {
         freshWater.SetActive(true); //물이 담김
         pour_water = true;
-    }
-    private void InputCarrot()
-    {
-        SlicedCarrot.SetActive(true);
-        add_food++;
-    }
-    private void InputBeef()
-    {
-        SlicedBeef.SetActive(true);
-        add_food++;
-    }
-    private void InputPotato()
-    {
-        SlicedPotato.SetActive(true);
-        add_food++;
     }
 
     private void OnCollisionEnter(Collision collision)
