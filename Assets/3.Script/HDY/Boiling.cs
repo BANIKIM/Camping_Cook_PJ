@@ -38,8 +38,6 @@ public class Boiling : MonoBehaviour
     private void Update()
     {
         MyInput();
-        
-        //boilingTime = water_HP + slice_obj.ingred_HP; // 끓는 시간 = 물hp + 모든 재료의 hp
         time += Time.deltaTime;
     }
 
@@ -78,30 +76,6 @@ public class Boiling : MonoBehaviour
         
     }
 
-   /* private void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.CompareTag("GrillGrate"))
-        {
-            All_hp--;
-            Debug.Log("끓어야 하는 시간: " + All_hp);
-        }
-    }*/
-    private void OnCollisionStay(Collision col)
-    {
-        if (col.gameObject.CompareTag("GrillGrate"))
-        {
-            All_hp -= Time.deltaTime;
-            Debug.Log("끓어야 하는 시간: " + All_hp);
-        }
-    }
-    /*private void OnCollisionExit(Collision col)
-    {
-        if (col.gameObject.CompareTag("GrillGrate"))
-        {
-            All_hp = All_hp;
-            Debug.Log("끓어야 하는 시간: " + All_hp);
-        }
-    }*/
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("GrillGrate"))
