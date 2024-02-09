@@ -28,17 +28,15 @@ public class Boiling : MonoBehaviour
 
     private bool pour_water = false;
 
-    public int water_HP = 0; //물의 hp
+    public int water_HP = 0;
     public int ingred_HP = 5;
     public float All_hp = 0;
 
     public int boilingTime;
-    public float time;
 
     private void Update()
     {
         MyInput();
-        time += Time.deltaTime;
     }
 
     private void MyInput()
@@ -72,8 +70,7 @@ public class Boiling : MonoBehaviour
         else
         {
             Debug.Log("물 없이는 재료를 넣지 못함");
-        }
-        
+        }   
     }
 
     private void OnTriggerStay(Collider other)
@@ -81,7 +78,20 @@ public class Boiling : MonoBehaviour
         if (other.gameObject.CompareTag("GrillGrate"))
         {
             All_hp -= Time.deltaTime;
-            Debug.Log("끓어야 하는 시간: " + All_hp);
+            
+            if (All_hp > 0)
+            {
+                Debug.Log("덜 익음");
+            }
+            else if(All_hp <= -10)
+            {
+                Debug.Log("탄 상태");
+
+            }
+            else
+            {
+                Debug.Log("Best Score");
+            }
         }
     }
 }
