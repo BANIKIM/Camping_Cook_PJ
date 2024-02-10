@@ -15,6 +15,12 @@ TagManager:
   - Fire
   - Firewood
   - Group
+  - FxTemporaire
+  - GrillGrate
+  - freshwater
+  - beef
+  - carrot
+  - potato
   layers:
   - Default
   - TransparentFX
