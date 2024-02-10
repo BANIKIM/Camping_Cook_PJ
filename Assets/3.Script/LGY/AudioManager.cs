@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] BGM_Clips;
     public AudioClip[] SFX_Clips;
 
+    public AudioMixer audiomixer;
 
 
     private void Awake()
