@@ -18,6 +18,7 @@ public class Boiling : MonoBehaviour
 
     private bool pour_water = false;
     private bool logOut = true;
+    private bool smoke_on = false;
 
     [Header("끓는 시간 계산하기")]
     public float water_HP = 0f;
@@ -46,12 +47,32 @@ public class Boiling : MonoBehaviour
         RawMat(sliceCarrot, sliceBeef, slicePotato);
 
         inputingred = FindObjectOfType<InputIngred>();
+
     }
 
     private void Update()
     {
         MyInput();
+        SmokeOnOff();
+        PourWaterOnOff();
 
+        Debug.Log("끓는 시간: " + All_hp);
+    }
+
+    private void SmokeOnOff()
+    {
+        if (smoke_on)
+        {
+            SmokeEff.SetActive(true);
+        }
+        else
+        {
+            SmokeEff.SetActive(false);
+        }
+    }
+
+    private void PourWaterOnOff()
+    {
         if (pour_water)
         {
             panEnter.SetActive(true); //물이 없을 때 재료가 닿아도 재료가 사라지지 않기 위함
@@ -60,7 +81,6 @@ public class Boiling : MonoBehaviour
         {
             panEnter.SetActive(false); //panEnter을 처음부터 꺼버리면 당근옵젝이 물에 안뜸
         }
-
     }
 
     private void MyInput()
@@ -132,12 +152,27 @@ public class Boiling : MonoBehaviour
             else
             {
                 Debug.Log("Best Score");
-                SmokeEff.SetActive(true); //연기On
+                smoke_on = true; //연기On
                 freshWater.GetComponent<MeshRenderer>().material = watherMat[1];
                 StewMat(sliceCarrot, sliceBeef, slicePotato);
 
             }
         }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("GrillGrate"))
+        {
+            StartCoroutine(SmokeOff());
+        }
+    }
+
+    IEnumerator SmokeOff()
+    {
+        yield return new WaitForSeconds(2f);
+        smoke_on = false; //연기Off
     }
 
     IEnumerator LogOutAgain()
@@ -203,6 +238,7 @@ public class Boiling : MonoBehaviour
             }
         }
     }
+
     private void StewMat(Transform sliceCarrot, Transform sliceBeef, Transform slicePotato)
     {
         if (sliceCarrot != null)
