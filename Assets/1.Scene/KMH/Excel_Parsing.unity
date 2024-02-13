@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mytext: {fileID: 4900000, guid: 176c58176f1f92340b73b02fa2df956c, type: 3}
-  recipenum: 11
+  recipenum: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
