@@ -6,69 +6,61 @@ using EzySlice;
 
 public class Slice_Obj2 : MonoBehaviour
 {
-    private Transform sliceObejct; 
-    public GameObject target; 
-    public Material cross; 
+    public Material cross;
+    public Transform slice_pos;
 
-    public float cutForce = 100f; 
+    public float cutForce = 100f;
 
-    Vector3 presiousPos; 
-    public LayerMask layer;
+    Vector3 presiousPos;
+    public LayerMask target_layer;
 
     private void FixedUpdate()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 5, layer))
+        bool hasHit = Physics.Linecast(slice_pos.position, slice_pos.forward, out RaycastHit hit, target_layer);
+
+        if (hasHit)
         {
-            if (Vector3.Angle(transform.position - presiousPos, hit.transform.up) >= 0) 
+            if (Vector3.Magnitude(slice_pos.position - presiousPos) >= 0.0001f)
             {
-                SliceObject(hit.transform.gameObject);
+                GameObject target = hit.transform.gameObject;
+                SliceObject(target);
             }
         }
 
-        presiousPos = transform.position;
+        presiousPos = slice_pos.position;
 
     }
 
     public void SliceObject(GameObject target)
     {
-        sliceObejct = target.transform.GetChild(1);
 
         Vector3 slice_normal = Vector3.Cross(transform.position - presiousPos, transform.forward);
-        SlicedHull hull = target.Slice(sliceObejct.position, slice_normal);
+
+        SlicedHull hull = target.Slice(target.transform.position, slice_normal);
 
         if (hull != null)
         {
             GameObject upperHull = hull.CreateUpperHull(target, cross);
+            SetUpSliceCompoent(upperHull, target);
             GameObject lowerHull = hull.CreateLowerHull(target, cross);
-            if (target.transform.childCount > 0)
-            {
-                for (int i = 0; i < transform.childCount; i++)
-                {
-                    GameObject obj = target.transform.GetChild(i).gameObject;
-                    SlicedHull hull_c = obj.Slice(sliceObejct.position, slice_normal);
+            SetUpSliceCompoent(lowerHull, target);
 
-                    if (hull_c != null)
-                    {
-                        GameObject upper_c = hull_c.CreateUpperHull(obj, cross);
-                        GameObject lower_c = hull_c.CreateLowerHull(obj, cross);
-                    }
-                }
-            }
-
-            target.SetActive(false);
-            SetUpSliceCompoent(upperHull);
-            SetUpSliceCompoent(lowerHull);
+            Destroy(target);
         }
     }
 
-    private void SetUpSliceCompoent(GameObject obj)
+    private void SetUpSliceCompoent(GameObject obj, GameObject target)
     {
-        XRGrabInteractable xrgrab = obj.AddComponent<XRGrabInteractable>();
-        Rigidbody rb = obj.AddComponent<Rigidbody>();
-        MeshCollider c = obj.AddComponent<MeshCollider>();
+        Rigidbody rigid = obj.AddComponent<Rigidbody>();
+        MeshCollider mesh = obj.AddComponent<MeshCollider>();
 
-        c.convex = true;
-        rb.AddExplosionForce(cutForce, obj.transform.position, 1);
+        mesh.convex = true;
+        rigid.AddExplosionForce(cutForce, obj.transform.position, 1);
+        XRGrabInteractable xrgrab = obj.AddComponent<XRGrabInteractable>();
+
+        obj.transform.parent = target.transform.parent;
+        obj.layer = 6;
+
     }
 
 }
