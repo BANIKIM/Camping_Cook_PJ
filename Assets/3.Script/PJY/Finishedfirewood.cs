@@ -17,20 +17,20 @@ public class Finishedfirewood : MonoBehaviour
     public GameObject finishedfirewood1;
     public GameObject finishedfirewood2;
     public GameObject finishedfirewood3;
- 
+
 
     public string campfireTag = "Campfire";
     [SerializeField]
     private CampFire campFire;
 
-   
-   
+
+
 
     // private IEnumerator timecheck_temp;
 
-    private float startTime;
-    private float FireTime = 0f;
-    private float fireDuration = 5f;
+    public float B_Time =0f;
+    public float FireTime = 0f;
+    public float fireDuration = 5f;
     private bool OnFire = false;
 
     private float lastHPDecreaseTime; // 마지막 HP 감소 시간
@@ -38,7 +38,7 @@ public class Finishedfirewood : MonoBehaviour
 
     private void Start()
     {
-        startTime = Time.time;
+        // startTime = Time.time;
         // fire_state = Fire_State.Default;
     }
 
@@ -46,167 +46,107 @@ public class Finishedfirewood : MonoBehaviour
     {
         // 캠프파이어 오브젝트를 태그로 찾아 변수에 저장
         // 캠프파이어 오브젝트가 가지고 있는 CampFire 스크립트 컴포넌트를 가져옴
-      
+
         CampfireObj = GameObject.FindGameObjectWithTag(campfireTag);
         campFire = CampfireObj.GetComponent<CampFire>();
 
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Fire"))
         {
-            OnFire = true;
-            FireTime = Time.time;
+            
+            FireTime += Time.deltaTime;
+            Debug.Log("불" + FireTime);
+            // 불에 닿아 있는 동안 매 프레임마다 시간을 체크하여 5초 이상이면 불을 붙입니다.
+            if (FireTime > fireDuration)
+            {
+                if (!OnFire) // 불이 이미 붙어 있지 않은 경우에만 실행
+                {
+                    OnFire = true;
+                }
+            }
+        }
+      
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Fire"))
+        {
+            FireTime = 0f; // 불이 붙지 않았으므로 FireTime을 초기화
+            Debug.Log("0으로 초기화");
         }
     }
     private void Update()
     {
-        if (OnFire && Time.time - FireTime >= fireDuration)
+        StartFire();
+        if (OnFire) B_Time += Time.deltaTime;
+    }
+    private void StartFire()
+    {
+        if (OnFire)
         {
-           
-            if (!campFire.Camfire_1.activeSelf) // 이미 활성화되어 있지 않은 경우에만 실행
+            // 불이 5초 이상으로 지속되었을 때만 실행됩니다.
+            if (FireTime > fireDuration)
             {
-                campFire.Camfire_1.SetActive(true);
-            }
-
-        }
-        if (Time.time - lastHPDecreaseTime >= hpDecreaseInterval)
-        {
-            // 1분이 지났으므로 HP 감소
-            campFire.HP--;
-            lastHPDecreaseTime = Time.time; // 마지막 HP 감소 시간 업데이트
-
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, campFire.expRange);
-            foreach (Collider collider in hitColliders)
-            {
-                if (collider.CompareTag("Hand"))
+                if (!campFire.Camfire_1.activeSelf) // 이미 활성화되어 있지 않은 경우에만 실행
                 {
-                    campFire.Exp += 10;
-                    Debug.Log(campFire.Exp);
-                  
+                    campFire.Camfire_1.SetActive(true);
                 }
             }
 
-            // 5분이 지난 경우
-            if (Time.time - startTime >= 60f) // 
+            if (B_Time >= hpDecreaseInterval)
             {
-                finishedfirewood1.SetActive(false);
-                finishedfirewood2.SetActive(true);
+                // 1분이 지났으므로 HP 감소
+                campFire.HP--;
+                B_Time = 0f; // 마지막 HP 감소 시간 업데이트
 
+                Collider[] hitColliders = Physics.OverlapSphere(transform.position, campFire.expRange);
+                foreach (Collider collider in hitColliders)
+                {
+                    if (collider.CompareTag("Hand"))
+                    {
+                        campFire.Exp += 10;
+                        Debug.Log(campFire.Exp);
+                    }
+                }
+
+/*                // 5분이 지난 경우
+                if (campFire.HP>=60) // 
+                {
+                
+                }
+                // 10분이 지난 경우
+                if (campFire.HP == 30) // 600초는 10분을 의미합니다
+                {
+    
+                }*/
             }
-            // 10분이 지난 경우
-            if (Time.time - startTime >= 120f) // 600초는 10분을 의미합니다
+
+            if (campFire.HP > 0 && campFire.HP <= 30)
             {
+                campFire.Camfire_1.SetActive(true);
+                campFire.Camfire_2.SetActive(false);
                 finishedfirewood2.SetActive(false);
                 finishedfirewood3.SetActive(true);
 
             }
-
+            else if (campFire.HP > 30 && campFire.HP <= 60)
+            {
+              
+                campFire.Camfire_1.SetActive(false);
+                campFire.Camfire_2.SetActive(true);
+                finishedfirewood1.SetActive(false);
+                finishedfirewood2.SetActive(true);
+            }
+            else if (campFire.HP <= 0)
+            {
+                campFire.Camfire_1.SetActive(false);
+                campFire.Camfire_2.SetActive(false);
+                Destroy(finishedfirewood3);
+            }
         }
-
-        if (OnFire && campFire.HP > 0 && campFire.HP <= 30)
-        {
-            campFire.Camfire_1.SetActive(true);
-            campFire.Camfire_2.SetActive(false);
-
-        }
-        else if (OnFire && campFire.HP > 30 && campFire.HP <= 60)
-        {
-            campFire.Camfire_1.SetActive(false);
-            campFire.Camfire_2.SetActive(true);
-
-        }
-        else if (OnFire && campFire.HP <= 0)
-        {
-            campFire.Camfire_1.SetActive(false);
-            campFire.Camfire_2.SetActive(false);
-            Destroy(finishedfirewood3);
-        }
-
-
     }
- 
 
 
-    /*  public void ChangeFireState(Fire_State startstate)
-      {
-          if (fire_state.Equals(startstate)) return;
-
-          OnExit();
-
-          fire_state = startstate;
-          OnEnter();
-      }
-
-      private void TimeCheck()
-      {
-          timecheck_temp = TimeCheck_Co();
-          StartCoroutine(timecheck_temp);
-
-      }
-
-      IEnumerator TimeCheck_Co()
-      {
-          yield return new WaitForSeconds(60f);
-
-          campFire.HP--;
-
-          yield return null;
-
-      }*/
-
-
-    /*    public void OnEnter()
-        {
-            // 오브젝트 SetActive true
-            //finishedfirewoods[(int)fire_state].SetActive(true);
-            TimeCheck();
-            switch (fire_state)
-            {
-                case Fire_State.Default:
-                    break;
-                case Fire_State.Campfire_1:
-                    break;
-                case Fire_State.Campfire_2:
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        public void OnUpdate()
-        {
-            // 시간 재기
-            if (campFire.HP <= 30)
-            {
-                switch (fire_state)
-                {
-                    case Fire_State.Default:
-                        break;
-                    case Fire_State.Campfire_1:
-                        break;
-                    case Fire_State.Campfire_2:
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-
-        public void OnExit()
-        {
-            // 오브젝트 SetActive false    
-            //finishedfirewoods[(int)fire_state].SetActive(false);
-            switch (fire_state)
-            {
-                case Fire_State.Default:
-                    break;
-                case Fire_State.Campfire_1:
-                    break;
-                case Fire_State.Campfire_2:
-                    break;
-                default:
-                    break;
-            }
-        }*/
 }

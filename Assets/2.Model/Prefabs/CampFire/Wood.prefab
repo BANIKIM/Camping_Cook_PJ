@@ -303,6 +303,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   childObjPrefab: {fileID: 3053445855453575817, guid: d359f1319201a774daf3c7a1101700cd, type: 3}
   Cut_0: {fileID: 8616861042016970933}
-  SpawnX: 0.5
+  SpawnX: 0
   SpawnY: 0.1
   coolTime: 60
