@@ -12,32 +12,18 @@ public interface IState
 public enum Ingredient_Type
 {
     Beef = 0,
-    Fish,
-    Lamb,
-    Chicken,
-    Sausage,
     Mashmellow,
     Salmon,
-    Shrimp,
-    Lobster,
-    Tomato,
-    Potato = 10,
+    Potato,
     Carrot,
     Onion,
-    Lemon,
-    Cabbage,
-    Corn,
-    Broccoli,
-    paprika,
-    Garlic,
-    GreenOnion,
-    Asparagus = 20,
-    White_Mushroom,
+    Asparagus,
+    Mushroom,
 }
 
 public class Ingredient : MonoBehaviour
 {
-    [SerializeField] private Ingredient_Type ingredient_type;
+    public Ingredient_Type ingredient_type;
 
     [HideInInspector] public Slice_Obj slice_obj;
     [HideInInspector] public Cooked_Ingredient cooked_ingred;
