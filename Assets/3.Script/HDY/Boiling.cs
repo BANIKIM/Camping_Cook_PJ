@@ -11,16 +11,22 @@ public class Boiling : MonoBehaviour
 
     [SerializeField] GameObject SmokeEff;
 
-    public Material[] watherMat = new Material[3];
+    public Material[] waterMat = new Material[3];
 
     [SerializeField] private InputIngred inputingred;
     [SerializeField] GameObject panEnter;
 
     private bool pour_water = false;
+    private bool no_food = true;
     private bool logOut = true;
+    private bool smoke_on = false;
+
+    [Header("현재 Material")] //CookTools에 머테리얼 종류를 전해줌
+    public bool stew_mat = false; 
+    public bool burnt_mat = false;
 
     [Header("끓는 시간 계산하기")]
-    public float water_HP = 0f;
+    //public float water_HP = 0f;
     public float ingred_HP = 5f; //각 재료의 hp
     public float All_hp = 0f; // 끓는 시간
 
@@ -36,7 +42,7 @@ public class Boiling : MonoBehaviour
     private void Start()
     {
         //물은 시작부터 SetAcive(false)라서 true가 되어도 null이 뜸
-        freshWater.GetComponent<MeshRenderer>().material = watherMat[0];
+        freshWater.GetComponent<MeshRenderer>().material = waterMat[0];
 
         Transform sliceCarrot = transform.Find("Slice_carrot");
         Transform sliceBeef = transform.Find("Slice_beef");
@@ -46,12 +52,32 @@ public class Boiling : MonoBehaviour
         RawMat(sliceCarrot, sliceBeef, slicePotato);
 
         inputingred = FindObjectOfType<InputIngred>();
+
     }
 
     private void Update()
     {
         MyInput();
+        SmokeOnOff();
+        PourWaterOnOff();
 
+        //Debug.Log("끓는 시간: " + All_hp);
+    }
+
+    private void SmokeOnOff()
+    {
+        if (smoke_on)
+        {
+            SmokeEff.SetActive(true);
+        }
+        else
+        {
+            SmokeEff.SetActive(false);
+        }
+    }
+
+    private void PourWaterOnOff()
+    {
         if (pour_water)
         {
             panEnter.SetActive(true); //물이 없을 때 재료가 닿아도 재료가 사라지지 않기 위함
@@ -60,7 +86,6 @@ public class Boiling : MonoBehaviour
         {
             panEnter.SetActive(false); //panEnter을 처음부터 꺼버리면 당근옵젝이 물에 안뜸
         }
-
     }
 
     private void MyInput()
@@ -79,15 +104,17 @@ public class Boiling : MonoBehaviour
                 All_hp += ingred_HP;
                 Debug.Log("All_hp : " + All_hp);
                 logOut = false;
+                no_food = false; //물만 있는게 아니라는 뜻
                 StartCoroutine(LogOutAgain());
-            }
-
+            } 
+            
             if (inputingred.inputBeef && logOut)
             {
                 SlicedBeef.SetActive(true);
                 All_hp += ingred_HP;
                 Debug.Log("All_hp : " + All_hp);
                 logOut = false;
+                no_food = false;
                 StartCoroutine(LogOutAgain());
             }
 
@@ -97,13 +124,10 @@ public class Boiling : MonoBehaviour
                 All_hp += ingred_HP;
                 Debug.Log("All_hp : " + All_hp);
                 logOut = false;
+                no_food = false;
                 StartCoroutine(LogOutAgain());
             }
 
-        }
-        else
-        {
-            Debug.Log("물 없이는 재료를 넣지 못함");
         }
 
     }
@@ -114,7 +138,7 @@ public class Boiling : MonoBehaviour
         Transform sliceBeef = transform.Find("Slice_beef");
         Transform slicePotato = transform.Find("Slice_potato");
 
-        if (other.gameObject.CompareTag("GrillGrate"))
+        if (other.gameObject.CompareTag("GrillGrate") && !no_food)
         {
             All_hp -= Time.deltaTime;
 
@@ -125,19 +149,40 @@ public class Boiling : MonoBehaviour
             else if (All_hp <= -10)
             {
                 Debug.Log("탄 상태");
-                freshWater.GetComponent<MeshRenderer>().material = watherMat[2];
+                stew_mat = false;
+                burnt_mat = true;
+                freshWater.GetComponent<MeshRenderer>().material = waterMat[2];
                 BurntMat(sliceCarrot, sliceBeef, slicePotato);
 
             }
             else
             {
                 Debug.Log("Best Score");
-                SmokeEff.SetActive(true); //연기On
-                freshWater.GetComponent<MeshRenderer>().material = watherMat[1];
+                smoke_on = true; //연기On
+                freshWater.GetComponent<MeshRenderer>().material = waterMat[1];
+                stew_mat = true;
                 StewMat(sliceCarrot, sliceBeef, slicePotato);
-
             }
         }
+        else if(no_food)
+        {
+            All_hp = 0;
+            Debug.Log("재료를 넣어주세요");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("GrillGrate"))
+        {
+            StartCoroutine(SmokeOff());
+        }
+    }
+
+    IEnumerator SmokeOff()
+    {
+        yield return new WaitForSeconds(2f);
+        smoke_on = false; //연기Off
     }
 
     IEnumerator LogOutAgain()
@@ -203,6 +248,7 @@ public class Boiling : MonoBehaviour
             }
         }
     }
+
     private void StewMat(Transform sliceCarrot, Transform sliceBeef, Transform slicePotato)
     {
         if (sliceCarrot != null)

@@ -22,7 +22,10 @@ TagManager:
   - beef
   - carrot
   - potato
-  
+  - Ladle
+  - Plate
+  - PanEnter
+
   layers:
   - Default
   - TransparentFX

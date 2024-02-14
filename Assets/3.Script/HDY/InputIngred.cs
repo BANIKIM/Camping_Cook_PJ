@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class InputIngred : MonoBehaviour
 {
+    [SerializeField] private CookTools tools;
+
     public bool inputBeef = false;
     public bool inputCarrot = false;
     public bool inputPotato = false;
+
+    private void Start()
+    {
+        tools = FindObjectOfType<CookTools>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +36,10 @@ public class InputIngred : MonoBehaviour
                 Destroy(other.gameObject);
                 Invoke("ReturnBool", 0.5f);
                 break;
+
+            case "Ladle": // 국자 상호작용
+                tools.Appear();
+                break;
         }
     }
 
@@ -38,4 +49,5 @@ public class InputIngred : MonoBehaviour
         inputCarrot = false;
         inputPotato = false;
     }
+
 }
