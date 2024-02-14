@@ -15,12 +15,14 @@ TagManager:
   - Fire
   - Firewood
   - Group
+  - CampfireHP
   - FxTemporaire
   - GrillGrate
   - freshwater
   - beef
   - carrot
   - potato
+  
   layers:
   - Default
   - TransparentFX
@@ -52,8 +54,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - SpawnObj
+  - Spawn
   m_SortingLayers:
   - name: Default
     uniqueID: 0
