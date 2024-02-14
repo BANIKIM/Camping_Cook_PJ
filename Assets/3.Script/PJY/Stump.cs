@@ -6,6 +6,7 @@ public class Stump : MonoBehaviour
 {
     public GameObject woodPrefab;
     public GameObject SpawnPosition;
+   
 
     public int maxCount = 1;
 
@@ -16,7 +17,7 @@ public class Stump : MonoBehaviour
         // 현재 생성된 오브젝트의 개수를 확인하여 currentCount를 업데이트합니다.
         currentCount = GameObject.FindGameObjectsWithTag("Wood").Length;
     }
-
+  
     public void SpawnWoodPrefab()
     {
         // 이미 최대 개수 이상의 프리팹이 생성되었다면 더 이상 생성하지 않음

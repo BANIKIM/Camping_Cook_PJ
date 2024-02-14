@@ -10,6 +10,8 @@ public class Wood : MonoBehaviour
     private GameObject Cut_1;
     private GameObject Cut_2;
 
+    public float SpawnX;
+    public float SpawnY;
     [SerializeField] private float coolTime = 60f;
 
     private void OnCollisionEnter(Collision collision)
@@ -37,8 +39,8 @@ public class Wood : MonoBehaviour
         Vector3 parentPosition = transform.position;
 
         // 자식 프리팹을 이용하여 자식 오브젝트 생성
-        Cut_1 = Instantiate(childObjPrefab, parentPosition + new Vector3(0, 0, 0), Quaternion.identity);
-        Cut_2 = Instantiate(childObjPrefab, parentPosition + new Vector3(0, 0, 0), Quaternion.identity);
+        Cut_1 = Instantiate(childObjPrefab, parentPosition + new Vector3(SpawnX, SpawnY, 0), Quaternion.identity);
+        Cut_2 = Instantiate(childObjPrefab, parentPosition + new Vector3(-SpawnX, SpawnY, 0), Quaternion.identity);
 
         SetColliderProperties(Cut_1);
         SetColliderProperties(Cut_2);
