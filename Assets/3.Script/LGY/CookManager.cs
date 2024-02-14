@@ -31,7 +31,7 @@ public class CookManager : MonoBehaviour
 
     public int[] Recipe_C(int idx)    // 레시피 부르는 메서드
     {
-        return recipeset.Recipe_D[idx];
+        return recipeset.recipe_D[idx];
     }
 
 }

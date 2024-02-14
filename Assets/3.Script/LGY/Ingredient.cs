@@ -23,7 +23,7 @@ public enum Ingredient_Type
 
 public class Ingredient : MonoBehaviour
 {
-    [SerializeField] private Ingredient_Type ingredient_type;
+    public Ingredient_Type ingredient_type;
 
     [HideInInspector] public Slice_Obj slice_obj;
     [HideInInspector] public Cooked_Ingredient cooked_ingred;

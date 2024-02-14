@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class Quick_Sort : MonoBehaviour
 {
+    public void Sort_Start(int[] array, int left, int right)
+    {
+        if (left < right)
+        {
+            int pivotpos = Partition(array, left, right);
+
+            Sort_Start(array, left, pivotpos - 1);
+            Sort_Start(array, pivotpos + 1, right);
+        }
+    }
+
     private int Partition(int[] array, int left, int right)
     {
         var low = left;
@@ -33,17 +44,6 @@ public class Quick_Sort : MonoBehaviour
         Swap(array[left], array[high]);
 
         return high;
-    }
-
-    public void Sort_Start(int[] array, int left, int right)
-    {
-        if (left < right)
-        {
-            int pivotpos = Partition(array, left, right);
-
-            Sort_Start(array, left, pivotpos - 1);
-            Sort_Start(array, pivotpos + 1, right);
-        }
     }
 
     private void Swap(int a, int b)
