@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Season_Type
+{
+    salt = 0,
+    pepper,
+}
+
 public class Seasoning : MonoBehaviour
 {
-    public enum Season_Type
-    {
-        salt = 0, 
-        pepper,
-    }
-
     [SerializeField] private ParticleSystem particle;
 
     [SerializeField] private Season_Type season_type;
@@ -40,7 +40,7 @@ public class Seasoning : MonoBehaviour
 
 
                 OnSeasoning();
-                seasoning_ingred.AddSeasoning((int)season_type);
+                seasoning_ingred.AddSeasoning(season_type);
 
             }
         }

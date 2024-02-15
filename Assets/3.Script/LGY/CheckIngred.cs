@@ -4,36 +4,46 @@ using UnityEngine;
 
 public class CheckIngred : MonoBehaviour
 {
-    public GameObject A;
-
-    public void Test()
+    public void CheckIngredType(Ingredient ingred)
     {
-        A.TryGetComponent<Ingredient>(out Ingredient ingred);
-    }
+        var ingred_type = ((int)ingred.ingredient_type * 100000)
+            + ((int)ingred.seasoning_ingred.salt_s * 1000) + ((int)ingred.seasoning_ingred.pepper_s * 100) +
+            ((int)ingred.skewer_ingred.skewer_state * 10) + (int)ingred.cooked_ingred.cooked_state;
 
-    public void CheckIngredType(Ingredient_Type ingred_T)
-    {
-        switch (ingred_T)
+        switch (ingred_type)
         {
-            case Ingredient_Type.Beef:
+            case 0:
                 break;
-            case Ingredient_Type.Mashmellow:
+            case 2:
                 break;
-            case Ingredient_Type.Salmon:
+            case 3:
                 break;
-            case Ingredient_Type.Potato:
+            case 4:
                 break;
-            case Ingredient_Type.Carrot:
+            case 5:
                 break;
-            case Ingredient_Type.Onion:
+            case 6:
                 break;
-            case Ingredient_Type.Asparagus:
+            case 7:
                 break;
-            case Ingredient_Type.Mushroom:
+            case 8:
                 break;
+            case 9:
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
+
+
+
+
+
             default:
                 break;
         }
+
+
     }
 
 }
