@@ -25,7 +25,7 @@ public class GoogleSheetManager : MonoBehaviour
             if (stringList[i].Trim() == recipenum)
             {
                 notFind = true;
-                for (int i1 = i; i1 < (i + 7); i1++) //열의 갯수만큼만 출력한다.
+                for (int i1 = i; i1 < (i + 8); i1++) //열의 갯수만큼만 출력한다.
                 {
                     Debug.Log(stringList[i1]);
                 }
