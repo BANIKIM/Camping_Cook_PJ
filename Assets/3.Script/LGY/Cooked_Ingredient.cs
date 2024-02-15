@@ -6,10 +6,10 @@ public class Cooked_Ingredient : MonoBehaviour, IState
 {
     public enum Cooked_State    // 요리 상태
     {
-        Raw = 0,
-        Roasted,    // 굽기
-        Boiled,     // 끓이기
-        Burnt,
+        Raw = 0, //날것
+        Cook,    // 익힘
+        Burned,     // 타다
+        
     }
 
     private void Update()
@@ -30,7 +30,7 @@ public class Cooked_Ingredient : MonoBehaviour, IState
     {
     }
 
-    public void Change_Skewer_State(Cooked_State start_state)
+    public void Change_Skewer_State(Cooked_State start_state)//상태 변화 메서드
     {
         if (cooked_state.Equals(start_state)) return;
 
