@@ -26,22 +26,25 @@ public class RewardSystem : MonoBehaviour
     }
 
 
-    public void RecipeCheck(int[] dish, int cookidx)
+    public void RecipeCheck(List<int> dish, int cookidx)
     {
-        q_sort.Sort_Start(dish, 0, dish.Length - 1);    // 정렬 실행
-        int[] recipe = CookManager.instance.Recipe_C(cookidx);
+        List<int> recipe = CookManager.instance.Recipe_C(cookidx);
 
         // 식재료 개수가 다를 때 ex) 레시피는 4개인데 내가만든 요리는 3개면 별 개수 -1
-        if (!recipe.Length.Equals(dish.Length)) 
+        if (!recipe.Count.Equals(dish.Count)) 
         {
             star_count--;
         }
 
-        if(dish[0].Equals(0)) // 정렬 이후라 0번째가 Trash라면 별 개수 -1
+        for (int i = 0; i < dish.Count; i++)
         {
-            star_count--;
+            //요리에 있는 식재료가 레시피에 없으면 -1
+            if(recipe.Contains(dish[i]).Equals(false))
+            {
+                star_count--;
+                break;
+            }
         }
-
 
 
     }

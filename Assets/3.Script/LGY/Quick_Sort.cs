@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Quick_Sort : MonoBehaviour
 {
-    public void Sort_Start(int[] array, int left, int right)
+    public void Sort_Start(List<int> array, int left, int right)
     {
         if (left < right)
         {
@@ -15,7 +15,7 @@ public class Quick_Sort : MonoBehaviour
         }
     }
 
-    private int Partition(int[] array, int left, int right)
+    private int Partition(List<int> array, int left, int right)
     {
         var low = left;
         var high = right + 1;
