@@ -22,4 +22,14 @@ public class UiManager : MonoBehaviour
             return update_CookUI;
         }
     }
+    [SerializeField]
+    private CookingTimer cookingTimer;
+
+    public CookingTimer CookingTimer
+    {
+        get
+        {
+            return cookingTimer;
+        }
+    }
 }
