@@ -6,45 +6,43 @@ public class Middle_meat : MonoBehaviour
 {
     public GameObject Meat_Up;
     public GameObject Meat_Down;
-    private new MeshRenderer renderer;
-    public Material Cooked_mat;
-    public Material Burnt_mat;
-
-    public Cooked_Ingredient meat_up_State;
-    public Cooked_Ingredient meat_down_State;
-
-
-
-private void Start()
+    public GameObject Meat_steak;
+    private Cooked_Ingredient meat_up_ing;
+    private Cooked_Ingredient meat_down_ing;
+    private Cooked_Ingredient middle_cook;
+    private Ingredient middle_ingredient;
+    private Cooked_Ingredient steak_cook;
+    private void Start()
     {
-        renderer = GetComponent<MeshRenderer>();
-         meat_up_State = Meat_Up.GetComponent<Cooked_Ingredient>();
-         meat_down_State = Meat_Down.GetComponent<Cooked_Ingredient>();
+        meat_up_ing = Meat_Up.GetComponent<Cooked_Ingredient>();
+        meat_down_ing = Meat_Down.GetComponent<Cooked_Ingredient>();
+        middle_cook = GetComponent<Cooked_Ingredient>();
+        middle_ingredient = GetComponent<Ingredient>();
+        steak_cook = Meat_steak.GetComponent<Cooked_Ingredient>();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        if(meat_up_State.cooked_state == Cooked_Ingredient.Cooked_State.Roasted &&
-            meat_down_State.cooked_state == Cooked_Ingredient.Cooked_State.Roasted)
+        if(meat_up_ing.cooked_state==Cooked_Ingredient.Cooked_State.Burned || meat_down_ing.cooked_state == Cooked_Ingredient.Cooked_State.Burned)
         {
-            Material[] materials = renderer.materials;
-            materials[0] = Cooked_mat; // 원하는 매터리얼로 변경
-            renderer.materials = materials; // 변경된 매터리얼 적용
-        }
-        else if(meat_up_State.cooked_state == Cooked_Ingredient.Cooked_State.Burnt ||
-            meat_down_State.cooked_state == Cooked_Ingredient.Cooked_State.Burnt)
-        {
-            Material[] materials = renderer.materials;
-            materials[0] = Cooked_mat; // 원하는 매터리얼로 변경
-            renderer.materials = materials; // 변경된 매터리얼 적용
-            if(meat_up_State.cooked_state == Cooked_Ingredient.Cooked_State.Burnt &&
-            meat_down_State.cooked_state == Cooked_Ingredient.Cooked_State.Burnt)
+            middle_cook.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Cook);//스테이터스 변경
+            middle_ingredient.Cook_ch_mat();//머테리얼 변경
+            steak_cook.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Burned);
+            if (meat_up_ing.cooked_state == Cooked_Ingredient.Cooked_State.Burned && meat_down_ing.cooked_state == Cooked_Ingredient.Cooked_State.Burned)
             {
-                materials = renderer.materials;
-                materials[0] = Burnt_mat; // 원하는 매터리얼로 변경
-                renderer.materials = materials; // 변경된 매터리얼 적용
+                middle_cook.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Burned);//스테이터스 변경
+                middle_ingredient.Cook_ch_mat();//머테리얼 변경
             }
         }
-        
+        else if(meat_up_ing.cooked_state == Cooked_Ingredient.Cooked_State.Cook && meat_down_ing.cooked_state == Cooked_Ingredient.Cooked_State.Cook)
+        {
+            middle_cook.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Cook);//스테이터스 변경
+            middle_ingredient.Cook_ch_mat();//머테리얼 변경
+            steak_cook.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Cook);
+        }
     }
+
+
+
+
 }

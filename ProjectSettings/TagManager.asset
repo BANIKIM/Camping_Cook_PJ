@@ -14,18 +14,7 @@ TagManager:
   - Campfire
   - Fire
   - Firewood
-  - Group
-  - CampfireHP
-  - FxTemporaire
-  - GrillGrate
-  - freshwater
-  - beef
-  - carrot
-  - potato
-  - Ladle
-  - Plate
-  - PanEnter
-
+  - CookTool
   layers:
   - Default
   - TransparentFX
@@ -33,7 +22,6 @@ TagManager:
   - 
   - Water
   - UI
-  - Food
   - 
   - 
   - 
@@ -57,8 +45,9 @@ TagManager:
   - 
   - 
   - 
-  - SpawnObj
-  - Spawn
+  - 
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0

@@ -11,7 +11,7 @@ public interface IState
 
 public enum Ingredient_Type
 {
-    Beef = 0,
+    Beef = 1,
     Mashmellow,
     Salmon,
     Potato,
@@ -21,21 +21,29 @@ public enum Ingredient_Type
     Mushroom,
 }
 
+public enum cut_state
+{
+    Notcut=0,
+    Cut,
+}
+
+
 public class Ingredient : MonoBehaviour
 {
     public Ingredient_Type ingredient_type;
+    public Cooked_Ingredient cooked_ingred;
+    public Seasoning_Ingredient seasoning_ingred;
+    public Skewer_Ingredient skewer_ingred;
 
-    [HideInInspector] public Slice_Obj slice_obj;
-    [HideInInspector] public Cooked_Ingredient cooked_ingred;
-    [HideInInspector] public Seasoning_Ingredient seasoning_ingred;
-    [HideInInspector] public Skewer_Ingredient skewer_ingred;
+    public Material[] materials;
+    public MeshRenderer mat;
 
     private void Start()
     {
         TryGetComponent<Seasoning_Ingredient>(out seasoning_ingred);
-        TryGetComponent<Slice_Obj>(out slice_obj);
         TryGetComponent<Cooked_Ingredient>(out cooked_ingred);
         TryGetComponent<Skewer_Ingredient>(out skewer_ingred);
+        mat = GetComponent<MeshRenderer>();
     }
 
     private void FixedUpdate()
@@ -43,9 +51,12 @@ public class Ingredient : MonoBehaviour
         cooked_ingred.OnUpdate();
         skewer_ingred.OnUpdate();
 
-        slice_obj.SliceObj();
     }
 
+    public void Cook_ch_mat()// 쿡스테이터스에 따라 머테리얼 값을 변경한다
+    {
+        mat.material = materials[(int)cooked_ingred.cooked_state];
+    }
 
 
 
