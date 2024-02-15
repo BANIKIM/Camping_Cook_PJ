@@ -24,9 +24,11 @@ public class CookManager : MonoBehaviour
 
     private void Start()
     {
-        TryGetComponent<RecipeSetting>(out recipeset);
+        TryGetComponent(out recipeset);
 
         recipeset.SetDefaultRecipe();
+
+
     }
 
     public int[] Recipe_C(int idx)    // 레시피 부르는 메서드
