@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class Option_Panel : MonoBehaviour
 {
     public static Option_Panel instance = null;
 
-    public Slider[] audio_sliders;  // Master, BGM, SFX
+    public Slider[] volume_sliders;  // Master, BGM, SFX
     public Dictionary<int, string> para_D = new Dictionary<int, string>();
+    public TextMeshProUGUI[] texts;
 
     private void Awake()
     {
@@ -33,9 +35,10 @@ public class Option_Panel : MonoBehaviour
 
     public void ChangeValue(int idx)
     {
-        float value = audio_sliders[idx].value;
+        float value = volume_sliders[idx].value;
         // value = 0.001 ~ 1
         AudioManager.instance.audiomixer.SetFloat(para_D[idx], Mathf.Log10(value) * 20);
+        texts[idx].text = $"{(int)(volume_sliders[idx].value * 100)}";
     }
 
 
@@ -49,7 +52,7 @@ public class Option_Panel : MonoBehaviour
 
     private void Default_Setting()
     {
-        for (int i = 0; i < audio_sliders.Length; i++)
+        for (int i = 0; i < volume_sliders.Length; i++)
         {
             ChangeValue(i);
         }
