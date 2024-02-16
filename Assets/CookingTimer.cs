@@ -27,11 +27,8 @@ public class CookingTimer : MonoBehaviour
             // 타이머 텍스트 업데이트
             for (int i = 0; i < timerText.Length; i++)
             {
-               
                     timerText[i].text = string.Format("{0:00}:{1:00}", minutes, seconds);
-                    timertext2.text = timerText[i].text;
-              
-               
+                    timertext2.text = timerText[i].text;    
             }
         }
         // 요리가 시작되었고 전체 요리 시간이 경과한 경우
@@ -45,6 +42,7 @@ public class CookingTimer : MonoBehaviour
             // 요리 중지
             StopCooking();
         }
+      
     }
 
     // 요리 시작 버튼에 연결할 메서드
@@ -54,7 +52,11 @@ public class CookingTimer : MonoBehaviour
     public void StopCooking()
     {
         // 요리 중지에 필요한 작업 추가
-        UiManager.instance.Update_CookUI.OffUpdate();
+        for (int i = 0; i < timerText.Length; i++)
+        {
+            timerText[i].text = "요리 시작";
+        }
+        timertext2.text = "00:00";
         cookingStarted = false;
         elapsedTime = 0.0f;
         // 플레이 중인 요리 사항들을 초기화하는 작업 추가
