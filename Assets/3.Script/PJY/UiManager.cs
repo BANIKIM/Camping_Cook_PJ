@@ -42,4 +42,13 @@ public class UiManager : MonoBehaviour
             return recipesUI;
         }
     }
+    [SerializeField]
+    private ExpUI expUI;
+    public ExpUI ExpUI
+    {
+        get
+        {
+            return expUI;
+        }
+    }
 }

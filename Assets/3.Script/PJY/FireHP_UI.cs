@@ -11,7 +11,7 @@ public class FireHP_UI : MonoBehaviour
 
     [SerializeField] private CampFire campFire;
 
-
+ 
 
     void Update()
     {

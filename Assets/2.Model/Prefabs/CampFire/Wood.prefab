@@ -306,3 +306,4 @@ MonoBehaviour:
   SpawnX: 0
   SpawnY: 0.1
   coolTime: 60
+  chopThresholdAngle: 300

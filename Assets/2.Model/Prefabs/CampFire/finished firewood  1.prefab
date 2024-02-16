@@ -326,6 +326,9 @@ MonoBehaviour:
   finishedfirewood3: {fileID: 6403697500428371920}
   campfireTag: Campfire
   campFire: {fileID: 0}
+  B_Time: 0
+  FireTime: 0
+  fireDuration: 5
 --- !u!65 &1759024175827511618
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class CampFire : MonoBehaviour
     public int HP = 0;
     public int maxHP = 60;
 
-    public float Exp;
+    public float Exp = 100;
     public float expRange = 3f;
 
     public int maxFirewoodCount = 6; // 좌우 좌우 좌우 3단높이로 장작을 쌓기 위해서는 총 18개의 Firewood가 필요

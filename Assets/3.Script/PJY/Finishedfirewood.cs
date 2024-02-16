@@ -106,8 +106,8 @@ public class Finishedfirewood : MonoBehaviour
                 {
                     if (collider.CompareTag("Hand"))
                     {
-                        campFire.Exp += 10;
-                        Debug.Log(campFire.Exp);
+                        campFire.Exp -= 10;
+                       
                     }
                 }
 

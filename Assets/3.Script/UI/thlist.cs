@@ -1,59 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class thlist : MonoBehaviour
 {
     public GameObject google;
     public UI_DB_Parsing dB_Parsing;
     public GoogleSheetManager googlesheet;
-    public string[] aa = new string[6];
-    private void OnEnable()
+    public Queue<string> reportQ = new Queue<string>();
+
+    public TextMeshProUGUI[] textMeshs;
+    public TextMeshProUGUI[] textMeshs2;
+
+    private void Update()
     {
         a();
         if (googlesheet.thnot)
         {
-    
-                ch();
-                one();
-            
+            string report = googlesheet.returnlist[1] + "요리가 완성되었습니다. 경험치 " + googlesheet.returnlist[2];
+
+            // 큐에 새로운 요소 추가 및 큐의 크기가 3개를 초과하는 경우 오래된 요소 제거
+            if (reportQ.Count >= 3)
+            {
+                reportQ.Dequeue();
+            }
+            reportQ.Enqueue(report);
             googlesheet.thnot = false;
         }
-        if(aa[0]!=null)
+
+        // 큐에 있는 보고서를 텍스트에 역순으로 출력
+        int index = 0;
+        foreach (var report in reportQ)
         {
-            Debug.Log(aa[0] + "요리를 만들었습니다." + aa[1] + "경험치 획득");
-            Debug.Log(aa[2] + "요리를 만들었습니다." + aa[3] + "경험치 획득");
-            Debug.Log(aa[4] + "요리를 만들었습니다." + aa[5] + "경험치 획득");
+            textMeshs[reportQ.Count - index - 1].text = report;
+            textMeshs2[reportQ.Count - index - 1].text = report;
+            index++;
         }
-       
 
-    }
-
-    public void one()
-    {
-        aa[0] = googlesheet.returnlist[1];
-        aa[1] = googlesheet.returnlist[2];
-    }
-    public void two()
-    {
-        aa[2] = googlesheet.returnlist[1];
-        aa[3] = googlesheet.returnlist[2];
-    }
-    public void th()
-    {
-        aa[4] = googlesheet.returnlist[1];
-        aa[5] = googlesheet.returnlist[2];
+        // 남은 텍스트 필드 초기화
+        for (int i = reportQ.Count; i < textMeshs.Length; i++)
+        {
+            textMeshs[i].text = "";
+            textMeshs2[i].text = "";
+        }
     }
 
-    public void ch()
-    {
-        aa[4] = aa[2];
-        aa[5] = aa[3];
-        //맨밑줄 밀어내기
-        aa[2] = aa[0];
-        aa[3] = aa[1];
-        //두번쨰줄 밀어내기
-    }
     public void a()
     {
         google = GameObject.FindGameObjectWithTag("UIManager");
