@@ -15,6 +15,7 @@ TagManager:
   - Fire
   - Firewood
   - CookTool
+  - UIManager
   layers:
   - Default
   - TransparentFX
