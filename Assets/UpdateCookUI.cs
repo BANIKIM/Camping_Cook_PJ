@@ -22,7 +22,7 @@ public class UpdateCookUI : MonoBehaviour
    // public string[] CookName; // 요리명 배열 선언
     public CookType[] CookTypes; // enum과 매칭되는 요리 타입 배열 선언
     public bool isCookingStarted = false;
-
+    public int num;
 
     [SerializeField]
     private GameObject updateObject;
@@ -33,7 +33,7 @@ public class UpdateCookUI : MonoBehaviour
     {
 
        UiManager.instance.CookingTimer.cookingStarted = true;
-    
+        num = i;
 
         if (i >= 0 && i < sprites.Length) // 유효한 인덱스 범위인지 확인
     {

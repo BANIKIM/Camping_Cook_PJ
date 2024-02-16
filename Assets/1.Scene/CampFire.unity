@@ -8883,9 +8883,11 @@ GameObject:
   m_Component:
   - component: {fileID: 496768790}
   - component: {fileID: 496768789}
+  - component: {fileID: 496768792}
+  - component: {fileID: 496768791}
   m_Layer: 0
   m_Name: UIManager
-  m_TagString: Untagged
+  m_TagString: UIManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8920,6 +8922,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &496768791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496768788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2cd78d94bf202d4c92ceb8f470273eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  google: {fileID: 496768792}
+  a: 0
+  b: 0
+  number: 
+--- !u!114 &496768792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496768788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65ef4fc0286ab9409e043ff0348f791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mytext: {fileID: 4900000, guid: 875f05b04ebf66240a17cba1bd6d440f, type: 3}
+  returnlist: []
+  Findnot: 0
+  thnot: 0
 --- !u!1 &500144090
 GameObject:
   m_ObjectHideFlags: 0
@@ -29643,7 +29677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB808\uBCA8\uC5C5\uC5B4\uC5B4\uC5B4\uC5B4\uC5C9\uC5B4\uC5B4\uC5B4\uC5B4\uC5B4\uC5B4\uC5B4"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 430324aa05def9b48a93ef3574c62bad, type: 2}
   m_sharedMaterial: {fileID: -4493603210152826547, guid: 430324aa05def9b48a93ef3574c62bad, type: 2}
@@ -30199,7 +30233,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC628\uB3C4\uC628\uB3C4\uC628\uB3C8\uB3C4\u3134\u3147\u3134\u3147\u3141\u3134\u3147\u3134\u3141\u3147\u3134\u3141\u3147\u3134\u3141\u3147"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 430324aa05def9b48a93ef3574c62bad, type: 2}
   m_sharedMaterial: {fileID: -4493603210152826547, guid: 430324aa05def9b48a93ef3574c62bad, type: 2}
@@ -30882,6 +30916,7 @@ GameObject:
   - component: {fileID: 1269899380}
   - component: {fileID: 1269899382}
   - component: {fileID: 1269899381}
+  - component: {fileID: 1269899383}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -30906,7 +30941,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 41.700012}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1269899381
 MonoBehaviour:
@@ -30928,7 +30963,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 430324aa05def9b48a93ef3574c62bad, type: 2}
   m_sharedMaterial: {fileID: -4493603210152826547, guid: 430324aa05def9b48a93ef3574c62bad, type: 2}
@@ -31005,6 +31040,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269899379}
   m_CullTransparentMesh: 1
+--- !u!114 &1269899383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269899379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b7932814c48ee40a6dc89c91b383b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  google: {fileID: 0}
+  dB_Parsing: {fileID: 0}
+  googlesheet: {fileID: 0}
+  textOnelist: {fileID: 1269899381}
 --- !u!1 &1274668436
 GameObject:
   m_ObjectHideFlags: 0
@@ -36793,7 +36844,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uACBD\uD5D8\uCE58\uC544\uC544\uC544\uC544\uC544\uC544\uC544\uC544\uC544\uC544\uC544\uC544\uC544\uC559\uC544\u314F"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 430324aa05def9b48a93ef3574c62bad, type: 2}
   m_sharedMaterial: {fileID: -4493603210152826547, guid: 430324aa05def9b48a93ef3574c62bad, type: 2}

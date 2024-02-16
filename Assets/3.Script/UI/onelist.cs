@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class onelist : MonoBehaviour
 {
     public GameObject google;
     public UI_DB_Parsing dB_Parsing;
     public GoogleSheetManager googlesheet;
+    public TextMeshProUGUI textOnelist;
 
     private void OnEnable()
     {
         a();
         if (googlesheet.Findnot)
         {
-            Debug.Log(googlesheet.returnlist[1] + "요리를 만들었습니다." + googlesheet.returnlist[2] + "경험치 획득");
+            textOnelist.text = googlesheet.returnlist[1]+ "요리를 만듬 경험치 " +googlesheet.returnlist[2];
         }
 
     }

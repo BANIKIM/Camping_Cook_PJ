@@ -27,6 +27,7 @@ public class CookingTimer : MonoBehaviour
             // 타이머 텍스트 업데이트
             for (int i = 0; i < timerText.Length; i++)
             {
+                UiManager.instance.Update_CookUI.OpenUpdate(i);
                     timerText[i].text = string.Format("{0:00}:{1:00}", minutes, seconds);
                     timertext2.text = timerText[i].text;    
             }
