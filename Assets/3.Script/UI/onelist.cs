@@ -9,15 +9,19 @@ public class onelist : MonoBehaviour
     public UI_DB_Parsing dB_Parsing;
     public GoogleSheetManager googlesheet;
     public TextMeshProUGUI textOnelist;
+    public TextMeshProUGUI textOnelist2;
 
-    private void OnEnable()
+
+
+    private void Update()
     {
         a();
         if (googlesheet.Findnot)
         {
             textOnelist.text = googlesheet.returnlist[1]+ "요리를 만듬 경험치 " +googlesheet.returnlist[2];
-        }
+            textOnelist2.text = googlesheet.returnlist[1] + "요리를 만듬 경험치 " + googlesheet.returnlist[2];
 
+        }
     }
 
 
