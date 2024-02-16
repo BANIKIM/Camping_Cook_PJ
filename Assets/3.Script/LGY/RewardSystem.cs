@@ -8,8 +8,6 @@ public class RewardSystem : MonoBehaviour
 
     public int star_count = 3;
 
-    public Quick_Sort q_sort;
-
     private void Awake()
     {
         if (instance == null)
@@ -21,8 +19,6 @@ public class RewardSystem : MonoBehaviour
         {
             return;
         }
-
-        TryGetComponent<Quick_Sort>(out q_sort);
     }
 
 
