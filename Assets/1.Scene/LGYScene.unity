@@ -19816,6 +19816,7 @@ GameObject:
   - component: {fileID: 1204786549}
   - component: {fileID: 1204786548}
   - component: {fileID: 1204786550}
+  - component: {fileID: 1204786551}
   m_Layer: 0
   m_Name: CookManager
   m_TagString: Untagged
@@ -19860,6 +19861,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aa1589c255236a41885c608d0b8e7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1204786551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204786546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb14ea5135ce34541b6be4dbcc5f168c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1208797075

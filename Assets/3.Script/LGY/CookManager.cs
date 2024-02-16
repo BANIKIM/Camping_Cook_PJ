@@ -7,7 +7,7 @@ public class CookManager : MonoBehaviour
     public static CookManager instance = null;
 
     private RecipeSetting recipeset;
-
+    private SpawnIngredient spawningred;
 
     private void Awake()
     {
@@ -25,6 +25,7 @@ public class CookManager : MonoBehaviour
     private void Start()
     {
         TryGetComponent(out recipeset);
+        TryGetComponent(out spawningred);
 
         recipeset.SetDefaultRecipe();
     }
@@ -34,4 +35,8 @@ public class CookManager : MonoBehaviour
         return recipeset.recipe_D[idx];
     }
 
+    public void Spawn(int idx)  // idx는 요리번호
+    {
+        spawningred.Spawn(idx);
+    }
 }
