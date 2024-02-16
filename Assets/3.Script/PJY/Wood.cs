@@ -14,14 +14,14 @@ public class Wood : MonoBehaviour
     public float SpawnY;
     [SerializeField] private float coolTime = 60f;
 
-    private void OnCollisionEnter(Collision collision)
+/*    private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Axe"))
         {
             CreatePrefabInstances();
         }
 
-    }
+    }*/
     private void Start()
     {
         Destroy(gameObject, coolTime);
@@ -34,7 +34,7 @@ public class Wood : MonoBehaviour
           // 쿨타임 종료 후 자신 파괴
 
       }*/
-    private void CreatePrefabInstances()
+    public void CreatePrefabInstances()
     {
         Vector3 parentPosition = transform.position;
 
