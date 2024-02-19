@@ -23,7 +23,11 @@ public class Finishedfirewood : MonoBehaviour
     [SerializeField]
     private CampFire campFire;
 
+    [SerializeField]
+    private GameObject uI_DB_ParsingObj;
 
+    [SerializeField]
+    private UI_DB_Parsing uI_DB_Parsing;
 
 
     // private IEnumerator timecheck_temp;
@@ -40,13 +44,15 @@ public class Finishedfirewood : MonoBehaviour
     {
         // startTime = Time.time;
         // fire_state = Fire_State.Default;
+       
     }
 
     private void Awake()
     {
         // 캠프파이어 오브젝트를 태그로 찾아 변수에 저장
         // 캠프파이어 오브젝트가 가지고 있는 CampFire 스크립트 컴포넌트를 가져옴
-
+        uI_DB_ParsingObj = GameObject.FindGameObjectWithTag("UIManager");
+        uI_DB_Parsing = uI_DB_ParsingObj.GetComponent<UI_DB_Parsing>();
         CampfireObj = GameObject.FindGameObjectWithTag(campfireTag);
         campFire = CampfireObj.GetComponent<CampFire>();
 
@@ -107,7 +113,10 @@ public class Finishedfirewood : MonoBehaviour
                     if (collider.CompareTag("Hand"))
                     {
                         campFire.Exp -= 10;
-                       
+                        uI_DB_Parsing.textType = UI_DB_Parsing.TextType.Campfire;
+                        uI_DB_Parsing.number = "1";
+                        uI_DB_Parsing.a = true;
+
                     }
                 }
 
