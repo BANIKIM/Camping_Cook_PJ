@@ -15,7 +15,10 @@ GameObject:
   - component: {fileID: 8345305978715980109}
   - component: {fileID: 3305705379847316642}
   - component: {fileID: 8828509110296909879}
-  m_Layer: 0
+  - component: {fileID: 8456391624719228390}
+  - component: {fileID: 6529475406587083222}
+  - component: {fileID: 8820676296376367400}
+  m_Layer: 6
   m_Name: Onion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,3 +332,48 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+--- !u!114 &8456391624719228390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789593867675869710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredient_type: 0
+  cooked_ingred: {fileID: 0}
+  seasoning_ingred: {fileID: 0}
+  skewer_ingred: {fileID: 0}
+  _crossMat: {fileID: 2100000, guid: d96adb4831ca7a74ab3f3b8c6b7164d9, type: 2}
+  materials: []
+  mat: {fileID: 0}
+--- !u!114 &6529475406587083222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789593867675869710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 041fe4f1631e9d64a81373917363cf8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8820676296376367400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789593867675869710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37ab45fac72b3f6498ccb84e4063394c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pepper_s: 0
+  salt_s: 0

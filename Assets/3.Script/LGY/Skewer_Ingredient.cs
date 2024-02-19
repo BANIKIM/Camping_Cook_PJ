@@ -11,7 +11,6 @@ public enum Skewer_State
 public class Skewer_Ingredient : MonoBehaviour, IState
 {
 
-    [SerializeField] private Gradient gradient;
     private Rigidbody rigid;
 
     public Skewer_State skewer_state { get; private set; }
