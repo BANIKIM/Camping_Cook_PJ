@@ -16,6 +16,9 @@ TagManager:
   - Firewood
   - CookTool
   - UIManager
+  - Group
+  - Liquid
+  - Ingredient
   layers:
   - Default
   - TransparentFX

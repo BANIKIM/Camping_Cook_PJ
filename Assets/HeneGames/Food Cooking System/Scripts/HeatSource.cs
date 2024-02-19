@@ -19,6 +19,7 @@ namespace HeneGames.CookingSystem
 
         private void OnTriggerEnter(Collider other)
         {
+
             for (int i = 0; i < foodList.Count; i++)
             {
                 if (foodList[i] == null)
@@ -33,7 +34,7 @@ namespace HeneGames.CookingSystem
 
                 _food.AddToHeatSource(this);
 
-                if(!FoodAlreadyInList(_food))
+                if (!FoodAlreadyInList(_food))
                 {
                     foodList.Add(_food);
                 }
@@ -64,7 +65,7 @@ namespace HeneGames.CookingSystem
         {
             for (int i = 0; i < foodList.Count; i++)
             {
-                if(_food == foodList[i])
+                if (_food == foodList[i])
                 {
                     return true;
                 }
@@ -85,5 +86,6 @@ namespace HeneGames.CookingSystem
 
             return foodList;
         }
+
     }
 }

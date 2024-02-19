@@ -452,8 +452,9 @@ GameObject:
   - component: {fileID: 1537339347}
   - component: {fileID: 1537339346}
   - component: {fileID: 1537339345}
-  - component: {fileID: 1537339343}
   - component: {fileID: 1537339342}
+  - component: {fileID: 1537339349}
+  - component: {fileID: 1537339348}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -488,46 +489,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &1537339343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537339341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f188942967c608a4eb71799280d3a86a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodMeshFilter: {fileID: 1384974362688836970}
-  foodSkinnedMeshRenderer: {fileID: 562062493336393884}
-  foodMeshHolder: {fileID: 1537339347}
-  smokeEffect: {fileID: 6692390869777032895}
-  smokeEffectNormal: {fileID: 7486751956126981640}
-  cookingEffectFat: {fileID: 2962037970351168140}
-  cookingEffectBubbles: {fileID: 4813191577026638739}
-  cookingEffectDeepFryer: {fileID: 3176609409856055458}
-  floatingForce: 3
-  floatWhenDeepFrying: 1
-  floatingDepth: 1
-  fatContent: 10
-  cookedScaleMultiplier: -0.025
-  cookingSpeed: 0.08
-  cookedToBurnedSpeed: 0.064
-  cookedEnoughPercent: 1
-  burnedIfOverThisPercent: 0.45
-  stoveCookTopSidePercent: 0.1
-  foodName: 
-  cookedPercent: 0
-  burnedPercent: 0
-  foodIsReady: 0
-  foodIsBurned: 0
-  debugVertexColors:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
 --- !u!23 &1537339345
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -587,68 +548,19 @@ Transform:
   m_GameObject: {fileID: 1537339341}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0444591, y: 1.6611935, z: 0.8076669}
+  m_LocalPosition: {x: 0.725, y: 1.6611935, z: 1.024}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1589649554}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1589649553
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1589649554}
-  - component: {fileID: 1589649556}
-  - component: {fileID: 1589649555}
-  m_Layer: 0
-  m_Name: Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1589649554
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589649553}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1537339347}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1589649555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589649553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e137b856a9447e4eb80241de4e39dc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodScript: {fileID: 1537339343}
-  slicedFood: {fileID: 0}
-  rb: {fileID: 1537339342}
---- !u!65 &1589649556
+--- !u!65 &1537339348
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589649553}
+  m_GameObject: {fileID: 1537339341}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -663,6 +575,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1537339349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537339341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97cc72e8773e6f84882fe4fb140bf81c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1537339342}
+  heat: {fileID: 0}
+  heatsource: {fileID: 0}
+  floatingForce: 0
+  floatingDepth: 0.336
 --- !u!1 &1823759224
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,7 +837,7 @@ GameObject:
   - component: {fileID: 492523888231317644}
   m_Layer: 0
   m_Name: Heat source oil_v1
-  m_TagString: Untagged
+  m_TagString: Liquid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1875,8 +1804,8 @@ Transform:
   m_GameObject: {fileID: 47459056835617459}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000008146034, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.035802104, y: 0.3555786, z: 0.0048823557}
-  m_LocalScale: {x: 1.8714672, y: 0.8136814, z: 1.8714672}
+  m_LocalPosition: {x: -0.035802104, y: 0.494, z: 0.005}
+  m_LocalScale: {x: 1.8714672, y: 0.7, z: 1.8714672}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2003710342297177604}
@@ -12863,7 +12792,7 @@ Transform:
   m_GameObject: {fileID: 2911859039139705192}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.69, y: 1.005, z: 0.984}
+  m_LocalPosition: {x: 0.69, y: 1.005, z: 0.091}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
