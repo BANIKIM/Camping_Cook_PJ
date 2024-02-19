@@ -13,14 +13,25 @@ public class onelist : MonoBehaviour
 
 
 
+
     private void Update()
     {
         a();
         if (googlesheet.Findnot)
         {
-            textOnelist.text = googlesheet.returnlist[1]+ "요리를 만듬 경험치 " +googlesheet.returnlist[2];
-            textOnelist2.text = googlesheet.returnlist[1] + "요리를 만듬 경험치 " + googlesheet.returnlist[2];
-
+            if (dB_Parsing.textType==UI_DB_Parsing.TextType.Cook)
+            {
+                textOnelist.text = googlesheet.returnlist[1] + "요리를 만듬 경험치 " + googlesheet.returnlist[2];
+                textOnelist2.text = googlesheet.returnlist[1] + "요리를 만듬 경험치 " + googlesheet.returnlist[2];
+            }
+            else if (dB_Parsing.textType == UI_DB_Parsing.TextType.Campfire)
+            {
+                textOnelist.text = "캠프파이어의 열기로 캠핑 온도를";
+                textOnelist2.text = "캠프파이어의 열기로 캠핑 온도를";
+            }
+            
+            
+            
         }
     }
 
@@ -30,5 +41,6 @@ public class onelist : MonoBehaviour
         google = GameObject.FindGameObjectWithTag("UIManager");
         dB_Parsing = google.GetComponent<UI_DB_Parsing>();
         googlesheet = google.GetComponent<GoogleSheetManager>();
+       
     }
 }

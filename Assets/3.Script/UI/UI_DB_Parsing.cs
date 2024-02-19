@@ -2,14 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class UI_DB_Parsing : MonoBehaviour
 {
-
+    public enum TextType
+    {
+        None,
+        Cook,
+        Campfire
+    }
+    public TextType textType;
     public GoogleSheetManager google;
     public bool a = false;
     public bool b = false;
     public string number;
-
 
     // Update is called once per frame
     void Update()

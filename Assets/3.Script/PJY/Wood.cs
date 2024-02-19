@@ -52,6 +52,14 @@ public class Wood : MonoBehaviour
         // 부모 오브젝트 비활성화
 
         Destroy(Cut_0);
+
+        Rigidbody cut1Rigidbody = Cut_1.GetComponent<Rigidbody>();
+        Rigidbody cut2Rigidbody = Cut_2.GetComponent<Rigidbody>();
+        if (cut1Rigidbody != null && cut2Rigidbody != null)
+        {
+            cut1Rigidbody.AddForce(Vector3.left * 5f, ForceMode.Impulse);
+            cut2Rigidbody.AddForce(Vector3.right * 5f, ForceMode.Impulse);
+        }
     }
     private void SetColliderProperties(GameObject obj)
     {
