@@ -12,7 +12,8 @@ public class Axe : MonoBehaviour
 
     private void Update()
     {
-        wood = GameObject.FindGameObjectWithTag("Wood").GetComponent<Wood>();
+       
+      
         // 레이를 쏠 시작 지점 설정 (현재 오브젝트의 위치)
         Vector3 rayOrigin = transform.position;
 
@@ -45,6 +46,10 @@ public class Axe : MonoBehaviour
                 }
             }
         }
+    }
+    public void WoodGet()
+    {
+        wood = GameObject.FindGameObjectWithTag("Wood").GetComponent<Wood>();
     }
 
 }

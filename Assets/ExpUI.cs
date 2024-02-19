@@ -11,7 +11,7 @@ public class ExpUI : MonoBehaviour
     public TextMeshProUGUI LevelUp2;
     public Slider slider;
     public Slider slider2;
-    private int level=1;
+    public  int level=1;
 
     private void Update()
     {
@@ -28,6 +28,7 @@ public class ExpUI : MonoBehaviour
                
                 LevelUp2.text= "Ä·ÇÎ ·¹º§ : " + (level);
                 campFire.Exp = 100;
+               
             }
 
         }
