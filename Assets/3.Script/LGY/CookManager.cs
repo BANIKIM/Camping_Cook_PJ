@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(RecipeSetting))]
+[RequireComponent(typeof(SpawnIngredient))]
+
 public class CookManager : MonoBehaviour
 {
     public static CookManager instance = null;

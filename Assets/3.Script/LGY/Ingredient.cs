@@ -21,12 +21,6 @@ public enum Ingredient_Type
     Mushroom,
 }
 
-public enum Slice_State
-{
-    Notcut=0,
-    Cut,
-}
-
 [RequireComponent(typeof(Cooked_Ingredient))]
 [RequireComponent(typeof(Seasoning_Ingredient))]
 [RequireComponent(typeof(Skewer_Ingredient))]
@@ -37,6 +31,8 @@ public class Ingredient : MonoBehaviour
     public Cooked_Ingredient cooked_ingred;
     public Seasoning_Ingredient seasoning_ingred;
     public Skewer_Ingredient skewer_ingred;
+
+    public bool isSlice = false;
 
     public Material _crossMat;
     public Material[] materials;
@@ -62,7 +58,13 @@ public class Ingredient : MonoBehaviour
         mat.material = materials[(int)cooked_ingred.cooked_state];
     }
 
+    public int CheckCookIdx()
+    {
+        var temp = isSlice ? 1 : 0;
+        var ingred_type = ((int)ingredient_type * 100000) + (temp * 10000) +
+            ((int)seasoning_ingred.salt_s * 1000) + ((int)seasoning_ingred.pepper_s * 100) +
+            ((int)skewer_ingred.skewer_state * 10) + ((int)cooked_ingred.cooked_state);
 
-
-
+        return ingred_type;
+    }
 }
