@@ -14,14 +14,14 @@ public class Wood : MonoBehaviour
     public float SpawnY;
     [SerializeField] private float coolTime = 60f;
 
-/*    private void OnCollisionEnter(Collision collision)
+  
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.CompareTag("Axe"))
+        if (other.CompareTag("Axe"))
         {
             CreatePrefabInstances();
         }
-
-    }*/
+    }
     private void Start()
     {
         Destroy(gameObject, coolTime);

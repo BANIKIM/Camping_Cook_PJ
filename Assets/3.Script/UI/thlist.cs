@@ -19,7 +19,7 @@ public class thlist : MonoBehaviour
         a();
         if (googlesheet.thnot)
         {
-            string report = googlesheet.returnlist[1] + "요리가 완성되었습니다. 경험치 " + googlesheet.returnlist[2];
+            string report = googlesheet.returnlist[1] + "요리가 완성되었습니다. 경험치 " + googlesheet.returnlist[2]+" 휙득";
 
             // 큐에 새로운 요소 추가 및 큐의 크기가 3개를 초과하는 경우 오래된 요소 제거
             if (reportQ.Count >= 3)
