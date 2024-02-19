@@ -9,7 +9,15 @@ public class Tool_heat : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Fire"))
+        if (collision.gameObject.CompareTag("Fire"))
+        {
+            tool_heat = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Fire"))
         {
             tool_heat = true;
         }
@@ -23,4 +31,12 @@ public class Tool_heat : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("Fire"))
+        {
+            tool_heat = true;
+        }
+    }
 }
