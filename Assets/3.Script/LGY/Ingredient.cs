@@ -21,12 +21,15 @@ public enum Ingredient_Type
     Mushroom,
 }
 
-public enum cut_state
+public enum Slice_State
 {
     Notcut=0,
     Cut,
 }
 
+[RequireComponent(typeof(Cooked_Ingredient))]
+[RequireComponent(typeof(Seasoning_Ingredient))]
+[RequireComponent(typeof(Skewer_Ingredient))]
 
 public class Ingredient : MonoBehaviour
 {
@@ -35,14 +38,15 @@ public class Ingredient : MonoBehaviour
     public Seasoning_Ingredient seasoning_ingred;
     public Skewer_Ingredient skewer_ingred;
 
+    public Material _crossMat;
     public Material[] materials;
     public MeshRenderer mat;
 
     private void Start()
     {
-        TryGetComponent<Seasoning_Ingredient>(out seasoning_ingred);
-        TryGetComponent<Cooked_Ingredient>(out cooked_ingred);
-        TryGetComponent<Skewer_Ingredient>(out skewer_ingred);
+        TryGetComponent(out seasoning_ingred);
+        TryGetComponent(out cooked_ingred);
+        TryGetComponent(out skewer_ingred);
         mat = GetComponent<MeshRenderer>();
     }
 
