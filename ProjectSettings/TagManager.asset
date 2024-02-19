@@ -19,6 +19,7 @@ TagManager:
   - Group
   - Liquid
   - Ingredient
+  - afaaga
   layers:
   - Default
   - TransparentFX
