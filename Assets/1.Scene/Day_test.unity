@@ -54610,9 +54610,10 @@ GameObject:
   - component: {fileID: 1090580419}
   - component: {fileID: 1091677443}
   - component: {fileID: 1093971942}
-  - component: {fileID: 1093971944}
   - component: {fileID: 1093971943}
   - component: {fileID: 1093971945}
+  - component: {fileID: 1093971947}
+  - component: {fileID: 1093971946}
   m_Layer: 0
   m_Name: Pan
   m_TagString: CookTool
@@ -54629,7 +54630,7 @@ Transform:
   m_GameObject: {fileID: 1093874627}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000005760124, y: 0.70710576, z: -0.00000005760108, w: 0.70710784}
-  m_LocalPosition: {x: 108.175, y: 0.757, z: 120.537}
+  m_LocalPosition: {x: 108.245, y: 0.757, z: 120.537}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54675,28 +54676,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tool_heat: 0
---- !u!64 &1093971944
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093874627}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 039a45ab4232bb940b0a7f49c6ac30f0, type: 3}
 --- !u!114 &1093971945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54849,6 +54828,48 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!65 &1093971946
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093874627}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2615865, y: 0.09094537, z: 1.5538279}
+  m_Center: {x: 0.0031847754, y: 0.07609605, z: -1.7265415}
+--- !u!65 &1093971947
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093874627}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1501703, y: 0.18403615, z: 2.0557897}
+  m_Center: {x: -7.984938e-10, y: -0.07453897, z: 0.21485884}
 --- !u!1 &1098113393
 GameObject:
   m_ObjectHideFlags: 0
@@ -112278,7 +112299,7 @@ Transform:
   m_GameObject: {fileID: 1839564922499279}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 108.188, y: 0.653, z: 119.477}
+  m_LocalPosition: {x: 108.188, y: 0.653, z: 119.287}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
