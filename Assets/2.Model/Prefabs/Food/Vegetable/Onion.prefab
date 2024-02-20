@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 9046824922288121656}
   - component: {fileID: 1966516182632778784}
   - component: {fileID: 6483443640897781171}
-  - component: {fileID: 8345305978715980109}
   - component: {fileID: 3305705379847316642}
   - component: {fileID: 8828509110296909879}
   - component: {fileID: 8456391624719228390}
   - component: {fileID: 6529475406587083222}
   - component: {fileID: 8820676296376367400}
+  - component: {fileID: 8515832839041005659}
   m_Layer: 6
   m_Name: Onion
   m_TagString: Untagged
@@ -117,27 +117,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &8345305978715980109
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2789593867675869710}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1.6914748
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3305705379847316642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,36 +281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a117c2619b26972409df36b1aa6eeae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: -1
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
 --- !u!114 &8456391624719228390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,7 +297,9 @@ MonoBehaviour:
   cooked_ingred: {fileID: 0}
   seasoning_ingred: {fileID: 0}
   skewer_ingred: {fileID: 0}
-  _crossMat: {fileID: 2100000, guid: d96adb4831ca7a74ab3f3b8c6b7164d9, type: 2}
+  isSlice: 0
+  _sliceCount: 0
+  _crossMat: {fileID: 6202957238202930716, guid: 8e144ba6303e50941b5dd5be5cab244b, type: 3}
   materials: []
   mat: {fileID: 0}
 --- !u!114 &6529475406587083222
@@ -377,3 +328,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pepper_s: 0
   salt_s: 0
+--- !u!64 &8515832839041005659
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789593867675869710}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: 2ea2577003f246d49939e8382c6a68fe, type: 3}

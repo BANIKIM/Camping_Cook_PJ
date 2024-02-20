@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public interface IState
 {
@@ -33,6 +34,8 @@ public class Ingredient : MonoBehaviour
     public Skewer_Ingredient skewer_ingred;
 
     public bool isSlice = false;
+
+    public int _sliceCount = 0;
 
     public Material _crossMat;
     public Material[] materials;
