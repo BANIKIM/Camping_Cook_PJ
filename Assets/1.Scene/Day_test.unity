@@ -3278,7 +3278,7 @@ Transform:
   m_GameObject: {fileID: 58864262}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1176, z: 0}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17415,7 +17415,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &342172444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22757,8 +22757,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients:
-  - {fileID: 0}
-  - {fileID: 1478599510687743725, guid: ce953f7ca336e7045b4a7fa2d5b235b5, type: 3}
+  - {fileID: 7253399473092350453, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
+  - {fileID: 7569872851256927042, guid: ce953f7ca336e7045b4a7fa2d5b235b5, type: 3}
   - {fileID: 2383210328084460954, guid: c128b71d823fa1649820c2f556837e80, type: 3}
   - {fileID: 5764684363043057522, guid: 37831b1f87d021148b518addf05bbecb, type: 3}
   - {fileID: 8974675608403906797, guid: 016caadb906ad4b4db5c531baf70c4dc, type: 3}
@@ -120435,6 +120435,7 @@ GameObject:
   - component: {fileID: 4905110341995904297}
   - component: {fileID: 4905110341995904299}
   - component: {fileID: 4905110341995904298}
+  - component: {fileID: 4905110341995904300}
   m_Layer: 0
   m_Name: salt
   m_TagString: Untagged
@@ -120630,7 +120631,7 @@ GameObject:
   - component: {fileID: 3793190618887745421}
   - component: {fileID: 8389790673763195465}
   - component: {fileID: 7336435009318652419}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Meat_up
   m_TagString: UpMeat
   m_Icon: {fileID: 0}
@@ -120699,7 +120700,7 @@ GameObject:
   - component: {fileID: 3221767747506378439}
   - component: {fileID: 5372141000253484787}
   - component: {fileID: 4609678268710401814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Meat_Down
   m_TagString: DownMeat
   m_Icon: {fileID: 0}
@@ -121338,6 +121339,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4905110341995904300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598973715409904802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0c800b3d4ee1c4b84caaa57cbc218b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  season_type: 0
+  lineSize: 1.5
 --- !u!114 &5007828354933388210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121803,6 +121819,7 @@ GameObject:
   - component: {fileID: 8260404456127677320}
   - component: {fileID: 8997847691606096760}
   - component: {fileID: 8997847691606096759}
+  - component: {fileID: 8997847691606096761}
   m_Layer: 0
   m_Name: papper
   m_TagString: Untagged
@@ -122326,6 +122343,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8997847691606096761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7484484217373481635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0c800b3d4ee1c4b84caaa57cbc218b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 0}
+  season_type: 1
+  lineSize: 1.5
 --- !u!114 &9063698079688482673
 MonoBehaviour:
   m_ObjectHideFlags: 0
