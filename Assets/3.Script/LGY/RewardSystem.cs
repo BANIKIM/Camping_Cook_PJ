@@ -22,7 +22,7 @@ public class RewardSystem : MonoBehaviour
     }
 
 
-    public void RecipeCheck(List<int> dish, int cookidx)
+    public int RecipeCheck(List<int> dish, int cookidx)
     {
         List<int> recipe = CookManager.instance.Recipe_C(cookidx);
 
@@ -41,7 +41,7 @@ public class RewardSystem : MonoBehaviour
                 break;
             }
         }
-
+        return star_count;
 
     }
 
