@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4376839393100143576}
   - component: {fileID: 7358719005826783417}
   - component: {fileID: 5302205449199419506}
+  - component: {fileID: -5576986836401189864}
   m_Layer: 6
   m_Name: Carrot
   m_TagString: Untagged
@@ -341,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient_type: 5
+  ingredient_type: 1
   cooked_ingred: {fileID: 0}
   seasoning_ingred: {fileID: 0}
   skewer_ingred: {fileID: 0}
@@ -350,3 +351,20 @@ MonoBehaviour:
   _crossMat: {fileID: 2100000, guid: 730da2daf3ac0a14eb076e521ed5cd80, type: 2}
   materials: []
   mat: {fileID: 0}
+--- !u!114 &-5576986836401189864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2420772864274950455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97cc72e8773e6f84882fe4fb140bf81c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  heat: {fileID: 0}
+  heatsource: {fileID: 0}
+  floatingForce: 0
+  floatingDepth: 0.336

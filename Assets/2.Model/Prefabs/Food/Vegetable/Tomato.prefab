@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 127491430313438435}
   - component: {fileID: 3086805096385796258}
   - component: {fileID: 5337996134828779686}
+  - component: {fileID: -2653661843664941537}
   m_Layer: 6
   m_Name: Tomato
   m_TagString: Untagged
@@ -341,11 +342,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient_type: 0
+  ingredient_type: 1
   cooked_ingred: {fileID: 0}
   seasoning_ingred: {fileID: 0}
   skewer_ingred: {fileID: 0}
   isSlice: 0
+  _sliceCount: 0
   _crossMat: {fileID: 2100000, guid: 0630d6f22340631489cb910f79ae2536, type: 2}
   materials: []
   mat: {fileID: 3995208204660639964}
+--- !u!114 &-2653661843664941537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3786999020922652417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97cc72e8773e6f84882fe4fb140bf81c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  heat: {fileID: 0}
+  heatsource: {fileID: 0}
+  floatingForce: 0
+  floatingDepth: 0.336

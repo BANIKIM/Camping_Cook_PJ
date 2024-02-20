@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3981715751464237695}
   - component: {fileID: 2440248572013677791}
   - component: {fileID: 744533214731556788}
+  - component: {fileID: 4164411943129671756}
   m_Layer: 6
   m_Name: Garlic
   m_TagString: Untagged
@@ -341,11 +342,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient_type: 0
+  ingredient_type: 1
   cooked_ingred: {fileID: 0}
   seasoning_ingred: {fileID: 0}
   skewer_ingred: {fileID: 0}
   isSlice: 0
+  _sliceCount: 0
   _crossMat: {fileID: 2100000, guid: f507a7fabe84c864394d598b70e3ccc6, type: 2}
   materials: []
   mat: {fileID: 0}
+--- !u!114 &4164411943129671756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5568264128032155925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97cc72e8773e6f84882fe4fb140bf81c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  heat: {fileID: 0}
+  heatsource: {fileID: 0}
+  floatingForce: 0
+  floatingDepth: 0.336
