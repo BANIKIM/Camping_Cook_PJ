@@ -30,11 +30,15 @@ public class CookingTimer : MonoBehaviour
 
             // 타이머 텍스트 업데이트
 
+            Debug.Log("반환받은값" + UiManager.instance.Num);
 
-            timerTexts[UiManager.instance.Update_CookUI.num].text = string.Format("{0:00}:{1:00}", minutes, seconds);
-            timerTexts2[UiManager.instance.Update_CookUI.num].text = string.Format("{0:00}:{1:00}", minutes, seconds);
-            timertext.text = timerTexts[UiManager.instance.Update_CookUI.num].text;
-            timertext2.text = timerTexts[UiManager.instance.Update_CookUI.num].text;
+            timerTexts[UiManager.instance.Num].text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerTexts2[UiManager.instance.Num].text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+       
+
+            timertext.text = timerTexts[UiManager.instance.Num].text;
+            timertext2.text = timerTexts[UiManager.instance.Num].text;
 
         }
         // 요리가 시작되었고 전체 요리 시간이 경과한 경우
@@ -43,6 +47,10 @@ public class CookingTimer : MonoBehaviour
             for (int i = 0; i < timerTexts.Length; i++)
             {
                 timerTexts[i].text = "00:00";
+               
+            }
+            for (int i = 0; i < timerTexts2.Length; i++)
+            {
                 timerTexts2[i].text = "00:00";
             }
             timertext.text = "00:00";
@@ -63,8 +71,12 @@ public class CookingTimer : MonoBehaviour
         for (int i = 0; i < timerTexts.Length; i++)
         {
             timerTexts[i].text = "요리 시작";
-            timerTexts2[i].text = "요리 시작";
+           
 
+        }
+        for (int i = 0; i < timerTexts2.Length; i++)
+        {
+            timerTexts2[i].text = "요리 시작";
         }
         timertext.text = "00:00";
         timertext2.text = "00:00";

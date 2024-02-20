@@ -8,6 +8,7 @@ public class VR_YInput : MonoBehaviour
     public InputActionReference HandCanvas;
     public GameObject Canvas1;
     public GameObject Canvas2;
+    public GameObject TruePosition;
 
     private bool isCanvasActive = false;
     private bool isButtonPressed = false;
@@ -33,6 +34,7 @@ public class VR_YInput : MonoBehaviour
             // 2초 이상 버튼이 눌려 있는 경우
             isCanvasActive = false;
             Canvas1.SetActive(isCanvasActive);
+            Canvas2.transform.position = TruePosition.transform.position; // 캔버스2의 위치를 TruePosition으로 설정
             Canvas2.SetActive(true);
         }
     }
@@ -42,6 +44,7 @@ public class VR_YInput : MonoBehaviour
         isButtonPressed = true;
         isCanvasActive = !isCanvasActive;
         Canvas1.SetActive(isCanvasActive);
+        Canvas2.SetActive(false);
         StartCoroutine(CheckLongPress());
     }
 
