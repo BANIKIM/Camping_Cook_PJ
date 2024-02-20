@@ -34,7 +34,7 @@ public class Seasoning : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.up * lineSize, out hit, lineSize))
         {
-            if (hit.collider.gameObject.layer == 6) // tobo 이퀄 ==6 으로 수정
+            if (hit.collider.gameObject.layer == 6) // tobo_mh 이퀄 ==6 으로 수정
             {
                 Seasoning_Ingredient seasoning_ingred = hit.collider.gameObject.GetComponent<Seasoning_Ingredient>();
 

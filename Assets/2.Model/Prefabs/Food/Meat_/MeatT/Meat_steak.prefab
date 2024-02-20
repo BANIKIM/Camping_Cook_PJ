@@ -147,6 +147,7 @@ MonoBehaviour:
   Meat_Up: {fileID: 3058816893387514171}
   Meat_Down: {fileID: 2425013715831410265}
   Meat_steak: {fileID: 0}
+  steak_cook: {fileID: 5594346957976120946}
 --- !u!114 &9220265296309136359
 MonoBehaviour:
   m_ObjectHideFlags: 0

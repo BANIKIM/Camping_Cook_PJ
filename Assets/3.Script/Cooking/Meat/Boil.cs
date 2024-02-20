@@ -61,7 +61,6 @@ public class Boil : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Æ®¸®°Å" + other.gameObject.tag);
         if (other.gameObject.CompareTag("Liquid"))
         {
             floatingForce = 6.88f;

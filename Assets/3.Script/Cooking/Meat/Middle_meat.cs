@@ -11,14 +11,14 @@ public class Middle_meat : MonoBehaviour
     private Cooked_Ingredient meat_down_ing;
     private Cooked_Ingredient middle_cook;
     private Ingredient middle_ingredient;
-    private Cooked_Ingredient steak_cook;
+    public Cooked_Ingredient steak_cook;
     private void Start()
     {
         meat_up_ing = Meat_Up.GetComponent<Cooked_Ingredient>();
         meat_down_ing = Meat_Down.GetComponent<Cooked_Ingredient>();
         middle_cook = GetComponent<Cooked_Ingredient>();
         middle_ingredient = GetComponent<Ingredient>();
-        steak_cook = Meat_steak.GetComponent<Cooked_Ingredient>();
+        steak_cook = steak_cook.GetComponent<Cooked_Ingredient>();
     }
 
     private void FixedUpdate()

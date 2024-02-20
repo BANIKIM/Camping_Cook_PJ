@@ -122330,6 +122330,7 @@ MonoBehaviour:
   Meat_Up: {fileID: 2499326759955692795}
   Meat_Down: {fileID: 2989014184371295129}
   Meat_steak: {fileID: 0}
+  steak_cook: {fileID: 5007828354933388210}
 --- !u!65 &7252789807481117125
 BoxCollider:
   m_ObjectHideFlags: 0
