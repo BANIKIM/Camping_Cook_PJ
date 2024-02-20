@@ -131,7 +131,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: bde1056c02c866249b689b61444cce3f, type: 3}
 --- !u!54 &5273790751790915096
@@ -367,6 +367,8 @@ MonoBehaviour:
   cooked_ingred: {fileID: 0}
   seasoning_ingred: {fileID: 0}
   skewer_ingred: {fileID: 0}
+  isSlice: 0
+  _sliceCount: 0
   _crossMat: {fileID: 0}
   materials: []
   mat: {fileID: 0}

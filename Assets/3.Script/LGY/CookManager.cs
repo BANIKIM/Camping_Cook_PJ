@@ -31,6 +31,10 @@ public class CookManager : MonoBehaviour
         TryGetComponent(out spawningred);
 
         recipeset.SetDefaultRecipe();
+
+        int[] test = new int[2] { (int)Ingredient_Type.Beef, (int)Ingredient_Type.Onion };
+
+        Spawn(test);
     }
 
     public List<int> Recipe_C(int idx)    // 레시피 부르는 메서드
@@ -38,8 +42,12 @@ public class CookManager : MonoBehaviour
         return recipeset.recipe_D[idx];
     }
 
-    public void Spawn(int idx)  // idx는 요리번호
+    public void Spawn(int[] idxs)  // idx는 요리번호
     {
-        spawningred.Spawn(idx);
+        for (int i = 0; i < idxs.Length; i++)
+        {
+            spawningred.Spawn(idxs[i]);
+
+        }
     }
 }
