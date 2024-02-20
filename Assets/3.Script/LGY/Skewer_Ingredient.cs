@@ -12,13 +12,15 @@ public class Skewer_Ingredient : MonoBehaviour, IState
 {
 
     private Rigidbody rigid;
+    private MeshCollider meshcol;
 
     public Skewer_State skewer_state { get; private set; }
 
     private void Start()
     {
         skewer_state = Skewer_State.Idle;
-        TryGetComponent<Rigidbody>(out rigid);
+        TryGetComponent(out rigid);
+        TryGetComponent(out meshcol);
     }
 
     public void OnEnter()
@@ -29,6 +31,8 @@ public class Skewer_Ingredient : MonoBehaviour, IState
                 rigid.constraints = RigidbodyConstraints.None;
                 break;
             case Skewer_State.Inserted:
+                rigid.isKinematic = true;
+                meshcol.isTrigger = true;
                 rigid.constraints = RigidbodyConstraints.FreezeAll;
                 break;
             default:

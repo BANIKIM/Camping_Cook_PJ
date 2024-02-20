@@ -77,7 +77,6 @@ GameObject:
   - component: {fileID: 7539143190743143539}
   - component: {fileID: 3995158431695945626}
   - component: {fileID: 5600630366487680301}
-  - component: {fileID: 2500363757950607412}
   m_Layer: 0
   m_Name: Skewer1
   m_TagString: Untagged
@@ -188,11 +187,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3652a9708a436e6448dd29e4d90cfdfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stickpos:
+  _stickpos:
   - {fileID: 1860466630062558724}
   - {fileID: 2143304488636209486}
   - {fileID: 5207864893122633448}
   - {fileID: 5556637808605338096}
+  _cookLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!54 &3995158431695945626
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -372,27 +374,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!65 &2500363757950607412
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2661351547922202181}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.38289797, y: 0.37288833, z: 6.7310534}
-  m_Center: {x: 0.002014242, y: -0.004462257, z: 2.6243286}
 --- !u!1 &2822252744851862750
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,8 +414,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4569700928941944726}
-  - component: {fileID: 5014273075442426110}
-  - component: {fileID: 1353793240645055604}
   m_Layer: 0
   m_Name: Skewer1
   m_TagString: Untagged
@@ -458,54 +437,6 @@ Transform:
   - {fileID: 1000899254921199972}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &5014273075442426110
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4629250869178154559}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!135 &1353793240645055604
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4629250869178154559}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5781857501686387646
 GameObject:
   m_ObjectHideFlags: 0
