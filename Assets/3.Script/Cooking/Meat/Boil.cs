@@ -9,6 +9,7 @@ public class Boil : MonoBehaviour
     public HeatSource heat;
     public GameObject heatsource;
     public float floatingForce =0;
+    public float HP = 5;
     [Range(0f, 1f)]
     [SerializeField] private float floatingDepth = 0.336f;
 
