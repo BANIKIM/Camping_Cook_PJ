@@ -198,18 +198,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient_type: 0
-  cooked_ingred: {fileID: 0}
-  seasoning_ingred: {fileID: 0}
-  skewer_ingred: {fileID: 0}
+  _ingredient_Type: 0
+  _cookedIngred: {fileID: 0}
+  _seasoningIngred: {fileID: 0}
+  _skewerIngred: {fileID: 0}
   isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
-  materials:
+  _materials:
   - {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
   - {fileID: 2100000, guid: 7bb7a87147c98704e930bc7ac123233a, type: 2}
   - {fileID: 2100000, guid: 0e65f1646f460a748b10be0ce6b6b395, type: 2}
-  mat: {fileID: 0}
+  _mesh: {fileID: 0}
 --- !u!1 &2425013715831410265
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,18 +407,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient_type: 0
-  cooked_ingred: {fileID: 0}
-  seasoning_ingred: {fileID: 0}
-  skewer_ingred: {fileID: 0}
+  _ingredient_Type: 0
+  _cookedIngred: {fileID: 0}
+  _seasoningIngred: {fileID: 0}
+  _skewerIngred: {fileID: 0}
   isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
-  materials:
+  _materials:
   - {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
   - {fileID: 2100000, guid: 7bb7a87147c98704e930bc7ac123233a, type: 2}
   - {fileID: 2100000, guid: 0e65f1646f460a748b10be0ce6b6b395, type: 2}
-  mat: {fileID: 0}
+  _mesh: {fileID: 0}
 --- !u!1 &3058816893387514171
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,18 +616,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient_type: 0
-  cooked_ingred: {fileID: 0}
-  seasoning_ingred: {fileID: 0}
-  skewer_ingred: {fileID: 0}
+  _ingredient_Type: 0
+  _cookedIngred: {fileID: 0}
+  _seasoningIngred: {fileID: 0}
+  _skewerIngred: {fileID: 0}
   isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
-  materials:
+  _materials:
   - {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
   - {fileID: 2100000, guid: 7bb7a87147c98704e930bc7ac123233a, type: 2}
   - {fileID: 2100000, guid: 0e65f1646f460a748b10be0ce6b6b395, type: 2}
-  mat: {fileID: 0}
+  _mesh: {fileID: 0}
 --- !u!1 &7569872851256927042
 GameObject:
   m_ObjectHideFlags: 0
