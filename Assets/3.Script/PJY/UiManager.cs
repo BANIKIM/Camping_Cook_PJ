@@ -63,11 +63,21 @@ public class UiManager : MonoBehaviour
  
     [SerializeField]
     private ExpUI expUI;
+    
     public ExpUI ExpUI
     {
         get
         {
             return expUI;
+        }
+    }
+    [SerializeField]
+    private ExpUI expUI2;
+    public ExpUI ExpUI2
+    {
+        get
+        {
+            return expUI2;
         }
     }
     private void Update()

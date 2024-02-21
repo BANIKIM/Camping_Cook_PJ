@@ -26,8 +26,8 @@ public class onelist : MonoBehaviour
             }
             else if (dB_Parsing.textType == UI_DB_Parsing.TextType.Campfire)
             {
-                textOnelist.text = "캠프파이어의 열기로 캠핑 온도를";
-                textOnelist2.text = "캠프파이어의 열기로 캠핑 온도를";
+                textOnelist.text = "캠프파이어의 열기로 캠핑 온도를 10 얻었습니다.";
+                textOnelist2.text = "캠프파이어의 열기로 캠핑 온도를 10 얻었습니다.";
             }
             
             

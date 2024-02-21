@@ -57,8 +57,8 @@ public class Wood : MonoBehaviour
         Rigidbody cut2Rigidbody = Cut_2.GetComponent<Rigidbody>();
         if (cut1Rigidbody != null && cut2Rigidbody != null)
         {
-            cut1Rigidbody.AddForce(Vector3.left * 5f, ForceMode.Impulse);
-            cut2Rigidbody.AddForce(Vector3.right * 5f, ForceMode.Impulse);
+            cut1Rigidbody.AddForce(Vector3.left * 3f, ForceMode.Impulse);
+            cut2Rigidbody.AddForce(Vector3.right * 2f, ForceMode.Impulse);
         }
     }
     private void SetColliderProperties(GameObject obj)
