@@ -33,7 +33,7 @@ public class LiquidBoil : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
-            HP = 5;//바로 타는거 방지
+            HP = 10;//바로 타는거 방지
             HP += 5;
             for (int i = 0; i < Foods.Length; i++)
             {
