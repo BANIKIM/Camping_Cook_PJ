@@ -37,7 +37,7 @@ public class Cooking_complete : MonoBehaviour
     //이름
     public int isType(Ingredient ingred)
     {
-        return (int)ingred.ingredient_type * 100000;
+        return (int)ingred._ingredient_Type * 100000;
     }
 
     //자르기
@@ -52,7 +52,7 @@ public class Cooking_complete : MonoBehaviour
     //소금 후추
     public int issalt(Ingredient ingred) // 소금체크
     { 
-        if(ingred.seasoning_ingred.salt_s.Equals(Seasoning_Ingredient.Salt_S.Salted))
+        if(ingred._seasoningIngred.salt_s.Equals(Seasoning_Ingredient.Salt_S.Salted))
         {
             return 1000;
         }
@@ -60,7 +60,7 @@ public class Cooking_complete : MonoBehaviour
     }
     public int ispepper(Ingredient ingred) //후추체크
     {
-        if (ingred.seasoning_ingred.pepper_s.Equals(Seasoning_Ingredient.Pepper_S.Peppered))
+        if (ingred._seasoningIngred.pepper_s.Equals(Seasoning_Ingredient.Pepper_S.Peppered))
         {
             //후추
             return 100;
@@ -70,7 +70,7 @@ public class Cooking_complete : MonoBehaviour
     //꽂기
     public int isSkewer(Ingredient ingred)
     {
-        if(ingred.skewer_ingred.skewer_state.Equals(Skewer_State.Inserted))
+        if(ingred._skewerIngred.skewer_state.Equals(Skewer_State.Inserted))
         {
             return 10;
         }
@@ -79,7 +79,7 @@ public class Cooking_complete : MonoBehaviour
     //익힘
     public int isCooked(Ingredient ingred)
     {
-        if(ingred.cooked_ingred.cooked_state == Cooked_Ingredient.Cooked_State.Cook)
+        if(ingred._cookedIngred._cooked_State == Cooked_Ingredient.Cooked_State.Cook)
         {
             return 1;
         }
