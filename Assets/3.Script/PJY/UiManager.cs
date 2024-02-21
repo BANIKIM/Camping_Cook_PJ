@@ -7,11 +7,17 @@ using TMPro;
 public class UiManager : MonoBehaviour
 {
     public static UiManager instance;
+
     public GameObject[] Star;
     public GameObject[] Star2;
     public TextMeshProUGUI[] StartCount;
 
+
+    public GameObject updateObject;
+    public GameObject updateObject2;
+
     public int activeStarCount = 0;
+    public bool isCookingStarted = false;
 
     public int Num = 0;
     private void Awake()
