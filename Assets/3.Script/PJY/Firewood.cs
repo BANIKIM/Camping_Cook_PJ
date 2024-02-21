@@ -9,12 +9,4 @@ public class Firewood : MonoBehaviour
     {
         Destroy(gameObject, coolTime);
     }
-    /*
-        private IEnumerator DestroyAfterCoolTime()
-        {
-            yield return new WaitForSeconds(coolTime); // 쿨타임 대기
-
-            // 쿨타임 종료 후 자신 파괴
-
-        }*/
 }

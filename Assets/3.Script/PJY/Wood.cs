@@ -24,16 +24,9 @@ public class Wood : MonoBehaviour
     }
     private void Start()
     {
-        Destroy(gameObject, coolTime);
+        Destroy(gameObject, coolTime);   // 일정 시간 후에 삭제
     }
 
-    /*  private IEnumerator DestroyAfterCoolTime()
-      {
-          yield return new WaitForSeconds(coolTime); // 쿨타임 대기
-
-          // 쿨타임 종료 후 자신 파괴
-
-      }*/
     public void CreatePrefabInstances()
     {
         Vector3 parentPosition = transform.position;

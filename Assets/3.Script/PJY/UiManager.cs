@@ -4,14 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public enum CookType
-{
-    마쉬멜로우 = 0,
-    비프스튜 = 1,
-    꼬치플래터 = 2,
-    스테이크 = 3,
-    연어스테이크 = 4
-}
 public class UiManager : MonoBehaviour
 {
     public static UiManager instance;
