@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.10853641, g: 0.23434368, b: 0.39096588, a: 1}
+  m_IndirectSpecularColor: {r: 0.10854726, g: 0.23432651, b: 0.39095598, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14828,9 +14828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796c780dc551aaa40bb14dda37f1b172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGM_Clips: []
-  SFX_Clips: []
-  audiomixer: {fileID: 24100000, guid: 36fbba27a1c52e348bb3149fcc8d0341, type: 2}
+  _bgmClips: []
+  _sfxClips: []
+  _audioMixer: {fileID: 0}
 --- !u!4 &295893740
 Transform:
   m_ObjectHideFlags: 0
@@ -22927,17 +22927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb14ea5135ce34541b6be4dbcc5f168c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredients:
-  - {fileID: 7253399473092350453, guid: faddd5942e3c22e40856efaf6bad2889, type: 3}
-  - {fileID: 7569872851256927042, guid: ce953f7ca336e7045b4a7fa2d5b235b5, type: 3}
-  - {fileID: 2383210328084460954, guid: c128b71d823fa1649820c2f556837e80, type: 3}
-  - {fileID: 5764684363043057522, guid: 37831b1f87d021148b518addf05bbecb, type: 3}
-  - {fileID: 8974675608403906797, guid: 016caadb906ad4b4db5c531baf70c4dc, type: 3}
-  - {fileID: 2420772864274950455, guid: d5270a91bbed405429b77e20f105f1e3, type: 3}
-  - {fileID: 2789593867675869710, guid: 0ba729c46ef21f44fad56625ea10e012, type: 3}
-  - {fileID: 3001263910565665860, guid: aca0c59497ef39d4ea09010ffa25da54, type: 3}
-  - {fileID: 6119087877375029368, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
-  spawn_point: {fileID: 1745941070}
+  _ingredients: []
+  _spawnPoint: {fileID: 0}
 --- !u!114 &486700051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25280,11 +25271,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa61096992418a44ab0b0e020743c407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  campFire: {fileID: 0}
   LevelUp: {fileID: 1894124640}
   LevelUp2: {fileID: 0}
   slider: {fileID: 1458832138}
   slider2: {fileID: 0}
+  Exp: 100
   level: 1
   StarCount: 0
 --- !u!114 &535010660
@@ -36794,14 +36785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd20952b46e14ee409c0868530cb1754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume_sliders:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  texts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _volumeSliders: []
+  _texts: []
 --- !u!4 &764353862
 Transform:
   m_ObjectHideFlags: 0
@@ -67346,9 +67331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9eea485e90d0b40b8213d8aa2c434b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  google: {fileID: 0}
-  dB_Parsing: {fileID: 0}
-  googlesheet: {fileID: 0}
   textMeshs:
   - {fileID: 401162496}
   - {fileID: 1224901385}
@@ -67423,6 +67405,7 @@ MonoBehaviour:
   update_CookUI2: {fileID: 1641481534}
   cookingTimer: {fileID: 71006073}
   expUI: {fileID: 535010659}
+  expUI2: {fileID: 0}
 --- !u!4 &1359389045
 Transform:
   m_ObjectHideFlags: 0
@@ -98349,7 +98332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 449af0107dfb2034dbedab01f9aff8d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  star_count: 3
+  _starCount: 3
 --- !u!4 &1922437055
 Transform:
   m_ObjectHideFlags: 0
@@ -111580,8 +111563,8 @@ GameObject:
   - component: {fileID: 33511583056751181}
   - component: {fileID: 33511583056751180}
   m_Layer: 0
-  m_Name: CampPot01_03a
-  m_TagString: Untagged
+  m_Name: Dish
+  m_TagString: Dish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120990,18 +120973,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient_type: 0
-  cooked_ingred: {fileID: 0}
-  seasoning_ingred: {fileID: 0}
-  skewer_ingred: {fileID: 0}
+  _ingredient_Type: 0
+  _cookedIngred: {fileID: 0}
+  _seasoningIngred: {fileID: 0}
+  _skewerIngred: {fileID: 0}
   isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
-  materials:
-  - {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
-  - {fileID: 2100000, guid: 7bb7a87147c98704e930bc7ac123233a, type: 2}
-  - {fileID: 2100000, guid: 0e65f1646f460a748b10be0ce6b6b395, type: 2}
-  mat: {fileID: 0}
+  _materials: []
+  _mesh: {fileID: 0}
 --- !u!114 &1324432608707042110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121302,10 +121282,10 @@ MonoBehaviour:
   _startPos: {fileID: 5230009794833893908}
   _endPos: {fileID: 452421622453662461}
   _velocityEstimator: {fileID: 3343711964448959543}
-  cutForce: 0
-  targetLayer:
+  _cutForce: 100
+  _targetLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
 --- !u!4 &2124400173437287960
 Transform:
   m_ObjectHideFlags: 0
@@ -122074,18 +122054,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient_type: 0
-  cooked_ingred: {fileID: 0}
-  seasoning_ingred: {fileID: 0}
-  skewer_ingred: {fileID: 0}
+  _ingredient_Type: 0
+  _cookedIngred: {fileID: 0}
+  _seasoningIngred: {fileID: 0}
+  _skewerIngred: {fileID: 0}
   isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
-  materials:
-  - {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
-  - {fileID: 2100000, guid: 7bb7a87147c98704e930bc7ac123233a, type: 2}
-  - {fileID: 2100000, guid: 0e65f1646f460a748b10be0ce6b6b395, type: 2}
-  mat: {fileID: 0}
+  _materials: []
+  _mesh: {fileID: 0}
 --- !u!199 &4712272819919824504
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -127758,18 +127735,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient_type: 0
-  cooked_ingred: {fileID: 0}
-  seasoning_ingred: {fileID: 0}
-  skewer_ingred: {fileID: 0}
+  _ingredient_Type: 0
+  _cookedIngred: {fileID: 0}
+  _seasoningIngred: {fileID: 0}
+  _skewerIngred: {fileID: 0}
   isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
-  materials:
-  - {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
-  - {fileID: 2100000, guid: 7bb7a87147c98704e930bc7ac123233a, type: 2}
-  - {fileID: 2100000, guid: 0e65f1646f460a748b10be0ce6b6b395, type: 2}
-  mat: {fileID: 0}
+  _materials: []
+  _mesh: {fileID: 0}
 --- !u!1 &7461990872778320182
 GameObject:
   m_ObjectHideFlags: 0
@@ -128183,15 +128157,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient_type: 1
-  cooked_ingred: {fileID: 0}
-  seasoning_ingred: {fileID: 0}
-  skewer_ingred: {fileID: 0}
+  _ingredient_Type: 0
+  _cookedIngred: {fileID: 0}
+  _seasoningIngred: {fileID: 0}
+  _skewerIngred: {fileID: 0}
   isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 0}
-  materials: []
-  mat: {fileID: 0}
+  _materials: []
+  _mesh: {fileID: 0}
 --- !u!114 &8677459068037914834
 MonoBehaviour:
   m_ObjectHideFlags: 0
