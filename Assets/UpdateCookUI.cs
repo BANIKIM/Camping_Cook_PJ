@@ -14,7 +14,7 @@ public class UpdateCookUI : MonoBehaviour
     public TextMeshProUGUI updatetext;
     public TextMeshProUGUI updatetext2;
     // public string[] CookName; // 요리명 배열 선언
-    public CookType[] CookTypes; // enum과 매칭되는 요리 타입 배열 선언
+    public Cooking_Type[] CookTypes; // enum과 매칭되는 요리 타입 배열 선언
     public bool isCookingStarted = false;
    
 
@@ -41,7 +41,7 @@ public class UpdateCookUI : MonoBehaviour
             tablet2.sprite = sprites[i];
             if (i >= 0 && i < CookTypes.Length) // 요리명 배열에 유효한 인덱스가 있는지 확인
             {
-                CookType cookType = CookTypes[i];
+                Cooking_Type cookType = CookTypes[i];
                 updatetext.text = cookType.ToString();  // 인덱스에 해당하는 요리명을 텍스트에 할당
                 updatetext2.text = cookType.ToString();
             }
