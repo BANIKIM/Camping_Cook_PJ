@@ -131,7 +131,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 74a458b6d2669a441a6269906916357c, type: 3}
 --- !u!54 &4164789234909547041
@@ -363,10 +363,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient_type: 0
-  cooked_ingred: {fileID: 0}
-  seasoning_ingred: {fileID: 0}
-  skewer_ingred: {fileID: 0}
+  _ingredient_Type: 0
+  _cookedIngred: {fileID: 0}
+  _seasoningIngred: {fileID: 0}
+  _skewerIngred: {fileID: 0}
+  isSlice: 0
+  _sliceCount: 0
   _crossMat: {fileID: 0}
-  materials: []
-  mat: {fileID: 0}
+  _materials: []
+  _mesh: {fileID: 0}

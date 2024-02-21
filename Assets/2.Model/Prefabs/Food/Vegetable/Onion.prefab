@@ -294,15 +294,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient_type: 1
-  cooked_ingred: {fileID: 0}
-  seasoning_ingred: {fileID: 0}
-  skewer_ingred: {fileID: 0}
+  _ingredient_Type: 0
+  _cookedIngred: {fileID: 0}
+  _seasoningIngred: {fileID: 0}
+  _skewerIngred: {fileID: 0}
   isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 6202957238202930716, guid: 8e144ba6303e50941b5dd5be5cab244b, type: 3}
-  materials: []
-  mat: {fileID: 0}
+  _materials: []
+  _mesh: {fileID: 0}
 --- !u!114 &6529475406587083222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,4 +367,5 @@ MonoBehaviour:
   heat: {fileID: 0}
   heatsource: {fileID: 0}
   floatingForce: 0
+  HP: 5
   floatingDepth: 0.336

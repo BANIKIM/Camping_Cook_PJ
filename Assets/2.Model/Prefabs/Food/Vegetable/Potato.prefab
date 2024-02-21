@@ -36,7 +36,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -342,15 +342,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient_type: 1
-  cooked_ingred: {fileID: 0}
-  seasoning_ingred: {fileID: 0}
-  skewer_ingred: {fileID: 0}
+  _ingredient_Type: 0
+  _cookedIngred: {fileID: 0}
+  _seasoningIngred: {fileID: 0}
+  _skewerIngred: {fileID: 0}
   isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 2100000, guid: 20a2c20eca7e24f4782517e141a98099, type: 2}
-  materials: []
-  mat: {fileID: 0}
+  _materials: []
+  _mesh: {fileID: 0}
 --- !u!114 &9191762844527422134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,4 +367,5 @@ MonoBehaviour:
   heat: {fileID: 0}
   heatsource: {fileID: 0}
   floatingForce: 0
+  HP: 5
   floatingDepth: 0.336
