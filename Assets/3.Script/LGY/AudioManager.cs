@@ -7,10 +7,10 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance = null;
 
-    public AudioClip[] BGM_Clips;
-    public AudioClip[] SFX_Clips;
+    public AudioClip[] _bgmClips;
+    public AudioClip[] _sfxClips;
 
-    public AudioMixer audiomixer;
+    public AudioMixer _audioMixer;
 
 
     private void Awake()

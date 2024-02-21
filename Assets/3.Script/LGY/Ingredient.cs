@@ -28,45 +28,45 @@ public enum Ingredient_Type
 
 public class Ingredient : MonoBehaviour
 {
-    public Ingredient_Type ingredient_type;
-    public Cooked_Ingredient cooked_ingred;
-    public Seasoning_Ingredient seasoning_ingred;
-    public Skewer_Ingredient skewer_ingred;
+    public Ingredient_Type _ingredient_Type;
+    public Cooked_Ingredient _cookedIngred;
+    public Seasoning_Ingredient _seasoningIngred;
+    public Skewer_Ingredient _skewerIngred;
 
     public bool isSlice = false;
 
     public int _sliceCount = 0;
 
     public Material _crossMat;
-    public Material[] materials;
-    public MeshRenderer mat;
+    public Material[] _materials;
+    public MeshRenderer _mesh;
 
     private void Start()
     {
-        TryGetComponent(out seasoning_ingred);
-        TryGetComponent(out cooked_ingred);
-        TryGetComponent(out skewer_ingred);
-        mat = GetComponent<MeshRenderer>();
+        TryGetComponent(out _seasoningIngred);
+        TryGetComponent(out _cookedIngred);
+        TryGetComponent(out _skewerIngred);
+        _mesh = GetComponent<MeshRenderer>();
     }
 
     private void FixedUpdate()
     {
-        cooked_ingred.OnUpdate();
-        skewer_ingred.OnUpdate();
+        _cookedIngred.OnUpdate();
+        _skewerIngred.OnUpdate();
 
     }
 
     public void Cook_ch_mat()// 쿡스테이터스에 따라 머테리얼 값을 변경한다
     {
-        mat.material = materials[(int)cooked_ingred.cooked_state];
+        _mesh.material = _materials[(int)_cookedIngred._cooked_State];
     }
 
     public int CheckCookIdx()
     {
         var temp = isSlice ? 1 : 0;
-        var ingred_type = ((int)ingredient_type * 100000) + (temp * 10000) +
-            ((int)seasoning_ingred.salt_s * 1000) + ((int)seasoning_ingred.pepper_s * 100) +
-            ((int)skewer_ingred.skewer_state * 10) + ((int)cooked_ingred.cooked_state);
+        var ingred_type = ((int)_ingredient_Type * 100000) + (temp * 10000) +
+            ((int)_seasoningIngred.salt_s * 1000) + ((int)_seasoningIngred.pepper_s * 100) +
+            ((int)_skewerIngred.skewer_state * 10) + ((int)_cookedIngred._cooked_State);
 
         return ingred_type;
     }

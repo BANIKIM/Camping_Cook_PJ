@@ -6,7 +6,7 @@ public class RewardSystem : MonoBehaviour
 {
     public static RewardSystem instance = null;
 
-    public int star_count = 3;
+    public int _starCount = 3;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class RewardSystem : MonoBehaviour
         // 식재료 개수가 다를 때 ex) 레시피는 4개인데 내가만든 요리는 3개면 별 개수 -1
         if (!recipe.Count.Equals(dish.Count)) 
         {
-            star_count--;
+            _starCount--;
         }
 
         for (int i = 0; i < dish.Count; i++)
@@ -37,11 +37,11 @@ public class RewardSystem : MonoBehaviour
             //요리에 있는 식재료가 레시피에 없으면 -1
             if(recipe.Contains(dish[i]).Equals(false))
             {
-                star_count--;
+                _starCount--;
                 break;
             }
         }
-        return star_count;
+        return _starCount;
 
     }
 

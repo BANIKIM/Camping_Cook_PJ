@@ -8,9 +8,9 @@ public class Option_Panel : MonoBehaviour
 {
     public static Option_Panel instance = null;
 
-    public Slider[] volume_sliders;  // Master, BGM, SFX
-    public Dictionary<int, string> para_D = new Dictionary<int, string>();
-    public TextMeshProUGUI[] texts;
+    public Slider[] _volumeSliders;  // Master, BGM, SFX
+    public Dictionary<int, string> _para_D = new Dictionary<int, string>();
+    public TextMeshProUGUI[] _texts;
 
     private void Awake()
     {
@@ -35,24 +35,24 @@ public class Option_Panel : MonoBehaviour
 
     public void ChangeValue(int idx)
     {
-        float value = volume_sliders[idx].value;
+        float value = _volumeSliders[idx].value;
         // value = 0.001 ~ 1
-        AudioManager.instance.audiomixer.SetFloat(para_D[idx], Mathf.Log10(value) * 20);
-        texts[idx].text = $"{(int)(volume_sliders[idx].value * 100)}";
+        AudioManager.instance._audioMixer.SetFloat(_para_D[idx], Mathf.Log10(value) * 20);
+        _texts[idx].text = $"{(int)(_volumeSliders[idx].value * 100)}";
     }
 
 
 
     private void Add_ParameterKey()
     {
-        para_D.Add(0, "Master");
-        para_D.Add(1, "BGM");
-        para_D.Add(2, "SFX");
+        _para_D.Add(0, "Master");
+        _para_D.Add(1, "BGM");
+        _para_D.Add(2, "SFX");
     }
 
     private void Default_Setting()
     {
-        for (int i = 0; i < volume_sliders.Length; i++)
+        for (int i = 0; i < _volumeSliders.Length; i++)
         {
             ChangeValue(i);
         }
