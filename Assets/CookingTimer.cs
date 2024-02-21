@@ -24,13 +24,13 @@ public class CookingTimer : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
 
-            //UiManager.instance.isCookingStarted = true;
+            UiManager.instance.isCookingStarted = true;
          
 
-            UiManager.instance.Update_CookUI.updateObject.SetActive(true);
-            UiManager.instance.Update_CookUI.updateObject2.SetActive(true);
-            UiManager.instance.Update_CookUI2.updateObject.SetActive(true);
-            UiManager.instance.Update_CookUI2.updateObject2.SetActive(true);
+            UiManager.instance.updateObject.SetActive(true);
+            UiManager.instance.updateObject2.SetActive(true);
+           // UiManager.instance.Update_CookUI2.updateObject.SetActive(true);
+            //UiManager.instance.Update_CookUI2.updateObject2.SetActive(true);
             // 경과 시간을 분과 초로 변환
             int minutes = Mathf.FloorToInt(elapsedTime / 60);
             int seconds = Mathf.FloorToInt(elapsedTime % 60);
@@ -78,18 +78,16 @@ public class CookingTimer : MonoBehaviour
         for (int i = 0; i < timerTexts.Length; i++)
         {
             timerTexts[i].text = "요리 시작";
-           
-
-        }
-        for (int i = 0; i < timerTexts2.Length; i++)
-        {
             timerTexts2[i].text = "요리 시작";
-        }
+
+        }    
         timertext.text = "00:00";
         timertext2.text = "00:00";
         cookingStarted = false;
-       // UiManager.instance.isCookingStarted = false;
-     
+        UiManager.instance.isCookingStarted = false;
+        UiManager.instance.updateObject.SetActive(false);
+        UiManager.instance.updateObject2.SetActive(false);
+
         elapsedTime = 0.0f;
         // 플레이 중인 요리 사항들을 초기화하는 작업 추가
     }

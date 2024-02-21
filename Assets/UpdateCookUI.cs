@@ -20,19 +20,17 @@ public class UpdateCookUI : MonoBehaviour
  
 
     
-    public GameObject updateObject;
-  
-    public GameObject updateObject2;
+
 
 
 
 
     public void OpenUpdate(int i)
     {
-       /* if (UiManager.instance.isCookingStarted)
+        if (UiManager.instance.isCookingStarted)
         {
             return;
-        }*/
+        }
         UiManager.instance.Num = i;    
         UiManager.instance.CookingTimer.cookingStarted = true;
        
@@ -55,9 +53,7 @@ public class UpdateCookUI : MonoBehaviour
     public void OffUpdate()
     {
         UiManager.instance.CookingTimer.StopCooking();
-       
-        updateObject.SetActive(false);
-        updateObject2.SetActive(false);
+          
 
     }
 
