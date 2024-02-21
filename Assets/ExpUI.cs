@@ -6,11 +6,12 @@ using TMPro;
 
 public class ExpUI : MonoBehaviour
 {
-    [SerializeField] private CampFire campFire;
+   
     public TextMeshProUGUI LevelUp;
     public TextMeshProUGUI LevelUp2;
     public Slider slider;
     public Slider slider2;
+    public float Exp = 100;
     public  int level=1;
     public int StarCount=0;
   
@@ -18,19 +19,19 @@ public class ExpUI : MonoBehaviour
 
     private void Update()
     {
-        if (campFire != null && slider != null)
+        if (slider != null)
         {
-            slider.value = campFire.Exp;
-            slider2.value = campFire.Exp;
+            slider.value = Exp;
+            slider2.value = Exp;
 
             // 이전 경험치와 현재 경험치를 비교하여 레벨업 텍스트 업데이트
-            if (campFire.Exp <= slider.minValue)
+            if (Exp <= slider.minValue)
             {
                 level++;
                 LevelUp.text = "캠핑 레벨 : " + (level);
                
                 LevelUp2.text= "캠핑 레벨 : " + (level);
-                campFire.Exp = 100;
+                Exp = 100;
 
          
 

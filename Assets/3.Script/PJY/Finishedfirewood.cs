@@ -4,14 +4,7 @@ using UnityEngine;
 
 public class Finishedfirewood : MonoBehaviour
 {
-    /*    public enum Fire_State
-     {
-         Default = 0,
-         Campfire_1,
-         Campfire_2,
-     }*/
 
-    //public Fire_State fire_state { get; private set; }
 
     public GameObject CampfireObj;
     public GameObject finishedfirewood1;
@@ -30,7 +23,6 @@ public class Finishedfirewood : MonoBehaviour
     private UI_DB_Parsing uI_DB_Parsing;
 
 
-    // private IEnumerator timecheck_temp;
 
     public float B_Time =0f;
     public float FireTime = 0f;
@@ -63,7 +55,7 @@ public class Finishedfirewood : MonoBehaviour
         {
             
             FireTime += Time.deltaTime;
-            Debug.Log("불" + FireTime);
+           
             // 불에 닿아 있는 동안 매 프레임마다 시간을 체크하여 5초 이상이면 불을 붙입니다.
             if (FireTime > fireDuration)
             {
@@ -80,7 +72,7 @@ public class Finishedfirewood : MonoBehaviour
         if (other.CompareTag("Fire"))
         {
             FireTime = 0f; // 불이 붙지 않았으므로 FireTime을 초기화
-            Debug.Log("0으로 초기화");
+            
         }
     }
     private void Update()
@@ -112,7 +104,8 @@ public class Finishedfirewood : MonoBehaviour
                 {
                     if (collider.CompareTag("Hand"))
                     {
-                        campFire.Exp -= 10;
+                        UiManager.instance.ExpUI.Exp -= 10;
+                        UiManager.instance.ExpUI2.Exp -= 10;
                         uI_DB_Parsing.textType = UI_DB_Parsing.TextType.Campfire;
                         uI_DB_Parsing.number = "1";
                         uI_DB_Parsing.a = true;

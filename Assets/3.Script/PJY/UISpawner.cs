@@ -6,23 +6,24 @@ public class UISpawner : MonoBehaviour
 {
     public GameObject SpawnUI;
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.CompareTag("Hand"))
+        if (other.CompareTag("Hand"))
         {
 
             SpawnUI.SetActive(true);
-           
+
         }
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.collider.CompareTag("Hand"))
+        if (other.CompareTag("Hand"))
         {
             SpawnUI.SetActive(false);
         }
     }
-  
+
 
 
 }
