@@ -74,64 +74,53 @@ public class UiManager : MonoBehaviour
     }
     private void Update()
     {
-        OnStar();
         UpdateActiveStarCount();
     }
-    public void OnStar()
+    public void OnStar(int idx)
     {
         // 레벨에 따라 활성화할 스타의 개수 계산 (최대 3개까지)
-        int starCount = Mathf.Min(expUI.level, 3);
-
-        if (Num == 0) //마쉬멜로우 
-        {            
+        switch (Num)
+        {
+            case 0:  
                 // 스타 배열과 스타2 배열의 자식 오브젝트 활성화
-                for (int i = 0; i < starCount; i++)
+                for (int i = 0; i < idx; i++)
                 {
                     Star[0].transform.GetChild(i).gameObject.SetActive(true);
                     Star2[0].transform.GetChild(i).gameObject.SetActive(true);
                 }
-                  
-        }
-        else if (Num == 1) //비프 스튜 
-        {
-          
-            for (int i = 0; i < starCount; i++)
-            {
-                Star[1].transform.GetChild(i).gameObject.SetActive(true);
-                Star2[1].transform.GetChild(i).gameObject.SetActive(true);
-            }
-        }
-        else if (Num == 2) //꼬치 플래터 
-        {
-     
+                break;
+            case 1:
+                for (int i = 0; i < idx; i++)
+                {
+                    Star[1].transform.GetChild(i).gameObject.SetActive(true);
+                    Star2[1].transform.GetChild(i).gameObject.SetActive(true);
+                }
+                break;
+            case 2:
+                for (int i = 0; i < idx; i++)
+                {
+                    Star[2].transform.GetChild(i).gameObject.SetActive(true);
+                    Star2[2].transform.GetChild(i).gameObject.SetActive(true);
+                }
+                break;
+            case 3:
+                for (int i = 0; i < idx; i++)
+                {
+                    Star[3].transform.GetChild(i).gameObject.SetActive(true);
+                    Star2[3].transform.GetChild(i).gameObject.SetActive(true);
+                }
+                break;
+            case 4:
+                for (int i = 0; i < idx; i++)
+                {
+                    Star[4].transform.GetChild(i).gameObject.SetActive(true);
+                    Star2[4].transform.GetChild(i).gameObject.SetActive(true);
+                }
+                break;
 
-            for (int i = 0; i < starCount; i++)
-            {
-                Star[2].transform.GetChild(i).gameObject.SetActive(true);
-                Star2[2].transform.GetChild(i).gameObject.SetActive(true);
-            }
+            default:
+                break;
         }
-        else if(Num == 3) //스테이크 
-        {
- 
-            for (int i = 0; i < starCount; i++)
-            {
-                Star[3].transform.GetChild(i).gameObject.SetActive(true);
-                Star2[3].transform.GetChild(i).gameObject.SetActive(true);
-            }
-        }
-        else if(Num == 4) // 연어 스테이크
-        {
-           
-
-            for (int i = 0; i < starCount; i++)
-            {
-                Star[4].transform.GetChild(i).gameObject.SetActive(true);
-                Star2[4].transform.GetChild(i).gameObject.SetActive(true);
-            }
-        }
-
-
     }
     private void UpdateActiveStarCount()
     {

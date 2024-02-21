@@ -14,10 +14,10 @@ public class SpawnIngredient : MonoBehaviour
         GameObject spawnobj =  Instantiate(_ingredients[idx], _spawnPoint.position, Quaternion.identity);
 
         // 상속된 오브젝트 개별로 바꿈
-       /* for (int i = 0; i < spawnobj.transform.childCount; i++)
+        for (int i = 0; i < spawnobj.transform.childCount; i++)
         {
             spawnobj.transform.GetChild(i).transform.parent = null;
-        }*/
+        }
 
     }
 }
