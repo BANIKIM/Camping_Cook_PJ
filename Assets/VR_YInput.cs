@@ -27,7 +27,7 @@ public class VR_YInput : MonoBehaviour
 
     private IEnumerator CheckLongPress()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         if (isButtonPressed)
         {

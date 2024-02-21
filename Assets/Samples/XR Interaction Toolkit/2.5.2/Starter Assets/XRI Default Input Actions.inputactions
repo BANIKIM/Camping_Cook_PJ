@@ -445,9 +445,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "UI_BUT",
+                    "name": "Y",
                     "type": "Button",
                     "id": "5f1c4cdf-19af-4c82-8e3b-12c3d9a6e234",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "X",
+                    "type": "Button",
+                    "id": "9102357f-fd3f-4aab-a5f3-bbdb00070c33",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -693,7 +702,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "UI_BUT",
+                    "action": "Y",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a11bc0d9-dfa7-42a9-9600-af9314fe0191",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

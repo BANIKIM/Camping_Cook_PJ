@@ -26,7 +26,7 @@ public class Finishedfirewood : MonoBehaviour
 
     public float B_Time =0f;
     public float FireTime = 0f;
-    public float fireDuration = 5f;
+    public float fireDuration = 2f;
     private bool OnFire = false;
 
     private float lastHPDecreaseTime; // 마지막 HP 감소 시간

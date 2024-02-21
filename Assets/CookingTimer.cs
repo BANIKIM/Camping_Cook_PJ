@@ -24,13 +24,20 @@ public class CookingTimer : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
 
+            //UiManager.instance.isCookingStarted = true;
+         
+
+            UiManager.instance.Update_CookUI.updateObject.SetActive(true);
+            UiManager.instance.Update_CookUI.updateObject2.SetActive(true);
+            UiManager.instance.Update_CookUI2.updateObject.SetActive(true);
+            UiManager.instance.Update_CookUI2.updateObject2.SetActive(true);
             // 경과 시간을 분과 초로 변환
             int minutes = Mathf.FloorToInt(elapsedTime / 60);
             int seconds = Mathf.FloorToInt(elapsedTime % 60);
 
-            // 타이머 텍스트 업데이트
+            
 
-            Debug.Log("반환받은값" + UiManager.instance.Num);
+          
 
             timerTexts[UiManager.instance.Num].text = string.Format("{0:00}:{1:00}", minutes, seconds);
             timerTexts2[UiManager.instance.Num].text = string.Format("{0:00}:{1:00}", minutes, seconds);
@@ -81,6 +88,8 @@ public class CookingTimer : MonoBehaviour
         timertext.text = "00:00";
         timertext2.text = "00:00";
         cookingStarted = false;
+       // UiManager.instance.isCookingStarted = false;
+     
         elapsedTime = 0.0f;
         // 플레이 중인 요리 사항들을 초기화하는 작업 추가
     }
