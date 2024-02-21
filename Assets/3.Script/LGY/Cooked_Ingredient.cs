@@ -12,11 +12,7 @@ public class Cooked_Ingredient : MonoBehaviour, IState
         
     }
 
-    private void Update()
-    {
-    }
-
-    public Cooked_State cooked_state { get; private set; }      // 굽기단계
+    public Cooked_State _cooked_State { get; private set; }      // 굽기단계
 
     public void OnEnter()
     {
@@ -30,12 +26,12 @@ public class Cooked_Ingredient : MonoBehaviour, IState
     {
     }
 
-    public void Change_Skewer_State(Cooked_State start_state)//상태 변화 메서드
+    public void Change_Skewer_State(Cooked_State start_State)//상태 변화 메서드
     {
-        if (cooked_state.Equals(start_state)) return;
+        if (_cooked_State.Equals(start_State)) return;
 
         OnExit();
-        cooked_state = start_state;
+        _cooked_State = start_State;
 
         OnEnter();
     }

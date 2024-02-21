@@ -14,7 +14,7 @@ public enum Recipe_Type
 public class RecipeSetting : MonoBehaviour
 {
     // Dictionary (요리 / 레시피)
-    public Dictionary<int, List<int>> recipe_D = new Dictionary<int, List<int>>();
+    public Dictionary<int, List<int>> _recipe_D = new Dictionary<int, List<int>>();
 
     public void SetDefaultRecipe()
     {
@@ -29,35 +29,35 @@ public class RecipeSetting : MonoBehaviour
     {
         // 마쉬멜로우 구이
         List<int> Temp = new List<int> { 200011 };
-        recipe_D.Add((int)Recipe_Type.Mashmellow, Temp);
+        _recipe_D.Add((int)Recipe_Type.Mashmellow, Temp);
     }
 
     private void Beef_Stew_R()
     {
         // 비프스튜
         List<int> Temp = new List<int> { 111101, 410001, 510001 };
-        recipe_D.Add((int)Recipe_Type.Beef_Stew, Temp);
+        _recipe_D.Add((int)Recipe_Type.Beef_Stew, Temp);
     }
 
     private void Skewers_Flatter_R()
     {
         // 꼬치플레터
         List<int> Temp = new List<int> { 111011, 610011, 810011 };
-        recipe_D.Add((int)Recipe_Type.Skewers_Flatter, Temp);
+        _recipe_D.Add((int)Recipe_Type.Skewers_Flatter, Temp);
     }
 
     private void Steak_R()
     {
         // 스테이크
         List<int> Temp = new List<int> { 101101, 610001 };
-        recipe_D.Add((int)Recipe_Type.Steak, Temp);
+        _recipe_D.Add((int)Recipe_Type.Steak, Temp);
     }
 
     private void Grilled_Salmon_R()
     {
         // 연어구이
         List<int> Temp = new List<int> { 311101, 710001 };
-        recipe_D.Add((int)Recipe_Type.Grilled_Salmon, Temp);
+        _recipe_D.Add((int)Recipe_Type.Grilled_Salmon, Temp);
     }
 
 

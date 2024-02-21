@@ -8,13 +8,13 @@ public class Knife : MonoBehaviour
     public Transform _endPos;
     public VelocityEstimator _velocityEstimator;
 
-    public float cutForce = 100f;
+    public float _cutForce = 100f;
 
-    public LayerMask targetLayer;
+    public LayerMask _targetLayer;
 
     private void FixedUpdate()
     {
-        bool hasHit = Physics.Linecast(_startPos.position, _endPos.position, out RaycastHit hit, targetLayer);
+        bool hasHit = Physics.Linecast(_startPos.position, _endPos.position, out RaycastHit hit, _targetLayer);
 
         if (hasHit)
         {
@@ -60,7 +60,7 @@ public class Knife : MonoBehaviour
 
 
         mesh.convex = true;
-        rigid.AddExplosionForce(cutForce, obj.transform.position, 1);
+        rigid.AddExplosionForce(_cutForce, obj.transform.position, 1);
         XRGrabInteractable xrgrab = obj.AddComponent<XRGrabInteractable>();
 
         obj.layer = 6;

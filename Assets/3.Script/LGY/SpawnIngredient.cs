@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SpawnIngredient : MonoBehaviour
 {
-    [SerializeField] private GameObject[] ingredients;   // 식재료 모아져있는 프리팹
+    [SerializeField] private GameObject[] _ingredients;   // 식재료 모아져있는 프리팹
 
-    [SerializeField] private Transform spawn_point;      // 스폰포인트
+    [SerializeField] private Transform _spawnPoint;      // 스폰포인트
 
     public void Spawn(int idx) 
     {
         // Instantiate로 생성
-        GameObject spawnobj =  Instantiate(ingredients[idx], spawn_point.position, Quaternion.identity);
+        GameObject spawnobj =  Instantiate(_ingredients[idx], _spawnPoint.position, Quaternion.identity);
 
         // 상속된 오브젝트 개별로 바꿈
        /* for (int i = 0; i < spawnobj.transform.childCount; i++)
