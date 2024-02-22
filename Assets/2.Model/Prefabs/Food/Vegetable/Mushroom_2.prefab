@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 8970526170399830792}
   - component: {fileID: 8829495399883813100}
   - component: {fileID: 709730821897671916}
-  - component: {fileID: 7261029374594203125}
   m_Layer: 6
   m_Name: Mushroom_2
   m_TagString: Untagged
@@ -351,21 +350,3 @@ MonoBehaviour:
   _crossMat: {fileID: 2100000, guid: 6d519f4805a0ad54b8b0de810bedc6e1, type: 2}
   _materials: []
   _mesh: {fileID: 0}
---- !u!114 &7261029374594203125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189690867990875983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97cc72e8773e6f84882fe4fb140bf81c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  heat: {fileID: 0}
-  heatsource: {fileID: 0}
-  floatingForce: 0
-  HP: 5
-  floatingDepth: 0.336

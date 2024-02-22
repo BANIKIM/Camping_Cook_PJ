@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 140951195507722186}
   - component: {fileID: 5857332521890596029}
   - component: {fileID: 999814090129347135}
-  - component: {fileID: 454228586929406382}
   m_Layer: 6
   m_Name: Mushroom_1
   m_TagString: Untagged
@@ -342,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ingredient_Type: 0
+  _ingredient_Type: 8
   _cookedIngred: {fileID: 0}
   _seasoningIngred: {fileID: 0}
   _skewerIngred: {fileID: 0}
@@ -351,21 +350,3 @@ MonoBehaviour:
   _crossMat: {fileID: 2100000, guid: 6d519f4805a0ad54b8b0de810bedc6e1, type: 2}
   _materials: []
   _mesh: {fileID: 0}
---- !u!114 &454228586929406382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6119087877375029368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97cc72e8773e6f84882fe4fb140bf81c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  heat: {fileID: 0}
-  heatsource: {fileID: 0}
-  floatingForce: 0
-  HP: 5
-  floatingDepth: 0.336
