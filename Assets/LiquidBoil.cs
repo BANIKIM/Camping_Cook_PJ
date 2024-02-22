@@ -7,14 +7,15 @@ public class LiquidBoil : MonoBehaviour
     public GameObject Cook_Tool_pot;
     public Tool_heat heat;
     public GameObject smoke;
-
     public float HP = 10;
-    public Ingredient[] Foods;
+    public GameObject[] Foods;
     private Cooked_Ingredient cooked;
-
     private Ingredient ingredient;
     private int number = 0;
-    public List<int> _ingred_Type_L = new List<int>();
+    private bool a;
+
+    public bool iscook = false;
+    private bool isBurned = false;
 
     void Start()
     {
@@ -35,53 +36,69 @@ public class LiquidBoil : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        List<int> recipe = CookManager.instance.Recipe_C(UiManager.instance.Num);
 
         if (other.gameObject.layer == 6) //조건에서 받아야 하는 Ingredient_Type 타입을 받아야 함 이거 0을 어떻게 받냐?
         {
+            HP = 10;//바로 타는거 방지
             HP += 5;
-            Ingredient_Type type = other.GetComponent<Ingredient>()._ingredient_Type;
-
             Destroy(other.gameObject);
-   
+
             for (int i = 0; i < Foods.Length; i++)
             {
-                if (!Foods[i].enabled && !Foods[i]._ingredient_Type.Equals(type))
+                a = false;
+                if (Foods[i].GetComponent<Ingredient>()._ingredient_Type == other.GetComponent<Ingredient>()._ingredient_Type)
                 {
-                    _ingred_Type_L.Add((int)type);
-                    Foods[i].transform.gameObject.SetActive(true);
+                    a = true;
                     break;
                 }
             }
+            if (!a)
+            {
+                Foods[number].GetComponent<Ingredient>()._ingredient_Type = other.GetComponent<Ingredient>()._ingredient_Type;
+                Foods[number].GetComponent<Ingredient>()._sliceCount = 1;
+                Foods[number].GetComponent<Seasoning_Ingredient>().salt_s = other.GetComponent<Seasoning_Ingredient>().salt_s;
+                Foods[number].GetComponent<Seasoning_Ingredient>().pepper_s = other.GetComponent<Seasoning_Ingredient>().pepper_s;
+                Foods[number].SetActive(true);
+                number += 1;
+            }
+
+
+
         }
     }
-
     private void Onsmoke()
     {
-        if (HP < 5)
+        if (HP < 5 && !iscook)
         {
-            smoke.SetActive(true);
-            if (Foods[0].transform.gameObject.activeSelf)
+            if (Foods[0].activeSelf)
             {
+                for (int i = 0; i < Foods.Length; i++)
+                {
+                    Foods[i].GetComponent<Cooked_Ingredient>().Change_Skewer_State(Cooked_Ingredient.Cooked_State.Cook);
+                }
                 cooked.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Cook);//스테이터스 변경
                 ingredient.Cook_ch_mat();//머테리얼 변경
                 ingredient._crossMat = ingredient._mesh.material;
+                iscook = true;
             }
+            
         }
-        else
-        {
-            smoke.SetActive(false);
-        }
+
     }
 
     private void isTan()
     {
-        if (HP < 0 && Foods[0].transform.gameObject.activeSelf)
+        if (HP < 0 && Foods[0].activeSelf && !isBurned)
         {
+            for (int i = 0; i < Foods.Length; i++)
+            {
+                Foods[i].GetComponent<Cooked_Ingredient>().Change_Skewer_State(Cooked_Ingredient.Cooked_State.Burned);
+            }
             cooked.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Burned);//스테이터스 변경
             ingredient.Cook_ch_mat();//머테리얼 변경
             ingredient._crossMat = ingredient._mesh.material;
 
+            isBurned = true;
         }
     }
 }

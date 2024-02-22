@@ -52,12 +52,12 @@ public class Knife : MonoBehaviour
         obj.AddComponent<Rigidbody>();
         MeshCollider mesh = obj.AddComponent<MeshCollider>();
         Ingredient ingred = obj.AddComponent<Ingredient>();
-
+        obj.AddComponent<Cooking>();
         ingred._crossMat = target_ingred._crossMat;
         ingred._sliceCount = target_ingred._sliceCount;
         ingred._sliceCount++;
         ingred._ingredient_Type = target_ingred._ingredient_Type;
-
+        ingred._materials = target_ingred._materials;
         mesh.convex = true;
 
         obj.AddComponent<XRGrabInteractable>();

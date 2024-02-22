@@ -35,7 +35,7 @@ public class RecipeSetting : MonoBehaviour
     private void Beef_Stew_R()
     {
         // ∫Ò«¡Ω∫∆©
-        List<int> Temp = new List<int> { 111101, 410001, 510001 };
+        List<int> Temp = new List<int> {111101, 410001, 510001 };
         _recipe_D.Add((int)Cooking_Type.Beef_Stew, Temp);
     }
 

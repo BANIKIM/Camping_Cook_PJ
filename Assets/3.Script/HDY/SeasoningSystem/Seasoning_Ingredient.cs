@@ -15,14 +15,10 @@ public class Seasoning_Ingredient : MonoBehaviour
         Salted
     }
 
-    public Pepper_S pepper_s;
-    public Salt_S salt_s;
+    public Pepper_S pepper_s = Pepper_S.None;
+    public Salt_S salt_s = Salt_S.None;
 
-    private void Start()
-    {
-        pepper_s = Pepper_S.None;
-        salt_s = Salt_S.None;
-    }
+
 
     public void AddSeasoning(Season_Type season)
     {

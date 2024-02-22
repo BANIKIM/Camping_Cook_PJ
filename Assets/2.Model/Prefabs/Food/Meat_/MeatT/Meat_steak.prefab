@@ -198,11 +198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ingredient_Type: 0
+  _ingredient_Type: 1
   _cookedIngred: {fileID: 0}
   _seasoningIngred: {fileID: 0}
   _skewerIngred: {fileID: 0}
-  isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
   _materials:
@@ -369,6 +368,7 @@ MonoBehaviour:
   CookTime: 0
   limit_CookTime: 5
   tool_heat: {fileID: 0}
+  meat: 1
 --- !u!114 &2624042784431491847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,11 +407,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ingredient_Type: 0
+  _ingredient_Type: 1
   _cookedIngred: {fileID: 0}
   _seasoningIngred: {fileID: 0}
   _skewerIngred: {fileID: 0}
-  isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
   _materials:
@@ -566,6 +565,7 @@ MonoBehaviour:
   CookTime: 0
   limit_CookTime: 5
   tool_heat: {fileID: 0}
+  meat: 1
 --- !u!114 &9209169072874716970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,11 +616,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ingredient_Type: 0
+  _ingredient_Type: 1
   _cookedIngred: {fileID: 0}
   _seasoningIngred: {fileID: 0}
   _skewerIngred: {fileID: 0}
-  isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 2100000, guid: f39cfaa3ab39f9d4d9fa5e310b208fab, type: 2}
   _materials:
@@ -641,9 +640,12 @@ GameObject:
   - component: {fileID: 8120265814398909712}
   - component: {fileID: 7266662631592784923}
   - component: {fileID: 5594346957976120946}
-  m_Layer: 0
+  - component: {fileID: 443600582618527193}
+  - component: {fileID: 6682192408696045637}
+  - component: {fileID: 3485471599936575195}
+  m_Layer: 6
   m_Name: Meat_steak
-  m_TagString: DownMeat
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -878,3 +880,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041fe4f1631e9d64a81373917363cf8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &443600582618527193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7569872851256927042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37ab45fac72b3f6498ccb84e4063394c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pepper_s: 0
+  salt_s: 0
+--- !u!114 &6682192408696045637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7569872851256927042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a117c2619b26972409df36b1aa6eeae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3485471599936575195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7569872851256927042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ingredient_Type: 1
+  _cookedIngred: {fileID: 0}
+  _seasoningIngred: {fileID: 0}
+  _skewerIngred: {fileID: 0}
+  _sliceCount: 0
+  _crossMat: {fileID: 0}
+  _materials: []
+  _mesh: {fileID: 0}

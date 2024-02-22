@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 140951195507722186}
   - component: {fileID: 5857332521890596029}
   - component: {fileID: 999814090129347135}
+  - component: {fileID: 2101230565003098055}
   m_Layer: 6
   m_Name: Mushroom_1
   m_TagString: Untagged
@@ -345,8 +346,23 @@ MonoBehaviour:
   _cookedIngred: {fileID: 0}
   _seasoningIngred: {fileID: 0}
   _skewerIngred: {fileID: 0}
-  isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 2100000, guid: 6d519f4805a0ad54b8b0de810bedc6e1, type: 2}
-  _materials: []
+  _materials:
+  - {fileID: 2100000, guid: e237440af6c074c4fb708a46d102e922, type: 2}
   _mesh: {fileID: 0}
+--- !u!114 &2101230565003098055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6119087877375029368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0bd1f84b19aa6148919c88bd62724d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CookTime: 0
+  limit_CookTime: 5
+  tool_heat: {fileID: 0}
