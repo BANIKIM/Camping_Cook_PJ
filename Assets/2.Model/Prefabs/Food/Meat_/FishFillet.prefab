@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6401070179328381485}
   - component: {fileID: 7413900642186018868}
   - component: {fileID: 8103731717011553942}
+  - component: {fileID: 7544369159714689095}
   m_Layer: 6
   m_Name: FishFillet
   m_TagString: Untagged
@@ -367,8 +368,23 @@ MonoBehaviour:
   _cookedIngred: {fileID: 0}
   _seasoningIngred: {fileID: 0}
   _skewerIngred: {fileID: 0}
-  isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 0}
   _materials: []
   _mesh: {fileID: 0}
+--- !u!114 &7544369159714689095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5764684363043057522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0bd1f84b19aa6148919c88bd62724d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CookTime: 0
+  limit_CookTime: 5
+  tool_heat: {fileID: 0}
+  meat: 0
