@@ -66,15 +66,4 @@ public class Ingredient : MonoBehaviour
         return ingred_type;
     }
 
-    public void DataSetting(Ingredient ingred)
-    {
-        _crossMat = ingred._crossMat;
-        _sliceCount = ingred._sliceCount;
-        _sliceCount++;
-        _seasoningIngred.salt_s = ingred._seasoningIngred.salt_s;
-        _seasoningIngred.pepper_s = ingred._seasoningIngred.pepper_s;
-        _ingredient_Type = ingred._ingredient_Type;
-        _materials = ingred._materials;
-    }
-
 }

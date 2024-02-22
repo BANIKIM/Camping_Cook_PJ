@@ -5,6 +5,7 @@ using UnityEngine;
 public class Dish : MonoBehaviour
 {
     public List<int> Cooking = new List<int>();
+    public GameObject[] Cooks;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,7 +24,7 @@ public class Dish : MonoBehaviour
             Ingredient ingred = collision.gameObject.GetComponent<Ingredient>();
 
             if (!Cooking.Contains(ingred.CheckCookIdx())) Cooking.Add(ingred.CheckCookIdx());
-
+            Cooks[UiManager.instance.Num].SetActive(true);
             Destroy(collision.gameObject);
 
         }
@@ -32,6 +33,7 @@ public class Dish : MonoBehaviour
     public int ch_Reward()
     {
         Debug.Log(UiManager.instance.Num);
+        Cooks[UiManager.instance.Num].SetActive(false);
         return RewardSystem.instance.RecipeCheck(Cooking, UiManager.instance.Num);
     }
 }
