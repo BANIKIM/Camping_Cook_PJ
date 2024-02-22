@@ -34,7 +34,7 @@ public class XBtn : MonoBehaviour
             Xbtn.action.started -= OnXButtonPressed;
         }
     }
-    private void Update()
+    private void FixedUpdate()
     {
         // 현재 생성된 오브젝트의 개수를 확인하여 currentCount를 업데이트합니다.
         currentCount = GameObject.FindGameObjectsWithTag("Wood").Length;
