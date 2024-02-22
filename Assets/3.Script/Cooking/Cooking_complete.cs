@@ -15,6 +15,8 @@ public class Cooking_Complete : MonoBehaviour
                 UiManager.instance.OnStar(starCount);
             }
             UiManager.instance.Update_CookUI.OffUpdate();
+            GameObject box = GameObject.FindWithTag("Box");
+            Destroy(box);
         }
     }
 }

@@ -25,6 +25,7 @@ TagManager:
   - UpMeat
   - CampfireHP
   - Dish
+  - Box
   layers:
   - Default
   - TransparentFX
