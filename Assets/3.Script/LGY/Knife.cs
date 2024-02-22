@@ -49,21 +49,17 @@ public class Knife : MonoBehaviour
 
     private void SetUpSliceCompoent(GameObject obj, Ingredient target_ingred)
     {
-        obj.AddComponent<Rigidbody>();
         MeshCollider mesh = obj.AddComponent<MeshCollider>();
-        Ingredient ingred = obj.AddComponent<Ingredient>();
-        obj.AddComponent<Cooking>();
-        ingred._crossMat = target_ingred._crossMat;
-        ingred._sliceCount = target_ingred._sliceCount;
-        ingred._sliceCount++;
-        ingred._ingredient_Type = target_ingred._ingredient_Type;
-        ingred._materials = target_ingred._materials;
         mesh.convex = true;
+
+        Ingredient ingred = obj.AddComponent<Ingredient>();
+        ingred.DataSetting(target_ingred);
+
+        obj.AddComponent<Cooking>();
 
         obj.AddComponent<XRGrabInteractable>();
 
         obj.layer = 6;
-
     }
 
 }

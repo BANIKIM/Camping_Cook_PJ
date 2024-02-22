@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 
 public interface IState
 {
@@ -68,4 +65,16 @@ public class Ingredient : MonoBehaviour
         Debug.Log("점수체크" + ingred_type);
         return ingred_type;
     }
+
+    public void DataSetting(Ingredient ingred)
+    {
+        _crossMat = ingred._crossMat;
+        _sliceCount = ingred._sliceCount;
+        _sliceCount++;
+        _seasoningIngred.salt_s = ingred._seasoningIngred.salt_s;
+        _seasoningIngred.pepper_s = ingred._seasoningIngred.pepper_s;
+        _ingredient_Type = ingred._ingredient_Type;
+        _materials = ingred._materials;
+    }
+
 }
