@@ -33,8 +33,6 @@ public class Ingredient : MonoBehaviour
     public Seasoning_Ingredient _seasoningIngred;
     public Skewer_Ingredient _skewerIngred;
 
-    public bool isSlice = false;
-
     public int _sliceCount = 0;
 
     public Material _crossMat;
@@ -63,7 +61,7 @@ public class Ingredient : MonoBehaviour
 
     public int CheckCookIdx()
     {
-        var temp = isSlice ? 1 : 0;
+        var temp = _sliceCount.Equals(0) ? 0 : 1;
         var ingred_type = ((int)_ingredient_Type * 100000) + (temp * 10000) +
             ((int)_seasoningIngred.salt_s * 1000) + ((int)_seasoningIngred.pepper_s * 100) +
             ((int)_skewerIngred.skewer_state * 10) + ((int)_cookedIngred._cooked_State);
