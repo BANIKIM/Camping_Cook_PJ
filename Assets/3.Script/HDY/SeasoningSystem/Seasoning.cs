@@ -15,7 +15,7 @@ public class Seasoning : MonoBehaviour
     [SerializeField] private Season_Type season_type;
 
     [Header("양념통과 고기 사이 간격")]
-    [SerializeField] private float lineSize = 1.5f;
+    [SerializeField] private float lineSize = 0.5f;
 
     [Header("양념 뿌려지는 시간")]
     [SerializeField] private WaitForSeconds cool = new WaitForSeconds(0.8f);
