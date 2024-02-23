@@ -5,7 +5,7 @@ using UnityEngine;
 public class RewardSystem : MonoBehaviour
 {
     public static RewardSystem instance = null;
-
+    public Dish dish1;
     public int _starCount = 3;
 
     private void Awake()
@@ -41,7 +41,6 @@ public class RewardSystem : MonoBehaviour
         }
 
         dish.Clear();
-
         return _starCount;
 
     }

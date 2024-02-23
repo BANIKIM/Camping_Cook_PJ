@@ -104,8 +104,8 @@ public class Finishedfirewood : MonoBehaviour
                 {
                     if (collider.CompareTag("Hand"))
                     {
-                        UiManager.instance.ExpUI.Exp -= 10;
-                        UiManager.instance.ExpUI2.Exp -= 10;
+                        UiManager.instance.Exp -= 10;
+                       
                         uI_DB_Parsing.textType = UI_DB_Parsing.TextType.Campfire;
                         uI_DB_Parsing.number = "1";
                         uI_DB_Parsing.a = true;

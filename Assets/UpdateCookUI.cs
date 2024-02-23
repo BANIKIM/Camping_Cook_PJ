@@ -13,6 +13,8 @@ public class UpdateCookUI : MonoBehaviour
     public Image tablet2;
     public TextMeshProUGUI updatetext;
     public TextMeshProUGUI updatetext2;
+    public Dish dish;
+
     // public string[] CookName; // 요리명 배열 선언
     public Cooking_Type[] CookTypes; // enum과 매칭되는 요리 타입 배열 선언
    
@@ -33,7 +35,8 @@ public class UpdateCookUI : MonoBehaviour
         }
         UiManager.instance.Num = i;    
         UiManager.instance.CookingTimer.cookingStarted = true;
-       
+
+        dish.onech = false;
 
         if (i >= 0 && i < sprites.Length) // 유효한 인덱스 범위인지 확인
         {

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5338254976030669073}
   - component: {fileID: 3514739089199740971}
   - component: {fileID: 707010381216395883}
-  - component: {fileID: 2796428185002681100}
   - component: {fileID: 5273790751790915096}
   - component: {fileID: 7919381043167454314}
   - component: {fileID: 6137243797185955348}
@@ -20,6 +19,7 @@ GameObject:
   - component: {fileID: 7413900642186018868}
   - component: {fileID: 8103731717011553942}
   - component: {fileID: 7544369159714689095}
+  - component: {fileID: 6176196673061663957}
   m_Layer: 6
   m_Name: FishFillet
   m_TagString: Untagged
@@ -113,28 +113,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!64 &2796428185002681100
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5764684363043057522}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: bde1056c02c866249b689b61444cce3f, type: 3}
 --- !u!54 &5273790751790915096
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -388,3 +366,24 @@ MonoBehaviour:
   limit_CookTime: 5
   tool_heat: {fileID: 0}
   meat: 0
+--- !u!65 &6176196673061663957
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5764684363043057522}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.13706306, y: 0.009834718, z: 0.2993781}
+  m_Center: {x: 0.0000000037252903, y: 0.0047149844, z: -0.020251848}

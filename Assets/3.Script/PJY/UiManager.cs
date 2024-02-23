@@ -19,6 +19,7 @@ public class UiManager : MonoBehaviour
     public int activeStarCount = 0;
     public bool isCookingStarted = false;
 
+    public float Exp = 100;
     public int Num = 0;
     private void Awake()
     {
