@@ -22,7 +22,7 @@ public class RewardSystem : MonoBehaviour
     }
 
 
-    public int RecipeCheck(ref List<int> dish, int cookidx)
+    public int RecipeCheck(List<int> dish, int cookidx)
     {
         List<int> recipe = CookManager.instance.Recipe_C(cookidx);
 

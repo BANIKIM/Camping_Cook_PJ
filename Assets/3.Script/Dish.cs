@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Dish : MonoBehaviour
 {
-    public List<int> Cooking = new List<int>();
+    public List<int> _cookingL = new List<int>();
     public GameObject[] Cooks;
     public bool onech = false;
 
@@ -27,7 +27,7 @@ public class Dish : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             Ingredient ingred = other.gameObject.GetComponent<Ingredient>();
-            Cooking.Add(ingred.CheckCookIdx());
+            _cookingL.Add(ingred.CheckCookIdx());
 
         }
     }
@@ -38,7 +38,7 @@ public class Dish : MonoBehaviour
         {
             Ingredient ingred = collision.gameObject.GetComponent<Ingredient>();
 
-            if (!Cooking.Contains(ingred.CheckCookIdx())) Cooking.Add(ingred.CheckCookIdx());
+            if (!_cookingL.Contains(ingred.CheckCookIdx())) _cookingL.Add(ingred.CheckCookIdx());
             Cooks[UiManager.instance.Num].SetActive(true);
             Destroy(collision.gameObject);
 
@@ -54,7 +54,7 @@ public class Dish : MonoBehaviour
             ok(UiManager.instance.Num.ToString());
             onech = true;
         }
-        return RewardSystem.instance.RecipeCheck(ref Cooking, UiManager.instance.Num);
+        return RewardSystem.instance.RecipeCheck(_cookingL, UiManager.instance.Num);
     }
 
 
