@@ -26,6 +26,8 @@ public class RewardSystem : MonoBehaviour
     {
         List<int> recipe = CookManager.instance.Recipe_C(cookidx);
 
+        _starCount = 3;
+
         // 식재료 개수가 다를 때 ex) 레시피는 4개인데 내가만든 요리는 3개면 별 개수 -1
 
         if (!recipe.Count.Equals(dish.Count)) _starCount--;
