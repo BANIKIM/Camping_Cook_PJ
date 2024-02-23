@@ -23,16 +23,16 @@ public class Dish : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == 6)
-        {
-            Ingredient ingred = other.gameObject.GetComponent<Ingredient>();
-            if (!_prep_List.Contains(ingred.CheckPrepIdx())) _prep_List.Add(ingred.CheckPrepIdx());
-            if (!_cook_List.Contains(ingred.CheckCookIdx())) _cook_List.Add(ingred.CheckCookIdx());
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.layer == 6)
+    //    {
+    //        Ingredient ingred = other.gameObject.GetComponent<Ingredient>();
+    //        if (!_prep_List.Contains(ingred.CheckPrepIdx())) _prep_List.Add(ingred.CheckPrepIdx());
+    //        if (!_cook_List.Contains(ingred.CheckCookIdx())) _cook_List.Add(ingred.CheckCookIdx());
 
-        }
-    }
+    //    }
+    //}
 
     private void OnCollisionEnter(Collision collision)
     {
