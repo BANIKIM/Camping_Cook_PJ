@@ -47,7 +47,7 @@ public class RecipeSetting : MonoBehaviour
     private void Skewers_Flatter_R()
     {
         // 꼬치플레터
-        List<int> perptemp = new List<int> { 11110, 41000, 51000 };
+        List<int> perptemp = new List<int> { 11111, 61001, 81001 };
         List<int> cooktemp = new List<int> { 11, 61, 81 };
         _recipePrep_D.Add((int)Cooking_Type.Skewers_Flatter, perptemp);
         _recipeCook_D.Add((int)Cooking_Type.Skewers_Flatter, cooktemp);
@@ -56,7 +56,7 @@ public class RecipeSetting : MonoBehaviour
     private void Steak_R()
     {
         // 스테이크
-        List<int> perptemp = new List<int> { 11110, 41000, 51000 };
+        List<int> perptemp = new List<int> { 11110, 61000 };
         List<int> cooktemp = new List<int> { 11, 61 };
         _recipePrep_D.Add((int)Cooking_Type.Steak, perptemp);
         _recipeCook_D.Add((int)Cooking_Type.Steak, cooktemp);
@@ -65,7 +65,7 @@ public class RecipeSetting : MonoBehaviour
     private void Grilled_Salmon_R()
     {
         // 연어구이
-        List<int> perptemp = new List<int> { 11110, 41000, 51000 };
+        List<int> perptemp = new List<int> { 31110, 71000 };
         List<int> cooktemp = new List<int> { 31, 71 };
         _recipePrep_D.Add((int)Cooking_Type.Grilled_Salmon, perptemp);
         _recipeCook_D.Add((int)Cooking_Type.Grilled_Salmon, cooktemp);
