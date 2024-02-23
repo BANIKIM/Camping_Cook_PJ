@@ -54,7 +54,7 @@ public class Dish : MonoBehaviour
             ok(UiManager.instance.Num.ToString());
             onech = true;
         }
-        return RewardSystem.instance.RecipeCheck(Cooking, UiManager.instance.Num);
+        return RewardSystem.instance.RecipeCheck(ref Cooking, UiManager.instance.Num);
     }
 
 
