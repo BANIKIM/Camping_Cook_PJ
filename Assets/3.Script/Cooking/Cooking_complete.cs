@@ -10,6 +10,7 @@ public class Cooking_Complete : MonoBehaviour
         {
             Dish dish = other.gameObject.GetComponent<Dish>();
             {
+
                 int starCount = dish.ch_Reward();
 
                 UiManager.instance.OnStar(starCount);

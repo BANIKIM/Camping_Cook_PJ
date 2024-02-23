@@ -33,9 +33,14 @@ public class CookManager : MonoBehaviour
         _recipeSetting.SetDefaultRecipe();
     }
 
-    public List<int> Recipe_C(int idx)    // 레시피 부르는 메서드
+    public List<int> PrepRecipe_C(int idx)    // 레시피 부르는 메서드
     {
-        return _recipeSetting._recipe_D[idx];
+        return _recipeSetting._recipePrep_D[idx];
+    }
+
+    public List<int> CookRecipe_C(int idx)
+    {
+        return _recipeSetting._recipeCook_D[idx];
     }
 
     public void Spawn(int idx)  // idx는 요리번호

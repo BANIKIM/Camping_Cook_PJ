@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Dish : MonoBehaviour
 {
-    public List<int> _cookingL = new List<int>();
+    public List<int> _prep_List = new List<int>();
+    public List<int> _cook_List = new List<int>();
     public GameObject[] Cooks;
     public bool onech = false;
 
@@ -27,7 +28,8 @@ public class Dish : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             Ingredient ingred = other.gameObject.GetComponent<Ingredient>();
-            _cookingL.Add(ingred.CheckCookIdx());
+            _prep_List.Add(ingred.CheckPrepIdx());
+            _cook_List.Add(ingred.CheckCookIdx());
 
         }
     }
@@ -38,7 +40,11 @@ public class Dish : MonoBehaviour
         {
             Ingredient ingred = collision.gameObject.GetComponent<Ingredient>();
 
-            if (!_cookingL.Contains(ingred.CheckCookIdx())) _cookingL.Add(ingred.CheckCookIdx());
+            if (!_prep_List.Contains(ingred.CheckPrepIdx())) _prep_List.Add(ingred.CheckPrepIdx());
+            if (!_cook_List.Contains(ingred.CheckCookIdx())) _cook_List.Add(ingred.CheckCookIdx());
+
+
+
             Cooks[UiManager.instance.Num].SetActive(true);
             Destroy(collision.gameObject);
 
@@ -49,12 +55,12 @@ public class Dish : MonoBehaviour
     {
         Debug.Log(UiManager.instance.Num);
         Cooks[UiManager.instance.Num].SetActive(false);
-        if(!onech)
+        if (!onech)
         {
             ok(UiManager.instance.Num.ToString());
             onech = true;
         }
-        return RewardSystem.instance.RecipeCheck(_cookingL, UiManager.instance.Num);
+        return RewardSystem.instance.RecipeCheck(_prep_List, _cook_List, UiManager.instance.Num);
     }
 
 

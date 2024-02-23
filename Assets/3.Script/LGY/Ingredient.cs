@@ -58,11 +58,16 @@ public class Ingredient : MonoBehaviour
 
     public int CheckCookIdx()
     {
+        var ingred_type = ((int)_ingredient_Type * 10) + ((int)_cookedIngred._cooked_State);
+        return ingred_type;
+    }
+
+    public int CheckPrepIdx()
+    {
         var temp = _sliceCount.Equals(0) ? 0 : 1;
-        var ingred_type = ((int)_ingredient_Type * 100000) + (temp * 10000) +
-            ((int)_seasoningIngred.salt_s * 1000) + ((int)_seasoningIngred.pepper_s * 100) +
-            ((int)_skewerIngred.skewer_state * 10) + ((int)_cookedIngred._cooked_State);
-        Debug.Log("점수체크" + ingred_type);
+        var ingred_type = ((int)_ingredient_Type * 10000) + (temp * 1000) +
+            ((int)_seasoningIngred.salt_s * 100) + ((int)_seasoningIngred.pepper_s * 10) +
+            ((int)_skewerIngred.skewer_state);
         return ingred_type;
     }
 
