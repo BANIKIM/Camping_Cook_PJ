@@ -35,6 +35,10 @@ public class RewardSystem : MonoBehaviour
             Debug.Log("재료개수 다름");
             _starCount--;
         }
+
+        if (prepdish.Count.Equals(0)) _starCount--;
+        if (cookdish.Count.Equals(0)) _starCount--;
+
         for (int i = 0; i < prepdish.Count; i++)
         {
             //요리에 있는 식재료가 레시피에 없으면 -1

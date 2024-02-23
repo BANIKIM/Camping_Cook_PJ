@@ -35,7 +35,7 @@ public class RecipeSetting : MonoBehaviour
         _recipeCook_D.Add((int)Cooking_Type.Mashmellow, cooktemp);
     }
 
-    private void Beef_Stew_R()
+    private void Beef_Stew_R() 
     {
         // 비프스튜
         List<int> perptemp = new List<int> { 11110, 41000, 51000 };
@@ -56,7 +56,7 @@ public class RecipeSetting : MonoBehaviour
     private void Steak_R()
     {
         // 스테이크
-        List<int> perptemp = new List<int> { 11110, 61000 };
+        List<int> perptemp = new List<int> { 10110, 61000 };
         List<int> cooktemp = new List<int> { 11, 61 };
         _recipePrep_D.Add((int)Cooking_Type.Steak, perptemp);
         _recipeCook_D.Add((int)Cooking_Type.Steak, cooktemp);
