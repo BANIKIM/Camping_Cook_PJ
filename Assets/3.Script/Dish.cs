@@ -28,8 +28,8 @@ public class Dish : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             Ingredient ingred = other.gameObject.GetComponent<Ingredient>();
-            _prep_List.Add(ingred.CheckPrepIdx());
-            _cook_List.Add(ingred.CheckCookIdx());
+            if (!_prep_List.Contains(ingred.CheckPrepIdx())) _prep_List.Add(ingred.CheckPrepIdx());
+            if (!_cook_List.Contains(ingred.CheckCookIdx())) _cook_List.Add(ingred.CheckCookIdx());
 
         }
     }
@@ -53,7 +53,6 @@ public class Dish : MonoBehaviour
 
     public int ch_Reward()
     {
-        Debug.Log(UiManager.instance.Num);
         Cooks[UiManager.instance.Num].SetActive(false);
         if (!onech)
         {

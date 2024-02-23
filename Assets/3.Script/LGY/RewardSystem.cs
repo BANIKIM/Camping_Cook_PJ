@@ -6,7 +6,7 @@ public class RewardSystem : MonoBehaviour
 {
     public static RewardSystem instance = null;
     public Dish dish1;
-    public int _starCount = 3;
+    public int _starCount;
 
     private void Awake()
     {
