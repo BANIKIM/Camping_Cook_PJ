@@ -8,7 +8,7 @@ public class Cooking : MonoBehaviour
     private Cooked_Ingredient cooked;
     private Ingredient ingredient;
     [SerializeField] private float CookTime = 0;
-    public float limit_CookTime = 5;
+    public float limit_CookTime = 8;
     public Tool_heat tool_heat;
     public bool meat;
     private void Start()
@@ -30,20 +30,19 @@ public class Cooking : MonoBehaviour
         {
             if (tool_heat.tool_heat)
             {
-                if (meat)
+
+                CookTime += Time.deltaTime;
+                if (CookTime > limit_CookTime)//구워짐
                 {
-                    CookTime += Time.deltaTime;
-                    if (CookTime > limit_CookTime)//구워짐
+                    cooked.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Cook);//스테이터스 변경
+                    ingredient.Cook_ch_mat();//머테리얼 변경
+                    if (CookTime > limit_CookTime + 10)//탄거
                     {
-                        cooked.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Cook);//스테이터스 변경
+                        cooked.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Burned);//스테이터스 변경
                         ingredient.Cook_ch_mat();//머테리얼 변경
-                        if (CookTime > limit_CookTime + 10)//탄거
-                        {
-                            cooked.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Burned);//스테이터스 변경
-                            ingredient.Cook_ch_mat();//머테리얼 변경
-                        }
                     }
                 }
+
             }
         }
     }
