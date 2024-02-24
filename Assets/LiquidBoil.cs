@@ -37,7 +37,7 @@ public class LiquidBoil : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.layer == 6) //조건에서 받아야 하는 Ingredient_Type 타입을 받아야 함 이거 0을 어떻게 받냐?
+        if (other.gameObject.layer == 6)
         {
             HP = 10;//바로 타는거 방지
             HP += 5;
@@ -61,7 +61,7 @@ public class LiquidBoil : MonoBehaviour
                 Foods[number].SetActive(true);
                 number += 1;
             }
-
+            if (number == 4) number = 0;
 
 
         }
@@ -100,5 +100,12 @@ public class LiquidBoil : MonoBehaviour
 
             isBurned = true;
         }
+    }
+
+    public void LiquidReset()//물의 머테리얼 을 초기로 돌린다.
+    {
+        cooked.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Raw);//스테이터스 변경
+        ingredient.Cook_ch_mat();//머테리얼 변경
+        ingredient._crossMat = ingredient._mesh.material;
     }
 }
