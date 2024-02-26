@@ -39,6 +39,9 @@ public class Dish : MonoBehaviour
             //값을초기화 해줘야 한다...
             ingred._ingredient_Type = 0; //타입0으로만들고
             ingred._sliceCount = 0; //슬라이스 0으로 만들고
+            other.GetComponent<Cooked_Ingredient>().Change_Skewer_State(Cooked_Ingredient.Cooked_State.Raw);//굽기초기화
+            other.GetComponent<Seasoning_Ingredient>().salt_s = 0; //소금초기화
+            other.GetComponent<Seasoning_Ingredient>().pepper_s = 0;//후추초기화
             other.gameObject.SetActive(false);
 
         }

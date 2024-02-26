@@ -50,6 +50,7 @@ public class LiquidBoil : MonoBehaviour
         }
         if(isDish)
         {
+            Debug.Log("물머테리얼 초기화");
             LiquidReset();//물 머테리얼 초기화
         }
     }
@@ -90,7 +91,7 @@ public class LiquidBoil : MonoBehaviour
     {
         if (HP < 5 && !iscook)
         {
-            if (Foods[0].activeSelf)
+            if (!isDish)
             {
                 for (int i = 0; i < Foods.Length; i++)
                 {
@@ -108,7 +109,7 @@ public class LiquidBoil : MonoBehaviour
 
     private void isTan()
     {
-        if (HP < 0 && Foods[0].activeSelf && !isBurned)
+        if (HP < 0 && !isDish && !isBurned)
         {
             for (int i = 0; i < Foods.Length; i++)
             {
@@ -127,5 +128,7 @@ public class LiquidBoil : MonoBehaviour
         cooked.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Raw);//스테이터스 변경
         ingredient.Cook_ch_mat();//머테리얼 변경
         ingredient._crossMat = ingredient._mesh.material;
+        iscook = false;
+        isBurned = false;
     }
 }
