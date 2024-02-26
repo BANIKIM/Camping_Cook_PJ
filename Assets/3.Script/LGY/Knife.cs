@@ -8,6 +8,8 @@ public class Knife : MonoBehaviour
     public Transform _endPos;
     public VelocityEstimator _velocityEstimator;
 
+    [SerializeField] private AudioSource _audiosource;
+
     public float _cutForce = 100f;
 
     public LayerMask _targetLayer;
@@ -34,7 +36,7 @@ public class Knife : MonoBehaviour
         if (ingred._sliceCount <= 2)
         {
             SlicedHull hull = target.Slice(_endPos.position, slice_normal);
-
+            PlaySound(ingred);
             if (hull != null)
             {
                 GameObject upperHull = hull.CreateUpperHull(target, cross);
@@ -46,6 +48,28 @@ public class Knife : MonoBehaviour
             }
         }
     }
+
+    private void PlaySound(Ingredient ingred)
+    {
+        switch (ingred._ingredient_Type)
+        {
+            case Ingredient_Type.Beef:
+            case Ingredient_Type.Salmon:
+                _audiosource.PlayOneShot(AudioManager.instance._sfxClips[(int)SFX_List.SliceMeat]);
+                break;
+            case Ingredient_Type.Potato:
+            case Ingredient_Type.Carrot:
+            case Ingredient_Type.Onion:
+            case Ingredient_Type.Asparagus:
+            case Ingredient_Type.Mushroom:
+                int temp = Random.Range((int)SFX_List.SliceVegetable1, (int)SFX_List.SliceVegetable2 + 1);
+                _audiosource.PlayOneShot(AudioManager.instance._sfxClips[temp]);
+                break;
+            default:
+                break;
+        }
+    }
+
 
     private void SetUpSliceCompoent(GameObject obj, Ingredient target_ingred)
     {
