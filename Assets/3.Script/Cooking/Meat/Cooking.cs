@@ -12,8 +12,6 @@ public class Cooking : MonoBehaviour
     public Tool_heat tool_heat;
     public bool meat;
 
-    [SerializeField] private AudioSource _audiosource;
-
     private void Start()
     {
         cooked = GetComponent<Cooked_Ingredient>();
@@ -33,11 +31,6 @@ public class Cooking : MonoBehaviour
         {
             if (tool_heat.tool_heat)
             {
-                if (!_audiosource.isPlaying)
-                {
-                    _audiosource.Play();
-                }
-
                 CookTime += Time.deltaTime;
                 if (CookTime > limit_CookTime)//±¸¿öÁü
                 {
@@ -57,10 +50,7 @@ public class Cooking : MonoBehaviour
     {
         if (other.gameObject.CompareTag("CookTool"))
         {
-            if (_audiosource.isPlaying)
-            {
-                _audiosource.Stop();
-            }
+
             tool_heat = null;
         }
     }

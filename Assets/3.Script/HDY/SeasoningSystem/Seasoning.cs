@@ -19,8 +19,9 @@ public class Seasoning : MonoBehaviour
     [Header("양념통과 고기 사이 간격")]
     [SerializeField] private float lineSize = 0.5f;
 
+    bool isAct = false;
     [Header("양념 뿌려지는 시간")]
-    [SerializeField] private WaitForSeconds cool = new WaitForSeconds(0.8f);
+    [SerializeField] private WaitForSeconds cool = new WaitForSeconds(0.3f);
 
     private IEnumerator OnSeasoning_Temp;
 
@@ -39,10 +40,11 @@ public class Seasoning : MonoBehaviour
             {
                 Seasoning_Ingredient seasoning_ingred = hit.collider.gameObject.GetComponent<Seasoning_Ingredient>();
 
-                _audiosource.PlayOneShot(AudioManager.instance._sfxClips[(int)SFX_List.Seasoning]);
-                OnSeasoning();
-                seasoning_ingred.AddSeasoning(season_type);
-
+                if (!isAct)
+                {
+                    OnSeasoning();
+                    seasoning_ingred.AddSeasoning(season_type);
+                }
             }
         }
     }
@@ -55,6 +57,8 @@ public class Seasoning : MonoBehaviour
 
     IEnumerator OnSeasoning_co()
     {
+        isAct = true;
+        
         yield return new WaitForSeconds(0.1f);
         particle.Play();
 
@@ -63,5 +67,7 @@ public class Seasoning : MonoBehaviour
 
         yield return cool;
         particle.Stop();
+        isAct = false;
+        yield return null;
     }
 }
