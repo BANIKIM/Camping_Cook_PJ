@@ -10,6 +10,7 @@ public class SpawnIngredient : MonoBehaviour
 
     public void Spawn(int idx) 
     {
+       
         // Instantiate·Î »ý¼º
         GameObject spawnobj =  Instantiate(_ingredients[idx], _spawnPoint.position, Quaternion.identity);
 

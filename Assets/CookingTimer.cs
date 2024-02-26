@@ -14,23 +14,22 @@ public class CookingTimer : MonoBehaviour
 
     private float totalTime = 3600.0f; // 요리 시간 (초) - 1시간(60분)로 초기화
 
-    public bool cookingStarted = false; // 요리가 시작되었는지 여부
+   // public bool cookingStarted = false; // 요리가 시작되었는지 여부
     private float elapsedTime = 0.0f; // 경과 시간
 
     void Update()
     {
         // 요리가 시작되었고 아직 시간이 남아있는 경우에만 타이머 감소
-        if (cookingStarted && elapsedTime < totalTime)
+        if (UiManager.instance.isCookingStarted && elapsedTime < totalTime)
         {
             elapsedTime += Time.deltaTime;
 
-            UiManager.instance.isCookingStarted = true;
+           // UiManager.instance.isCookingStarted = true;
          
 
             UiManager.instance.updateObject.SetActive(true);
             UiManager.instance.updateObject2.SetActive(true);
-           // UiManager.instance.Update_CookUI2.updateObject.SetActive(true);
-            //UiManager.instance.Update_CookUI2.updateObject2.SetActive(true);
+           
             // 경과 시간을 분과 초로 변환
             int minutes = Mathf.FloorToInt(elapsedTime / 60);
             int seconds = Mathf.FloorToInt(elapsedTime % 60);
@@ -49,7 +48,7 @@ public class CookingTimer : MonoBehaviour
 
         }
         // 요리가 시작되었고 전체 요리 시간이 경과한 경우
-        else if (cookingStarted && elapsedTime >= totalTime)
+        else if (UiManager.instance.isCookingStarted && elapsedTime >= totalTime)
         {
             for (int i = 0; i < timerTexts.Length; i++)
             {
@@ -83,7 +82,7 @@ public class CookingTimer : MonoBehaviour
         }    
         timertext.text = "00:00";
         timertext2.text = "00:00";
-        cookingStarted = false;
+       // cookingStarted = false;
         UiManager.instance.isCookingStarted = false;
         UiManager.instance.updateObject.SetActive(false);
         UiManager.instance.updateObject2.SetActive(false);
