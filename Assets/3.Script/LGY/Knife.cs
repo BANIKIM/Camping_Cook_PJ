@@ -41,7 +41,7 @@ public class Knife : MonoBehaviour
                 SetUpSliceCompoent(upperHull, ingred);
                 GameObject lowerHull = hull.CreateLowerHull(target, cross);
                 SetUpSliceCompoent(lowerHull, ingred);
-
+                Debug.Log("삭제~");
                 Destroy(target);
             }
         }
@@ -69,6 +69,7 @@ public class Knife : MonoBehaviour
         obj.AddComponent<XRGrabInteractable>();
 
         obj.layer = 6;
+        obj.tag = "Food";
     }
 
 }

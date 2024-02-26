@@ -26,6 +26,7 @@ TagManager:
   - CampfireHP
   - Dish
   - Box
+  - Food
   layers:
   - Default
   - TransparentFX

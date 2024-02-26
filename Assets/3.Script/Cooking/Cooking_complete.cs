@@ -18,6 +18,11 @@ public class Cooking_Complete : MonoBehaviour
             UiManager.instance.Update_CookUI.OffUpdate();
             GameObject box = GameObject.FindWithTag("Box");
             Destroy(box);
+            GameObject[] trash = GameObject.FindGameObjectsWithTag("Food");
+            for (int i = 0; i < trash.Length; i++)
+            {
+                Destroy(trash[i]);
+            }
         }
     }
 }
