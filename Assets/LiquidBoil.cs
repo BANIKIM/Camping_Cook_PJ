@@ -41,11 +41,16 @@ public class LiquidBoil : MonoBehaviour
                 isDish = false;
                 break;
             }
+            else
+            {
+                isDish = true;
+
+            }
+
         }
         if(isDish)
         {
             LiquidReset();//물 머테리얼 초기화
-            isDish = false;
         }
     }
 
