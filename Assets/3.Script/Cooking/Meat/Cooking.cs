@@ -11,6 +11,9 @@ public class Cooking : MonoBehaviour
     public float limit_CookTime = 8;
     public Tool_heat tool_heat;
     public bool meat;
+
+    [SerializeField] private AudioSource _audiosource;
+
     private void Start()
     {
         cooked = GetComponent<Cooked_Ingredient>();
@@ -30,15 +33,19 @@ public class Cooking : MonoBehaviour
         {
             if (tool_heat.tool_heat)
             {
+                if (!_audiosource.isPlaying)
+                {
+                    _audiosource.Play();
+                }
 
                 CookTime += Time.deltaTime;
                 if (CookTime > limit_CookTime)//구워짐
                 {
-                    cooked.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Cook);//스테이터스 변경
+                    cooked.Change_Cooked_State(Cooked_Ingredient.Cooked_State.Cook);//스테이터스 변경
                     ingredient.Cook_ch_mat();//머테리얼 변경
                     if (CookTime > limit_CookTime + 10)//탄거
                     {
-                        cooked.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Burned);//스테이터스 변경
+                        cooked.Change_Cooked_State(Cooked_Ingredient.Cooked_State.Burned);//스테이터스 변경
                         ingredient.Cook_ch_mat();//머테리얼 변경
                     }
                 }
@@ -50,6 +57,10 @@ public class Cooking : MonoBehaviour
     {
         if (other.gameObject.CompareTag("CookTool"))
         {
+            if (_audiosource.isPlaying)
+            {
+                _audiosource.Stop();
+            }
             tool_heat = null;
         }
     }
@@ -75,11 +86,11 @@ public class Cooking : MonoBehaviour
                     CookTime += Time.deltaTime;
                     if (CookTime > limit_CookTime)//구워짐
                     {
-                        cooked.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Cook);//스테이터스 변경
+                        cooked.Change_Cooked_State(Cooked_Ingredient.Cooked_State.Cook);//스테이터스 변경
                         ingredient.Cook_ch_mat();//머테리얼 변경
                         if (CookTime > limit_CookTime + 10)//탄거
                         {
-                            cooked.Change_Skewer_State(Cooked_Ingredient.Cooked_State.Burned);//스테이터스 변경
+                            cooked.Change_Cooked_State(Cooked_Ingredient.Cooked_State.Burned);//스테이터스 변경
                             ingredient.Cook_ch_mat();//머테리얼 변경
                         }
                     }

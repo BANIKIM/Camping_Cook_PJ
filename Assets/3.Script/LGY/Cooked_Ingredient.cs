@@ -26,7 +26,7 @@ public class Cooked_Ingredient : MonoBehaviour, IState
     {
     }
 
-    public void Change_Skewer_State(Cooked_State start_State)//상태 변화 메서드
+    public void Change_Cooked_State(Cooked_State start_State)//상태 변화 메서드
     {
         if (_cooked_State.Equals(start_State)) return;
 

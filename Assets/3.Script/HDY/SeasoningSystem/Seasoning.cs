@@ -10,6 +10,8 @@ public enum Season_Type
 
 public class Seasoning : MonoBehaviour
 {
+    [SerializeField] private AudioSource _audiosource;
+
     [SerializeField] private ParticleSystem particle;
 
     [SerializeField] private Season_Type season_type;
@@ -30,15 +32,14 @@ public class Seasoning : MonoBehaviour
     private void CheckMeat()
     {
         Debug.DrawRay(transform.position, transform.up * lineSize, Color.green);
-        RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.up * lineSize, out hit, lineSize))
+        if (Physics.Raycast(transform.position, transform.up * lineSize, out RaycastHit hit, lineSize))
         {
             if (hit.collider.gameObject.layer == 6) // tobo_mh 이퀄 ==6 으로 수정
             {
                 Seasoning_Ingredient seasoning_ingred = hit.collider.gameObject.GetComponent<Seasoning_Ingredient>();
 
-
+                _audiosource.PlayOneShot(AudioManager.instance._sfxClips[(int)SFX_List.Seasoning]);
                 OnSeasoning();
                 seasoning_ingred.AddSeasoning(season_type);
 
@@ -56,6 +57,9 @@ public class Seasoning : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         particle.Play();
+
+        _audiosource.PlayOneShot(_audiosource.clip);
+        //AudioManager.instance.Play_Audio(_source, (int)SFX_List.Seasoning);
 
         yield return cool;
         particle.Stop();
