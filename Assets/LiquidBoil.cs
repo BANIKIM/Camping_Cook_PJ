@@ -53,7 +53,7 @@ public class LiquidBoil : MonoBehaviour
             }
 
         }
-        if(isDish)
+        if(isDish && iscook)
         {
             Debug.Log("물머테리얼 초기화");
             LiquidReset();//물 머테리얼 초기화
@@ -66,7 +66,7 @@ public class LiquidBoil : MonoBehaviour
 
         if (other.gameObject.layer == 6)
         {
-            if(!_audiosource.isPlaying)
+            if (!_audiosource.isPlaying)
             {
                 _audiosource.Play();
             }
