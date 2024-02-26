@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 8515832839041005659}
   m_Layer: 6
   m_Name: Onion
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ingredient_Type: 6
+  _ingredient_Type: 1
   _cookedIngred: {fileID: 0}
   _seasoningIngred: {fileID: 0}
   _skewerIngred: {fileID: 0}
@@ -347,6 +347,7 @@ MonoBehaviour:
   CookTime: 0
   limit_CookTime: 5
   tool_heat: {fileID: 0}
+  meat: 0
 --- !u!64 &8515832839041005659
 MeshCollider:
   m_ObjectHideFlags: 0

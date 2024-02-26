@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4066085240158243401}
   m_Layer: 6
   m_Name: Meatroll
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,7 +367,6 @@ MonoBehaviour:
   _cookedIngred: {fileID: 0}
   _seasoningIngred: {fileID: 0}
   _skewerIngred: {fileID: 0}
-  isSlice: 0
   _sliceCount: 0
   _crossMat: {fileID: 0}
   _materials: []
