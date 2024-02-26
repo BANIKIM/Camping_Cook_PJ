@@ -23,16 +23,32 @@ public class Dish : MonoBehaviour
 
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.layer == 6)
-    //    {
-    //        Ingredient ingred = other.gameObject.GetComponent<Ingredient>();
-    //        if (!_prep_List.Contains(ingred.CheckPrepIdx())) _prep_List.Add(ingred.CheckPrepIdx());
-    //        if (!_cook_List.Contains(ingred.CheckCookIdx())) _cook_List.Add(ingred.CheckCookIdx());
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            Ingredient ingred = other.gameObject.GetComponent<Ingredient>();
 
-    //    }
-    //}
+            if (!_prep_List.Contains(ingred.CheckPrepIdx())) _prep_List.Add(ingred.CheckPrepIdx());
+            if (!_cook_List.Contains(ingred.CheckCookIdx())) _cook_List.Add(ingred.CheckCookIdx());
+
+
+
+            Cooks[UiManager.instance.Num].SetActive(true);
+            //Destroy(other.gameObject);
+            //값을초기화 해줘야 한다...
+            ingred._ingredient_Type = 0; //타입0으로만들고
+            ingred._sliceCount = 0; //슬라이스 0으로 만들고
+            other.gameObject.SetActive(false);
+
+        }
+
+       /* if (other.gameObject.CompareTag("Liquid"))
+        {
+            other.GetComponent<LiquidBoil>().LiquidReset();
+            other.gameObject.SetActive(false);
+        }*/
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -70,4 +86,6 @@ public class Dish : MonoBehaviour
         uI_DB_Parsing.number = i;
         uI_DB_Parsing.a = true;
     }
+
+
 }
