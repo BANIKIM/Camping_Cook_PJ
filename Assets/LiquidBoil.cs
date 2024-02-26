@@ -16,6 +16,7 @@ public class LiquidBoil : MonoBehaviour
 
     public bool iscook = false;
     private bool isBurned = false;
+    public bool isDish = false;
 
     void Start()
     {
@@ -31,6 +32,23 @@ public class LiquidBoil : MonoBehaviour
             HP -= Time.deltaTime;
             Onsmoke();//스모크 이펙트 키기
             isTan();//시간지나면 탐
+        }
+
+        for (int i = 0; i < Foods.Length; i++)
+        {
+            if(Foods[i].activeSelf == true)
+            {
+                isDish = false;
+                break;
+            }
+            else
+            {
+                isDish = true;
+            }
+        }
+        if(isDish)
+        {
+            LiquidReset();//물 머테리얼 초기화
         }
     }
 

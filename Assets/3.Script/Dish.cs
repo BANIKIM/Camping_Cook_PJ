@@ -37,7 +37,8 @@ public class Dish : MonoBehaviour
             Cooks[UiManager.instance.Num].SetActive(true);
             //Destroy(other.gameObject);
             //값을초기화 해줘야 한다...
-            ingred._ingredient_Type = 0;
+            ingred._ingredient_Type = 0; //타입0으로만들고
+            ingred._sliceCount = 0; //슬라이스 0으로 만들고
             other.gameObject.SetActive(false);
 
         }
