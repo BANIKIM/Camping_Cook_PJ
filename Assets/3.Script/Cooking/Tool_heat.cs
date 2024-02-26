@@ -27,7 +27,7 @@ public class Tool_heat : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fire"))
         {
-            tool_heat = true;
+            tool_heat = false;
         }
     }
 
@@ -36,7 +36,7 @@ public class Tool_heat : MonoBehaviour
 
         if (other.gameObject.CompareTag("Fire"))
         {
-            tool_heat = true;
+            tool_heat = false;
         }
     }
 }

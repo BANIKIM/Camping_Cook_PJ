@@ -16,6 +16,8 @@ public enum SFX_List
     SliceVegetable2,
     BoilingWater,
     Seasoning,
+    GrillLoopS =6,
+    GrillLoopE =11,
 
 }
 
