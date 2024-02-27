@@ -76,6 +76,7 @@ public class Cooking : MonoBehaviour
                     CookTime += Time.deltaTime;
                     if (CookTime > limit_CookTime)//구워짐
                     {
+                        Debug.Log("익는중");
                         cooked.Change_Cooked_State(Cooked_Ingredient.Cooked_State.Cook);//스테이터스 변경
                         ingredient.Cook_ch_mat();//머테리얼 변경
                         if (CookTime > limit_CookTime + 10)//탄거

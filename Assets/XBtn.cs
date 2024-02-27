@@ -24,7 +24,7 @@ public class XBtn : MonoBehaviour
         {
             // X 버튼을 눌렀을 때 소환 작업 실행
             Xbtn.action.started += OnXButtonPressed;
-            DropWood.PlayOneShot(DropWood.clip);
+            
         }
     }
     private void OnTriggerExit(Collider other)
@@ -57,6 +57,7 @@ public class XBtn : MonoBehaviour
             return;
         }
         // 스크립트가 붙은 오브젝트의 위치에 프리팹 생성하되, y값에 offset을 더한 위치에 생성
+        DropWood.PlayOneShot(DropWood.clip);
         Vector3 spawnPosition = WoodSpawnPosition.transform.position;
         Quaternion rotation = Quaternion.Euler(90f, 0f, 0f); // x축 회전값을 90도로 설정
         Instantiate(woodPrefab, spawnPosition, rotation);

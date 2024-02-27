@@ -9,7 +9,8 @@ public class UI_sound : MonoBehaviour
     
     public void PlayButtonClickSound1()
     {
-        buttonClickSound1.PlayOneShot(buttonClickSound1.clip); 
+        buttonClickSound1.PlayOneShot(buttonClickSound1.clip);
+        Debug.Log("UI 사운드 매니저");
     }
 
    

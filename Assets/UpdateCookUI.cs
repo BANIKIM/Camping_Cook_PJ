@@ -29,6 +29,7 @@ public class UpdateCookUI : MonoBehaviour
         UiManager.instance.Num = i;
         dish.onech = false;
         buttonClickSound.PlayOneShot(buttonClickSound.clip);
+        Debug.Log("사운드 재생");
 
         if (i >= 0 && i < sprites.Length && i < CookTypes.Length) // 유효한 인덱스 범위인지 확인
         {
