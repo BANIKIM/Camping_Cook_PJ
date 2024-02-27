@@ -14,7 +14,8 @@ public class UpdateCookUI : MonoBehaviour
     public TextMeshProUGUI updatetext;
     public TextMeshProUGUI updatetext2;
     public Dish dish;
-    public AudioSource buttonClickSound;
+    public UI_sound uI_Sound;
+  
     // public string[] CookName; // 요리명 배열 선언
     public Cooking_Type[] CookTypes; // enum과 매칭되는 요리 타입 배열 선언
 
@@ -28,9 +29,7 @@ public class UpdateCookUI : MonoBehaviour
         UiManager.instance.isCookingStarted = true; // isCookingStarted를 먼저 변경
         UiManager.instance.Num = i;
         dish.onech = false;
-        buttonClickSound.PlayOneShot(buttonClickSound.clip);
-        Debug.Log("사운드 재생");
-
+       
         if (i >= 0 && i < sprites.Length && i < CookTypes.Length) // 유효한 인덱스 범위인지 확인
         {
             tablet.sprite = sprites[i]; // 인덱스에 해당하는 스프라이트를 이미지에 할당
@@ -42,6 +41,7 @@ public class UpdateCookUI : MonoBehaviour
         }
 
         CookManager.instance.Spawn(i); // Spawn 메서드 호출
+        uI_Sound.StartBtn();
     }
     public void OffUpdate()
     {
