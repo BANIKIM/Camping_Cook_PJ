@@ -72,6 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5126385978819815065}
+  - component: {fileID: 2266543412208371995}
   - component: {fileID: 2252107403266148191}
   - component: {fileID: 3622672776397750430}
   - component: {fileID: 9066461200027231097}
@@ -99,6 +100,27 @@ Transform:
   - {fileID: 177652130037596947}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!95 &2266543412208371995
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031157927135346704}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d0c255d07fd68f14b94e55d388e7e6bb, type: 3}
+  m_Controller: {fileID: 9100000, guid: 3338dde1ae80a3b43826deca5c238356, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2252107403266148191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _handType: 1
   _root: {fileID: 5126385978819815065}
-  _animator: {fileID: 0}
+  _animator: {fileID: 2266543412208371995}
   _fingerBones:
   - {fileID: 4917186177544164629}
   - {fileID: 648737673126951153}

@@ -22,8 +22,10 @@ public class GrabHandPos : MonoBehaviour
         XRGrabInteractable _grabInter = GetComponent<XRGrabInteractable>();
 
         _grabInter.selectEntered.AddListener(SetupPos);
+        _grabInter.selectExited.AddListener(UnSetPos);
 
         _rightHandPos.gameObject.SetActive(false);
+
     }
 
     public void SetupPos(BaseInteractionEventArgs arg)
@@ -32,6 +34,7 @@ public class GrabHandPos : MonoBehaviour
         {
             HandData handData = arg.interactorObject.transform.GetComponentInChildren<HandData>();
             handData._animator.enabled = false;
+
 
             SetHandDataValues(handData, _rightHandPos);
             SetHandData(handData, _finalHandPos, _finalHandRot, _finalFingerRots);
@@ -55,8 +58,8 @@ public class GrabHandPos : MonoBehaviour
     {
         _startingHandPos = new Vector3(hand1._root.localPosition.x / hand1._root.localScale.x,
             hand1._root.localPosition.y / hand1._root.localScale.y, hand1._root.localPosition.z / hand1._root.localScale.z);
-        _finalHandPos = new Vector3(hand1._root.localRotation.x / hand1._root.localScale.x,
-           hand1._root.localRotation.y / hand1._root.localScale.y, hand1._root.localRotation.z / hand1._root.localScale.z);
+        _finalHandPos = new Vector3(hand2._root.localPosition.x / hand2._root.localScale.x,
+            hand2._root.localPosition.y / hand2._root.localScale.y, hand2._root.localPosition.z / hand2._root.localScale.z);
 
         _startingHandRot = hand1._root.localRotation;
         _finalHandRot = hand2._root.localRotation;

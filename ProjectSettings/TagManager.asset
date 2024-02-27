@@ -27,6 +27,8 @@ TagManager:
   - Dish
   - Box
   - Food
+  - RightHand
+  - LeftHand
   layers:
   - Default
   - TransparentFX
