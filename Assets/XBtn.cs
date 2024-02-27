@@ -9,6 +9,7 @@ public class XBtn : MonoBehaviour
     public InputActionReference Xbtn;
     public GameObject woodPrefab;
     public GameObject WoodSpawnPosition;
+    public AudioSource DropWood;
    
 
 
@@ -23,6 +24,7 @@ public class XBtn : MonoBehaviour
         {
             // X 버튼을 눌렀을 때 소환 작업 실행
             Xbtn.action.started += OnXButtonPressed;
+            DropWood.PlayOneShot(DropWood.clip);
         }
     }
     private void OnTriggerExit(Collider other)
