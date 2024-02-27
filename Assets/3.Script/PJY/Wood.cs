@@ -43,6 +43,7 @@ public class Wood : MonoBehaviour
         Cut_1.transform.parent = null;
         Cut_2.transform.parent = null;
         CutWood.PlayOneShot(CutWood.clip);
+        Debug.Log("wood 소환소리");
         // 부모 오브젝트 비활성화
 
         Destroy(Cut_0);
