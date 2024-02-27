@@ -10,8 +10,6 @@ public class Knife : MonoBehaviour
 
     [SerializeField] private AudioSource _audiosource;
 
-    public float _cutForce = 100f;
-
     public LayerMask _targetLayer;
 
     private void FixedUpdate()
