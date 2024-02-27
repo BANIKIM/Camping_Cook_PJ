@@ -5,22 +5,12 @@ using UnityEngine.InputSystem;
 
 public class AnimateHandOnInput : MonoBehaviour
 {
-
     public InputActionProperty pinchanim;
     public InputActionProperty gripanim;
     public Animator handanim;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
         float triggerValue = pinchanim.action.ReadValue<float>();
         handanim.SetFloat("Trigger", triggerValue);
 
