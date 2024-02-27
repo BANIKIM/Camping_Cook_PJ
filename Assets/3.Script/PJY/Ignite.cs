@@ -5,6 +5,7 @@ public class Ignite : MonoBehaviour
 {
     public GameObject _fireEffect;
     public XRGrabInteractable a;
+    public AudioSource OnIgnite;
 
     private void FixedUpdate()
     {
@@ -16,8 +17,14 @@ public class Ignite : MonoBehaviour
         // fire 게임 오브젝트의 활성화 상태를 토글
 
         _fireEffect.SetActive(isignite);
+        if (isignite)
+        {
+            OnIgnite.Play();
+        }
+        else
+        {
+            OnIgnite.Stop();
+        }
         
-
-
     }
 }

@@ -9,6 +9,7 @@ public class Wood : MonoBehaviour
     public GameObject Cut_0;
     private GameObject Cut_1;
     private GameObject Cut_2;
+    public AudioSource CutWood;
 
     public float SpawnX;
     public float SpawnY;
@@ -41,7 +42,7 @@ public class Wood : MonoBehaviour
         // 부모-자식 관계 끊기
         Cut_1.transform.parent = null;
         Cut_2.transform.parent = null;
-
+        CutWood.PlayOneShot(CutWood.clip);
         // 부모 오브젝트 비활성화
 
         Destroy(Cut_0);
