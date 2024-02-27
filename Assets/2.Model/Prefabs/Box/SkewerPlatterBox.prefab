@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 3303399818844175012}
   m_Layer: 0
   m_Name: Col
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -413,6 +413,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1430806461208131216}
     m_Modifications:
+    - target: {fileID: 999814090129347135, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
+      propertyPath: _ingredient_Type
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6119087877375029368, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
       propertyPath: m_Name
       value: Mushroom_1
@@ -590,6 +594,10 @@ PrefabInstance:
     - target: {fileID: 2789593867675869710, guid: 0ba729c46ef21f44fad56625ea10e012, type: 3}
       propertyPath: m_Name
       value: Onion
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456391624719228390, guid: 0ba729c46ef21f44fad56625ea10e012, type: 3}
+      propertyPath: _ingredient_Type
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
