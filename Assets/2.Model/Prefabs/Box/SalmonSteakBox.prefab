@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 3303399818844175012}
   m_Layer: 0
   m_Name: Col
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,6 +501,10 @@ PrefabInstance:
     - target: {fileID: 3001263910565665860, guid: aca0c59497ef39d4ea09010ffa25da54, type: 3}
       propertyPath: m_Name
       value: Asparagus
+      objectReference: {fileID: 0}
+    - target: {fileID: 5803021828581162057, guid: aca0c59497ef39d4ea09010ffa25da54, type: 3}
+      propertyPath: _ingredient_Type
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5803021828581162057, guid: aca0c59497ef39d4ea09010ffa25da54, type: 3}
       propertyPath: _materials.Array.size
