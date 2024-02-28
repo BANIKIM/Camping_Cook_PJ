@@ -459,6 +459,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishFillet
       objectReference: {fileID: 0}
+    - target: {fileID: 7544369159714689095, guid: 37831b1f87d021148b518addf05bbecb, type: 3}
+      propertyPath: limit_CookTime
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103731717011553942, guid: 37831b1f87d021148b518addf05bbecb, type: 3}
+      propertyPath: _ingredient_Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8103731717011553942, guid: 37831b1f87d021148b518addf05bbecb, type: 3}
       propertyPath: _materials.Array.size
       value: 3
@@ -498,13 +506,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1430806461208131216}
     m_Modifications:
+    - target: {fileID: 2277493559794934352, guid: aca0c59497ef39d4ea09010ffa25da54, type: 3}
+      propertyPath: limit_CookTime
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3001263910565665860, guid: aca0c59497ef39d4ea09010ffa25da54, type: 3}
       propertyPath: m_Name
       value: Asparagus
       objectReference: {fileID: 0}
     - target: {fileID: 5803021828581162057, guid: aca0c59497ef39d4ea09010ffa25da54, type: 3}
       propertyPath: _ingredient_Type
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5803021828581162057, guid: aca0c59497ef39d4ea09010ffa25da54, type: 3}
       propertyPath: _materials.Array.size

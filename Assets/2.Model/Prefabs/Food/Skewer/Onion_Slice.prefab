@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CookTime: 0
-  limit_CookTime: 8
+  limit_CookTime: 15
   tool_heat: {fileID: 0}
   meat: 0
 --- !u!54 &-2526686223665473202

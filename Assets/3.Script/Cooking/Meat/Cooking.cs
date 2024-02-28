@@ -8,7 +8,7 @@ public class Cooking : MonoBehaviour
     private Cooked_Ingredient cooked;
     private Ingredient ingredient;
     [SerializeField] private float CookTime = 0;
-    public float limit_CookTime = 8;
+    public float limit_CookTime;
     public Tool_heat tool_heat;
     public bool meat;
 
