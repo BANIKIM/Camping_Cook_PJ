@@ -631,11 +631,11 @@ GameObject:
   - component: {fileID: 2195534661828912968}
   - component: {fileID: 2693155629421330541}
   - component: {fileID: 8574589133296796178}
-  - component: {fileID: 6685551611733391833}
   - component: {fileID: 9142936959381611877}
   - component: {fileID: 4742520411512868541}
   - component: {fileID: 3109131593667229226}
   - component: {fileID: 4654617288050571396}
+  - component: {fileID: 4368738611938619452}
   m_Layer: 0
   m_Name: Skewer1_v1
   m_TagString: Untagged
@@ -714,28 +714,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6685551611733391833
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3908345535806217084}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 41a56475c78653a42a4bd5865ccfea66, type: 3}
 --- !u!114 &9142936959381611877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,6 +933,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rightHandPos: {fileID: 4073111813888473833}
+--- !u!65 &4368738611938619452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3908345535806217084}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.38289797, y: 0.37288833, z: 6.7310534}
+  m_Center: {x: 0.002014242, y: -0.004462257, z: 2.6243286}
 --- !u!1 &3926254379950764445
 GameObject:
   m_ObjectHideFlags: 0
