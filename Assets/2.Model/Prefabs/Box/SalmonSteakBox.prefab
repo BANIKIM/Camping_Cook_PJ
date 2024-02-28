@@ -64,7 +64,6 @@ GameObject:
   - component: {fileID: 1430806461208131216}
   - component: {fileID: 8129000283249552623}
   - component: {fileID: 8990751491014584742}
-  - component: {fileID: 7621731489921941957}
   m_Layer: 0
   m_Name: SalmonSteakBox
   m_TagString: Box
@@ -140,21 +139,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7621731489921941957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2284503425986823616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d32d9a81452a2948ad95ea1708f054f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ingreds:
-  - {fileID: 4613628421010640807}
-  - {fileID: 587410572231428436}
 --- !u!1 &2909249971508702046
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,11 +472,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37831b1f87d021148b518addf05bbecb, type: 3}
---- !u!1 &4613628421010640807 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5764684363043057522, guid: 37831b1f87d021148b518addf05bbecb, type: 3}
-  m_PrefabInstance: {fileID: 1154790091912274133}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6897424721575039969 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5746083247900078900, guid: 37831b1f87d021148b518addf05bbecb, type: 3}
@@ -579,11 +558,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca0c59497ef39d4ea09010ffa25da54, type: 3}
---- !u!1 &587410572231428436 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3001263910565665860, guid: aca0c59497ef39d4ea09010ffa25da54, type: 3}
-  m_PrefabInstance: {fileID: 2414007936119379216}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6701940251236745720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8971826092558341352, guid: aca0c59497ef39d4ea09010ffa25da54, type: 3}
