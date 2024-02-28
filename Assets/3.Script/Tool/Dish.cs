@@ -46,11 +46,11 @@ public class Dish : MonoBehaviour
 
         }
 
-       /* if (other.gameObject.CompareTag("Liquid"))
-        {
-            other.GetComponent<LiquidBoil>().LiquidReset();
-            other.gameObject.SetActive(false);
-        }*/
+        /* if (other.gameObject.CompareTag("Liquid"))
+         {
+             other.GetComponent<LiquidBoil>().LiquidReset();
+             other.gameObject.SetActive(false);
+         }*/
     }
 
     private void OnCollisionEnter(Collision collision)
