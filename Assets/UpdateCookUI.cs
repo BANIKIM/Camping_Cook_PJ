@@ -39,7 +39,7 @@ public class UpdateCookUI : MonoBehaviour
             updatetext.text = cookType.ToString();  // 인덱스에 해당하는 요리명을 텍스트에 할당
             updatetext2.text = cookType.ToString();
         }
-
+        dish.transform.position = UiManager.instance.dishSpawnPoint.transform.position;
         CookManager.instance.Spawn(i); // Spawn 메서드 호출
         uI_Sound.StartBtn();
     }

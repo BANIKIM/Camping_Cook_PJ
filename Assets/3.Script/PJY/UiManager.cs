@@ -16,6 +16,8 @@ public class UiManager : MonoBehaviour
     public GameObject updateObject;
     public GameObject updateObject2;
 
+    public GameObject dishSpawnPoint;
+
     public int activeStarCount = 0;
     public bool isCookingStarted = false;
 
