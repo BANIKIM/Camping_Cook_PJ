@@ -35,6 +35,7 @@ public class VR_YInput : MonoBehaviour
             isCanvasActive = false;
             Canvas1.SetActive(isCanvasActive);
             Canvas2.transform.position = TruePosition.transform.position; // 캔버스2의 위치를 TruePosition으로 설정
+            Canvas2.transform.rotation = TruePosition.transform.rotation; // 캔버스2의 회전
             Canvas2.SetActive(true);
         }
     }

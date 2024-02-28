@@ -5,7 +5,7 @@ using UnityEngine;
 public class Lock : MonoBehaviour
 {
     [SerializeField] private GameObject[] LockObj;
-    private void OnEnable()
+    private void update()
     {
         LockOff();
     }
