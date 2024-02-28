@@ -8,7 +8,7 @@ public class Dish : MonoBehaviour
     public List<int> _cook_List = new List<int>();
     public GameObject[] Cooks;
     public bool onech = false;
-    public AudioSource CookEnd;
+
     [SerializeField]
     private GameObject uI_DB_ParsingObj;
 
@@ -34,7 +34,7 @@ public class Dish : MonoBehaviour
 
 
 
-            Cooks[UiManager.instance.Num].SetActive(true);
+            Cooks[UiManager.instance._cookIdx].SetActive(true);
             //Destroy(other.gameObject);
             //값을초기화 해줘야 한다...
             ingred._ingredient_Type = 0; //타입0으로만들고
@@ -46,11 +46,11 @@ public class Dish : MonoBehaviour
 
         }
 
-       /* if (other.gameObject.CompareTag("Liquid"))
-        {
-            other.GetComponent<LiquidBoil>().LiquidReset();
-            other.gameObject.SetActive(false);
-        }*/
+        /* if (other.gameObject.CompareTag("Liquid"))
+         {
+             other.GetComponent<LiquidBoil>().LiquidReset();
+             other.gameObject.SetActive(false);
+         }*/
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -76,7 +76,6 @@ public class Dish : MonoBehaviour
         if (!onech)
         {
             ok(UiManager.instance._cookIdx.ToString());
-            CookEnd.PlayOneShot(CookEnd.clip);
             onech = true;
         }
         return RewardManager.instance.RecipeCheck(_prep_List, _cook_List, UiManager.instance._cookIdx);
