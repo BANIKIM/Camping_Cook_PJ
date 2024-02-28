@@ -60,27 +60,11 @@ public class UiManager : MonoBehaviour
             return cookingTimer;
         }
     }
-   
- 
+
+
     [SerializeField]
-    private ExpUI expUI;
-    
-    public ExpUI ExpUI
-    {
-        get
-        {
-            return expUI;
-        }
-    }
-    [SerializeField]
-    private ExpUI expUI2;
-    public ExpUI ExpUI2
-    {
-        get
-        {
-            return expUI2;
-        }
-    }
+    private UIExperience _uiExperience;
+
     private void Update()
     {
         UpdateActiveStarCount();
@@ -88,49 +72,15 @@ public class UiManager : MonoBehaviour
     public void OnStar(int idx)
     {
         // 레벨에 따라 활성화할 스타의 개수 계산 (최대 3개까지)
-        switch (Num)
+        for (int i = 0; i < idx; i++)
         {
-            case 0:  
-                // 스타 배열과 스타2 배열의 자식 오브젝트 활성화
-                for (int i = 0; i < idx; i++)
-                {
-                    Star[0].transform.GetChild(i).gameObject.SetActive(true);
-                    Star2[0].transform.GetChild(i).gameObject.SetActive(true);
-                }
-                break;
-            case 1:
-                for (int i = 0; i < idx; i++)
-                {
-                    Star[1].transform.GetChild(i).gameObject.SetActive(true);
-                    Star2[1].transform.GetChild(i).gameObject.SetActive(true);
-                }
-                break;
-            case 2:
-                for (int i = 0; i < idx; i++)
-                {
-                    Star[2].transform.GetChild(i).gameObject.SetActive(true);
-                    Star2[2].transform.GetChild(i).gameObject.SetActive(true);
-                }
-                break;
-            case 3:
-                for (int i = 0; i < idx; i++)
-                {
-                    Star[3].transform.GetChild(i).gameObject.SetActive(true);
-                    Star2[3].transform.GetChild(i).gameObject.SetActive(true);
-                }
-                break;
-            case 4:
-                for (int i = 0; i < idx; i++)
-                {
-                    Star[4].transform.GetChild(i).gameObject.SetActive(true);
-                    Star2[4].transform.GetChild(i).gameObject.SetActive(true);
-                }
-                break;
-
-            default:
-                break;
+            Star[Num].transform.GetChild(i).gameObject.SetActive(true);
+            Star2[Num].transform.GetChild(i).gameObject.SetActive(true);
         }
+
     }
+
+
     private void UpdateActiveStarCount()
     {
         // 활성화된 별의 갯수를 초기화
