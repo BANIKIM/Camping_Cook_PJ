@@ -62,8 +62,7 @@ public class UiManager : MonoBehaviour
     }
 
 
-    [SerializeField]
-    private UIExperience _uiExperience;
+    public UIExperience _uiExperience;
 
     private void Update()
     {
