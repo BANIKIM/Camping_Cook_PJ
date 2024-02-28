@@ -64,7 +64,7 @@ public class Dish : MonoBehaviour
 
 
 
-            Cooks[UiManager.instance.Num].SetActive(true);
+            Cooks[UiManager.instance._cookIdx].SetActive(true);
             Destroy(collision.gameObject);
 
         }
@@ -72,14 +72,14 @@ public class Dish : MonoBehaviour
 
     public int ch_Reward()
     {
-        Cooks[UiManager.instance.Num].SetActive(false);
+        Cooks[UiManager.instance._cookIdx].SetActive(false);
         if (!onech)
         {
-            ok(UiManager.instance.Num.ToString());
+            ok(UiManager.instance._cookIdx.ToString());
             CookEnd.PlayOneShot(CookEnd.clip);
             onech = true;
         }
-        return RewardManager.instance.RecipeCheck(_prep_List, _cook_List, UiManager.instance.Num);
+        return RewardManager.instance.RecipeCheck(_prep_List, _cook_List, UiManager.instance._cookIdx);
     }
 
 
