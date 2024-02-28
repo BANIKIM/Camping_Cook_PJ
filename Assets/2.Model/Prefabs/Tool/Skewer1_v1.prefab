@@ -760,6 +760,7 @@ MonoBehaviour:
   - {fileID: 7442376881542223928, guid: 7691f841c8e0efe43b9361862006ae4b, type: 3}
   - {fileID: 3099035059945202059, guid: 961e724bf46d0c7419b6d0841e0f6ad4, type: 3}
   - {fileID: 6634410330400852387, guid: e5b226cc3ed51bc478a66cefebe352aa, type: 3}
+  - {fileID: 6448154027160860143, guid: f1b598190a42e3346b260bef9e2cade5, type: 3}
 --- !u!54 &4742520411512868541
 Rigidbody:
   m_ObjectHideFlags: 0

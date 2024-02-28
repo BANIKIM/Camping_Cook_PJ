@@ -37,7 +37,6 @@ public class Skewer : MonoBehaviour
                     _stickPos.RemoveAt(0);
                     break;*/
                 case Ingredient_Type.Potato:
-                    ingred._skewerIngred.Change_Skewer_State(Skewer_State.Inserted);//»óÅÂÀÎ½Ä
                     GameObject obj3 = Instantiate(Foods[1], gameObject.transform);
                     obj3.gameObject.transform.position = _stickPos[0].position;        // ²¿Ä¡¿¡ ³¢¿ò
                     obj3.GetComponent<Seasoning_Ingredient>().pepper_s = ingred.GetComponent<Seasoning_Ingredient>().pepper_s;
@@ -46,11 +45,18 @@ public class Skewer : MonoBehaviour
                     _stickPos.RemoveAt(0);
                     break;
                 case Ingredient_Type.Mushroom:
-                    ingred._skewerIngred.Change_Skewer_State(Skewer_State.Inserted);//»óÅÂÀÎ½Ä
                     GameObject obj4 = Instantiate(Foods[2], gameObject.transform);
                     obj4.gameObject.transform.position = _stickPos[0].position;        // ²¿Ä¡¿¡ ³¢¿ò
                     obj4.GetComponent<Seasoning_Ingredient>().pepper_s = ingred.GetComponent<Seasoning_Ingredient>().pepper_s;
                     obj4.GetComponent<Seasoning_Ingredient>().salt_s = ingred.GetComponent<Seasoning_Ingredient>().salt_s;
+                    Destroy(other.gameObject);
+                    _stickPos.RemoveAt(0);
+                    break;
+                case Ingredient_Type.Onion:
+                    GameObject obj5 = Instantiate(Foods[3], gameObject.transform);
+                    obj5.gameObject.transform.position = _stickPos[0].position;        // ²¿Ä¡¿¡ ³¢¿ò
+                    obj5.GetComponent<Seasoning_Ingredient>().pepper_s = ingred.GetComponent<Seasoning_Ingredient>().pepper_s;
+                    obj5.GetComponent<Seasoning_Ingredient>().salt_s = ingred.GetComponent<Seasoning_Ingredient>().salt_s;
                     Destroy(other.gameObject);
                     _stickPos.RemoveAt(0);
                     break;
