@@ -49,6 +49,7 @@ public class Finishedfirewood : MonoBehaviour
         campFire = CampfireObj.GetComponent<CampFire>();
 
     }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Fire"))
