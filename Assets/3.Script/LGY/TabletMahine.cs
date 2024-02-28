@@ -7,20 +7,25 @@ public class TabletMahine : MonoBehaviour
 {
     public enum TabletMod { Secret, Handed, World }
 
-    private TabletMod _tabletMod;
+    private TabletMod _tabletMod = TabletMod.Secret;
 
     public InputActionReference HandCanvas;
 
     public GameObject _tablet;
-    public Transform _handPos;
+    private Quaternion _tabletRot;
 
-    public GameObject Canvas1;
-    public GameObject Canvas2;
-    public GameObject TruePosition;
+    public GameObject _hand;
 
-    private bool isCanvasActive = false;
-    private bool isButtonPressed = false;
+    private IEnumerator _changeMod;
+    private IEnumerator _pressYBtnTemp;
 
+    private float _pressTime = 0f;
+    private bool isPress = false;
+
+    private void Awake()
+    {
+        _tabletRot = _tablet.transform.rotation;
+    }
     private void OnEnable()
     {
         HandCanvas.action.started += OnButtonPress;
@@ -33,61 +38,71 @@ public class TabletMahine : MonoBehaviour
         HandCanvas.action.canceled -= OnButtonRelease;
     }
 
-    private IEnumerator CheckLongPress()
-    {
-        yield return new WaitForSeconds(1f);
-
-        if (isButtonPressed)
-        {
-            // 2초 이상 버튼이 눌려 있는 경우
-            isCanvasActive = false;
-            Canvas1.SetActive(isCanvasActive);
-            Canvas2.transform.position = TruePosition.transform.position; // 캔버스2의 위치를 TruePosition으로 설정
-            Canvas2.transform.rotation = TruePosition.transform.rotation; // 캔버스2의 회전
-            Canvas2.SetActive(true);
-        }
-    }
-
     private void OnButtonPress(InputAction.CallbackContext context)
     {
-        switch (_tabletMod)
+        isPress = true;
+        if (_tabletMod.Equals(TabletMod.Secret))
         {
-            case TabletMod.Secret:
-                break;
-            case TabletMod.Handed:
-                break;
-            case TabletMod.World:
-                break;
-            default:
-                break;
+            PressYBtn();
         }
-
-
-
-        isButtonPressed = true;
-        isCanvasActive = !isCanvasActive;
-        Canvas1.SetActive(isCanvasActive);
-        Canvas2.SetActive(false);
-        StartCoroutine(CheckLongPress());
+        else
+        {
+            DefaultSetting();
+        }
     }
 
+    private void DefaultSetting()
+    {
+        _tabletMod = TabletMod.Secret;
+        _tablet.SetActive(false);
+        _tablet.transform.parent = _hand.transform;
+        _tablet.transform.position = Vector3.zero;
+        _tablet.transform.rotation = _tabletRot;
+    }
     private void OnButtonRelease(InputAction.CallbackContext context)
     {
-        switch (_tabletMod)
+        isPress = false;
+        _pressTime = 0f;
+    }
+
+    private void PressYBtn()
+    {
+        _pressYBtnTemp = PressYBtn_co();
+        StartCoroutine(_pressYBtnTemp);
+    }
+
+    private IEnumerator PressYBtn_co()
+    {
+        while (isPress || _pressTime < 1f)
         {
-            case TabletMod.Secret:
-                break;
-            case TabletMod.Handed:
-                break;
-            case TabletMod.World:
-                break;
-            default:
-                break;
+            _pressTime += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
         }
 
-
-
-        isButtonPressed = false;
-        StopAllCoroutines();
+        _changeMod = _pressTime >= 1 ? WorldTablet_co() : HandedTablet_co();
+        StartCoroutine(_changeMod);
     }
+
+    private IEnumerator HandedTablet_co()
+    {
+        _tabletMod = TabletMod.Handed;
+        _tablet.SetActive(true);
+        yield return null;
+    }
+
+    private IEnumerator WorldTablet_co()
+    {
+        _tabletMod = TabletMod.World;
+        while (_tablet.transform.parent != null)
+        {
+            _tablet.transform.parent = null;
+            yield return null;
+        }
+        _tablet.SetActive(true);
+
+        yield return null;
+    }
+
+
+    
 }
