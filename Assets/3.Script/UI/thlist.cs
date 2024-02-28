@@ -26,7 +26,7 @@ public class thlist : MonoBehaviour
             if (_googleSheet.thnot)
             {
                 string report = _googleSheet.returnlist[1] + "요리가 완성되었습니다. 경험치 " + _googleSheet.returnlist[2];
-                UiManager.instance.Exp -= 50;
+                GameManager.instance._needExp -= 50;
                 // 큐에 새로운 요소 추가 및 큐의 크기가 3개를 초과하는 경우 오래된 요소 제거
                 if (reportQ.Count >= 3)
                 {

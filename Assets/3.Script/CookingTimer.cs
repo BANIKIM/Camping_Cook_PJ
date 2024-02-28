@@ -38,13 +38,13 @@ public class CookingTimer : MonoBehaviour
 
           
 
-            timerTexts[UiManager.instance.Num].text = string.Format("{0:00}:{1:00}", minutes, seconds);
-            timerTexts2[UiManager.instance.Num].text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerTexts[UiManager.instance._cookIdx].text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerTexts2[UiManager.instance._cookIdx].text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
        
 
-            timertext.text = timerTexts[UiManager.instance.Num].text;
-            timertext2.text = timerTexts[UiManager.instance.Num].text;
+            timertext.text = timerTexts[UiManager.instance._cookIdx].text;
+            timertext2.text = timerTexts[UiManager.instance._cookIdx].text;
 
         }
         // 요리가 시작되었고 전체 요리 시간이 경과한 경우

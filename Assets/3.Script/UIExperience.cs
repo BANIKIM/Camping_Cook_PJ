@@ -18,17 +18,17 @@ public class UIExperience : MonoBehaviour
 
     public void UpdateValue()
     {
-        slider.value = UiManager.instance.Exp;
-        slider2.value = UiManager.instance.Exp;
+        slider.value = GameManager.instance._needExp;
+        slider2.value = GameManager.instance._needExp;
 
         // 이전 경험치와 현재 경험치를 비교하여 레벨업 텍스트 업데이트
-        if (UiManager.instance.Exp <= slider.minValue)
+        if (GameManager.instance._needExp <= slider.minValue)
         {
             level++;
             LevelUp.text = "캠핑 레벨 : " + (level);
 
             LevelUp2.text = "캠핑 레벨 : " + (level);
-            UiManager.instance.Exp = 100;
+            GameManager.instance._needExp = 100;
         }
     }
 
@@ -37,17 +37,17 @@ public class UIExperience : MonoBehaviour
     {
         if (slider != null)
         {
-            slider.value = UiManager.instance.Exp;
-            slider2.value = UiManager.instance.Exp;
+            slider.value = GameManager.instance._needExp;
+            slider2.value = GameManager.instance._needExp;
 
             // 이전 경험치와 현재 경험치를 비교하여 레벨업 텍스트 업데이트
-            if (UiManager.instance.Exp <= slider.minValue)
+            if (GameManager.instance._needExp <= slider.minValue)
             {
                 level++;
                 LevelUp.text = "캠핑 레벨 : " + (level);
 
                 LevelUp2.text = "캠핑 레벨 : " + (level);
-                UiManager.instance.Exp = 100;
+                GameManager.instance._needExp = 100;
 
 
 
