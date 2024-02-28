@@ -64,7 +64,6 @@ GameObject:
   - component: {fileID: 1430806461208131216}
   - component: {fileID: 8129000283249552623}
   - component: {fileID: 8990751491014584742}
-  - component: {fileID: 3930863424610564279}
   m_Layer: 0
   m_Name: MashmellosBox
   m_TagString: Box
@@ -142,20 +141,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3930863424610564279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2284503425986823616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d32d9a81452a2948ad95ea1708f054f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ingreds:
-  - {fileID: 4904891063794026198}
 --- !u!1 &2909249971508702046
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,11 +573,6 @@ PrefabInstance:
 --- !u!4 &2656104306081121304 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8674523207732097024, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
-  m_PrefabInstance: {fileID: 6682911039964132376}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4904891063794026198 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1778873755720184526, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
   m_PrefabInstance: {fileID: 6682911039964132376}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9082989002520913410

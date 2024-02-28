@@ -64,7 +64,6 @@ GameObject:
   - component: {fileID: 1430806461208131216}
   - component: {fileID: 8129000283249552623}
   - component: {fileID: 8990751491014584742}
-  - component: {fileID: 1103510924438062842}
   m_Layer: 0
   m_Name: SkewerPlatterBox
   m_TagString: Box
@@ -142,22 +141,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1103510924438062842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2284503425986823616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d32d9a81452a2948ad95ea1708f054f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ingreds:
-  - {fileID: 6775344458512981647}
-  - {fileID: 6678147772307829403}
-  - {fileID: 5211605659983044440}
 --- !u!1 &2909249971508702046
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,11 +450,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
---- !u!1 &5211605659983044440 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6119087877375029368, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
-  m_PrefabInstance: {fileID: 2069414737621430048}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8125579366593815199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7817073423333674431, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
@@ -549,11 +527,6 @@ PrefabInstance:
 --- !u!4 &231310221921355523 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3157935705855468706, guid: 33b3445d178d26745b55e743d173505e, type: 3}
-  m_PrefabInstance: {fileID: 2947318574911562657}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6775344458512981647 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8565883065473203502, guid: 33b3445d178d26745b55e743d173505e, type: 3}
   m_PrefabInstance: {fileID: 2947318574911562657}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7497393871083747312
@@ -687,11 +660,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ba729c46ef21f44fad56625ea10e012, type: 3}
---- !u!1 &6678147772307829403 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2789593867675869710, guid: 0ba729c46ef21f44fad56625ea10e012, type: 3}
-  m_PrefabInstance: {fileID: 8798675583955685525}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7547966955068302042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1343461543650488911, guid: 0ba729c46ef21f44fad56625ea10e012, type: 3}
