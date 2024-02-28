@@ -27,7 +27,7 @@ public class UpdateCookUI : MonoBehaviour
         }
 
         UiManager.instance.isCookingStarted = true; // isCookingStarted를 먼저 변경
-        UiManager.instance.Num = i;
+        UiManager.instance._cookIdx = i;
         dish.onech = false;
        
         if (i >= 0 && i < sprites.Length && i < CookTypes.Length) // 유효한 인덱스 범위인지 확인

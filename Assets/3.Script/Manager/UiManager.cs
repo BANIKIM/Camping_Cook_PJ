@@ -21,8 +21,7 @@ public class UiManager : MonoBehaviour
     public int activeStarCount = 0;
     public bool isCookingStarted = false;
 
-    public float Exp = 100;
-    public int Num = 0;
+    public int _cookIdx = 0;
     private void Awake()
     {
         instance = this;
@@ -73,8 +72,8 @@ public class UiManager : MonoBehaviour
         // 레벨에 따라 활성화할 스타의 개수 계산 (최대 3개까지)
         for (int i = 0; i < idx; i++)
         {
-            Star[Num].transform.GetChild(i).gameObject.SetActive(true);
-            Star2[Num].transform.GetChild(i).gameObject.SetActive(true);
+            Star[_cookIdx].transform.GetChild(i).gameObject.SetActive(true);
+            Star2[_cookIdx].transform.GetChild(i).gameObject.SetActive(true);
         }
 
     }

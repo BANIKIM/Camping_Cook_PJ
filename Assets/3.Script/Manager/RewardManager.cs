@@ -36,8 +36,16 @@ public class RewardManager : MonoBehaviour
             _starCount--;
         }
 
-        if (prepdish.Count.Equals(0)) _starCount--;
-        if (cookdish.Count.Equals(0)) _starCount--;
+        if (prepdish.Count.Equals(0))
+        {
+            Debug.Log("재료가 아예 없을 때");
+            _starCount--;
+        }
+        if (cookdish.Count.Equals(0))
+        {
+            Debug.Log("재료가 아예 없을 때");
+            _starCount--;
+        }
 
         for (int i = 0; i < prepdish.Count; i++)
         {

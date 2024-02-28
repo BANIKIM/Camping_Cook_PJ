@@ -104,7 +104,7 @@ public class Finishedfirewood : MonoBehaviour
                 {
                     if (collider.CompareTag("Hand"))
                     {
-                        UiManager.instance.Exp -= 10;
+                        GameManager.instance._needExp -= 10;
                        
                         uI_DB_Parsing.textType = UI_DB_Parsing.TextType.Campfire;
                         uI_DB_Parsing.number = "1";
@@ -112,17 +112,6 @@ public class Finishedfirewood : MonoBehaviour
 
                     }
                 }
-
-/*                // 5분이 지난 경우
-                if (campFire.HP>=60) // 
-                {
-                
-                }
-                // 10분이 지난 경우
-                if (campFire.HP == 30) // 600초는 10분을 의미합니다
-                {
-    
-                }*/
             }
 
             if (campFire.HP > 0 && campFire.HP <= 30)
