@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dc969b796c38745adce82827446b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ingredient_Type: 1
+  _ingredient_Type: 8
   _cookedIngred: {fileID: 0}
   _seasoningIngred: {fileID: 0}
   _skewerIngred: {fileID: 0}

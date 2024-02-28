@@ -11,6 +11,7 @@ public class Skewer : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.layer != 6)return;
+        if (_stickPos.Count < 1) return; //자리가 없으면 안 꽂아진다.
         //잘린건지 판단을 한다
         if (other.gameObject.GetComponent<Ingredient>()._sliceCount > 0)
         {
@@ -21,7 +22,9 @@ public class Skewer : MonoBehaviour
             {
                 case Ingredient_Type.Beef:
                     GameObject ob1= Instantiate(Foods[0], gameObject.transform);
-                    ingred._skewerIngred.Change_Skewer_State(Skewer_State.Inserted);
+                    ingred._skewerIngred.Change_Skewer_State(Skewer_State.Inserted); //상태인식
+                    ob1.GetComponent<Seasoning_Ingredient>().pepper_s = ingred.GetComponent<Seasoning_Ingredient>().pepper_s;
+                    ob1.GetComponent<Seasoning_Ingredient>().salt_s = ingred.GetComponent<Seasoning_Ingredient>().salt_s;
                     ob1.gameObject.transform.position = _stickPos[0].position;        // 꼬치에 끼움
                     Destroy(other.gameObject);
                     _stickPos.RemoveAt(0);
@@ -34,16 +37,20 @@ public class Skewer : MonoBehaviour
                     _stickPos.RemoveAt(0);
                     break;*/
                 case Ingredient_Type.Potato:
-                    ingred._skewerIngred.Change_Skewer_State(Skewer_State.Inserted);
+                    ingred._skewerIngred.Change_Skewer_State(Skewer_State.Inserted);//상태인식
                     GameObject obj3 = Instantiate(Foods[1], gameObject.transform);
                     obj3.gameObject.transform.position = _stickPos[0].position;        // 꼬치에 끼움
+                    obj3.GetComponent<Seasoning_Ingredient>().pepper_s = ingred.GetComponent<Seasoning_Ingredient>().pepper_s;
+                    obj3.GetComponent<Seasoning_Ingredient>().salt_s = ingred.GetComponent<Seasoning_Ingredient>().salt_s;
                     Destroy(other.gameObject);
                     _stickPos.RemoveAt(0);
                     break;
                 case Ingredient_Type.Mushroom:
-                    ingred._skewerIngred.Change_Skewer_State(Skewer_State.Inserted);
+                    ingred._skewerIngred.Change_Skewer_State(Skewer_State.Inserted);//상태인식
                     GameObject obj4 = Instantiate(Foods[2], gameObject.transform);
                     obj4.gameObject.transform.position = _stickPos[0].position;        // 꼬치에 끼움
+                    obj4.GetComponent<Seasoning_Ingredient>().pepper_s = ingred.GetComponent<Seasoning_Ingredient>().pepper_s;
+                    obj4.GetComponent<Seasoning_Ingredient>().salt_s = ingred.GetComponent<Seasoning_Ingredient>().salt_s;
                     Destroy(other.gameObject);
                     _stickPos.RemoveAt(0);
                     break;
