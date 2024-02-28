@@ -8,7 +8,7 @@ public class Dish : MonoBehaviour
     public List<int> _cook_List = new List<int>();
     public GameObject[] Cooks;
     public bool onech = false;
-    public AudioSource CookEnd;
+
     [SerializeField]
     private GameObject uI_DB_ParsingObj;
 
@@ -76,7 +76,6 @@ public class Dish : MonoBehaviour
         if (!onech)
         {
             ok(UiManager.instance._cookIdx.ToString());
-            CookEnd.PlayOneShot(CookEnd.clip);
             onech = true;
         }
         return RewardManager.instance.RecipeCheck(_prep_List, _cook_List, UiManager.instance._cookIdx);
