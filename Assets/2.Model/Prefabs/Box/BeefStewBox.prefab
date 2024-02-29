@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 1430806461208131216}
   - component: {fileID: 8129000283249552623}
   - component: {fileID: 8990751491014584742}
+  - component: {fileID: -2357224381177771949}
   m_Layer: 0
   m_Name: BeefStewBox
   m_TagString: Box
@@ -140,6 +141,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-2357224381177771949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2284503425986823616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a17d75cc92af34784802b30190ecc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ingredients:
+  - {fileID: 3253838363175473621}
+  - {fileID: 5818051621469483752}
+  - {fileID: 4820549663563750624}
 --- !u!1 &2909249971508702046
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,6 +471,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1655322996223275973, guid: d5270a91bbed405429b77e20f105f1e3, type: 3}
   m_PrefabInstance: {fileID: 918634097979406562}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3253838363175473621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2420772864274950455, guid: d5270a91bbed405429b77e20f105f1e3, type: 3}
+  m_PrefabInstance: {fileID: 918634097979406562}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2764645418699755462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -528,6 +550,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3157935705855468706, guid: 33b3445d178d26745b55e743d173505e, type: 3}
   m_PrefabInstance: {fileID: 2764645418699755462}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5818051621469483752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8565883065473203502, guid: 33b3445d178d26745b55e743d173505e, type: 3}
+  m_PrefabInstance: {fileID: 2764645418699755462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4497543012995271693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -592,5 +619,10 @@ PrefabInstance:
 --- !u!4 &2143260609352214045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2581723265459890704, guid: 016caadb906ad4b4db5c531baf70c4dc, type: 3}
+  m_PrefabInstance: {fileID: 4497543012995271693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4820549663563750624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8974675608403906797, guid: 016caadb906ad4b4db5c531baf70c4dc, type: 3}
   m_PrefabInstance: {fileID: 4497543012995271693}
   m_PrefabAsset: {fileID: 0}

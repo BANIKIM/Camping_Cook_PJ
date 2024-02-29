@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 1430806461208131216}
   - component: {fileID: 8129000283249552623}
   - component: {fileID: 8990751491014584742}
+  - component: {fileID: 1651371735770888037}
   m_Layer: 0
   m_Name: BeefSteakBox
   m_TagString: Box
@@ -139,6 +140,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1651371735770888037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2284503425986823616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a17d75cc92af34784802b30190ecc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ingredients:
+  - {fileID: 7977257600240757770}
+  - {fileID: 1810132009432664564}
 --- !u!1 &2909249971508702046
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +559,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
+--- !u!1 &1810132009432664564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6119087877375029368, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
+  m_PrefabInstance: {fileID: 5617606640025614732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2417990607233971251 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7817073423333674431, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}

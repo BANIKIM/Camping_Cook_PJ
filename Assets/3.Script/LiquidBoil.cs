@@ -87,7 +87,7 @@ public class LiquidBoil : MonoBehaviour
             if (!a)
             {
                 Foods[number].GetComponent<Ingredient>()._ingredient_Type = other.GetComponent<Ingredient>()._ingredient_Type;
-                Foods[number].GetComponent<Ingredient>()._sliceCount = 1;
+                Foods[number].GetComponent<Ingredient>()._sliceCount = other.GetComponent<Ingredient>()._sliceCount;
                 Foods[number].GetComponent<Seasoning_Ingredient>().salt_s = other.GetComponent<Seasoning_Ingredient>().salt_s;
                 Foods[number].GetComponent<Seasoning_Ingredient>().pepper_s = other.GetComponent<Seasoning_Ingredient>().pepper_s;
                 Foods[number].SetActive(true);

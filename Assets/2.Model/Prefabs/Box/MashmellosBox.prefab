@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 1430806461208131216}
   - component: {fileID: 8129000283249552623}
   - component: {fileID: 8990751491014584742}
+  - component: {fileID: 4506144465567263629}
   m_Layer: 0
   m_Name: MashmellosBox
   m_TagString: Box
@@ -141,6 +142,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4506144465567263629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2284503425986823616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a17d75cc92af34784802b30190ecc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ingredients:
+  - {fileID: 4904891063794026198}
+  - {fileID: 585432237669725937}
+  - {fileID: 4418812706872035793}
+  - {fileID: 7395638594896827596}
 --- !u!1 &2909249971508702046
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +417,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1778873755720184526, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
       propertyPath: m_Name
-      value: Cylinder (3)
+      value: Cylinder2
       objectReference: {fileID: 0}
     - target: {fileID: 8674523207732097024, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -446,6 +464,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
+--- !u!1 &585432237669725937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778873755720184526, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
+  m_PrefabInstance: {fileID: 1202474042111214655}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7553120557163230271 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8674523207732097024, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
@@ -461,7 +484,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1778873755720184526, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
       propertyPath: m_Name
-      value: Cylinder (2)
+      value: Cylinder4
       objectReference: {fileID: 0}
     - target: {fileID: 8674523207732097024, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -508,6 +531,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
+--- !u!1 &4418812706872035793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778873755720184526, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
+  m_PrefabInstance: {fileID: 2737365036008766239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6746121877487389471 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8674523207732097024, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
@@ -523,7 +551,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1778873755720184526, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
       propertyPath: m_Name
-      value: Cylinder
+      value: Cylinder1
       objectReference: {fileID: 0}
     - target: {fileID: 8674523207732097024, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -575,6 +603,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8674523207732097024, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
   m_PrefabInstance: {fileID: 6682911039964132376}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4904891063794026198 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778873755720184526, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
+  m_PrefabInstance: {fileID: 6682911039964132376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9082989002520913410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -585,7 +618,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1778873755720184526, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
       propertyPath: m_Name
-      value: Cylinder (1)
+      value: Cylinder3
       objectReference: {fileID: 0}
     - target: {fileID: 8674523207732097024, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -597,7 +630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8674523207732097024, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.038620166
+      value: -0.006
       objectReference: {fileID: 0}
     - target: {fileID: 8674523207732097024, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -635,5 +668,10 @@ PrefabInstance:
 --- !u!4 &463689042002253314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8674523207732097024, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
+  m_PrefabInstance: {fileID: 9082989002520913410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7395638594896827596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778873755720184526, guid: 2fadb7d642a1a2240b38b85c4d0e281d, type: 3}
   m_PrefabInstance: {fileID: 9082989002520913410}
   m_PrefabAsset: {fileID: 0}
