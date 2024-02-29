@@ -29,8 +29,12 @@ public class CookingOrder : MonoBehaviour
     public Sprite[] _ingredientImgs;
     public Sprite[] _toolmgs;
 
-    public int _toolCount;
-    public int _ingredinetCount;
+
+    public void OrderSetting(List<int> toolList, List<int> ingredList)
+    {
+        _line1[0].sprite = _toolmgs[(int)Tool_Idx.Skewer];
+        _line1[1].sprite = _ingredientImgs[(int)Ingredient_Type.Mashmellow];
+    }
 
 
 }
