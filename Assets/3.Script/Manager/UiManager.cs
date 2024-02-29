@@ -6,7 +6,7 @@ using TMPro;
 
 public class UiManager : MonoBehaviour
 {
-    public static UiManager instance;
+    public static UiManager instance = null;
 
     public GameObject[] Star;
     public GameObject[] Star2;
