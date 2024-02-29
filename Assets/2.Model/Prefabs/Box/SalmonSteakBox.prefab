@@ -464,6 +464,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8103731717011553942, guid: 37831b1f87d021148b518addf05bbecb, type: 3}
+      propertyPath: _crossMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 85959b2202deb174ab72744e317fc65f, type: 2}
+    - target: {fileID: 8103731717011553942, guid: 37831b1f87d021148b518addf05bbecb, type: 3}
       propertyPath: _ingredient_Type
       value: 1
       objectReference: {fileID: 0}

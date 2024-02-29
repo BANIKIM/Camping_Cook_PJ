@@ -480,6 +480,22 @@ PrefabInstance:
       propertyPath: _ingredient_Type
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 999814090129347135, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
+      propertyPath: _materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 999814090129347135, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
+      propertyPath: _materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1405b2637e37efa4cbac7929877c0c0e, type: 2}
+    - target: {fileID: 999814090129347135, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
+      propertyPath: _materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c5b270d0b17e3743ba1e34b137416a1, type: 2}
+    - target: {fileID: 2101230565003098055, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
+      propertyPath: limit_CookTime
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6119087877375029368, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
       propertyPath: m_Name
       value: Mushroom_1
@@ -547,6 +563,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1430806461208131216}
     m_Modifications:
+    - target: {fileID: 3032610972261103982, guid: 33b3445d178d26745b55e743d173505e, type: 3}
+      propertyPath: _crossMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a4c149355014c346b72f82b54a161dc, type: 2}
+    - target: {fileID: 3032610972261103982, guid: 33b3445d178d26745b55e743d173505e, type: 3}
+      propertyPath: _materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032610972261103982, guid: 33b3445d178d26745b55e743d173505e, type: 3}
+      propertyPath: _materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 718c4bae24b5ef142bdd16378498f987, type: 2}
+    - target: {fileID: 3032610972261103982, guid: 33b3445d178d26745b55e743d173505e, type: 3}
+      propertyPath: _materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: d187e8e67d9d2f045ba39c391ae8812a, type: 2}
+    - target: {fileID: 3032610972261103982, guid: 33b3445d178d26745b55e743d173505e, type: 3}
+      propertyPath: _materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: efb055e6632d7eb47a93a38c375ed75a, type: 2}
     - target: {fileID: 3157935705855468706, guid: 33b3445d178d26745b55e743d173505e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6
@@ -606,7 +642,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8565883065473203502, guid: 33b3445d178d26745b55e743d173505e, type: 3}
+      insertIndex: 10
+      addedObject: {fileID: 2514886851724855225}
   m_SourcePrefab: {fileID: 100100000, guid: 33b3445d178d26745b55e743d173505e, type: 3}
 --- !u!4 &231310221921355523 stripped
 Transform:
@@ -618,6 +657,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8565883065473203502, guid: 33b3445d178d26745b55e743d173505e, type: 3}
   m_PrefabInstance: {fileID: 2947318574911562657}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2514886851724855225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6775344458512981647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0bd1f84b19aa6148919c88bd62724d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CookTime: 0
+  limit_CookTime: 8
+  tool_heat: {fileID: 0}
+  meat: 0
 --- !u!1001 &8798675583955685525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -672,7 +727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5125589107164612917, guid: 0ba729c46ef21f44fad56625ea10e012, type: 3}
       propertyPath: limit_CookTime
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8456391624719228390, guid: 0ba729c46ef21f44fad56625ea10e012, type: 3}
       propertyPath: _ingredient_Type
