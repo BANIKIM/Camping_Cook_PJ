@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Cooking_Complete : MonoBehaviour
 {
-    
+    [SerializeField] private AudioSource _audioSource;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Dish"))
@@ -12,11 +13,11 @@ public class Cooking_Complete : MonoBehaviour
             Dish dish = other.gameObject.GetComponent<Dish>();
             {
 
-                int starCount = dish.ch_Reward();           
+                int starCount = dish.ch_Reward();
                 UiManager.instance.OnStar(starCount);
             }
             UiManager.instance.Update_CookUI2.OffUpdate();
-          
+            _audioSource.PlayOneShot(_audioSource.clip);
             GameObject box = GameObject.FindWithTag("Box");
             Destroy(box);
             GameObject[] trash = GameObject.FindGameObjectsWithTag("Food");
