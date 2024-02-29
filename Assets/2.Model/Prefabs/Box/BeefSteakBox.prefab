@@ -478,6 +478,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1430806461208131216}
     m_Modifications:
+    - target: {fileID: 999814090129347135, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
+      propertyPath: _materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 999814090129347135, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
+      propertyPath: _materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f40887d782de4f7438ad78096b0d86d9, type: 2}
+    - target: {fileID: 999814090129347135, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
+      propertyPath: _materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c5b270d0b17e3743ba1e34b137416a1, type: 2}
+    - target: {fileID: 4309868146106271309, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e237440af6c074c4fb708a46d102e922, type: 2}
     - target: {fileID: 6119087877375029368, guid: 8e05b06f544a1aa4da72e93eb8155730, type: 3}
       propertyPath: m_Name
       value: Mushroom_1
