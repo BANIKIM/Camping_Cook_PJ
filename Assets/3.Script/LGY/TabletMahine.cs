@@ -25,6 +25,7 @@ public class TabletMahine : MonoBehaviour
     private void Awake()
     {
         _tabletRot = _tablet.transform.rotation;
+        DefaultSetting();
     }
     private void OnEnable()
     {
@@ -41,13 +42,18 @@ public class TabletMahine : MonoBehaviour
     private void OnButtonPress(InputAction.CallbackContext context)
     {
         isPress = true;
-        if (_tabletMod.Equals(TabletMod.Secret))
+
+        switch (_tabletMod)
         {
-            PressYBtn();
-        }
-        else
-        {
-            DefaultSetting();
+            case TabletMod.Secret:
+                PressYBtn();
+                break;
+            case TabletMod.Handed:
+            case TabletMod.World:
+                DefaultSetting();
+                break;
+            default:
+                break;
         }
     }
 
@@ -56,9 +62,8 @@ public class TabletMahine : MonoBehaviour
         _tabletMod = TabletMod.Secret;
         _tablet.SetActive(false);
         _tablet.transform.parent = _hand.transform;
-        _tablet.transform.position = Vector3.zero;
-        _tablet.transform.rotation = _tabletRot;
     }
+
     private void OnButtonRelease(InputAction.CallbackContext context)
     {
         isPress = false;
@@ -73,19 +78,23 @@ public class TabletMahine : MonoBehaviour
 
     private IEnumerator PressYBtn_co()
     {
-        while (isPress || _pressTime < 1f)
+        while (isPress && _pressTime < 1f)
         {
+
             _pressTime += Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }
 
         _changeMod = _pressTime >= 1 ? WorldTablet_co() : HandedTablet_co();
         StartCoroutine(_changeMod);
+        yield return null;
     }
 
     private IEnumerator HandedTablet_co()
     {
         _tabletMod = TabletMod.Handed;
+        _tablet.transform.localPosition = Vector3.zero;
+        _tablet.transform.rotation = _tabletRot;
         _tablet.SetActive(true);
         yield return null;
     }
@@ -93,6 +102,8 @@ public class TabletMahine : MonoBehaviour
     private IEnumerator WorldTablet_co()
     {
         _tabletMod = TabletMod.World;
+        _tablet.transform.localPosition = Vector3.zero;
+        _tablet.transform.rotation = _tabletRot;
         while (_tablet.transform.parent != null)
         {
             _tablet.transform.parent = null;
