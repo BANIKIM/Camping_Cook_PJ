@@ -2,26 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameData
-{
-    public int _level = 1;
-    public float _needExp = 100f;
-    public float _currentExp = 0f;
-
-}
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-
-    public GameData _gameData;
 
     public GameObject[] _tools;
     public Transform[] _toolsPos;
 
     public int _level = 1;
     public float _needExp = 100f;
+    public float _currentExp = 0f;
+    public int _cookIdx;
 
+    public bool isCookingStart = false;
 
     private void Awake()
     {
@@ -44,12 +37,4 @@ public class GameManager : MonoBehaviour
             _tools[i].transform.rotation = _toolsPos[i].rotation;
         }
     }
-
-
-
-
-
-
-
-
 }

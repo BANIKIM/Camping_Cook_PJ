@@ -16,20 +16,10 @@ public class UiManager : MonoBehaviour
 
     public GameObject updateObject2;
 
-    public GameObject dishSpawnPoint;
-
     public int activeStarCount = 0;
     public bool isCookingStarted = false;
 
     public int _cookIdx = 0;
-
-    private void Awake()
-    {
-        instance = this;
-        TryGetComponent(out _uiExperience);
-        TryGetComponent(out update_CookUI2);
-    }
-
 
 
     [SerializeField]
@@ -53,6 +43,25 @@ public class UiManager : MonoBehaviour
             return cookingTimer;
         }
     }
+
+
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            return;
+        }
+        TryGetComponent(out _uiExperience);
+        TryGetComponent(out update_CookUI2);
+    }
+
+
 
 
     public UIExperience _uiExperience;

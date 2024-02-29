@@ -84,7 +84,6 @@ public class Dish : MonoBehaviour
 
     public void ok(string i)
     {
-        Debug.Log("같은거 여러번하냐?");
         uI_DB_Parsing.textType = UI_DB_Parsing.TextType.Cook;
         uI_DB_Parsing.number = i;
         uI_DB_Parsing.a = true;
