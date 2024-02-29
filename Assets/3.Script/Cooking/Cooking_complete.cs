@@ -15,7 +15,7 @@ public class Cooking_Complete : MonoBehaviour
                 int starCount = dish.ch_Reward();           
                 UiManager.instance.OnStar(starCount);
             }
-            UiManager.instance.Update_CookUI.OffUpdate();
+            UiManager.instance.Update_CookUI2.OffUpdate();
           
             GameObject box = GameObject.FindWithTag("Box");
             Destroy(box);

@@ -10,8 +10,7 @@ public class thlist : MonoBehaviour
     public Queue<string> reportQ = new Queue<string>();
 
     public TextMeshProUGUI[] textMeshs;
-    public TextMeshProUGUI[] textMeshs2;
-
+   
     private void Start()
     {
         TryGetComponent(out _db_Parsing);
@@ -57,7 +56,7 @@ public class thlist : MonoBehaviour
         foreach (var report in reportQ)
         {
             textMeshs[reportQ.Count - index - 1].text = report;
-            textMeshs2[reportQ.Count - index - 1].text = report;
+           
             index++;
         }
 
@@ -65,7 +64,7 @@ public class thlist : MonoBehaviour
         for (int i = reportQ.Count; i < textMeshs.Length; i++)
         {
             textMeshs[i].text = "";
-            textMeshs2[i].text = "";
+           
         }
     }
 

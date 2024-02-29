@@ -6,10 +6,10 @@ using TMPro;
 
 public class CookingTimer : MonoBehaviour
 {
-    public TextMeshProUGUI timertext;
+   
     public TextMeshProUGUI timertext2;
 
-    public TextMeshProUGUI[] timerTexts; // 타이머를 표시할 TextMeshProUGUI
+   
     public TextMeshProUGUI[] timerTexts2; // 타이머를 표시할 TextMeshProUGUI
 
     private float totalTime = 3600.0f; // 요리 시간 (초) - 1시간(60분)로 초기화
@@ -27,7 +27,7 @@ public class CookingTimer : MonoBehaviour
            // UiManager.instance.isCookingStarted = true;
          
 
-            UiManager.instance.updateObject.SetActive(true);
+           
             UiManager.instance.updateObject2.SetActive(true);
            
             // 경과 시간을 분과 초로 변환
@@ -38,28 +38,22 @@ public class CookingTimer : MonoBehaviour
 
           
 
-            timerTexts[UiManager.instance._cookIdx].text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            
             timerTexts2[UiManager.instance._cookIdx].text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
        
 
-            timertext.text = timerTexts[UiManager.instance._cookIdx].text;
-            timertext2.text = timerTexts[UiManager.instance._cookIdx].text;
+            timertext2.text = timerTexts2[UiManager.instance._cookIdx].text;
 
         }
         // 요리가 시작되었고 전체 요리 시간이 경과한 경우
         else if (UiManager.instance.isCookingStarted && elapsedTime >= totalTime)
         {
-            for (int i = 0; i < timerTexts.Length; i++)
-            {
-                timerTexts[i].text = "00:00";
-               
-            }
             for (int i = 0; i < timerTexts2.Length; i++)
             {
                 timerTexts2[i].text = "00:00";
-            }
-            timertext.text = "00:00";
+               
+            }     
             timertext2.text= "00:00";
             // 요리 중지
             StopCooking();
@@ -74,17 +68,17 @@ public class CookingTimer : MonoBehaviour
     public void StopCooking()
     {
         // 요리 중지에 필요한 작업 추가
-        for (int i = 0; i < timerTexts.Length; i++)
+        for (int i = 0; i < timerTexts2.Length; i++)
         {
-            timerTexts[i].text = "요리 시작";
+           
             timerTexts2[i].text = "요리 시작";
 
         }    
-        timertext.text = "00:00";
+       
         timertext2.text = "00:00";
        // cookingStarted = false;
         UiManager.instance.isCookingStarted = false;
-        UiManager.instance.updateObject.SetActive(false);
+        
         UiManager.instance.updateObject2.SetActive(false);
 
         elapsedTime = 0.0f;

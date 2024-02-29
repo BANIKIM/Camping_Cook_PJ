@@ -8,12 +8,12 @@ public class UiManager : MonoBehaviour
 {
     public static UiManager instance = null;
 
-    public GameObject[] Star;
+ 
     public GameObject[] Star2;
     public TextMeshProUGUI[] StartCount;
 
 
-    public GameObject updateObject;
+  
     public GameObject updateObject2;
 
     public GameObject dishSpawnPoint;
@@ -27,17 +27,8 @@ public class UiManager : MonoBehaviour
         instance = this;
     }
 
-    [SerializeField]
-    private UpdateCookUI update_CookUI;
 
-
-    public UpdateCookUI Update_CookUI
-    {
-        get
-        {
-            return update_CookUI;
-        }
-    }
+ 
     [SerializeField]
     private UpdateCookUI update_CookUI2;
 
@@ -72,7 +63,7 @@ public class UiManager : MonoBehaviour
         // 레벨에 따라 활성화할 스타의 개수 계산 (최대 3개까지)
         for (int i = 0; i < idx; i++)
         {
-            Star[_cookIdx].transform.GetChild(i).gameObject.SetActive(true);
+          
             Star2[_cookIdx].transform.GetChild(i).gameObject.SetActive(true);
         }
 
@@ -84,17 +75,7 @@ public class UiManager : MonoBehaviour
         // 활성화된 별의 갯수를 초기화
         activeStarCount = 0;
 
-        // 각 요리에 대해 활성화된 별의 갯수를 계산하여 합산
-        for (int i = 0; i < Star.Length; i++)
-        {
-            for (int j = 0; j < Star[i].transform.childCount; j++)
-            {
-                if (Star[i].transform.GetChild(j).gameObject.activeSelf)
-                {
-                    activeStarCount++;
-                }
-            }
-        }
+     
 
         for (int i = 0; i < Star2.Length; i++)
         {

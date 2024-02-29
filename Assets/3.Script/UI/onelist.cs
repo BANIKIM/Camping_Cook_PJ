@@ -8,7 +8,7 @@ public class onelist : MonoBehaviour
     public GameObject google;
     public UI_DB_Parsing dB_Parsing;
     public GoogleSheetManager googlesheet;
-    public TextMeshProUGUI textOnelist;
+   
     public TextMeshProUGUI textOnelist2;
 
 
@@ -21,12 +21,12 @@ public class onelist : MonoBehaviour
         {
             if (dB_Parsing.textType==UI_DB_Parsing.TextType.Cook)
             {
-                textOnelist.text = googlesheet.returnlist[1] + "요리를 만듬 경험치 " + googlesheet.returnlist[2];
+              
                 textOnelist2.text = googlesheet.returnlist[1] + "요리를 만듬 경험치 " + googlesheet.returnlist[2];
             }
             else if (dB_Parsing.textType == UI_DB_Parsing.TextType.Campfire)
             {
-                textOnelist.text = "캠프파이어의 열기로 캠핑 온도를 10 얻었습니다.";
+               
                 textOnelist2.text = "캠프파이어의 열기로 캠핑 온도를 10 얻었습니다.";
             }
             
