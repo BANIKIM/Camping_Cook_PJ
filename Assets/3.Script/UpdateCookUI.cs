@@ -21,13 +21,13 @@ public class UpdateCookUI : MonoBehaviour
 
     public void OpenUpdate(int i)
     {
-        if (UiManager.instance.isCookingStarted)
+        if (TabletManager.instance.isCookingStarted)
         {
             return;
         }
 
-        UiManager.instance.isCookingStarted = true; // isCookingStarted를 먼저 변경
-        UiManager.instance._cookIdx = i;
+        TabletManager.instance.isCookingStarted = true; // isCookingStarted를 먼저 변경
+        TabletManager.instance._cookIdx = i;
         dish.onech = false;
        
         if (i >= 0 && i < sprites.Length && i < CookTypes.Length) // 유효한 인덱스 범위인지 확인
@@ -46,7 +46,7 @@ public class UpdateCookUI : MonoBehaviour
     }
     public void OffUpdate()
     {
-        UiManager.instance.CookingTimer.StopCooking();
+        TabletManager.instance.CookingTimer.StopCooking();
          
     }
 

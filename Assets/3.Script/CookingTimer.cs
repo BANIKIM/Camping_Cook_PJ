@@ -20,7 +20,7 @@ public class CookingTimer : MonoBehaviour
     void Update()
     {
         // 요리가 시작되었고 아직 시간이 남아있는 경우에만 타이머 감소
-        if (UiManager.instance.isCookingStarted && elapsedTime < totalTime)
+        if (TabletManager.instance.isCookingStarted && elapsedTime < totalTime)
         {
             elapsedTime += Time.deltaTime;
 
@@ -28,7 +28,7 @@ public class CookingTimer : MonoBehaviour
          
 
            
-            UiManager.instance.updateObject2.SetActive(true);
+            TabletManager.instance.updateObject2.SetActive(true);
            
             // 경과 시간을 분과 초로 변환
             int minutes = Mathf.FloorToInt(elapsedTime / 60);
@@ -39,15 +39,15 @@ public class CookingTimer : MonoBehaviour
           
 
             
-            timerTexts2[UiManager.instance._cookIdx].text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerTexts2[TabletManager.instance._cookIdx].text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
        
 
-            timertext2.text = timerTexts2[UiManager.instance._cookIdx].text;
+            timertext2.text = timerTexts2[TabletManager.instance._cookIdx].text;
 
         }
         // 요리가 시작되었고 전체 요리 시간이 경과한 경우
-        else if (UiManager.instance.isCookingStarted && elapsedTime >= totalTime)
+        else if (TabletManager.instance.isCookingStarted && elapsedTime >= totalTime)
         {
             for (int i = 0; i < timerTexts2.Length; i++)
             {
@@ -77,9 +77,9 @@ public class CookingTimer : MonoBehaviour
        
         timertext2.text = "00:00";
        // cookingStarted = false;
-        UiManager.instance.isCookingStarted = false;
+        TabletManager.instance.isCookingStarted = false;
         
-        UiManager.instance.updateObject2.SetActive(false);
+        TabletManager.instance.updateObject2.SetActive(false);
 
         elapsedTime = 0.0f;
         // 플레이 중인 요리 사항들을 초기화하는 작업 추가
