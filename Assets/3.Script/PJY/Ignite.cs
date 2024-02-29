@@ -9,7 +9,12 @@ public class Ignite : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_grabInteractable.isSelected) _fireEffect.SetActive(false);
+        if (!_grabInteractable.isSelected)
+        {
+            _fireEffect.SetActive(false);
+            _audioSource.Stop();
+        }
+          
     }
 
     // 버튼을 누를 때 호출할 메서드
