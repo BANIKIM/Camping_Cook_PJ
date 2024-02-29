@@ -42,6 +42,7 @@ public class UpdateCookUI : MonoBehaviour
         dish.transform.position = UiManager.instance.dishSpawnPoint.transform.position;
         CookManager.instance.Spawn(i); // Spawn 메서드 호출
         uI_Sound.StartBtn();
+        GameManager.instance.ResetToolsPos();
     }
     public void OffUpdate()
     {

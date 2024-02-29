@@ -11,15 +11,15 @@ public class Lock : MonoBehaviour
     }
     public void LockOff()
     {
-        if (UiManager.instance._uiExperience.level >= 20)
+        if (UiManager.instance._uiExperience.level >= 0)
         {
             LockObj[2].SetActive(false);
         }
-        else if (UiManager.instance._uiExperience.level >= 15)
+        else if (UiManager.instance._uiExperience.level >= 0)
         {
             LockObj[1].SetActive(false);
         }
-        else if (UiManager.instance._uiExperience.level >= 10)
+        else if (UiManager.instance._uiExperience.level >= 0)
         {
             LockObj[0].SetActive(false);
         }
