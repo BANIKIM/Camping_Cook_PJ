@@ -56,8 +56,8 @@ public class RecipeSetting : MonoBehaviour
     private void Steak_R()
     {
         // 스테이크
-        List<int> perptemp = new List<int> { 10110, 61000 };
-        List<int> cooktemp = new List<int> { 11, 61 };
+        List<int> perptemp = new List<int> { 10110, 81000 };
+        List<int> cooktemp = new List<int> { 11, 81 };
         _recipePrep_D.Add((int)Cooking_Type.Steak, perptemp);
         _recipeCook_D.Add((int)Cooking_Type.Steak, cooktemp);
     }

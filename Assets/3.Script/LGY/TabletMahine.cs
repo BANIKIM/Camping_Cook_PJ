@@ -7,7 +7,7 @@ public class TabletMahine : MonoBehaviour
 {
     public enum TabletMod { Secret, Handed, World }
 
-    private TabletMod _tabletMod = TabletMod.Secret;
+    private TabletMod _tabletMod;
 
     public InputActionReference HandCanvas;
 
