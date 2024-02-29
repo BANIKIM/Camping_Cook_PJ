@@ -34,18 +34,6 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-
-        SaveToolsData();
-    }
-
-    private void SaveToolsData()
-    {
-        _toolsPos = new Transform[_tools.Length];
-
-        for (int i = 0; i < _tools.Length; i++)
-        {
-            _toolsPos[i].position = _tools[i].transform.position;
-        }
     }
 
     public void ResetToolsPos()
@@ -53,6 +41,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < _tools.Length; i++)
         {
             _tools[i].transform.position = _toolsPos[i].position;
+            _tools[i].transform.rotation = _toolsPos[i].rotation;
         }
     }
 
