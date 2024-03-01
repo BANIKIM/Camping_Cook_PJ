@@ -34,7 +34,7 @@ public class Dish : MonoBehaviour
 
 
 
-            Cooks[TabletManager.instance._cookIdx].SetActive(true);
+            Cooks[GameManager.instance._cookIdx].SetActive(true);
             //Destroy(other.gameObject);
             //값을초기화 해줘야 한다...
             ingred._ingredient_Type = 0; //타입0으로만들고
@@ -64,7 +64,7 @@ public class Dish : MonoBehaviour
 
 
 
-            Cooks[TabletManager.instance._cookIdx].SetActive(true);
+            Cooks[GameManager.instance._cookIdx].SetActive(true);
             Destroy(collision.gameObject);
 
         }
@@ -72,13 +72,13 @@ public class Dish : MonoBehaviour
 
     public int ch_Reward()
     {
-        Cooks[TabletManager.instance._cookIdx].SetActive(false);
+        Cooks[GameManager.instance._cookIdx].SetActive(false);
         if (!onech)
         {
-            ok(TabletManager.instance._cookIdx.ToString());
+            ok(GameManager.instance._cookIdx.ToString());
             onech = true;
         }
-        return RewardManager.instance.RecipeCheck(_prep_List, _cook_List, TabletManager.instance._cookIdx);
+        return RewardManager.instance.RecipeCheck(_prep_List, _cook_List, GameManager.instance._cookIdx);
     }
 
 

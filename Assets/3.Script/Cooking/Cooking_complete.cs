@@ -13,7 +13,7 @@ public class Cooking_Complete : MonoBehaviour
             Dish dish = other.gameObject.GetComponent<Dish>();
 
             int starCount = dish.ch_Reward();
-            TabletManager.instance.OnStar(starCount);
+            TabletManager.instance.StarUpdate(starCount);
             TabletManager.instance.Update_CookUI2.OffUpdate();
 
             _audioSource.PlayOneShot(_audioSource.clip);

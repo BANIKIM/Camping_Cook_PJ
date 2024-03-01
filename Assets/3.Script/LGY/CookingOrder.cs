@@ -26,15 +26,48 @@ public class CookingOrder : MonoBehaviour
     public Image[] _line4;
     public Image[] _line5;
 
-    public Sprite[] _ingredientImgs;
-    public Sprite[] _toolmgs;
+    public Sprite[] _allImgs;
 
 
-    public void OrderSetting(List<int> toolList, List<int> ingredList)
+    public void OrderSetting()
     {
-        _line1[0].sprite = _toolmgs[(int)Tool_Idx.Skewer];
-        _line1[1].sprite = _ingredientImgs[(int)Ingredient_Type.Mashmellow];
+        int[] idxArray;
+        switch (GameManager.instance._cookIdx)
+        {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+        }
+
+
     }
 
+    public void DefaultSetting()
+    {
+        for (int i = 0; i < _line1.Length; i++)
+        {
+            _line1[i].transform.gameObject.SetActive(false);
+            _line2[i].transform.gameObject.SetActive(false);
+            _line3[i].transform.gameObject.SetActive(false);
+            _line4[i].transform.gameObject.SetActive(false);
+            _line5[i].transform.gameObject.SetActive(false);
+        }
+    }
+
+    private void ImageActive(Image[] imgs, int[] idxArr)
+    {
+        for (int i = 0; i < idxArr.Length; i++)
+        {
+            imgs[i].sprite = _allImgs[idxArr[i]];
+            imgs[i].transform.gameObject.SetActive(true);
+        }
+    }
 
 }

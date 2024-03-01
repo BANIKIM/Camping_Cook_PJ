@@ -8,31 +8,36 @@ public class TabletManager : MonoBehaviour
 {
     public static TabletManager instance = null;
 
+    [Header("Recipe")]
     public Image _cookImg;
     public Sprite[] _cookAllImgs;
     public TextMeshProUGUI _cookText;
-
     public TextMeshProUGUI _difficultyText;
+    public GameObject[] _cookingOrder;
 
 
+    [Header("Star")]
+    public GameObject[] _starObj;
+    public Sprite _fullStarImg;
+    public int[] _currentStarCount = new int[5] { 0, 0, 0, 0, 0 };
+
+    [Header("Home")]
+    public TextMeshProUGUI _userName;
+    public TextMeshProUGUI _starCount;
+    public TextMeshProUGUI _trophyCount;
+    public TextMeshProUGUI _campingLv;
+    public TextMeshProUGUI _campingExp;
 
 
-
-
+    public UIExperience _uiExperience;
 
     // =============================
-    public GameObject[] Star2;
-    public TextMeshProUGUI StartCount;
 
 
 
     public GameObject updateObject2;
 
     public int activeStarCount = 0;
-    public bool isCookingStarted = false;
-
-    public int _cookIdx = 0;
-
 
     [SerializeField]
     private UpdateCookUI update_CookUI2;
@@ -76,19 +81,25 @@ public class TabletManager : MonoBehaviour
 
 
 
-    public UIExperience _uiExperience;
 
     private void Update()
     {
         UpdateActiveStarCount();
     }
-    public void OnStar(int idx)
+
+
+    public void StarUpdate(int idx)
     {
         // 레벨에 따라 활성화할 스타의 개수 계산 (최대 3개까지)
-        for (int i = 0; i < idx; i++)
+        // idx는 별을 활성화할 개수
+        if (_currentStarCount[GameManager.instance._cookIdx] < idx)
         {
+            for (int i = 0; i < idx; i++)
+            {
+                _starObj[GameManager.instance._cookIdx].transform.GetChild(i).GetComponent<Image>().sprite = _fullStarImg;
 
-            Star2[_cookIdx].transform.GetChild(i).gameObject.SetActive(true);
+            }
+            _currentStarCount[GameManager.instance._cookIdx] = idx;
         }
 
     }
@@ -101,11 +112,11 @@ public class TabletManager : MonoBehaviour
 
 
 
-        for (int i = 0; i < Star2.Length; i++)
+        for (int i = 0; i < _starObj.Length; i++)
         {
-            for (int j = 0; j < Star2[i].transform.childCount; j++)
+            for (int j = 0; j < _starObj[i].transform.childCount; j++)
             {
-                if (Star2[i].transform.GetChild(j).gameObject.activeSelf)
+                if (_starObj[i].transform.GetChild(j).gameObject.activeSelf)
                 {
                     activeStarCount++;
                 }
@@ -114,7 +125,7 @@ public class TabletManager : MonoBehaviour
         int halfActiveStarCount = activeStarCount / 2;
 
         // TextMeshProUGUI 배열에 반으로 나눈 값을 설정
-        StartCount.text = halfActiveStarCount.ToString();
+        _starCount.text = halfActiveStarCount.ToString();
     }
 
 

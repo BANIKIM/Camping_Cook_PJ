@@ -20,7 +20,7 @@ public class CookingTimer : MonoBehaviour
     void Update()
     {
         // 요리가 시작되었고 아직 시간이 남아있는 경우에만 타이머 감소
-        if (TabletManager.instance.isCookingStarted && elapsedTime < totalTime)
+        if (GameManager.instance.isCookingStart && elapsedTime < totalTime)
         {
             elapsedTime += Time.deltaTime;
 
@@ -39,15 +39,15 @@ public class CookingTimer : MonoBehaviour
           
 
             
-            timerTexts2[TabletManager.instance._cookIdx].text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerTexts2[GameManager.instance._cookIdx].text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
        
 
-            timertext2.text = timerTexts2[TabletManager.instance._cookIdx].text;
+            timertext2.text = timerTexts2[GameManager.instance._cookIdx].text;
 
         }
         // 요리가 시작되었고 전체 요리 시간이 경과한 경우
-        else if (TabletManager.instance.isCookingStarted && elapsedTime >= totalTime)
+        else if (GameManager.instance.isCookingStart && elapsedTime >= totalTime)
         {
             for (int i = 0; i < timerTexts2.Length; i++)
             {
@@ -76,8 +76,8 @@ public class CookingTimer : MonoBehaviour
         }    
        
         timertext2.text = "00:00";
-       // cookingStarted = false;
-        TabletManager.instance.isCookingStarted = false;
+        // cookingStarted = false;
+        GameManager.instance.isCookingStart = false;
         
         TabletManager.instance.updateObject2.SetActive(false);
 

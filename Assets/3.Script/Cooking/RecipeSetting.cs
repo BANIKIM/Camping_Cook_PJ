@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum Cooking_Type
 {
-    Mashmellow = 0,
+    Marshmallow = 0,
     Beef_Stew,
     Skewers_Flatter,
     Beef_Steak,
@@ -31,8 +31,8 @@ public class RecipeSetting : MonoBehaviour
         // 마쉬멜로우 구이
         List<int> perptemp = new List<int> { 20001 };
         List<int> cooktemp = new List<int> { 21 };
-        _recipePrep_D.Add((int)Cooking_Type.Mashmellow, perptemp);
-        _recipeCook_D.Add((int)Cooking_Type.Mashmellow, cooktemp);
+        _recipePrep_D.Add((int)Cooking_Type.Marshmallow, perptemp);
+        _recipeCook_D.Add((int)Cooking_Type.Marshmallow, cooktemp);
     }
 
     private void Beef_Stew_R() 
