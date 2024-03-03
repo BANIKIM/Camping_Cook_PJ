@@ -32,7 +32,7 @@ public class TabletManager : MonoBehaviour
 
     public GameObject[] _cookProgress;
 
-
+    private int _idxTemp;
 
 
     private void Awake()
@@ -57,9 +57,15 @@ public class TabletManager : MonoBehaviour
 
     public void SelectRecipe(int idx)
     {
-        _cookImg.sprite= _cookAllImgs[idx];
+        _cookImg.sprite = _cookAllImgs[idx];
         _cookingOrder[idx].SetActive(true);
+        _idxTemp = idx;
 
+    }
+
+    public void RecipeBackBtn()
+    {
+        _cookingOrder[_idxTemp].SetActive(false);
     }
 
     #region GameStart
@@ -72,7 +78,6 @@ public class TabletManager : MonoBehaviour
         _ui_CookingTimer.OnCookingTimer(true);
         _ui_ProgressCook.StartProgress();
     }
-
 
 
 

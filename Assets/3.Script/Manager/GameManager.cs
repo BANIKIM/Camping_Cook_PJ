@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     public void SelectCookIdx(int idx)
     {
         TabletManager.instance._cookingOrder[idx].SetActive(true);
+
         if (isCookingStart) return;
 
         _cookIdx = idx;
