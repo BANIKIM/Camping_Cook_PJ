@@ -58,7 +58,9 @@ public class LiquidBoil : MonoBehaviour
             Debug.Log("물머테리얼 초기화");
             LiquidReset();//물 머테리얼 초기화
             _audiosource.Stop();
+
         }
+        else if(isDish) _audiosource.Stop();
     }
 
     private void OnTriggerEnter(Collider other)
