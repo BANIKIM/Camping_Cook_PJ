@@ -8,9 +8,9 @@ public class TabletManager : MonoBehaviour
 {
     public static TabletManager instance = null;
 
-    public UI_Star _ui_Star;
-    public UI_ProgressCook _ui_ProgressCook;
-    public UI_CookingTimer _ui_CookingTimer;
+    [HideInInspector] public UI_Star _ui_Star;
+    [HideInInspector] public UI_ProgressCook _ui_ProgressCook;
+    [HideInInspector] public UI_CookingTimer _ui_CookingTimer;
 
 
     public TextMeshProUGUI _levelText;
