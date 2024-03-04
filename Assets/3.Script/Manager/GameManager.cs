@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    
+
 
     public void StopCooking()
     {
@@ -76,15 +76,17 @@ public class GameManager : MonoBehaviour
     #endregion
 
 
-    public void CampingExpCheck()
+    public void CampingExpCheck(float exp)
     {
+        _currentExp += exp;
         if (_needExp - _currentExp <= 0)
         {
             _level++;
 
-             TabletManager.instance._levelText.text = $"Ä·ÇÎ ·¹º§ : {_level}";
-            _currentExp = 0f;
+            TabletManager.instance._levelText.text = $"Ä·ÇÎ ·¹º§ : {_level}";
+            _currentExp -= _needExp;
         }
+        TabletManager.instance._expSlider.value = _needExp - _currentExp;
     }
 
     public void SelectCookIdx(int idx)

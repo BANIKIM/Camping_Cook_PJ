@@ -15,7 +15,7 @@ public class Cooking_Complete : MonoBehaviour
             TabletManager.instance._ui_Star.StarUpdate(dish.ch_Reward());
             GameManager.instance.StopCooking();
             dish.onech = false;
-            GameManager.instance._currentExp += 50; // 경험치 50씩 추가한다.
+            GameManager.instance.CampingExpCheck(50);
             GameObject box = GameObject.FindWithTag("Box");
             Destroy(box);
             GameObject[] trash = GameObject.FindGameObjectsWithTag("Food");

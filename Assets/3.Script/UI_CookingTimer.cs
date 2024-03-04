@@ -32,7 +32,7 @@ public class UI_CookingTimer : MonoBehaviour
 
     private IEnumerator StopCookingTimer_Co()
     {
-        _cookTimerText.text = "00 : 00";
+        _cookTimerText.text = "요리 시작";
         _homeTimerText.text = "00 : 00";
         yield return null;
     }
