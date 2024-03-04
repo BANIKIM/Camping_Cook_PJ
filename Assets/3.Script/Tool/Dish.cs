@@ -15,6 +15,7 @@ public class Dish : MonoBehaviour
     [SerializeField]
     private UI_DB_Parsing uI_DB_Parsing;
 
+    [SerializeField] private AudioSource _audioSource;
 
     private void Start()
     {
@@ -76,6 +77,7 @@ public class Dish : MonoBehaviour
         if (!onech)
         {
             ok(GameManager.instance._cookIdx.ToString());
+            _audioSource.PlayOneShot(_audioSource.clip);
             onech = true;
         }
         return RewardManager.instance.RecipeCheck(_prep_List, _cook_List, GameManager.instance._cookIdx);

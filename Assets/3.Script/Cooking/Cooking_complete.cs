@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class Cooking_Complete : MonoBehaviour
 {
-    [SerializeField] private AudioSource _audioSource;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Dish"))
+        if (other.gameObject.CompareTag("Dish") && GameManager.instance.isCookingStart)
         {
+            
             Dish dish = other.gameObject.GetComponent<Dish>();
 
             TabletManager.instance._ui_Star.StarUpdate(dish.ch_Reward());
             GameManager.instance.StopCooking();
-
-            _audioSource.PlayOneShot(_audioSource.clip);
-
+            dish.onech = false;
+            GameManager.instance._currentExp += 50; // 경험치 50씩 추가한다.
             GameObject box = GameObject.FindWithTag("Box");
             Destroy(box);
             GameObject[] trash = GameObject.FindGameObjectsWithTag("Food");

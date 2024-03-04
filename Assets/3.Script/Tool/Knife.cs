@@ -86,7 +86,7 @@ public class Knife : MonoBehaviour
         ingred._materials = target_ingred._materials;
 
 
-        obj.AddComponent<Cooking>();
+        obj.AddComponent<Cooking>().limit_CookTime = 8;
 
         obj.AddComponent<XRGrabInteractable>();
 
