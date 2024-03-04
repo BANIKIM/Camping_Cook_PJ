@@ -72,7 +72,8 @@ public class Skewer : MonoBehaviour
             {
                 XRGrabInteractable xrgrab = other.gameObject.GetComponent<XRGrabInteractable>();
                 xrgrab = null;
-
+                BoxCollider boxcoll = other.gameObject.GetComponent<BoxCollider>();
+                if (boxcoll != null) boxcoll.isTrigger = true;
                 ingred._skewerIngred.Change_Skewer_State(Skewer_State.Inserted);
                 other.gameObject.transform.parent = gameObject.transform;     // ²¿Ä¡¿¡ »ó¼Ó
                 other.gameObject.transform.position = _stickPos[0].position;        // ²¿Ä¡¿¡ ³¢¿ò
