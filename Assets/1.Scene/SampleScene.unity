@@ -1060,6 +1060,7 @@ GameObject:
   - component: {fileID: 302429835}
   - component: {fileID: 302429834}
   - component: {fileID: 302429836}
+  - component: {fileID: 302429837}
   m_Layer: 0
   m_Name: Right Hand Model
   m_TagString: Untagged
@@ -1163,6 +1164,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.07904997, y: 0.06503673, z: 0.13721937}
   m_Center: {x: 0.019732896, y: 0.03195388, z: 0.012470186}
+--- !u!114 &302429837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302429832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbac5f486db70184180198c8f8366f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Start: {fileID: 79641386}
+  Quit: {fileID: 1948889754}
 --- !u!1 &360672103
 GameObject:
   m_ObjectHideFlags: 0
@@ -4607,6 +4622,7 @@ GameObject:
   - component: {fileID: 1227225415}
   - component: {fileID: 1227225414}
   - component: {fileID: 1227225413}
+  - component: {fileID: 1227225418}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4712,6 +4728,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 929, y: 421}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1227225418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227225412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &1235183465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5621,6 +5656,7 @@ GameObject:
   - component: {fileID: 1435937025}
   - component: {fileID: 1435937024}
   - component: {fileID: 1435937026}
+  - component: {fileID: 1435937027}
   m_Layer: 0
   m_Name: Left Hand Model
   m_TagString: Untagged
@@ -5724,6 +5760,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.09076057, y: 0.06503673, z: 0.123395026}
   m_Center: {x: -0.03306529, y: 0.03195388, z: 0.014023781}
+--- !u!114 &1435937027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435937022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbac5f486db70184180198c8f8366f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Start: {fileID: 79641386}
+  Quit: {fileID: 1948889754}
 --- !u!1 &1451294641
 GameObject:
   m_ObjectHideFlags: 0
