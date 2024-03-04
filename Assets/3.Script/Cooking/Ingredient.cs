@@ -10,7 +10,7 @@ public interface IState
 public enum Ingredient_Type
 {
     Beef = 1,
-    Mashmellow,
+    Marshmallow,
     Salmon,
     Potato,
     Carrot,

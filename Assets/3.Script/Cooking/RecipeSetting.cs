@@ -4,11 +4,11 @@ using UnityEngine;
 
 public enum Cooking_Type
 {
-    Mashmellow = 0,
+    Marshmallow = 0,
     Beef_Stew,
     Skewers_Flatter,
-    Steak,
-    Grilled_Salmon,
+    Beef_Steak,
+    Salmon_Steak,
 }
 
 public class RecipeSetting : MonoBehaviour
@@ -31,11 +31,11 @@ public class RecipeSetting : MonoBehaviour
         // 마쉬멜로우 구이
         List<int> perptemp = new List<int> { 20001 };
         List<int> cooktemp = new List<int> { 21 };
-        _recipePrep_D.Add((int)Cooking_Type.Mashmellow, perptemp);
-        _recipeCook_D.Add((int)Cooking_Type.Mashmellow, cooktemp);
+        _recipePrep_D.Add((int)Cooking_Type.Marshmallow, perptemp);
+        _recipeCook_D.Add((int)Cooking_Type.Marshmallow, cooktemp);
     }
 
-    private void Beef_Stew_R() 
+    private void Beef_Stew_R()
     {
         // 비프스튜
         List<int> perptemp = new List<int> { 11110, 41000, 51000 };
@@ -58,8 +58,8 @@ public class RecipeSetting : MonoBehaviour
         // 스테이크
         List<int> perptemp = new List<int> { 10110, 81000 };
         List<int> cooktemp = new List<int> { 11, 81 };
-        _recipePrep_D.Add((int)Cooking_Type.Steak, perptemp);
-        _recipeCook_D.Add((int)Cooking_Type.Steak, cooktemp);
+        _recipePrep_D.Add((int)Cooking_Type.Beef_Steak, perptemp);
+        _recipeCook_D.Add((int)Cooking_Type.Beef_Steak, cooktemp);
     }
 
     private void Grilled_Salmon_R()
@@ -67,8 +67,8 @@ public class RecipeSetting : MonoBehaviour
         // 연어구이
         List<int> perptemp = new List<int> { 31110, 71000 };
         List<int> cooktemp = new List<int> { 31, 71 };
-        _recipePrep_D.Add((int)Cooking_Type.Grilled_Salmon, perptemp);
-        _recipeCook_D.Add((int)Cooking_Type.Grilled_Salmon, cooktemp);
+        _recipePrep_D.Add((int)Cooking_Type.Salmon_Steak, perptemp);
+        _recipeCook_D.Add((int)Cooking_Type.Salmon_Steak, cooktemp);
     }
 
 

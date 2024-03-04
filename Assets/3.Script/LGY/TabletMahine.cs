@@ -12,7 +12,7 @@ public class TabletMahine : MonoBehaviour
     public InputActionReference HandCanvas;
 
     public GameObject _tablet;
-     public GameObject TruePosition;
+    public GameObject TruePosition;
     private Quaternion _tabletRot;
 
     public GameObject _hand;
@@ -94,8 +94,8 @@ public class TabletMahine : MonoBehaviour
     private IEnumerator HandedTablet_co()
     {
         _tabletMod = TabletMod.Handed;
-        _tablet.transform.position = TruePosition.transform.position; // 캔버스2의 위치를 TruePosition으로 설정
-        _tablet.transform.rotation = TruePosition.transform.rotation; // 캔버스2의 회전
+        _tablet.transform.localPosition = Vector3.zero;
+        _tablet.transform.rotation = _hand.transform.rotation; // 캔버스2의 회전
         _tablet.SetActive(true);
         yield return null;
     }
@@ -103,8 +103,8 @@ public class TabletMahine : MonoBehaviour
     private IEnumerator WorldTablet_co()
     {
         _tabletMod = TabletMod.World;
-        _tablet.transform.position = TruePosition.transform.position; // 캔버스2의 위치를 TruePosition으로 설정
-        _tablet.transform.rotation = TruePosition.transform.rotation; // 캔버스2의 회전
+        _tablet.transform.localPosition = Vector3.zero;
+        _tablet.transform.rotation = _hand.transform.rotation; // 캔버스2의 회전
         while (_tablet.transform.parent != null)
         {
             _tablet.transform.parent = null;
@@ -116,5 +116,5 @@ public class TabletMahine : MonoBehaviour
     }
 
 
-    
+
 }

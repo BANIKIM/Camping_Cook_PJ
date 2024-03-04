@@ -11,13 +11,12 @@ public class Cooking_Complete : MonoBehaviour
         if (other.gameObject.CompareTag("Dish"))
         {
             Dish dish = other.gameObject.GetComponent<Dish>();
-            {
 
-                int starCount = dish.ch_Reward();
-                UiManager.instance.OnStar(starCount);
-            }
-            UiManager.instance.Update_CookUI2.OffUpdate();
+            TabletManager.instance._ui_Star.StarUpdate(dish.ch_Reward());
+            GameManager.instance.StopCooking();
+
             _audioSource.PlayOneShot(_audioSource.clip);
+
             GameObject box = GameObject.FindWithTag("Box");
             Destroy(box);
             GameObject[] trash = GameObject.FindGameObjectsWithTag("Food");
