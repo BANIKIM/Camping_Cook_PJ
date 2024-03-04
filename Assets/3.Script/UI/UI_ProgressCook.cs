@@ -10,12 +10,12 @@ public class UI_ProgressCook : MonoBehaviour
     [SerializeField] private Image _progressImg;
     [SerializeField] private TextMeshProUGUI _progressCookName;
 
-    private string[] _cookNameArr = new string[5] { "마쉬멜로우", "비프 스튜", "꼬치 플래터", "스테이크", "연어 스테이크" };
+    public string[] _cookNameArr = new string[5] { "마쉬멜로우", "비프 스튜", "꼬치 플래터", "스테이크", "연어 스테이크" };
 
-    public void StartProgress()
+    public void StartProgress(int idx)
     {
-        _progressImg.sprite = TabletManager.instance._cookAllImgs[GameManager.instance._cookIdx];
-        _progressCookName.text = _cookNameArr[GameManager.instance._cookIdx];
+        _progressImg.sprite = TabletManager.instance._cookAllImgs[idx];
+        _progressCookName.text = _cookNameArr[idx];
         _progressCooking.SetActive(true);
     }
 

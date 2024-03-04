@@ -16,21 +16,21 @@ public class TabletManager : MonoBehaviour
     public TextMeshProUGUI _levelText;
     public Slider _expSlider;
 
+    [SerializeField] private AudioSource _audioSource;
 
     [Header("Selected Recipe")]
     public Image _cookImg;
     public Sprite[] _cookAllImgs;
-    public TextMeshProUGUI _cookText;
     public TextMeshProUGUI _difficultyText;
     public GameObject[] _cookingOrder;
+    [SerializeField] private TextMeshProUGUI _recipeName;
+
 
     [Header("Home")]
     public TextMeshProUGUI _trophyCount;
     public TextMeshProUGUI _campingLv;
     public TextMeshProUGUI _userName;
     public Slider _campingExp;
-
-    public GameObject[] _cookProgress;
 
     private int _idxTemp;
 
@@ -57,8 +57,12 @@ public class TabletManager : MonoBehaviour
 
     public void SelectRecipe(int idx)
     {
+
+
         _cookImg.sprite = _cookAllImgs[idx];
         _cookingOrder[idx].SetActive(true);
+        _recipeName.text = _ui_ProgressCook._cookNameArr[idx];
+
         _idxTemp = idx;
 
     }
@@ -74,9 +78,10 @@ public class TabletManager : MonoBehaviour
     {
         if (!GameManager.instance.isCookingStart) return;
 
-        CookingProgress(true);
+        AudioManager.instance.Play_Audio(_audioSource, (int)SFX_List.CookStart);
+        _ui_ProgressCook.StartProgress(GameManager.instance._cookIdx);
         _ui_CookingTimer.OnCookingTimer(true);
-        _ui_ProgressCook.StartProgress();
+        // _ui_ProgressCook.StartProgress();
     }
 
 
@@ -84,20 +89,22 @@ public class TabletManager : MonoBehaviour
     #endregion
 
     #region GameEnd
+
     public void UIEndGameEvent()
     {
         if (GameManager.instance.isCookingStart) return;
 
         _ui_CookingTimer.OnCookingTimer(false);
-        CookingProgress(false);
+
         _ui_ProgressCook.EndProgress();
 
     }
+
     #endregion
 
-    public void CookingProgress(bool isActive)
+    public void BtnSound()
     {
-        _cookProgress[GameManager.instance._cookIdx].SetActive(isActive);
+        _audioSource.PlayOneShot(AudioManager.instance._sfxClips[(int)SFX_List.Btn]);
     }
 
 }

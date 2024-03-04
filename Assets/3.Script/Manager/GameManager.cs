@@ -47,14 +47,6 @@ public class GameManager : MonoBehaviour
 
     #region GameStart
 
-    public void SelectCookIdx(int idx)
-    {
-        TabletManager.instance._cookingOrder[idx].SetActive(true);
-
-        if (isCookingStart) return;
-
-        _cookIdx = idx;
-    }
 
     public void ResetToolsPos()
     {
@@ -95,4 +87,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SelectCookIdx(int idx)
+    {
+        TabletManager.instance.SelectRecipe(idx);
+
+        if (isCookingStart) return;
+
+        _cookIdx = idx;
+    }
 }

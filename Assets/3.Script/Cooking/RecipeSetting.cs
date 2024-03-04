@@ -35,7 +35,7 @@ public class RecipeSetting : MonoBehaviour
         _recipeCook_D.Add((int)Cooking_Type.Marshmallow, cooktemp);
     }
 
-    private void Beef_Stew_R() 
+    private void Beef_Stew_R()
     {
         // ∫Ò«¡Ω∫∆©
         List<int> perptemp = new List<int> { 11110, 41000, 51000 };

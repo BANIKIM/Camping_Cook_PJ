@@ -16,8 +16,10 @@ public enum SFX_List
     SliceVegetable2,
     BoilingWater,
     Seasoning,
-    GrillLoopS =6,
-    GrillLoopE =11,
+    GrillLoopS = 6,
+    GrillLoopE = 11,
+    Btn = 12,
+    CookStart = 13,
 
 }
 
@@ -47,6 +49,7 @@ public class AudioManager : MonoBehaviour
     public void Play_Audio(AudioSource source, int idx)
     {
         source.clip = _sfxClips[idx];
-        source.Play();
+
+        if (!source.isPlaying) source.Play();
     }
 }
