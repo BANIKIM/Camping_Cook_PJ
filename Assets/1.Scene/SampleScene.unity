@@ -1347,8 +1347,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.16717173, y: 0.08126697, z: 0.13841358}
-  m_Center: {x: 0.03177739, y: -0.007919579, z: -0.0151403705}
+  m_Size: {x: 0.23515326, y: 0.14883149, z: 0.17525975}
+  m_Center: {x: 0.06576814, y: 0.025862653, z: -0.033563476}
 --- !u!54 &383356346
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4641,8 +4641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbda134d2f20af84cbf3e00aaa8c34f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Start: {fileID: 79641386}
-  Quit: {fileID: 1948889754}
 --- !u!114 &1227225415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8141,7 +8139,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948889754}
   m_LocalRotation: {x: -0, y: 0.69586265, z: -0, w: 0.7181749}
-  m_LocalPosition: {x: 0, y: 0, z: 532}
+  m_LocalPosition: {x: 0, y: 0, z: 594}
   m_LocalScale: {x: 0.4, y: 0.2, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8150,7 +8148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 88.192, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 651, y: 1539}
+  m_AnchoredPosition: {x: 651, y: 1602}
   m_SizeDelta: {x: -10, y: 378}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948889756

@@ -21,4 +21,18 @@ public class HandUi : MonoBehaviour
             Quit.SetActive(true);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Box"))
+        {
+            Start.SetActive(false);
+
+        }
+        // 만약 충돌한 객체의 태그가 "Food"라면
+        else if (other.CompareTag("Food"))
+        {
+            Quit.SetActive(false);
+        }
+    }
 }
