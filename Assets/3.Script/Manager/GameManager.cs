@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public float _needExp = 100f;
     public float _currentExp = 0f;
     public int _cookIdx;
+    public int _idxTemp;
 
     public int _star = 0;
     public int _trophy = 0;
@@ -34,8 +35,16 @@ public class GameManager : MonoBehaviour
 
     public void StartCooking()
     {
-        if (isCookingStart) return;
+        if (isCookingStart)
+        {
+            if (_idxTemp.Equals(_cookIdx)) return;
 
+            else
+            {
+                StopCooking();
+            }
+        }
+        _cookIdx = _idxTemp;
         isCookingStart = true;
 
         ResetToolsPos();   // 도구위치 초기화
@@ -91,10 +100,9 @@ public class GameManager : MonoBehaviour
 
     public void SelectCookIdx(int idx)
     {
-        TabletManager.instance.SelectRecipe(idx);
+        _idxTemp = idx;
+        TabletManager.instance.SelectRecipe(_idxTemp);
 
-        if (isCookingStart) return;
 
-        _cookIdx = idx;
     }
 }

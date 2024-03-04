@@ -63,13 +63,11 @@ public class TabletManager : MonoBehaviour
         _cookingOrder[idx].SetActive(true);
         _recipeName.text = _ui_ProgressCook._cookNameArr[idx];
 
-        _idxTemp = idx;
-
     }
 
     public void RecipeBackBtn()
     {
-        _cookingOrder[_idxTemp].SetActive(false);
+        _cookingOrder[GameManager.instance._cookIdx].SetActive(false);
     }
 
     #region GameStart
