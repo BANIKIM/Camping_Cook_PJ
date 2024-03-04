@@ -78,7 +78,7 @@ public class TabletManager : MonoBehaviour
     {
         if (!GameManager.instance.isCookingStart) return;
 
-        AudioManager.instance.Play_Audio(_audioSource, (int)SFX_List.CookStart);
+        _audioSource.PlayOneShot(AudioManager.instance._sfxClips[(int)SFX_List.CookStart]);
         _ui_ProgressCook.StartProgress(GameManager.instance._cookIdx);
         _ui_CookingTimer.OnCookingTimer(true);
         // _ui_ProgressCook.StartProgress();
