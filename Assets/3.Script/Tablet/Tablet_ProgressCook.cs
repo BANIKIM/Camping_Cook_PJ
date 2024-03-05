@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UI_ProgressCook : MonoBehaviour
+public class Tablet_ProgressCook : MonoBehaviour
 {
     [SerializeField] private GameObject _progressCooking;
     [SerializeField] private Image _progressImg;

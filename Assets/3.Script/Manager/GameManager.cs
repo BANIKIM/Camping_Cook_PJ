@@ -100,10 +100,10 @@ public class GameManager : MonoBehaviour
         {
             _level++;
 
-            TabletManager.instance._campingLv.text = $"Ä·ÇÎ ·¹º§ : {_level}";
+            TabletManager.instance._campingLvText.text = $"Ä·ÇÎ ·¹º§ : {_level}";
             _currentExp -= _needExp;
         }
-        TabletManager.instance._campingExp.value = _needExp - _currentExp;
+        TabletManager.instance._campingExpSlider.value = _needExp - _currentExp;
     }
 
     public void SelectCookIdx(int idx)

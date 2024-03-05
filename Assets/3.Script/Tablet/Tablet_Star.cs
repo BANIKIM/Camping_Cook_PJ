@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_Star : MonoBehaviour
+public class Tablet_Star : MonoBehaviour
 {
     private int[] _starCountArr = new int[5] { 0, 0, 0, 0, 0 };
 

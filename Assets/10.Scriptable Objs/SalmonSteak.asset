@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a197bbe444f89458b05c872c2f3119, type: 3}
   m_Name: SalmonSteak
   m_EditorClassIdentifier: 
-  _cookName: 
-  _difficulty: 
+  _cookName: "\uC5F0\uC5B4 \uC2A4\uD14C\uC774\uD06C"
+  _difficulty: "\uBCF4\uD1B5"
   _reward: 0

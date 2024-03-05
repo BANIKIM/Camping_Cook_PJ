@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a197bbe444f89458b05c872c2f3119, type: 3}
   m_Name: SkewerPlatter
   m_EditorClassIdentifier: 
-  _cookName: 
-  _difficulty: 
+  _cookName: "\uAF2C\uCE58 \uD50C\uB798\uD130"
+  _difficulty: "\uBCF4\uD1B5"
   _reward: 0

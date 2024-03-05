@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a197bbe444f89458b05c872c2f3119, type: 3}
   m_Name: MarshMallow
   m_EditorClassIdentifier: 
-  _cookName: 
-  _difficulty: 
+  _cookName: "\uB9C8\uC26C\uBA5C\uB85C\uC6B0"
+  _difficulty: "\uC26C\uC6C0"
   _reward: 0

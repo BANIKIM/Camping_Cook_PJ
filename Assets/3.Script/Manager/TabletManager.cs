@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-[RequireComponent(typeof(UI_Star))]
-[RequireComponent(typeof(UI_ProgressCook))]
-[RequireComponent(typeof(UI_CookingTimer))]
+[RequireComponent(typeof(Tablet_Star))]
+[RequireComponent(typeof(Tablet_ProgressCook))]
+[RequireComponent(typeof(Tablet_CookingTimer))]
 
 public class TabletManager : MonoBehaviour
 {
     public static TabletManager instance = null;
 
-    [HideInInspector] public UI_Star _ui_Star;
-    [HideInInspector] public UI_ProgressCook _ui_ProgressCook;
-    [HideInInspector] public UI_CookingTimer _ui_CookingTimer;
+    [HideInInspector] public Tablet_Star _ui_Star;
+    [HideInInspector] public Tablet_ProgressCook _ui_ProgressCook;
+    [HideInInspector] public Tablet_CookingTimer _ui_CookingTimer;
 
     // ===============================================
 
@@ -22,10 +22,11 @@ public class TabletManager : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
 
     [Header("Home")]
-    public TextMeshProUGUI _userName;
-    public TextMeshProUGUI _trophyCount;
-    public TextMeshProUGUI _campingLv;
-    public Slider _campingExp;
+    public TextMeshProUGUI _userNameText;
+    public TextMeshProUGUI _trophyCountText;
+    public TextMeshProUGUI _campingLvText;
+    public Slider _campingExpSlider;
+    public TextMeshProUGUI _coinCountText;
 
     private void Awake()
     {

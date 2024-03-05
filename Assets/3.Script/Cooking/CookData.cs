@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Cook Data", menuName = "ScriptableObject/Cook Data", order = int.MaxValue)]
+[CreateAssetMenu(fileName = "Cook Data", menuName = "Scriptable Object/Cook Data", order = int.MaxValue)]
 public class CookData : ScriptableObject
 {
     [SerializeField] private string _cookName;
