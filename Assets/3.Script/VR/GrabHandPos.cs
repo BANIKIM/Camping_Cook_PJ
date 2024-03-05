@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class GrabHandPos : MonoBehaviour
 {
+    public float _posTransitionDuration = 0.2f;
     public HandData _rightHandPos;
+    public HandData _leftHandPos;
 
     private Vector3 _startingHandPos;
     private Vector3 _finalHandPos;
@@ -25,6 +30,7 @@ public class GrabHandPos : MonoBehaviour
         _grabInter.selectExited.AddListener(UnSetPos);
 
         _rightHandPos.gameObject.SetActive(false);
+        _leftHandPos.gameObject.SetActive(false);
 
     }
 
@@ -35,21 +41,31 @@ public class GrabHandPos : MonoBehaviour
             HandData handData = arg.interactorObject.transform.GetComponentInChildren<HandData>();
             handData._animator.enabled = false;
 
+            if (handData.Equals(HandData.HandType.Right))
+            {
+                SetHandDataValues(handData, _rightHandPos);
+            }
+            else
+            {
+                SetHandDataValues(handData, _leftHandPos);
+            }
 
             SetHandDataValues(handData, _rightHandPos);
-            SetHandData(handData, _finalHandPos, _finalHandRot, _finalFingerRots);
+            StartCoroutine(SetHandDataRoutine(handData, _finalHandPos, _finalHandRot, _finalFingerRots,
+                _startingHandPos, _startingHandRot, _startingFingerRots));
 
         }
     }
 
     public void UnSetPos(BaseInteractionEventArgs arg)
     {
-        if(arg.interactorObject is XRRayInteractor)
+        if (arg.interactorObject is XRRayInteractor)
         {
             HandData handData = arg.interactorObject.transform.GetComponentInChildren<HandData>();
             handData._animator.enabled = true;
 
-            SetHandData(handData, _startingHandPos, _startingHandRot, _startingFingerRots);
+            StartCoroutine(SetHandDataRoutine(handData, _startingHandPos, _startingHandRot, _startingFingerRots
+                , _finalHandPos, _finalHandRot, _finalFingerRots));
         }
     }
 
@@ -87,4 +103,56 @@ public class GrabHandPos : MonoBehaviour
         }
     }
 
+    public IEnumerator SetHandDataRoutine(HandData hand, Vector3 newPos, Quaternion newRot, Quaternion[] newBonesRot
+        , Vector3 startingPos, Quaternion startingRot, Quaternion[] startingBonesRot)
+    {
+        float timer = 0f;
+
+        while (timer < _posTransitionDuration)
+        {
+            Vector3 p = Vector3.Lerp(startingPos, newPos, timer / _posTransitionDuration);
+            Quaternion r = Quaternion.Lerp(startingRot, newRot, timer / _posTransitionDuration);
+
+            hand._root.localPosition = p;
+            hand._root.localRotation = r;
+
+            for (int i = 0; i < newBonesRot.Length; i++)
+            {
+                hand._fingerBones[i].localRotation = Quaternion.Lerp(startingBonesRot[i], newBonesRot[i], timer / _posTransitionDuration);
+            }
+
+            timer += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+
+    }
+
+#if UNITY_EDITOR
+
+    [MenuItem("Tools/Mirror Selected Right Grab Pos")]
+    public static void MirrorRightPos()
+    {
+        Debug.Log("Mirror Right Pos");
+        GrabHandPos handPos = Selection.activeGameObject.GetComponent<GrabHandPos>();
+        handPos.MirrorPos(handPos._leftHandPos, handPos._rightHandPos);
+    }
+
+#endif
+    public void MirrorPos(HandData posToMirror, HandData posUsedToMirror)
+    {
+        Vector3 mirroredPos = posUsedToMirror._root.localPosition;
+        mirroredPos.x *= -1;
+
+        Quaternion mirroredQuaternion = posUsedToMirror._root.localRotation;
+        mirroredQuaternion.y *= -1;
+        mirroredQuaternion.z *= -1;
+
+        posToMirror._root.localPosition = mirroredPos;
+        posToMirror._root.localRotation = mirroredQuaternion;
+
+        for (int i = 0; i < posUsedToMirror._fingerBones.Length; i++)
+        {
+            posToMirror._fingerBones[i].localRotation = posUsedToMirror._fingerBones[i].localRotation;
+        }
+    }
 }
