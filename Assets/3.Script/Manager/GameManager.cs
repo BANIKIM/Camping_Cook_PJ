@@ -6,6 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public enum GameMod
+    {
+        Default = 0,
+        Challenge = 1,
+    }
+
+    public GameMod _gameMod = GameMod.Default;
+
     [SerializeField] private GameObject[] _tools;
     [SerializeField] private Transform[] _toolsPos;
 
@@ -92,10 +100,10 @@ public class GameManager : MonoBehaviour
         {
             _level++;
 
-            TabletManager.instance._levelText.text = $"Ä·ÇÎ ·¹º§ : {_level}";
+            TabletManager.instance._campingLv.text = $"Ä·ÇÎ ·¹º§ : {_level}";
             _currentExp -= _needExp;
         }
-        TabletManager.instance._expSlider.value = _needExp - _currentExp;
+        TabletManager.instance._campingExp.value = _needExp - _currentExp;
     }
 
     public void SelectCookIdx(int idx)
