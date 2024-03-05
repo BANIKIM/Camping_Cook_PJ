@@ -19,6 +19,7 @@ public class DayAndNight : MonoBehaviour
     private void Start()
     {
         dayFogDensity = RenderSettings.fogDensity;
+          RenderSettings.skybox = daySkyboxMaterial; // 시작할 때 낮에 해당하는 Skybox로 설정
     }
     private void Update()
     {
@@ -27,7 +28,7 @@ public class DayAndNight : MonoBehaviour
         {
             isNight = true;
         }
-        else if (transform.eulerAngles.x >= 340)
+        else if (transform.eulerAngles.x <= 10)
         {
             isNight = false;
         }
@@ -40,20 +41,23 @@ public class DayAndNight : MonoBehaviour
                 RenderSettings.fogDensity = currentFogDensity;
 
                 // 밤에 Skybox 머테리얼 변경
-                RenderSettings.skybox = nightSkyboxMaterial;
+               RenderSettings.skybox = nightSkyboxMaterial;
             }
 
         }
         else
         {   //낮이 경우
-            if (currentFogDensity >= nightFogDensity)
+            if (currentFogDensity >= dayFogDensity)
             {
                 currentFogDensity -= 0.1f * fogDensityCal * Time.deltaTime;
                 RenderSettings.fogDensity = currentFogDensity;
 
                 // 낮에 Skybox 머테리얼 변경
                 RenderSettings.skybox = daySkyboxMaterial;
+               
             }
         }
+      
     }
+
 }
