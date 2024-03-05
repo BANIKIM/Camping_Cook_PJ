@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class UI_CookingTimer : MonoBehaviour
+public class Tablet_CookingTimer : MonoBehaviour
 {
     private IEnumerator _cookingTimer_Temp;
     [SerializeField] private TextMeshProUGUI _cookTimerText;

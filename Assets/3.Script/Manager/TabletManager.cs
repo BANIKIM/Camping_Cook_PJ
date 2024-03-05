@@ -4,36 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+[RequireComponent(typeof(Tablet_Star))]
+[RequireComponent(typeof(Tablet_ProgressCook))]
+[RequireComponent(typeof(Tablet_CookingTimer))]
+
 public class TabletManager : MonoBehaviour
 {
     public static TabletManager instance = null;
 
-    [HideInInspector] public UI_Star _ui_Star;
-    [HideInInspector] public UI_ProgressCook _ui_ProgressCook;
-    [HideInInspector] public UI_CookingTimer _ui_CookingTimer;
+    [HideInInspector] public Tablet_Star _ui_Star;
+    [HideInInspector] public Tablet_ProgressCook _ui_ProgressCook;
+    [HideInInspector] public Tablet_CookingTimer _ui_CookingTimer;
 
+    // ===============================================
 
-    public TextMeshProUGUI _levelText;
-    public Slider _expSlider;
-
+    // Tablet AudioSource 
     [SerializeField] private AudioSource _audioSource;
 
-    [Header("Selected Recipe")]
-    public Image _cookImg;
-    public Sprite[] _cookAllImgs;
-    public TextMeshProUGUI _difficultyText;
-    public GameObject[] _cookingOrder;
-    [SerializeField] private TextMeshProUGUI _recipeName;
-
-
     [Header("Home")]
-    public TextMeshProUGUI _trophyCount;
-    public TextMeshProUGUI _campingLv;
-    public TextMeshProUGUI _userName;
-    public Slider _campingExp;
-
-    private int _idxTemp;
-
+    public TextMeshProUGUI _userNameText;
+    public TextMeshProUGUI _trophyCountText;
+    public TextMeshProUGUI _campingLvText;
+    public Slider _campingExpSlider;
+    public TextMeshProUGUI _coinCountText;
 
     private void Awake()
     {
@@ -59,15 +52,12 @@ public class TabletManager : MonoBehaviour
     {
 
 
-        _cookImg.sprite = _cookAllImgs[idx];
-        _cookingOrder[idx].SetActive(true);
-        _recipeName.text = _ui_ProgressCook._cookNameArr[idx];
 
     }
 
     public void RecipeBackBtn()
     {
-        _cookingOrder[GameManager.instance._cookIdx].SetActive(false);
+
     }
 
     #region GameStart
