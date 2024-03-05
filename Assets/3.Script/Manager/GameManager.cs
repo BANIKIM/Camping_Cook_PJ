@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public int _trophy = 0;
 
     public bool isCookingStart = false;
+    private IEnumerator _challengeTimerTemp;
 
     private void Awake()
     {
@@ -52,12 +53,21 @@ public class GameManager : MonoBehaviour
                 StopCooking();
             }
         }
+        // 60초 쿨타임 나중에 변수로 빼야함
+        if (_gameMod.Equals(GameMod.Challenge))
+        {
+            ChallengeTimer(60);
+            CookManager.instance.Spawn(5);
+        }
+        else
+        {
+            CookManager.instance.Spawn(_cookIdx);
+        }
         _cookIdx = _idxTemp;
         isCookingStart = true;
 
         ResetToolsPos();   // 도구위치 초기화
         TabletManager.instance.UIStartGameEvent();
-        CookManager.instance.Spawn(_cookIdx);
 
 
     }
@@ -73,6 +83,25 @@ public class GameManager : MonoBehaviour
             _tools[i].transform.rotation = _toolsPos[i].rotation;
         }
     }
+
+    private void ChallengeTimer(float seconds)
+    {
+        _challengeTimerTemp = ChallengeTimer_Co(seconds);
+        StartCoroutine(_challengeTimerTemp);
+    }
+
+    private IEnumerator ChallengeTimer_Co(float seconds)
+    {
+        float currentTime = 0f;
+
+        while (isCookingStart && currentTime <= seconds)
+        {
+            currentTime += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
+        }
+        StopCooking();
+    }
+
 
     #endregion
 
