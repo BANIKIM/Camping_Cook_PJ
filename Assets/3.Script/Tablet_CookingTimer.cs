@@ -5,8 +5,8 @@ using UnityEngine;
 public class Tablet_CookingTimer : MonoBehaviour
 {
     private IEnumerator _cookingTimer_Temp;
-    [SerializeField] private TextMeshProUGUI _cookTimerText;
-    [SerializeField] private TextMeshProUGUI _homeTimerText;
+    public TextMeshProUGUI _cookTimerText;
+    public TextMeshProUGUI _homeTimerText;
 
     public void OnCookingTimer(bool isStart)
     {

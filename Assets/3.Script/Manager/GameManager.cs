@@ -92,11 +92,13 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator ChallengeTimer_Co(float seconds)
     {
-        float currentTime = 0f;
+        float currentTime = 60f;
 
-        while (isCookingStart && currentTime <= seconds)
+        while (isCookingStart && currentTime > 0)
         {
-            currentTime += Time.fixedDeltaTime;
+            currentTime -= Time.fixedDeltaTime;
+            TabletManager.instance._ui_CookingTimer._cookTimerText.text =
+                string.Format("{0:00},{1:00}", (int)currentTime / 60, (int)currentTime % 60);
             yield return new WaitForFixedUpdate();
         }
         StopCooking();
