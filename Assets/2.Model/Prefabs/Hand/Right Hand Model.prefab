@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 9066461200027231097}
   m_Layer: 30
   m_Name: Right Hand Model
-  m_TagString: Hand
+  m_TagString: RightHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
