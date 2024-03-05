@@ -142,4 +142,22 @@ public class GameManager : MonoBehaviour
 
 
     }
+
+    public void ChangeGameMod()
+    {
+        switch (_gameMod)
+        {
+            case GameMod.Default:
+                _gameMod = GameMod.Challenge;
+                TabletManager.instance._gameModText.text = "도전 모드";
+                break;
+            case GameMod.Challenge:
+                _gameMod = GameMod.Default;
+                TabletManager.instance._gameModText.text = "일반 모드";
+                break;
+            default:
+                break;
+        }
+    }
+
 }

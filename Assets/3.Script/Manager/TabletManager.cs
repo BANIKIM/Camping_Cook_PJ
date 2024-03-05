@@ -28,6 +28,9 @@ public class TabletManager : MonoBehaviour
     public Slider _campingExpSlider;
     public TextMeshProUGUI _coinCountText;
 
+
+    public TextMeshProUGUI _gameModText;
+
     private void Awake()
     {
         if (instance == null)
@@ -94,5 +97,7 @@ public class TabletManager : MonoBehaviour
     {
         _audioSource.PlayOneShot(AudioManager.instance._sfxClips[(int)SFX_List.Btn]);
     }
+
+
 
 }
