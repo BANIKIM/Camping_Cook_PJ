@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         if (_gameMod.Equals(GameMod.Challenge))
         {
             ChallengeTimer(60);
-            CookManager.instance.Spawn(5);
+            CookManager.instance.Spawn(5); // 모든 재료 있는 프리팹 만들어서 넣어야함
         }
         else
         {
