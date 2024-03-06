@@ -9,7 +9,7 @@ public class UISpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Hand"))
+        if (other.CompareTag("Player"))
         {
 
             SpawnUI.SetActive(true);
@@ -18,7 +18,7 @@ public class UISpawner : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Hand"))
+        if (other.CompareTag("Player"))
         {
             SpawnUI.SetActive(false);
         }
