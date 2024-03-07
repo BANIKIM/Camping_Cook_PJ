@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
     public void CampingExpCheck(float exp)
     {
         _currentExp += exp;
-        if (_needExp - _currentExp <= 0)
+        if (_needExp <= _currentExp)
         {
             _level++;
 

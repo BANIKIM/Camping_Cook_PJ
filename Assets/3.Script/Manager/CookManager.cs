@@ -2,6 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Cooking_Type
+{
+    Marshmallow = 0,
+    Beef_Stew,
+    Skewers_Flatter,
+    Beef_Steak,
+    Salmon_Steak,
+}
+
+public enum Cooking_Difficulty 
+{
+    Easy,
+    Normal,
+    Hard
+}
+
 [RequireComponent(typeof(RecipeSetting))]
 [RequireComponent(typeof(SpawnIngredient))]
 

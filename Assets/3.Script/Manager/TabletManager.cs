@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,7 @@ public class TabletManager : MonoBehaviour
 
     // Tablet AudioSource 
     [SerializeField] private AudioSource _audioSource;
+
 
     [Header("Home")]
     public TextMeshProUGUI _userNameText;
@@ -50,6 +52,12 @@ public class TabletManager : MonoBehaviour
         TryGetComponent(out _ui_CookingTimer);
         TryGetComponent(out _ui_ProgressCook);
     }
+
+    private void FixedUpdate()
+    {
+
+    }
+
 
     public void SelectRecipe(int idx)
     {

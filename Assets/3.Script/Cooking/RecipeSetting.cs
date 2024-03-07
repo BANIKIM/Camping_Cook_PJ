@@ -2,15 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Cooking_Type
-{
-    Marshmallow = 0,
-    Beef_Stew,
-    Skewers_Flatter,
-    Beef_Steak,
-    Salmon_Steak,
-}
-
 public class RecipeSetting : MonoBehaviour
 {
     // Dictionary (요리 / 레시피)
