@@ -12,7 +12,7 @@ public class Cooking_Complete : MonoBehaviour
             
             Dish dish = other.gameObject.GetComponent<Dish>();
 
-            TabletManager.instance._ui_Star.StarUpdate(dish.ch_Reward());
+            TabletManager.instance._tablet_Star.StarUpdate(dish.ch_Reward());
             GameManager.instance.StopCooking();
             dish.onech = false;
             GameManager.instance.CampingExpCheck(50);

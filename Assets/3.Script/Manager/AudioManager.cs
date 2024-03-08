@@ -30,9 +30,6 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] _bgmClips;
     public AudioClip[] _sfxClips;
 
-    public AudioMixer _audioMixer;
-
-
     private void Awake()
     {
         if (instance == null)

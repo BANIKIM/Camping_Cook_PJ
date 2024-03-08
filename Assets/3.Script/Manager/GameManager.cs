@@ -11,8 +11,14 @@ public class GameManager : MonoBehaviour
         Default = 0,
         Challenge = 1,
     }
-
     public GameMod _gameMod = GameMod.Default;
+
+    // Scriptable Objs
+    private CookData _currentCookData;
+
+    [Header("Resource")]
+    [SerializeField] private CookData[] _cookDatas;
+
 
     [SerializeField] private GameObject[] _tools;
     [SerializeField] private Transform[] _toolsPos;
@@ -21,7 +27,7 @@ public class GameManager : MonoBehaviour
     public float _needExp = 100f;
     public float _currentExp = 0f;
     public int _cookIdx;
-    public int _idxTemp;
+    private int _selectIdx;
 
     public int _star = 0;
     public int _trophy = 0;
@@ -46,7 +52,7 @@ public class GameManager : MonoBehaviour
     {
         if (isCookingStart)
         {
-            if (_idxTemp.Equals(_cookIdx)) return;
+            if (_selectIdx.Equals(_cookIdx)) return;
 
             else
             {
@@ -63,11 +69,13 @@ public class GameManager : MonoBehaviour
         {
             CookManager.instance.Spawn(_cookIdx);
         }
-        _cookIdx = _idxTemp;
-        isCookingStart = true;
 
+
+        _cookIdx = _selectIdx;
+        isCookingStart = true;
+        _currentCookData = _cookDatas[_selectIdx];
         ResetToolsPos();   // 도구위치 초기화
-        TabletManager.instance.UIStartGameEvent();
+        TabletManager.instance.UIStartGameEvent(_cookIdx);
 
 
     }
@@ -97,7 +105,7 @@ public class GameManager : MonoBehaviour
         while (isCookingStart && currentTime > 0)
         {
             currentTime -= Time.fixedDeltaTime;
-            TabletManager.instance._ui_CookingTimer._cookTimerText.text =
+            TabletManager.instance._tablet_CookingTimer._cookTimerText[_cookIdx].text =
                 string.Format("{0:00},{1:00}", (int)currentTime / 60, (int)currentTime % 60);
             yield return new WaitForFixedUpdate();
         }
@@ -115,7 +123,7 @@ public class GameManager : MonoBehaviour
 
         isCookingStart = false;
 
-        TabletManager.instance.UIEndGameEvent();
+        TabletManager.instance.UIEndGameEvent(_cookIdx);
 
     }
 
@@ -134,15 +142,22 @@ public class GameManager : MonoBehaviour
             TabletManager.instance._campingLvText.text = $"캠핑 레벨 : {_level}";
             _currentExp -= _needExp;
         }
-        TabletManager.instance._campingExpSlider.value = _needExp - _currentExp;
+        TabletManager.instance._campingExpSlider.value = _currentExp;
     }
 
-    public void SelectCookIdx(int idx)
+    public void SelectRecipeEvent(int idx)
     {
-        _idxTemp = idx;
-        TabletManager.instance.SelectRecipe(_idxTemp);
+        _selectIdx = idx;
 
+        TabletManager.instance._tablet_ProgressCook.SelectRecipe(_selectIdx);
 
+    }
+
+    public void BackBtn()
+    {
+        TabletManager.instance._gameModText[_selectIdx].text = "일반";
+        TabletManager.instance._tablet_ProgressCook.BackBtn();
+        _gameMod = GameMod.Default;
     }
 
     public void ChangeGameMod()
@@ -151,15 +166,14 @@ public class GameManager : MonoBehaviour
         {
             case GameMod.Default:
                 _gameMod = GameMod.Challenge;
-                TabletManager.instance._gameModText.text = "도전 모드";
                 break;
             case GameMod.Challenge:
                 _gameMod = GameMod.Default;
-                TabletManager.instance._gameModText.text = "일반 모드";
                 break;
             default:
                 break;
         }
+        TabletManager.instance.ChangeGameMod(_selectIdx, (int)_gameMod);
     }
 
 }

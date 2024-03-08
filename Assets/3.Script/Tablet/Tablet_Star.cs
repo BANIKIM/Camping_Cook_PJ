@@ -7,8 +7,7 @@ public class Tablet_Star : MonoBehaviour
     private int[] _starCountArr = new int[5] { 0, 0, 0, 0, 0 };
 
     [SerializeField] private GameObject[] _starObj;
-    [SerializeField] private Sprite _fullStarImg;
-    [SerializeField] private TextMeshProUGUI _starCountText;
+    [SerializeField] private Sprite _fillStarImg;
 
     public void StarUpdate(int idx)
     {
@@ -20,11 +19,11 @@ public class Tablet_Star : MonoBehaviour
             GameManager.instance._star -= _starCountArr[GameManager.instance._cookIdx];
             for (int i = 0; i < idx; i++)
             {
-                _starObj[GameManager.instance._cookIdx].transform.GetChild(i).GetComponent<Image>().sprite = _fullStarImg;
+                _starObj[GameManager.instance._cookIdx].transform.GetChild(i).GetComponent<Image>().sprite = _fillStarImg;
             }
             _starCountArr[GameManager.instance._cookIdx] = idx;
             GameManager.instance._star += idx;
-            _starCountText.text = string.Format("{0:000}", GameManager.instance._star);
+            TabletManager.instance._starCountText.text = string.Format("{0:00}", GameManager.instance._star);
         }
     }
 }

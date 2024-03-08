@@ -13,9 +13,9 @@ public class TabletManager : MonoBehaviour
 {
     public static TabletManager instance = null;
 
-    [HideInInspector] public Tablet_Star _ui_Star;
-    [HideInInspector] public Tablet_ProgressCook _ui_ProgressCook;
-    [HideInInspector] public Tablet_CookingTimer _ui_CookingTimer;
+    [HideInInspector] public Tablet_Star _tablet_Star;
+    [HideInInspector] public Tablet_ProgressCook _tablet_ProgressCook;
+    [HideInInspector] public Tablet_CookingTimer _tablet_CookingTimer;
 
     // ===============================================
 
@@ -25,13 +25,14 @@ public class TabletManager : MonoBehaviour
 
     [Header("Home")]
     public TextMeshProUGUI _userNameText;
-    public TextMeshProUGUI _trophyCountText;
     public TextMeshProUGUI _campingLvText;
     public Slider _campingExpSlider;
+    public TextMeshProUGUI _starCountText;
+    public TextMeshProUGUI _trophyCountText;
     public TextMeshProUGUI _coinCountText;
 
-
-    public TextMeshProUGUI _gameModText;
+    [Header("Mod")]
+    public TextMeshProUGUI[] _gameModText;
 
     private void Awake()
     {
@@ -48,58 +49,35 @@ public class TabletManager : MonoBehaviour
 
     private void Start()
     {
-        TryGetComponent(out _ui_Star);
-        TryGetComponent(out _ui_CookingTimer);
-        TryGetComponent(out _ui_ProgressCook);
+        TryGetComponent(out _tablet_Star);
+        TryGetComponent(out _tablet_CookingTimer);
+        TryGetComponent(out _tablet_ProgressCook);
     }
 
-    private void FixedUpdate()
-    {
-
-    }
-
-
-    public void SelectRecipe(int idx)
-    {
-
-
-
-    }
-
-    public void RecipeBackBtn()
-    {
-
-    }
-
-    #region GameStart
-
-    public void UIStartGameEvent()
+    public void UIStartGameEvent(int idx)
     {
         if (!GameManager.instance.isCookingStart) return;
 
         _audioSource.PlayOneShot(AudioManager.instance._sfxClips[(int)SFX_List.CookStart]);
-        _ui_ProgressCook.StartProgress(GameManager.instance._cookIdx);
-        _ui_CookingTimer.OnCookingTimer(true);
+        _tablet_ProgressCook.StartProgress(idx);
+        _tablet_CookingTimer.OnCookingTimer(true, idx);
         // _ui_ProgressCook.StartProgress();
     }
 
-
-
-    #endregion
-
-    #region GameEnd
-
-    public void UIEndGameEvent()
+    public void UIEndGameEvent(int idx)
     {
         if (GameManager.instance.isCookingStart) return;
 
-        _ui_CookingTimer.OnCookingTimer(false);
+        _tablet_CookingTimer.OnCookingTimer(false, idx);
 
-        _ui_ProgressCook.EndProgress();
+        _tablet_ProgressCook.EndProgress();
 
     }
 
-    #endregion
+    public void ChangeGameMod(int cookNum, int mod)
+    {
+        _gameModText[cookNum].text = mod.Equals(0) ? "일반" : "도전 모드";
+    }
 
     public void BtnSound()
     {
