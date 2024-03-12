@@ -6311,7 +6311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerCharacteristics: 0
-  handAnimator: {fileID: 0}
+  handAnimator: {fileID: 325930006407029961}
 --- !u!1 &8602383720408128076
 GameObject:
   m_ObjectHideFlags: 0
