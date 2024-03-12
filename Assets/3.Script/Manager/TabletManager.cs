@@ -33,6 +33,7 @@ public class TabletManager : MonoBehaviour
 
     [Header("Mod")]
     public TextMeshProUGUI[] _gameModText;
+    [SerializeField] private GameObject _secretObj;
 
     private void Awake()
     {
@@ -59,17 +60,24 @@ public class TabletManager : MonoBehaviour
         if (!GameManager.instance.isCookingStart) return;
 
         _audioSource.PlayOneShot(AudioManager.instance._sfxClips[(int)SFX_List.CookStart]);
-        _tablet_ProgressCook.StartProgress(idx);
-        _tablet_CookingTimer.OnCookingTimer(true, idx);
+        if (GameManager.instance._gameMod.Equals(GameManager.GameMod.Challenge))
+        {
+            _secretObj.SetActive(true);
+            _tablet_CookingTimer.ChallengeTimer(60);
+        }
+        else
+        {
+
+            _tablet_ProgressCook.StartProgress(idx);
+            _tablet_CookingTimer.OnCookingTimer(true, idx);
+        }
         // _ui_ProgressCook.StartProgress();
     }
 
     public void UIEndGameEvent(int idx)
     {
-        if (GameManager.instance.isCookingStart) return;
-
         _tablet_CookingTimer.OnCookingTimer(false, idx);
-
+        _secretObj.SetActive(false);
         _tablet_ProgressCook.EndProgress();
 
     }

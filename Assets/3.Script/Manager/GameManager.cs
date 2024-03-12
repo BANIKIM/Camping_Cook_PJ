@@ -63,7 +63,6 @@ public class GameManager : MonoBehaviour
         // 60초 쿨타임 나중에 변수로 빼야함
         if (_gameMod.Equals(GameMod.Challenge))
         {
-            ChallengeTimer(60);
             if (_cookIdx.Equals(3))
             {
                 CookManager.instance.Spawn(5); // 모든 재료 있는 프리팹 만들어서 넣어야함
@@ -83,8 +82,9 @@ public class GameManager : MonoBehaviour
 
         isCookingStart = true;
         _currentCookData = _cookDatas[_selectIdx];
-        ResetToolsPos();   // 도구위치 초기화
         TabletManager.instance.UIStartGameEvent(_cookIdx);
+        ResetToolsPos();   // 도구위치 초기화
+
 
 
     }
@@ -101,25 +101,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void ChallengeTimer(float seconds)
-    {
-        _challengeTimerTemp = ChallengeTimer_Co(seconds);
-        StartCoroutine(_challengeTimerTemp);
-    }
 
-    private IEnumerator ChallengeTimer_Co(float seconds)
-    {
-        float currentTime = 60f;
-
-        while (isCookingStart && currentTime > 0)
-        {
-            currentTime -= Time.fixedDeltaTime;
-            TabletManager.instance._tablet_CookingTimer._cookTimerText[_cookIdx].text =
-                string.Format("{0:00},{1:00}", (int)currentTime / 60, (int)currentTime % 60);
-            yield return new WaitForFixedUpdate();
-        }
-        StopCooking();
-    }
 
 
     #endregion
@@ -133,7 +115,13 @@ public class GameManager : MonoBehaviour
         isCookingStart = false;
 
         TabletManager.instance.UIEndGameEvent(_cookIdx);
-
+        GameObject box = GameObject.FindWithTag("Box");
+        Destroy(box);
+        GameObject[] trash = GameObject.FindGameObjectsWithTag("Food");
+        for (int i = 0; i < trash.Length; i++)
+        {
+            Destroy(trash[i]);
+        }
     }
 
     #region GameEnd

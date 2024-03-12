@@ -16,13 +16,7 @@ public class Cooking_Complete : MonoBehaviour
             GameManager.instance.StopCooking();
             dish.onech = false;
             GameManager.instance.CampingExpCheck(50);
-            GameObject box = GameObject.FindWithTag("Box");
-            Destroy(box);
-            GameObject[] trash = GameObject.FindGameObjectsWithTag("Food");
-            for (int i = 0; i < trash.Length; i++)
-            {
-                Destroy(trash[i]);
-            }
+            
         }
     }
 }
