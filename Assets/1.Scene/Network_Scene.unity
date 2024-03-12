@@ -342,7 +342,7 @@ Transform:
   m_GameObject: {fileID: 625472955}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.72, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -556,12 +556,10 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 7462684099648362490, guid: 7cee263202f0fc64eb07dee5c998ba18, type: 3}
+  playerPrefab: {fileID: 7462684099648362490, guid: 85501cad36ee8504b95bcd8893fe6209, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 1
-  spawnPrefabs:
-  - {fileID: 4554561294953304353, guid: d6500433213f5784ab5e80f18b01010c, type: 3}
-  - {fileID: 4554561294953304353, guid: b07d575854ee5654fbd36bad92b0407d, type: 3}
+  spawnPrefabs: []
   snapshotSettings:
     bufferTimeMultiplier: 2
     bufferLimit: 32
@@ -1060,7 +1058,7 @@ Transform:
   m_GameObject: {fileID: 1946162483}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.09, z: 0}
+  m_LocalPosition: {x: 0, y: 4.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4321,6 +4319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b4a737903b82a43bb95804a2149147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controllerCharacteristics: 0
+  handAnimator: {fileID: 2292132868194963487}
 --- !u!1 &2205083082264810061
 GameObject:
   m_ObjectHideFlags: 0
@@ -6310,6 +6310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b4a737903b82a43bb95804a2149147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controllerCharacteristics: 0
+  handAnimator: {fileID: 0}
 --- !u!1 &8602383720408128076
 GameObject:
   m_ObjectHideFlags: 0
