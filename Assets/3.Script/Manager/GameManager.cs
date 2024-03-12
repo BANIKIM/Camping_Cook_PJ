@@ -59,11 +59,20 @@ public class GameManager : MonoBehaviour
                 StopCooking();
             }
         }
+        _cookIdx = _selectIdx;
         // 60초 쿨타임 나중에 변수로 빼야함
         if (_gameMod.Equals(GameMod.Challenge))
         {
             ChallengeTimer(60);
-            CookManager.instance.Spawn(5); // 모든 재료 있는 프리팹 만들어서 넣어야함
+            if (_cookIdx.Equals(3))
+            {
+                CookManager.instance.Spawn(5); // 모든 재료 있는 프리팹 만들어서 넣어야함
+            }
+            else
+            {
+                CookManager.instance.Spawn(6); // 모든 재료 있는 프리팹 만들어서 넣어야함
+
+            }
         }
         else
         {
@@ -71,7 +80,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-        _cookIdx = _selectIdx;
+
         isCookingStart = true;
         _currentCookData = _cookDatas[_selectIdx];
         ResetToolsPos();   // 도구위치 초기화

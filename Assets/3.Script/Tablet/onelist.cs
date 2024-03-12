@@ -16,7 +16,6 @@ public class onelist : MonoBehaviour
 
     private void Update()
     {
-        a();
         if (googlesheet.Findnot)
         {
             if (dB_Parsing.textType==UI_DB_Parsing.TextType.Cook)
@@ -36,11 +35,10 @@ public class onelist : MonoBehaviour
     }
 
 
-    public void a()
+    public void Start()
     {
-        google = GameObject.FindGameObjectWithTag("UIManager");
-        dB_Parsing = google.GetComponent<UI_DB_Parsing>();
-        googlesheet = google.GetComponent<GoogleSheetManager>();
+        dB_Parsing = GetComponent<UI_DB_Parsing>();
+        googlesheet = GetComponent<GoogleSheetManager>();
        
     }
 }
