@@ -957,6 +957,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR_Rig_v1
       objectReference: {fileID: 0}
+    - target: {fileID: 2442274226774450591, guid: 19de5666429bf75409cbf489c16f09f8, type: 3}
+      propertyPath: m_RightHandTurnAction.m_Reference
+      value: 
+      objectReference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 2442274226774450591, guid: 19de5666429bf75409cbf489c16f09f8, type: 3}
+      propertyPath: m_RightHandTurnAction.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
