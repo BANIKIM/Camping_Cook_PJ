@@ -4182,7 +4182,6 @@ GameObject:
   - component: {fileID: 4137616886691398528}
   - component: {fileID: 8506153525667958704}
   - component: {fileID: 1498889413819852918}
-  - component: {fileID: 2943634957603730557}
   m_Layer: 0
   m_Name: NetworkPlayer (XR Rig) 1
   m_TagString: Player
@@ -4379,32 +4378,6 @@ MonoBehaviour:
   positionSensitivity: 0.01
   rotationSensitivity: 0.01
   scaleSensitivity: 0.01
---- !u!143 &2943634957603730557
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7462684099648362490}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.3
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7549360132868622316
 GameObject:
   m_ObjectHideFlags: 0
