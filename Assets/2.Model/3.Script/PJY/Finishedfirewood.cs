@@ -103,9 +103,9 @@ public class Finishedfirewood : MonoBehaviour
                 Collider[] hitColliders = Physics.OverlapSphere(transform.position, campFire.expRange);
                 foreach (Collider collider in hitColliders)
                 {
-                    if (collider.CompareTag("Hand"))
+                    if (collider.CompareTag("Player"))
                     {
-                        GameManager.instance._needExp -= 10;
+                        GameManager.instance.CampingExpCheck(10);//경험치 추가
                        
                         uI_DB_Parsing.textType = UI_DB_Parsing.TextType.Campfire;
                         uI_DB_Parsing.number = "1";

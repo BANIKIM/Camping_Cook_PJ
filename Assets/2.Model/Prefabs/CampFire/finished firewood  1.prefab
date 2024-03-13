@@ -326,6 +326,8 @@ MonoBehaviour:
   finishedfirewood3: {fileID: 6403697500428371920}
   campfireTag: Campfire
   campFire: {fileID: 0}
+  uI_DB_ParsingObj: {fileID: 0}
+  uI_DB_Parsing: {fileID: 0}
   B_Time: 0
   FireTime: 0
   fireDuration: 5
@@ -348,5 +350,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5895175, y: 0.30153888, z: 0.5651461}
-  m_Center: {x: 0.01040934, y: 0.17203048, z: 0.031223834}
+  m_Size: {x: 1.6123786, y: 1.0763636, z: 1.4823847}
+  m_Center: {x: 0.050574422, y: 0.55944276, z: 0.0628337}
