@@ -1,0 +1,44 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+public class onelist : MonoBehaviour
+{
+    public GameObject google;
+    public UI_DB_Parsing dB_Parsing;
+    public GoogleSheetManager googlesheet;
+   
+    public TextMeshProUGUI textOnelist2;
+
+
+
+
+    private void Update()
+    {
+        if (googlesheet.Findnot)
+        {
+            if (dB_Parsing.textType==UI_DB_Parsing.TextType.Cook)
+            {
+              
+                textOnelist2.text = googlesheet.returnlist[1] + "요리를 만듬 경험치 " + googlesheet.returnlist[2];
+            }
+            else if (dB_Parsing.textType == UI_DB_Parsing.TextType.Campfire)
+            {
+               
+                textOnelist2.text = "캠프파이어의 열기로 캠핑 온도를 10 얻었습니다.";
+            }
+            
+            
+            
+        }
+    }
+
+
+    public void Start()
+    {
+        dB_Parsing = GetComponent<UI_DB_Parsing>();
+        googlesheet = GetComponent<GoogleSheetManager>();
+       
+    }
+}
