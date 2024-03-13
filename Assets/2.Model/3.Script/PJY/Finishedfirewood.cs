@@ -7,9 +7,9 @@ public class Finishedfirewood : MonoBehaviour
 
 
     public GameObject CampfireObj;
-    public GameObject finishedfirewood1;
+ /*   public GameObject finishedfirewood1;
     public GameObject finishedfirewood2;
-    public GameObject finishedfirewood3;
+    public GameObject finishedfirewood3;*/
 
 
     public string campfireTag = "Campfire";
@@ -119,8 +119,8 @@ public class Finishedfirewood : MonoBehaviour
             {
                 campFire.Camfire_1.SetActive(true);
                 campFire.Camfire_2.SetActive(false);
-                finishedfirewood2.SetActive(false);
-                finishedfirewood3.SetActive(true);
+            /*    finishedfirewood2.SetActive(false);
+                finishedfirewood3.SetActive(true);*/
 
             }
             else if (campFire.HP > 30 && campFire.HP <= 60)
@@ -128,14 +128,14 @@ public class Finishedfirewood : MonoBehaviour
               
                 campFire.Camfire_1.SetActive(false);
                 campFire.Camfire_2.SetActive(true);
-                finishedfirewood1.SetActive(false);
-                finishedfirewood2.SetActive(true);
+               /* finishedfirewood1.SetActive(false);
+                finishedfirewood2.SetActive(true);*/
             }
             else if (campFire.HP <= 0)
             {
                 campFire.Camfire_1.SetActive(false);
                 campFire.Camfire_2.SetActive(false);
-                Destroy(finishedfirewood3);
+                //Destroy(finishedfirewood3);
             }
         }
     }
