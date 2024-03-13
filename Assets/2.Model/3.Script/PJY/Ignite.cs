@@ -23,6 +23,7 @@ public class Ignite : MonoBehaviour
         // fire 게임 오브젝트의 활성화 상태를 토글
 
         _fireEffect.SetActive(isignite);
+        _audioSource.Play();
 
         if (isignite)
         {
