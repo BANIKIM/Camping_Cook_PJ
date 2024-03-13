@@ -11,8 +11,12 @@ public class Network_Client : MonoBehaviour
 
     public void Start_Client()
     {
-        NetworkManager.singleton.networkAddress = ip.text;
-        NetworkManager.singleton.StartClient();
+        if(ip.text!="")
+        {
+            NetworkManager.singleton.networkAddress = ip.text;
+            NetworkManager.singleton.StartClient();
+        }
+       
 
     }
 }
