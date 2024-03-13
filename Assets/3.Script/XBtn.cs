@@ -20,7 +20,7 @@ public class XBtn : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // 충돌한 오브젝트가 컨트롤러인지 확인
-        if (other.CompareTag("Hand"))
+        if (other.CompareTag("Player"))
         {
             // X 버튼을 눌렀을 때 소환 작업 실행
             Xbtn.action.started += OnXButtonPressed;
@@ -30,7 +30,7 @@ public class XBtn : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // 충돌한 오브젝트가 컨트롤러인지 확인
-        if (other.CompareTag("Hand"))
+        if (other.CompareTag("Player"))
         {
             // X 버튼을 누르는 이벤트 해제
             Xbtn.action.started -= OnXButtonPressed;
