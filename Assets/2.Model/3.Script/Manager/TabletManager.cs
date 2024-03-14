@@ -20,7 +20,7 @@ public class TabletManager : MonoBehaviour
     // ===============================================
 
     // Tablet AudioSource 
-    [SerializeField] private AudioSource _audioSource;
+    public AudioSource _audioSource;
 
 
     [Header("Home")]
@@ -68,9 +68,9 @@ public class TabletManager : MonoBehaviour
         else
         {
 
-            _tablet_ProgressCook.StartProgress(idx);
             _tablet_CookingTimer.OnCookingTimer(true, idx);
         }
+        _tablet_ProgressCook.StartProgress(idx);
         // _ui_ProgressCook.StartProgress();
     }
 

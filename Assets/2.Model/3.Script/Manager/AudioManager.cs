@@ -20,6 +20,8 @@ public enum SFX_List
     GrillLoopE = 11,
     Btn = 12,
     CookStart = 13,
+    Count10s = 14,
+    ChallengeModFinish = 15,
 
 }
 
