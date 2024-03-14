@@ -6,9 +6,11 @@ using UnityEngine.InputSystem;
 public class VR_XInput : MonoBehaviour
 {
     public InputActionReference Xbtn;
-    public GameObject equipmentPosition;
-    public GameObject axe;
-    public GameObject torch;
+    public Transform _axePos;
+    public Transform _torchPos;
+
+    public GameObject _axe;
+    public GameObject _torch;
 
     private bool isHoldingX = false; // X 키를 꾹 누르고 있는지 여부를 나타내는 플래그
     private float holdDuration = 1f; // X 키를 꾹 누른 지속 시간
@@ -37,9 +39,8 @@ public class VR_XInput : MonoBehaviour
             if (currentHoldTime >= holdDuration) // 지정된 시간 이상 꾹 누른 경우
             {
                 // 엑스와 토치를 equipmentPosition 위치로 이동
-                axe.transform.position = equipmentPosition.transform.position;
-                Vector3 torchPosition = equipmentPosition.transform.position + new Vector3(0.3f, 0f, 0f); // 오른쪽으로 0.1만큼 이동
-                torch.transform.position = torchPosition;
+                _axe.transform.position = _axePos.position;
+                _torch.transform.position = _torchPos.position;
             }
         }
     }
