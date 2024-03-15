@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cooking_Complete : MonoBehaviour
 {
+    public LiquidBoil liquidBoil;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +17,8 @@ public class Cooking_Complete : MonoBehaviour
             GameManager.instance.StopCooking();
             dish.onech = false;
             GameManager.instance.CampingExpCheck(50);
-            
+            liquidBoil.LiquidReset();//물머테리얼도 초기화
+            liquidBoil.CookReset();//초기화
         }
     }
 }

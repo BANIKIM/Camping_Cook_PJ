@@ -144,4 +144,20 @@ public class LiquidBoil : MonoBehaviour
         iscook = false;
         isBurned = false;
     }
+
+    public void CookReset()//값초기화
+    {
+        for (int i = 0; i < Foods.Length; i++)
+        {
+            if(Foods[i].activeSelf==true)
+            {
+                Foods[i].GetComponent<Ingredient>()._ingredient_Type = 0; //타입0으로만들고
+                Foods[i].GetComponent<Ingredient>()._sliceCount = 0; //슬라이스 0으로 만들고
+                Foods[i].GetComponent<Cooked_Ingredient>().Change_Cooked_State(Cooked_Ingredient.Cooked_State.Raw);//굽기초기화
+                Foods[i].GetComponent<Seasoning_Ingredient>().salt_s = 0; //소금초기화
+                Foods[i].GetComponent<Seasoning_Ingredient>().pepper_s = 0;//후추초기화
+                Foods[i].gameObject.SetActive(false);
+            }
+        }
+    }
 }
