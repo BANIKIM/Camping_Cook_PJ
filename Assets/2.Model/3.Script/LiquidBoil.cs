@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class LiquidBoil : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class LiquidBoil : MonoBehaviour
     private Ingredient ingredient;
     private int number = 0;
     private bool a;
+    public Slider Time_slider;
 
     [SerializeField] private AudioSource _audiosource;
 
@@ -33,6 +36,7 @@ public class LiquidBoil : MonoBehaviour
         if (heat.tool_heat)
         {
             HP -= Time.deltaTime;
+            Time_slider.value = HP;
             Onsmoke();//스모크 이펙트 키기
             isTan();//시간지나면 탐
 
@@ -75,6 +79,8 @@ public class LiquidBoil : MonoBehaviour
 
             HP = 10;//바로 타는거 방지
             HP += 5;
+            Time_slider.maxValue = HP;
+            Time_slider.value = HP;
             Destroy(other.gameObject);
 
             for (int i = 0; i < Foods.Length; i++)
