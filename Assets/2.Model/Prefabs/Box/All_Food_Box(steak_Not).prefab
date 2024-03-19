@@ -166,7 +166,6 @@ MonoBehaviour:
   - {fileID: 332365418100219150}
   - {fileID: 7641746840365612084}
   - {fileID: 2845437872448781897}
-  - {fileID: 0}
 --- !u!1 &2909249971508702046
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3908345535806217084, guid: 9ec976e7184498948ba22e67766ac9c7, type: 3}
       propertyPath: m_TagString
-      value: Box
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
