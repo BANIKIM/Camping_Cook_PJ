@@ -24,10 +24,9 @@ public class thlist : MonoBehaviour
             // 이넘이 Cook일 때의 동작
             if (_googleSheet.thnot)
             {
-                string report = _googleSheet.returnlist[1] + "요리가 완성되었습니다. 경험치 " + _googleSheet.returnlist[2];
-                GameManager.instance._needExp -= 50;
+                string report = $"{_googleSheet.returnlist[1]}를 완성했습니다. (Exp + {_googleSheet.returnlist[2]})";
                 // 큐에 새로운 요소 추가 및 큐의 크기가 3개를 초과하는 경우 오래된 요소 제거
-                if (reportQ.Count >= 3)
+                if (reportQ.Count >= 5)
                 {
                     reportQ.Dequeue();
                 }
@@ -40,10 +39,10 @@ public class thlist : MonoBehaviour
             // 이넘이 Campfire일 때의 동작
             if (_googleSheet.thnot)
             {
-                string report = "캠프파이어 열기로";
+                string report = $"캠프파이어의 열기로 캠핑 온도를 획득했습니다. (Exp + 10)";
 
-                // 큐에 새로운 요소 추가 및 큐의 크기가 3개를 초과하는 경우 오래된 요소 제거
-                if (reportQ.Count >= 3)
+                // 큐에 새로운 요소 추가 및 큐의 크기가 5개를 초과하는 경우 오래된 요소 제거
+                if (reportQ.Count >= 5)
                 {
                     reportQ.Dequeue();
                 }

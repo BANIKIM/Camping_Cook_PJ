@@ -6,7 +6,7 @@ using TMPro;
 
 public class Tablet_ProgressCook : MonoBehaviour
 {
-    private string[] _cookNames = new string[5] { "마쉬멜로우", "소고기 스튜", "연어 스테이크", "소고기 스테이크", "꼬치 플래터" };
+    private string[] _cookNames = new string[5] { "마쉬멜로우", "소고기 스튜", "꼬치 플래터", "소고기 스테이크", "연어 스테이크" };
 
     [Header("Resource")]
     [SerializeField] private Sprite[] _cookImgs;
