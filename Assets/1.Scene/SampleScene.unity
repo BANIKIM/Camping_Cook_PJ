@@ -4822,7 +4822,7 @@ MonoBehaviour:
   autoStartServerBuild: 1
   autoConnectClientBuild: 0
   sendRate: 120
-  offlineScene: Assets/1.Scene/Day_test.unity
+  offlineScene: Assets/1.Scene/SampleScene.unity
   onlineScene: Assets/1.Scene/Network_Scene.unity
   transport: {fileID: 703052187}
   networkAddress: localhost
