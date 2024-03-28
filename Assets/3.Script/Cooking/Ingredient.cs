@@ -7,7 +7,7 @@ public interface IState
     void OnExit();
 }
 
-public enum Ingredient_Type
+public enum IngredientType
 {
     Beef = 1,
     Marshmallow,
@@ -19,56 +19,54 @@ public enum Ingredient_Type
     Mushroom,
 }
 
-[RequireComponent(typeof(Cooked_Ingredient))]
-[RequireComponent(typeof(Seasoning_Ingredient))]
-[RequireComponent(typeof(Skewer_Ingredient))]
+[RequireComponent(typeof(CookedIngredient))]
+[RequireComponent(typeof(SeasoningIngredient))]
+[RequireComponent(typeof(SkewerIngredient))]
 
 public class Ingredient : MonoBehaviour
 {
-    public Ingredient_Type _ingredient_Type;
-    public Cooked_Ingredient _cookedIngred;
-    public Seasoning_Ingredient _seasoningIngred;
-    public Skewer_Ingredient _skewerIngred;
+    public IngredientType ingredientType;
+    public CookedIngredient cookedIngred;
+    public SeasoningIngredient seasoningIngred;
+    public SkewerIngredient skewerIngred;
 
-    public int _sliceCount = 0;
+    public int sliceCount = 0;
 
-    public Material _crossMat;
-    public Material[] _materials;
-    public MeshRenderer _mesh;
+    public Material crossMat;
+    public Material[] materials;
+    public MeshRenderer mesh;
 
     private void Start()
     {
-        TryGetComponent(out _seasoningIngred);
-        TryGetComponent(out _cookedIngred);
-        TryGetComponent(out _skewerIngred);
-        _mesh = GetComponent<MeshRenderer>();
+        TryGetComponent(out seasoningIngred);
+        TryGetComponent(out cookedIngred);
+        TryGetComponent(out skewerIngred);
+        mesh = GetComponent<MeshRenderer>();
     }
 
     private void FixedUpdate()
     {
-        _cookedIngred.OnUpdate();
-        _skewerIngred.OnUpdate();
-
+        cookedIngred.OnUpdate();
+        skewerIngred.OnUpdate();
     }
 
     public void Cook_ch_mat()// 쿡스테이터스에 따라 머테리얼 값을 변경한다
     {
-        _mesh.material = _materials[(int)_cookedIngred._cooked_State];
+        mesh.material = materials[(int)cookedIngred.cookedState];
     }
 
     public int CheckCookIdx()
     {
-        var ingred_type = ((int)_ingredient_Type * 10) + ((int)_cookedIngred._cooked_State);
-        return ingred_type;
+        var _ingred_type = ((int)ingredientType * 10) + ((int)cookedIngred.cookedState);
+        return _ingred_type;
     }
 
     public int CheckPrepIdx()
     {
-        var temp = _sliceCount.Equals(0) ? 0 : 1;
-        var ingred_type = ((int)_ingredient_Type * 10000) + (temp * 1000) +
-            ((int)_seasoningIngred.salt_s * 100) + ((int)_seasoningIngred.pepper_s * 10) +
-            ((int)_skewerIngred.skewer_state);
-        return ingred_type;
+        var _temp = sliceCount.Equals(0) ? 0 : 1;
+        var _ingred_type = ((int)ingredientType * 10000) + (_temp * 1000) +
+            ((int)seasoningIngred.salt_s * 100) + ((int)seasoningIngred.pepper_s * 10) +
+            ((int)skewerIngred.skewer_state);
+        return _ingred_type;
     }
-
 }

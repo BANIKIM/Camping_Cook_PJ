@@ -11,7 +11,7 @@ public class LiquidBoil : MonoBehaviour
     public GameObject smoke;
     public float HP = 10;
     public GameObject[] Foods;
-    private Cooked_Ingredient cooked;
+    private CookedIngredient cooked;
     private Ingredient ingredient;
     private int number = 0;
     private bool a;
@@ -27,13 +27,13 @@ public class LiquidBoil : MonoBehaviour
     void Start()
     {
         heat = Cook_Tool_pot.gameObject.GetComponent<Tool_heat>();
-        cooked = GetComponent<Cooked_Ingredient>();
+        cooked = GetComponent<CookedIngredient>();
         ingredient = GetComponent<Ingredient>();
     }
 
     private void FixedUpdate()
     {
-        if (heat.tool_heat)
+        if (heat.isToolHeat)
         {
             HP -= Time.deltaTime;
             Time_slider.value = HP;
@@ -86,7 +86,7 @@ public class LiquidBoil : MonoBehaviour
             for (int i = 0; i < Foods.Length; i++)
             {
                 a = false;
-                if (Foods[i].GetComponent<Ingredient>()._ingredient_Type == other.GetComponent<Ingredient>()._ingredient_Type)
+                if (Foods[i].GetComponent<Ingredient>().ingredientType == other.GetComponent<Ingredient>().ingredientType)
                 {
                     a = true;
                     break;
@@ -94,10 +94,10 @@ public class LiquidBoil : MonoBehaviour
             }
             if (!a)
             {
-                Foods[number].GetComponent<Ingredient>()._ingredient_Type = other.GetComponent<Ingredient>()._ingredient_Type;
-                Foods[number].GetComponent<Ingredient>()._sliceCount = other.GetComponent<Ingredient>()._sliceCount;
-                Foods[number].GetComponent<Seasoning_Ingredient>().salt_s = other.GetComponent<Seasoning_Ingredient>().salt_s;
-                Foods[number].GetComponent<Seasoning_Ingredient>().pepper_s = other.GetComponent<Seasoning_Ingredient>().pepper_s;
+                Foods[number].GetComponent<Ingredient>().ingredientType = other.GetComponent<Ingredient>().ingredientType;
+                Foods[number].GetComponent<Ingredient>().sliceCount = other.GetComponent<Ingredient>().sliceCount;
+                Foods[number].GetComponent<SeasoningIngredient>().salt_s = other.GetComponent<SeasoningIngredient>().salt_s;
+                Foods[number].GetComponent<SeasoningIngredient>().pepper_s = other.GetComponent<SeasoningIngredient>().pepper_s;
                 Foods[number].SetActive(true);
                 number += 1;
             }
@@ -114,11 +114,11 @@ public class LiquidBoil : MonoBehaviour
             {
                 for (int i = 0; i < Foods.Length; i++)
                 {
-                    Foods[i].GetComponent<Cooked_Ingredient>().Change_Cooked_State(Cooked_Ingredient.Cooked_State.Cook);
+                    Foods[i].GetComponent<CookedIngredient>().Change_Cooked_State(CookedIngredient.Cooked_State.Cook);
                 }
-                cooked.Change_Cooked_State(Cooked_Ingredient.Cooked_State.Cook);//스테이터스 변경
+                cooked.Change_Cooked_State(CookedIngredient.Cooked_State.Cook);//스테이터스 변경
                 ingredient.Cook_ch_mat();//머테리얼 변경
-                ingredient._crossMat = ingredient._mesh.material;
+                ingredient.crossMat = ingredient.mesh.material;
                 iscook = true;
             }
             
@@ -132,11 +132,11 @@ public class LiquidBoil : MonoBehaviour
         {
             for (int i = 0; i < Foods.Length; i++)
             {
-                Foods[i].GetComponent<Cooked_Ingredient>().Change_Cooked_State(Cooked_Ingredient.Cooked_State.Burned);
+                Foods[i].GetComponent<CookedIngredient>().Change_Cooked_State(CookedIngredient.Cooked_State.Burned);
             }
-            cooked.Change_Cooked_State(Cooked_Ingredient.Cooked_State.Burned);//스테이터스 변경
+            cooked.Change_Cooked_State(CookedIngredient.Cooked_State.Burned);//스테이터스 변경
             ingredient.Cook_ch_mat();//머테리얼 변경
-            ingredient._crossMat = ingredient._mesh.material;
+            ingredient.crossMat = ingredient.mesh.material;
 
             isBurned = true;
         }
@@ -144,9 +144,9 @@ public class LiquidBoil : MonoBehaviour
 
     public void LiquidReset()//물의 머테리얼 을 초기로 돌린다.
     {
-        cooked.Change_Cooked_State(Cooked_Ingredient.Cooked_State.Raw);//스테이터스 변경
+        cooked.Change_Cooked_State(CookedIngredient.Cooked_State.Raw);//스테이터스 변경
         ingredient.Cook_ch_mat();//머테리얼 변경
-        ingredient._crossMat = ingredient._mesh.material;
+        ingredient.crossMat = ingredient.mesh.material;
         iscook = false;
         isBurned = false;
     }
@@ -157,11 +157,11 @@ public class LiquidBoil : MonoBehaviour
         {
             if(Foods[i].activeSelf==true)
             {
-                Foods[i].GetComponent<Ingredient>()._ingredient_Type = 0; //타입0으로만들고
-                Foods[i].GetComponent<Ingredient>()._sliceCount = 0; //슬라이스 0으로 만들고
-                Foods[i].GetComponent<Cooked_Ingredient>().Change_Cooked_State(Cooked_Ingredient.Cooked_State.Raw);//굽기초기화
-                Foods[i].GetComponent<Seasoning_Ingredient>().salt_s = 0; //소금초기화
-                Foods[i].GetComponent<Seasoning_Ingredient>().pepper_s = 0;//후추초기화
+                Foods[i].GetComponent<Ingredient>().ingredientType = 0; //타입0으로만들고
+                Foods[i].GetComponent<Ingredient>().sliceCount = 0; //슬라이스 0으로 만들고
+                Foods[i].GetComponent<CookedIngredient>().Change_Cooked_State(CookedIngredient.Cooked_State.Raw);//굽기초기화
+                Foods[i].GetComponent<SeasoningIngredient>().salt_s = 0; //소금초기화
+                Foods[i].GetComponent<SeasoningIngredient>().pepper_s = 0;//후추초기화
                 Foods[i].gameObject.SetActive(false);
             }
         }

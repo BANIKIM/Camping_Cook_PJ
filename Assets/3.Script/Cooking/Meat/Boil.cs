@@ -1,36 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using HeneGames.CookingSystem;
+using UnityEngine;
 
 public class Boil : MonoBehaviour
 {
-    public Rigidbody rb;
+    public Rigidbody rigid;
 
+    public HeatSource heatSource;
+    public GameObject heatSourceObj;
 
-    public HeatSource heat;
-    public GameObject heatsource;
-    public float floatingForce =0;
-    public float HP = 5;
+    public float floatingForce = 0;
+    public float Hp = 5;
+
     [Range(0f, 1f)]
-    [SerializeField] private float floatingDepth = 0.336f;
+    [SerializeField] private float floatingDept = 0.336f;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        heatsource = GameObject.FindWithTag("Liquid");
-        heat = heatsource.GetComponent<HeatSource>();
+        rigid = GetComponent<Rigidbody>();
+        heatSourceObj = GameObject.FindWithTag("Liquid");
+        heatSource = heatSourceObj.GetComponent<HeatSource>();
     }
 
-    // Update is called once per frame
     private void FixedUpdate()
     {
-        rb.angularDrag = 10f;
-        rb.drag = 6f;
+        rigid.angularDrag = 10f;
+        rigid.drag = 6f;
 
-        Vector3 _floatingPos = new Vector3(transform.position.x, heat.oilSurface.position.y, transform.position.z);
+        Vector3 _floatingPos = new Vector3(transform.position.x, heatSource.oilSurface.position.y, transform.position.z);
         float _surfaceDistanceMultiplier = (_floatingPos.y - transform.position.y) * 100f;
         Vector3 _force = (Vector3.up * floatingForce) * _surfaceDistanceMultiplier;
 
@@ -43,7 +39,7 @@ public class Boil : MonoBehaviour
         Vector3 _upPos = transform.TransformPoint(new Vector3(0f, 0f, _offsetZ));
         Vector3 _downPos = transform.TransformPoint(new Vector3(0f, 0f, -_offsetZ));
 
-        float _surfacePointYOffset = heat.oilSurface.position.y + floatingDepth;
+        float _surfacePointYOffset = heatSource.oilSurface.position.y + floatingDept;
 
         AddForceFromPoint(_leftPos, _floatingPos, _surfacePointYOffset, _force);
         AddForceFromPoint(_rightPos, _floatingPos, _surfacePointYOffset, _force);
@@ -51,14 +47,13 @@ public class Boil : MonoBehaviour
         AddForceFromPoint(_downPos, _floatingPos, _surfacePointYOffset, _force);
     }
 
-
     private void AddForceFromPoint(Vector3 _forcePosition, Vector3 _surfacePosition, float _surfaceOffset, Vector3 _force)
     {
         if (_forcePosition.y < _surfacePosition.y)
         {
             Vector3 _surfacePoint = new Vector3(_forcePosition.x, _surfaceOffset, _forcePosition.z);
             float _leftMultiplier = Vector3.Distance(_forcePosition, _surfacePoint);
-            rb.AddForceAtPosition(_force * _leftMultiplier, _forcePosition, ForceMode.Force);
+            rigid.AddForceAtPosition(_force * _leftMultiplier, _forcePosition, ForceMode.Force);
         }
     }
 
@@ -77,5 +72,4 @@ public class Boil : MonoBehaviour
             floatingForce = 0f;
         }
     }
-
 }

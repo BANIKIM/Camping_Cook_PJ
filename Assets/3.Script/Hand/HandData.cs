@@ -10,11 +10,8 @@ public class HandData : MonoBehaviour
         Right,
     }
 
-    public HandType _handType;
-    public Transform _root;
-    public Animator _animator;
-    public Transform[] _fingerBones;
-
-
-
+    public HandType handType;
+    public Transform root;
+    public Animator animator;
+    public Transform[] fingerBones;
 }

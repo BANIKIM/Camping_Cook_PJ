@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Cook Data", menuName = "Scriptable Object/Cook Data", order = int.MaxValue)]

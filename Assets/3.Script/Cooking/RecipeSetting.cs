@@ -10,14 +10,14 @@ public class RecipeSetting : MonoBehaviour
 
     public void SetDefaultRecipe()
     {
-        MashMellow_R();
-        Beef_Stew_R();
-        Skewers_Flatter_R();
-        Steak_R();
-        Grilled_Salmon_R();
+        MashMellowRecipe();
+        BeefStewRecipe();
+        SkewersFlatterRecipe();
+        SteakRecipe();
+        SalmonSteakRecipe();
     }
 
-    private void MashMellow_R()
+    private void MashMellowRecipe()
     {
         // 마쉬멜로우 구이
         List<int> perptemp = new List<int> { 20001 };
@@ -26,7 +26,7 @@ public class RecipeSetting : MonoBehaviour
         _recipeCook_D.Add((int)Cooking_Type.Marshmallow, cooktemp);
     }
 
-    private void Beef_Stew_R()
+    private void BeefStewRecipe()
     {
         // 비프스튜
         List<int> perptemp = new List<int> { 11110, 41000, 51000 };
@@ -35,7 +35,7 @@ public class RecipeSetting : MonoBehaviour
         _recipeCook_D.Add((int)Cooking_Type.Beef_Stew, cooktemp);
     }
 
-    private void Skewers_Flatter_R()
+    private void SkewersFlatterRecipe()
     {
         // 꼬치플레터
         List<int> perptemp = new List<int> { 11111, 61001, 81001 };
@@ -44,7 +44,7 @@ public class RecipeSetting : MonoBehaviour
         _recipeCook_D.Add((int)Cooking_Type.Skewers_Flatter, cooktemp);
     }
 
-    private void Steak_R()
+    private void SteakRecipe()
     {
         // 스테이크
         List<int> perptemp = new List<int> { 10110, 81000 };
@@ -53,7 +53,7 @@ public class RecipeSetting : MonoBehaviour
         _recipeCook_D.Add((int)Cooking_Type.Beef_Steak, cooktemp);
     }
 
-    private void Grilled_Salmon_R()
+    private void SalmonSteakRecipe()
     {
         // 연어구이
         List<int> perptemp = new List<int> { 31110, 71000 };

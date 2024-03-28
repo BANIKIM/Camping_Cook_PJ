@@ -39,7 +39,7 @@ public class GrabHandPos : MonoBehaviour
         if (arg.interactorObject is XRRayInteractor)
         {
             HandData handData = arg.interactorObject.transform.GetComponentInChildren<HandData>();
-            handData._animator.enabled = false;
+            handData.animator.enabled = false;
 
             if (handData.Equals(HandData.HandType.Right))
             {
@@ -62,7 +62,7 @@ public class GrabHandPos : MonoBehaviour
         if (arg.interactorObject is XRRayInteractor)
         {
             HandData handData = arg.interactorObject.transform.GetComponentInChildren<HandData>();
-            handData._animator.enabled = true;
+            handData.animator.enabled = true;
 
             StartCoroutine(SetHandDataRoutine(handData, _startingHandPos, _startingHandRot, _startingFingerRots
                 , _finalHandPos, _finalHandRot, _finalFingerRots));
@@ -72,21 +72,21 @@ public class GrabHandPos : MonoBehaviour
 
     public void SetHandDataValues(HandData hand1, HandData hand2)
     {
-        _startingHandPos = new Vector3(hand1._root.localPosition.x / hand1._root.localScale.x,
-            hand1._root.localPosition.y / hand1._root.localScale.y, hand1._root.localPosition.z / hand1._root.localScale.z);
-        _finalHandPos = new Vector3(hand2._root.localPosition.x / hand2._root.localScale.x,
-            hand2._root.localPosition.y / hand2._root.localScale.y, hand2._root.localPosition.z / hand2._root.localScale.z);
+        _startingHandPos = new Vector3(hand1.root.localPosition.x / hand1.root.localScale.x,
+            hand1.root.localPosition.y / hand1.root.localScale.y, hand1.root.localPosition.z / hand1.root.localScale.z);
+        _finalHandPos = new Vector3(hand2.root.localPosition.x / hand2.root.localScale.x,
+            hand2.root.localPosition.y / hand2.root.localScale.y, hand2.root.localPosition.z / hand2.root.localScale.z);
 
-        _startingHandRot = hand1._root.localRotation;
-        _finalHandRot = hand2._root.localRotation;
+        _startingHandRot = hand1.root.localRotation;
+        _finalHandRot = hand2.root.localRotation;
 
-        _startingFingerRots = new Quaternion[hand1._fingerBones.Length];
-        _finalFingerRots = new Quaternion[hand1._fingerBones.Length];
+        _startingFingerRots = new Quaternion[hand1.fingerBones.Length];
+        _finalFingerRots = new Quaternion[hand1.fingerBones.Length];
 
-        for (int i = 0; i < hand1._fingerBones.Length; i++)
+        for (int i = 0; i < hand1.fingerBones.Length; i++)
         {
-            _startingFingerRots[i] = hand1._fingerBones[i].localRotation;
-            _finalFingerRots[i] = hand2._fingerBones[i].localRotation;
+            _startingFingerRots[i] = hand1.fingerBones[i].localRotation;
+            _finalFingerRots[i] = hand2.fingerBones[i].localRotation;
 
         }
 
@@ -94,12 +94,12 @@ public class GrabHandPos : MonoBehaviour
 
     public void SetHandData(HandData hand, Vector3 newPos, Quaternion newRot, Quaternion[] newBonesRot)
     {
-        hand._root.localPosition = newPos;
-        hand._root.localRotation = newRot;
+        hand.root.localPosition = newPos;
+        hand.root.localRotation = newRot;
 
         for (int i = 0; i < newBonesRot.Length; i++)
         {
-            hand._fingerBones[i].localRotation = newBonesRot[i];
+            hand.fingerBones[i].localRotation = newBonesRot[i];
         }
     }
 
@@ -113,12 +113,12 @@ public class GrabHandPos : MonoBehaviour
             Vector3 p = Vector3.Lerp(startingPos, newPos, timer / _posTransitionDuration);
             Quaternion r = Quaternion.Lerp(startingRot, newRot, timer / _posTransitionDuration);
 
-            hand._root.localPosition = p;
-            hand._root.localRotation = r;
+            hand.root.localPosition = p;
+            hand.root.localRotation = r;
 
             for (int i = 0; i < newBonesRot.Length; i++)
             {
-                hand._fingerBones[i].localRotation = Quaternion.Lerp(startingBonesRot[i], newBonesRot[i], timer / _posTransitionDuration);
+                hand.fingerBones[i].localRotation = Quaternion.Lerp(startingBonesRot[i], newBonesRot[i], timer / _posTransitionDuration);
             }
 
             timer += Time.fixedDeltaTime;
@@ -140,19 +140,19 @@ public class GrabHandPos : MonoBehaviour
 #endif
     public void MirrorPos(HandData posToMirror, HandData posUsedToMirror)
     {
-        Vector3 mirroredPos = posUsedToMirror._root.localPosition;
+        Vector3 mirroredPos = posUsedToMirror.root.localPosition;
         mirroredPos.x *= -1;
 
-        Quaternion mirroredQuaternion = posUsedToMirror._root.localRotation;
+        Quaternion mirroredQuaternion = posUsedToMirror.root.localRotation;
         mirroredQuaternion.y *= -1;
         mirroredQuaternion.z *= -1;
 
-        posToMirror._root.localPosition = mirroredPos;
-        posToMirror._root.localRotation = mirroredQuaternion;
+        posToMirror.root.localPosition = mirroredPos;
+        posToMirror.root.localRotation = mirroredQuaternion;
 
-        for (int i = 0; i < posUsedToMirror._fingerBones.Length; i++)
+        for (int i = 0; i < posUsedToMirror.fingerBones.Length; i++)
         {
-            posToMirror._fingerBones[i].localRotation = posUsedToMirror._fingerBones[i].localRotation;
+            posToMirror.fingerBones[i].localRotation = posUsedToMirror.fingerBones[i].localRotation;
         }
     }
 }

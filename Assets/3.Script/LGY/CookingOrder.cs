@@ -31,7 +31,6 @@ public class CookingOrder : MonoBehaviour
 
     public void OrderSetting()
     {
-        int[] idxArray;
         switch (GameManager.instance._cookIdx)
         {
             case 0:

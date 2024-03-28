@@ -4,7 +4,7 @@ using UnityEngine;
 using Mirror;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class NetWork_Hand_grab : NetworkBehaviour
+public class NetWorkHandgrab : NetworkBehaviour
 {
     private XRGrabInteractable grabInteractable;
     [SyncVar(hook = nameof(OnObjectPositionChanged))]

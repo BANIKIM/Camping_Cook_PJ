@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Mirror;
+using UnityEngine;
 
-public class FireWood_Hardware_Rig : NetworkBehaviour
+public class FireWoodHardwareRig : NetworkBehaviour
 {
     [SyncVar(hook = nameof(OnPositionChanged))]
     private Vector3 syncedPosition;
