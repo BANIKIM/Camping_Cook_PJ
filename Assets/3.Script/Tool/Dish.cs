@@ -38,11 +38,11 @@ public class Dish : MonoBehaviour
             Cooks[GameManager.instance._cookIdx].SetActive(true);
             //Destroy(other.gameObject);
             //값을초기화 해줘야 한다...
-            ingred.ingredientType = 0; //타입0으로만들고
-            ingred.sliceCount = 0; //슬라이스 0으로 만들고
-            other.GetComponent<CookedIngredient>().Change_Cooked_State(CookedIngredient.Cooked_State.Raw);//굽기초기화
-            other.GetComponent<SeasoningIngredient>().salt_s = 0; //소금초기화
-            other.GetComponent<SeasoningIngredient>().pepper_s = 0;//후추초기화
+            ingred._ingredient_Type = 0; //타입0으로만들고
+            ingred._sliceCount = 0; //슬라이스 0으로 만들고
+            other.GetComponent<Cooked_Ingredient>().Change_Cooked_State(Cooked_Ingredient.Cooked_State.Raw);//굽기초기화
+            other.GetComponent<Seasoning_Ingredient>().salt_s = 0; //소금초기화
+            other.GetComponent<Seasoning_Ingredient>().pepper_s = 0;//후추초기화
             other.gameObject.SetActive(false);
 
         }

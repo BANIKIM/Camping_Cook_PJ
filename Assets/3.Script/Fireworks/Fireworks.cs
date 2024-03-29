@@ -1,34 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Fireworks : MonoBehaviour
 {
-    public GameObject[] firework;
-    private Rigidbody rigid;
-    public float randomTime;
-    public float currentTime = 0f;
-    private bool isFire = false;
+    public GameObject[] Firework;
+    private Rigidbody rig;
+    public float time;
+    public float retime = 0f;
+    private bool fire = false;
     public bool fountain;
-    private int randomForce;
+    private int random_addForce;
 
     private void Start()
     {
-        rigid = GetComponent<Rigidbody>();
-        randomForce = Random.Range(900, 1100);
-        if (fountain) rigid.AddForce(Vector3.up * randomForce);//생성되고 위로 튀어간다
-        randomTime = Random.Range(1, 2);//터지는 시간랜덤
+        rig = GetComponent<Rigidbody>();
+        random_addForce = Random.Range(900, 1100);
+        if (fountain) rig.AddForce(Vector3.up * random_addForce);//생성되고 위로 튀어간다
+        time = Random.Range(1, 2);//터지는 시간랜덤
     }
 
     private void Update()
     {
-        if (!isFire) currentTime += Time.deltaTime;
+        if(!fire)retime += Time.deltaTime;
 
-        if (randomTime < currentTime)
+        if (time < retime)
         {
-            isFire = true;
-            int _num = Random.Range(0, firework.Length);
-            rigid.isKinematic = true;
-            firework[_num].SetActive(true); //랜덤으로 다른 이펙트가 터짐
-            currentTime = 0f;
+            int num = Random.Range(0, Firework.Length);
+            rig.isKinematic = true;
+            Firework[num].SetActive(true); //랜덤으로 다른 이펙트가 터짐
+            fire = true;
+            retime = 0f;
             Destroy(gameObject, 8f);
         }
     }

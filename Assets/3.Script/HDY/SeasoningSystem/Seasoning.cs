@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum SeasonType
+public enum Season_Type
 {
     salt = 0,
     pepper,
@@ -10,11 +10,11 @@ public enum SeasonType
 
 public class Seasoning : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource _audiosource;
 
     [SerializeField] private ParticleSystem particle;
 
-    [SerializeField] private SeasonType seasonType;
+    [SerializeField] private Season_Type season_type;
 
     [Header("양념통과 고기 사이 간격")]
     [SerializeField] private float lineSize = 0.5f;
@@ -23,7 +23,7 @@ public class Seasoning : MonoBehaviour
     [Header("양념 뿌려지는 시간")]
     [SerializeField] private WaitForSeconds cool = new WaitForSeconds(0.3f);
 
-    private IEnumerator OnSeasoningTemp;
+    private IEnumerator OnSeasoning_Temp;
 
     private void FixedUpdate()
     {
@@ -38,12 +38,12 @@ public class Seasoning : MonoBehaviour
         {
             if (hit.collider.gameObject.layer == 6) // tobo_mh 이퀄 ==6 으로 수정
             {
-                SeasoningIngredient _seasoningingred = hit.collider.gameObject.GetComponent<SeasoningIngredient>();
+                Seasoning_Ingredient seasoning_ingred = hit.collider.gameObject.GetComponent<Seasoning_Ingredient>();
 
                 if (!isAct)
                 {
                     OnSeasoning();
-                    _seasoningingred.AddSeasoning(seasonType);
+                    seasoning_ingred.AddSeasoning(season_type);
                 }
             }
         }
@@ -51,8 +51,8 @@ public class Seasoning : MonoBehaviour
 
     private void OnSeasoning()
     {
-        OnSeasoningTemp = OnSeasoning_co();
-        StartCoroutine(OnSeasoningTemp);
+        OnSeasoning_Temp = OnSeasoning_co();
+        StartCoroutine(OnSeasoning_Temp);
     }
 
     IEnumerator OnSeasoning_co()
@@ -62,7 +62,8 @@ public class Seasoning : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         particle.Play();
 
-        audioSource.PlayOneShot(audioSource.clip);
+        _audiosource.PlayOneShot(_audiosource.clip);
+        //AudioManager.instance.Play_Audio(_source, (int)SFX_List.Seasoning);
 
         yield return cool;
         particle.Stop();

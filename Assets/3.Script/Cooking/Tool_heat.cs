@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Tool_heat : MonoBehaviour
 {
-    public bool isToolHeat = false;
+    public bool tool_heat = false;
+
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Fire"))
         {
-            isToolHeat = true;
+            tool_heat = true;
         }
     }
 
@@ -18,7 +19,7 @@ public class Tool_heat : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Fire"))
         {
-            isToolHeat = true;
+            tool_heat = true;
         }
     }
 
@@ -26,15 +27,16 @@ public class Tool_heat : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fire"))
         {
-            isToolHeat = false;
+            tool_heat = false;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+
         if (other.gameObject.CompareTag("Fire"))
         {
-            isToolHeat = false;
+            tool_heat = false;
         }
     }
 }

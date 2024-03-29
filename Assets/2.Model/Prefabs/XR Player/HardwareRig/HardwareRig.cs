@@ -5,8 +5,8 @@ using UnityEngine;
 public class HardwareRig : MonoBehaviour
 {
     public HardwareHead head;
-    public Hardware_Hand leftHand;
-    public Hardware_Hand rightHand;
+    public HardwareHand leftHand;
+    public HardwareHand rightHand;
 
     public Vector3 rigPosition;
     public Quaternion rigRotation;

@@ -1,18 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class AnimateHandOnInput : MonoBehaviour
 {
-    public InputActionProperty pinchAnime;
-    public InputActionProperty gripAnime;
-    public Animator handAnime;
+    public InputActionProperty pinchanim;
+    public InputActionProperty gripanim;
+    public Animator handanim;
 
     private void Update()
     {
-        float triggerValue = pinchAnime.action.ReadValue<float>();
-        handAnime.SetFloat("Trigger", triggerValue);
+        float triggerValue = pinchanim.action.ReadValue<float>();
+        handanim.SetFloat("Trigger", triggerValue);
 
-        float gripValue = gripAnime.action.ReadValue<float>();
-        handAnime.SetFloat("Grip", gripValue);
+        float gripValue = gripanim.action.ReadValue<float>();
+        handanim.SetFloat("Grip", gripValue);
+
     }
 }

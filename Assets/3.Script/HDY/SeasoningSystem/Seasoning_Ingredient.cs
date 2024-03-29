@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeasoningIngredient : MonoBehaviour
+public class Seasoning_Ingredient : MonoBehaviour
 {
     public enum Pepper_S
     {
@@ -20,14 +20,14 @@ public class SeasoningIngredient : MonoBehaviour
 
 
 
-    public void AddSeasoning(SeasonType season)
+    public void AddSeasoning(Season_Type season)
     {
         switch (season)
         {
-            case SeasonType.salt:
+            case Season_Type.salt:
                 salt_s = Salt_S.Salted;
                 break;
-            case SeasonType.pepper:
+            case Season_Type.pepper:
                 pepper_s = Pepper_S.Peppered;
                 break;
             default:

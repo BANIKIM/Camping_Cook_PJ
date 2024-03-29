@@ -28,10 +28,10 @@ public class Knife : MonoBehaviour
         Ingredient ingred = target.GetComponent<Ingredient>();
         Vector3 velo = _velocityEstimator.GetVelocityEstimate();
         Vector3 slice_normal = Vector3.Cross(_endPos.position - _startPos.position, velo);
-        Material cross = target.GetComponent<Ingredient>().crossMat;
+        Material cross = target.GetComponent<Ingredient>()._crossMat;
         slice_normal.Normalize();
 
-        if (ingred.sliceCount <= 2)
+        if (ingred._sliceCount <= 2)
         {
             SlicedHull hull = target.Slice(_endPos.position, slice_normal);
             PlaySound(ingred);
@@ -49,17 +49,17 @@ public class Knife : MonoBehaviour
 
     private void PlaySound(Ingredient ingred)
     {
-        switch (ingred.ingredientType)
+        switch (ingred._ingredient_Type)
         {
-            case IngredientType.Beef:
-            case IngredientType.Salmon:
+            case Ingredient_Type.Beef:
+            case Ingredient_Type.Salmon:
                 _audiosource.PlayOneShot(AudioManager.instance._sfxClips[(int)SFX_List.SliceMeat]);
                 break;
-            case IngredientType.Potato:
-            case IngredientType.Carrot:
-            case IngredientType.Onion:
-            case IngredientType.Asparagus:
-            case IngredientType.Mushroom:
+            case Ingredient_Type.Potato:
+            case Ingredient_Type.Carrot:
+            case Ingredient_Type.Onion:
+            case Ingredient_Type.Asparagus:
+            case Ingredient_Type.Mushroom:
                 int temp = Random.Range((int)SFX_List.SliceVegetable1, (int)SFX_List.SliceVegetable2 + 1);
                 _audiosource.PlayOneShot(AudioManager.instance._sfxClips[temp]);
                 break;
@@ -77,16 +77,16 @@ public class Knife : MonoBehaviour
 
         Ingredient ingred = obj.AddComponent<Ingredient>();
     
-        ingred.crossMat = target_ingred.crossMat;
-        ingred.sliceCount = target_ingred.sliceCount;
-        ingred.sliceCount++;
-        ingred.GetComponent<SeasoningIngredient>().pepper_s = target_ingred.GetComponent<SeasoningIngredient>().pepper_s;
-        ingred.GetComponent<SeasoningIngredient>().salt_s = target_ingred.GetComponent<SeasoningIngredient>().salt_s;
-        ingred.ingredientType = target_ingred.ingredientType;
-        ingred.materials = target_ingred.materials;
+        ingred._crossMat = target_ingred._crossMat;
+        ingred._sliceCount = target_ingred._sliceCount;
+        ingred._sliceCount++;
+        ingred.GetComponent<Seasoning_Ingredient>().pepper_s = target_ingred.GetComponent<Seasoning_Ingredient>().pepper_s;
+        ingred.GetComponent<Seasoning_Ingredient>().salt_s = target_ingred.GetComponent<Seasoning_Ingredient>().salt_s;
+        ingred._ingredient_Type = target_ingred._ingredient_Type;
+        ingred._materials = target_ingred._materials;
 
 
-        obj.AddComponent<Cooking>().limitCookTime = 8;
+        obj.AddComponent<Cooking>().limit_CookTime = 8;
 
         obj.AddComponent<XRGrabInteractable>();
 

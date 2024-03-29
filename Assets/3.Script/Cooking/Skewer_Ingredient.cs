@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum Skewer_State
@@ -6,22 +8,24 @@ public enum Skewer_State
     Inserted,
 }
 
-public class SkewerIngredient : MonoBehaviour, IState
+public class Skewer_Ingredient : MonoBehaviour, IState
 {
-    private Rigidbody rigid;
-    private MeshCollider meshCol;
-    public bool isSkewer;
+
+    private Rigidbody _rb;
+    private MeshCollider _meshCol;
+    public bool isSkwer;
 
     public Skewer_State skewer_state { get; private set; }
 
     private void Start()
     {
         skewer_state = Skewer_State.Idle;
-        TryGetComponent(out rigid);
-        TryGetComponent(out meshCol);
-        if (isSkewer)
+        TryGetComponent(out _rb);
+        TryGetComponent(out _meshCol);
+        if(isSkwer)
         {
             Change_Skewer_State(Skewer_State.Inserted);
+            Debug.Log("²¿Áö¿ëÀÌ¾ß");
         }
     }
 
@@ -30,12 +34,12 @@ public class SkewerIngredient : MonoBehaviour, IState
         switch (skewer_state)
         {
             case Skewer_State.Idle:
-                rigid.constraints = RigidbodyConstraints.None;
+                _rb.constraints = RigidbodyConstraints.None;
                 break;
             case Skewer_State.Inserted:
-                rigid.isKinematic = true;
-                if (meshCol != null) meshCol.isTrigger = true;
-                rigid.constraints = RigidbodyConstraints.FreezeAll;
+                _rb.isKinematic = true;
+                if(_meshCol !=null)_meshCol.isTrigger = true;
+                _rb.constraints = RigidbodyConstraints.FreezeAll;
                 break;
             default:
                 break;
