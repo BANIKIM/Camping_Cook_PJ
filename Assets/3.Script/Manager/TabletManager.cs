@@ -55,23 +55,23 @@ public class TabletManager : MonoBehaviour
         TryGetComponent(out _tablet_ProgressCook);
     }
 
+    // 게임 시작했을 때 UI 변경
     public void UIStartGameEvent(int idx)
     {
         if (!GameManager.instance.isCookingStart) return;
 
         _audioSource.PlayOneShot(AudioManager.instance._sfxClips[(int)SFX_List.CookStart]);
-        if (GameManager.instance._gameMod.Equals(GameManager.GameMod.Challenge))
+
+        if (GameManager.instance._gameMod.Equals(GameManager.GameMod.Challenge)) // 도전 모드
         {
             _secretObj.SetActive(true);
             _tablet_CookingTimer.ChallengeTimer(60);
         }
-        else
+        else   // 일반 모드
         {
-
             _tablet_ProgressCook.StartProgress(idx);
             _tablet_CookingTimer.OnCookingTimer(true, idx);
         }
-        // _ui_ProgressCook.StartProgress();
     }
 
     public void UIEndGameEvent(int idx)
@@ -82,11 +82,13 @@ public class TabletManager : MonoBehaviour
 
     }
 
+    // 게임 모드 바뀜
     public void ChangeGameMod(int cookNum, int mod)
     {
         _gameModText[cookNum].text = mod.Equals(0) ? "일반" : "도전 모드";
     }
 
+    // 버튼 사운드
     public void BtnSound()
     {
         _audioSource.PlayOneShot(AudioManager.instance._sfxClips[(int)SFX_List.Btn]);

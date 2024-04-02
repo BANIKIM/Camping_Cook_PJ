@@ -10,6 +10,7 @@ public class SpawnIngredient : MonoBehaviour
 
     public void Spawn(int idx)
     {
+        // 식재료 박스 생성
         Instantiate(_ingredients[idx], _spawnPoint.position, _spawnPoint.rotation);
     }
 }

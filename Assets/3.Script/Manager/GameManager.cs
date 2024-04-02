@@ -13,13 +13,6 @@ public class GameManager : MonoBehaviour
     }
     public GameMod _gameMod = GameMod.Default;
 
-    // Scriptable Objs
-    private CookData _currentCookData;
-
-    [Header("Resource")]
-    [SerializeField] private CookData[] _cookDatas;
-
-
     [SerializeField] private GameObject[] _tools;
     [SerializeField] private Transform[] _toolsPos;
 
@@ -33,7 +26,6 @@ public class GameManager : MonoBehaviour
     public int _trophy = 0;
 
     public bool isCookingStart = false;
-    private IEnumerator _challengeTimerTemp;
 
     private void Awake()
     {
@@ -48,6 +40,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // 요리 시작
     public void StartCooking()
     {
         if (isCookingStart)
@@ -81,7 +74,6 @@ public class GameManager : MonoBehaviour
 
 
         isCookingStart = true;
-        _currentCookData = _cookDatas[_selectIdx];
         TabletManager.instance.UIStartGameEvent(_cookIdx);
         ResetToolsPos();   // 도구위치 초기화
 
@@ -89,9 +81,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    #region GameStart
-
-
+    // 도구 위치 초기화
     public void ResetToolsPos()
     {
         for (int i = 0; i < _tools.Length; i++)
@@ -103,11 +93,7 @@ public class GameManager : MonoBehaviour
 
 
 
-
-    #endregion
-
-
-
+    // 요리 중지
     public void StopCooking()
     {
         if (!isCookingStart) return;
@@ -124,14 +110,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    #region GameEnd
-
-    #endregion
-
-
+    // 캠핑 경험치 확인
     public void CampingExpCheck(float exp)
     {
-        _currentExp += exp;
+        _currentExp += exp; // exp 추가
         if (_needExp <= _currentExp)
         {
             _level++;
@@ -142,6 +124,7 @@ public class GameManager : MonoBehaviour
         TabletManager.instance._campingExpSlider.value = _currentExp;
     }
 
+    // 레시피 선택했을 때
     public void SelectRecipeEvent(int idx)
     {
         _selectIdx = idx;
@@ -150,6 +133,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+    // 뒤로가기 버튼 눌렀을 때
     public void BackBtn()
     {
         TabletManager.instance._gameModText[_selectIdx].text = "일반";
@@ -157,14 +141,15 @@ public class GameManager : MonoBehaviour
         _gameMod = GameMod.Default;
     }
 
+    // 게임 모드 변경
     public void ChangeGameMod()
     {
         switch (_gameMod)
         {
-            case GameMod.Default:
+            case GameMod.Default:      // 기본 > 챌린지
                 _gameMod = GameMod.Challenge;
                 break;
-            case GameMod.Challenge:
+            case GameMod.Challenge:    // 챌린지 -> 기본
                 _gameMod = GameMod.Default;
                 break;
             default:

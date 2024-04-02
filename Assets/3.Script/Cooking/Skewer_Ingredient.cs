@@ -25,7 +25,6 @@ public class Skewer_Ingredient : MonoBehaviour, IState
         if(isSkwer)
         {
             Change_Skewer_State(Skewer_State.Inserted);
-            Debug.Log("꼬지용이야");
         }
     }
 

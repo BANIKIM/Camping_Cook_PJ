@@ -6,9 +6,9 @@ public class Cooked_Ingredient : MonoBehaviour, IState
 {
     public enum Cooked_State    // 요리 상태
     {
-        Raw = 0, //날것
-        Cook,    // 익힘
-        Burned,     // 타다
+        Raw = 0,    // 안 익힘
+        Cook,       // 익힘
+        Burned,     // 탐
         
     }
 

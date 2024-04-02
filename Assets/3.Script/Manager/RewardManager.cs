@@ -29,40 +29,37 @@ public class RewardManager : MonoBehaviour
 
         _starCount = 3;
 
-        // 식재료 개수가 다를 때 ex) 레시피는 4개인데 내가만든 요리는 3개면 별 개수 -1
         if (!preprecipe.Count.Equals(prepdish.Count))
         {
-            Debug.Log("재료개수 다름");
+            // 재료 개수 다를 때
             _starCount--;
         }
 
         if (prepdish.Count.Equals(0))
         {
-            Debug.Log("재료가 아예 없을 때");
+            // 재료가 없을 때
             _starCount--;
         }
         if (cookdish.Count.Equals(0))
         {
-            Debug.Log("재료가 아예 없을 때");
+            // 재료가 없을 때
             _starCount--;
         }
 
         for (int i = 0; i < prepdish.Count; i++)
         {
-            //요리에 있는 식재료가 레시피에 없으면 -1
+            // 손질 단계가 다를 때
             if (preprecipe.Contains(prepdish[i]).Equals(false))
             {
-                Debug.Log("손질 다름");
                 _starCount--;
                 break;
             }
         }
         for (int i = 0; i < cookdish.Count; i++)
         {
-            //요리에 있는 식재료가 레시피에 없으면 -1
+            // 굽기 단계가 다를 때
             if (cookrecipe.Contains(cookdish[i]).Equals(false))
             {
-                Debug.Log("굽기 다름");
                 _starCount--;
                 break;
             }
@@ -71,7 +68,6 @@ public class RewardManager : MonoBehaviour
         prepdish.Clear();
         cookdish.Clear();
         return _starCount;
-
     }
 
 }

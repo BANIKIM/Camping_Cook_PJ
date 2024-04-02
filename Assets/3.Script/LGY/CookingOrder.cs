@@ -28,27 +28,6 @@ public class CookingOrder : MonoBehaviour
 
     public Sprite[] _allImgs;
 
-
-    public void OrderSetting()
-    {
-        int[] idxArray;
-        switch (GameManager.instance._cookIdx)
-        {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-        }
-
-
-    }
-
     public void DefaultSetting()
     {
         for (int i = 0; i < _line1.Length; i++)

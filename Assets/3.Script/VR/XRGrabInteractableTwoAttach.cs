@@ -8,6 +8,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
     public Transform leftAttachTransform;
     public Transform rightAttachTransform;
 
+    // 손 위치, 회전값 보정
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         if (args.interactorObject.transform.CompareTag("LeftHand"))

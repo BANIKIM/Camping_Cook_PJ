@@ -128,7 +128,7 @@ public class GrabHandPos : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-
+    // 유니티 엔진 내 도구탭
     [MenuItem("Tools/Mirror Selected Right Grab Pos")]
     public static void MirrorRightPos()
     {
@@ -138,6 +138,8 @@ public class GrabHandPos : MonoBehaviour
     }
 
 #endif
+
+    // 반대 손 동기화
     public void MirrorPos(HandData posToMirror, HandData posUsedToMirror)
     {
         Vector3 mirroredPos = posUsedToMirror._root.localPosition;
