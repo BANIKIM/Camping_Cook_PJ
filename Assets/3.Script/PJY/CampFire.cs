@@ -44,6 +44,7 @@ public class CampFire : MonoBehaviour
     }
 
 
+    //게임상에 Group이 하나만 존재하는지 검사하고 캠프파이어에 나무를 쌓는 작업
     private void ArrangeSingleFirewood()
     {
         if (FirewoodPrefab != null && HP < maxHP && SpawnPosition != null)

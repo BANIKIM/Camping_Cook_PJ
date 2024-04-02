@@ -7,6 +7,7 @@ public class Firewood : MonoBehaviour
 
     public AudioSource cutSound;
 
+    //장작이 생성되고 사용되지 않는다면 90초후에 삭제
     private void Start()
     {
         Destroy(gameObject, coolTime);
