@@ -13,8 +13,8 @@ public class DayAndNight : MonoBehaviour
     private float currentFogDensity; // 계산 
 
     // 새로운 Skybox 머테리얼
-    public Material daySkyboxMaterial;
-    public Material nightSkyboxMaterial;
+    public Material daySkyboxMaterial;  //낮
+    public Material nightSkyboxMaterial; //밤
 
     private void Start()
     {
@@ -22,6 +22,11 @@ public class DayAndNight : MonoBehaviour
         RenderSettings.skybox = daySkyboxMaterial; // 시작할 때 낮에 해당하는 Skybox로 설정
     }
     private void Update()
+    {
+        DayAndnight();
+    }
+    // Light의 로테이션을 돌려서 각도에 따라 bool값으로 낮과 밤을 관리한다.
+    private void DayAndnight()
     {
         transform.Rotate(Vector3.right, 0.1f * secondPerRealTimeSecond * Time.deltaTime);
         if (transform.eulerAngles.x >= 170)

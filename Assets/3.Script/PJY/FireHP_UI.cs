@@ -11,11 +11,11 @@ public class FireHP_UI : MonoBehaviour
 
     [SerializeField] private CampFire campFire;
 
- 
 
+    // 캠프파이어의 HP 값을 참조하여 슬라이더의 값으로 업데이트 합니다.
     void Update()
     {
-        // 캠프파이어의 HP 값을 슬라이더의 값으로 업데이트합니다.
+      
         if (campFire != null && slider != null)
         {
             slider.value = campFire.HP;

@@ -7,11 +7,6 @@ public class Finishedfirewood : MonoBehaviour
 
 
     public GameObject CampfireObj;
- /*   public GameObject finishedfirewood1;
-    public GameObject finishedfirewood2;
-    public GameObject finishedfirewood3;*/
-
-
     public string campfireTag = "Campfire";
     [SerializeField]
     private CampFire campFire;
@@ -29,16 +24,9 @@ public class Finishedfirewood : MonoBehaviour
     public float fireDuration = 2f;
     private bool OnFire = false;
 
-    private float lastHPDecreaseTime; // 마지막 HP 감소 시간
     private float hpDecreaseInterval = 60f; // HP 감소 간격 (1분)
 
-    private void Start()
-    {
-        // startTime = Time.time;
-        // fire_state = Fire_State.Default;
-       
-    }
-
+   
     private void Awake()
     {
         // 캠프파이어 오브젝트를 태그로 찾아 변수에 저장
@@ -81,6 +69,9 @@ public class Finishedfirewood : MonoBehaviour
         StartFire();
         if (OnFire) B_Time += Time.deltaTime;
     }
+
+
+    //불이 5초이상 닿았을 때 불을 붙이고 장작의 HP를 감소시키며 HP의 따른 불의 상태변화, 플레이어가 주위에 있다면 경험치 적용
     private void StartFire()
     {
         if (OnFire)
@@ -119,8 +110,7 @@ public class Finishedfirewood : MonoBehaviour
             {
                 campFire.Camfire_1.SetActive(true);
                 campFire.Camfire_2.SetActive(false);
-            /*    finishedfirewood2.SetActive(false);
-                finishedfirewood3.SetActive(true);*/
+           
 
             }
             else if (campFire.HP > 30 && campFire.HP <= 60)
@@ -128,14 +118,13 @@ public class Finishedfirewood : MonoBehaviour
               
                 campFire.Camfire_1.SetActive(false);
                 campFire.Camfire_2.SetActive(true);
-               /* finishedfirewood1.SetActive(false);
-                finishedfirewood2.SetActive(true);*/
+              
             }
             else if (campFire.HP <= 0)
             {
                 campFire.Camfire_1.SetActive(false);
                 campFire.Camfire_2.SetActive(false);
-                //Destroy(finishedfirewood3);
+                
             }
         }
     }

@@ -28,6 +28,7 @@ public class Wood : MonoBehaviour
         Destroy(gameObject, coolTime);   // 일정 시간 후에 삭제
     }
 
+    //장작 패는 과정에서 장작생성하는 메서드 
     public void CreatePrefabInstances()
     {
         Vector3 parentPosition = transform.position;
@@ -36,16 +37,15 @@ public class Wood : MonoBehaviour
         Cut_1 = Instantiate(childObjPrefab, parentPosition + new Vector3(SpawnX, SpawnY, 0), Quaternion.identity);
         Cut_2 = Instantiate(childObjPrefab, parentPosition + new Vector3(-SpawnX, SpawnY, 0), Quaternion.identity);
 
-        SetColliderProperties(Cut_1);
-        SetColliderProperties(Cut_2);
+      /*  SetColliderProperties(Cut_1);
+        SetColliderProperties(Cut_2);*/
 
         // 부모-자식 관계 끊기
         Cut_1.transform.parent = null;
         Cut_2.transform.parent = null;
         CutWood.PlayOneShot(CutWood.clip);
-        Debug.Log("wood 소환소리");
-        // 부모 오브젝트 비활성화
-
+       
+        // 부모 오브젝트 삭제
         Destroy(Cut_0);
 
         Rigidbody cut1Rigidbody = Cut_1.GetComponent<Rigidbody>();
@@ -56,7 +56,7 @@ public class Wood : MonoBehaviour
             cut2Rigidbody.AddForce(Vector3.right * 2f, ForceMode.Impulse);
         }
     }
-    private void SetColliderProperties(GameObject obj)
+/*    private void SetColliderProperties(GameObject obj)
     {
         // 자식 오브젝트에 Collider 컴포넌트가 있다면 설정
         BoxCollider objCollider = obj.GetComponent<BoxCollider>();
@@ -73,7 +73,7 @@ public class Wood : MonoBehaviour
             // 리지드바디를 비활성화하여 물리 연산을 무시
             objRigidbody.isKinematic = false;
         }
-    }
+    }*/
 
 
 

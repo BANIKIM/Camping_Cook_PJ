@@ -17,7 +17,7 @@ public class Ignite : MonoBehaviour
           
     }
 
-    // 버튼을 누를 때 호출할 메서드
+    // 트리거 버튼을 누를 때 호출할 메서드 토글방식(effect,sound) on,off
     public void OnOffFire(bool isignite)
     {
         // fire 게임 오브젝트의 활성화 상태를 토글
