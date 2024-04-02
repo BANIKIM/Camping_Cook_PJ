@@ -43,6 +43,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    // 오디오 실행시키는 메서드
     public void Play_Audio(AudioSource source, int idx)
     {
         source.clip = _sfxClips[idx];

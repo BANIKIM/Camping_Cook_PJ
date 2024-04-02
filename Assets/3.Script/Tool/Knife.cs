@@ -31,17 +31,18 @@ public class Knife : MonoBehaviour
         Material cross = target.GetComponent<Ingredient>()._crossMat;
         slice_normal.Normalize();
 
-        if (ingred._sliceCount <= 2)
+        if (ingred._sliceCount <= 2) // 자르기 카운트가 2 이하일 때
         {
-            SlicedHull hull = target.Slice(_endPos.position, slice_normal);
+            SlicedHull hull = target.Slice(_endPos.position, slice_normal); // EZYSlice
             PlaySound(ingred);
+
             if (hull != null)
             {
                 GameObject upperHull = hull.CreateUpperHull(target, cross);
                 SetUpSliceCompoent(upperHull, ingred);
                 GameObject lowerHull = hull.CreateLowerHull(target, cross);
                 SetUpSliceCompoent(lowerHull, ingred);
-                Debug.Log("삭제~");
+
                 Destroy(target);
             }
         }
@@ -76,7 +77,7 @@ public class Knife : MonoBehaviour
         mesh.convex = true;
 
         Ingredient ingred = obj.AddComponent<Ingredient>();
-    
+
         ingred._crossMat = target_ingred._crossMat;
         ingred._sliceCount = target_ingred._sliceCount;
         ingred._sliceCount++;

@@ -13,7 +13,6 @@ public class TabletMahine : MonoBehaviour
 
     public GameObject _tablet;
     public GameObject TruePosition;
-    private Quaternion _tabletRot;
 
     public GameObject _hand;
 
@@ -25,11 +24,11 @@ public class TabletMahine : MonoBehaviour
 
     private void Awake()
     {
-        _tabletRot = _tablet.transform.rotation;
         DefaultSetting();
     }
     private void OnEnable()
     {
+        //
         HandCanvas.action.started += OnButtonPress;
         HandCanvas.action.canceled += OnButtonRelease;
     }
@@ -58,9 +57,10 @@ public class TabletMahine : MonoBehaviour
         }
     }
 
+    // 기본 셋팅
     private void DefaultSetting()
     {
-        _tabletMod = TabletMod.Secret;
+        _tabletMod = TabletMod.Secret;   // 숨김 모드
         _tablet.SetActive(false);
         _tablet.transform.parent = _hand.transform;
     }
@@ -91,15 +91,17 @@ public class TabletMahine : MonoBehaviour
         yield return null;
     }
 
+    // 잡기 모드
     private IEnumerator HandedTablet_co()
-    {
-        _tabletMod = TabletMod.Handed;
-        _tablet.transform.localPosition = Vector3.zero;
+    {       
+        _tabletMod = TabletMod.Handed;   // 모드 변경
+        _tablet.transform.localPosition = Vector3.zero;  // 포지션 초기화
         _tablet.transform.rotation = _hand.transform.rotation; // 캔버스2의 회전
         _tablet.SetActive(true);
         yield return null;
     }
 
+    // 월드 모드
     private IEnumerator WorldTablet_co()
     {
         _tabletMod = TabletMod.World;
