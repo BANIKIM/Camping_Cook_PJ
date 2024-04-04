@@ -71,7 +71,7 @@ public class Dish : MonoBehaviour
         }
     }
 
-    public int ch_Reward()
+    public int ch_Reward()//리워드 체크
     {
         Cooks[GameManager.instance._cookIdx].SetActive(false);
         if (!onech)
@@ -84,7 +84,7 @@ public class Dish : MonoBehaviour
     }
 
 
-    public void ok(string i)
+    public void ok(string i)//데이터 반환
     {
         uI_DB_Parsing.textType = UI_DB_Parsing.TextType.Cook;
         uI_DB_Parsing.number = i;

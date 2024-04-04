@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tool_heat : MonoBehaviour
 {
-    public bool tool_heat = false;
+    public bool tool_heat = false;//가열 여부
 
 
     private void OnCollisionEnter(Collision collision)

@@ -36,7 +36,7 @@ public class UI_DB_Parsing : MonoBehaviour
             b = false;
         }
     }
-
+    //DB 값가져오기
     public void Find_cook_DB()
     {
         google.GetDB(number, 3);
