@@ -6,9 +6,9 @@ public class Wood : MonoBehaviour
 {
     public GameObject childObjPrefab;  // 자식 프리팹
 
-    public GameObject Cut_0;
-    private GameObject Cut_1;
-    private GameObject Cut_2;
+    public GameObject woodPrefab;
+    private GameObject woodCut_1;
+    private GameObject woodCut_2;
     public AudioSource CutWood;
 
     public float SpawnX;
@@ -34,22 +34,23 @@ public class Wood : MonoBehaviour
         Vector3 parentPosition = transform.position;
 
         // 자식 프리팹을 이용하여 자식 오브젝트 생성
-        Cut_1 = Instantiate(childObjPrefab, parentPosition + new Vector3(SpawnX, SpawnY, 0), Quaternion.identity);
-        Cut_2 = Instantiate(childObjPrefab, parentPosition + new Vector3(-SpawnX, SpawnY, 0), Quaternion.identity);
+        woodCut_1 = Instantiate(childObjPrefab, parentPosition + new Vector3(SpawnX, SpawnY, 0), Quaternion.identity);
+        woodCut_2 = Instantiate(childObjPrefab, parentPosition + new Vector3(-SpawnX, SpawnY, 0), Quaternion.identity);
 
       /*  SetColliderProperties(Cut_1);
         SetColliderProperties(Cut_2);*/
 
         // 부모-자식 관계 끊기
-        Cut_1.transform.parent = null;
-        Cut_2.transform.parent = null;
+        woodCut_1.transform.parent = null;
+        woodCut_2.transform.parent = null;
         CutWood.PlayOneShot(CutWood.clip);
        
         // 부모 오브젝트 삭제
-        Destroy(Cut_0);
+        Destroy(woodPrefab);
 
-        Rigidbody cut1Rigidbody = Cut_1.GetComponent<Rigidbody>();
-        Rigidbody cut2Rigidbody = Cut_2.GetComponent<Rigidbody>();
+        //잘릴때 튕겨나가는 효과
+        Rigidbody cut1Rigidbody = woodCut_1.GetComponent<Rigidbody>();
+        Rigidbody cut2Rigidbody = woodCut_2.GetComponent<Rigidbody>();
         if (cut1Rigidbody != null && cut2Rigidbody != null)
         {
             cut1Rigidbody.AddForce(Vector3.left * 3f, ForceMode.Impulse);

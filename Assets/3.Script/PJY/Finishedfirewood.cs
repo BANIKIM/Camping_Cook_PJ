@@ -20,9 +20,9 @@ public class Finishedfirewood : MonoBehaviour
 
 
     public float B_Time =0f;
-    public float FireTime = 0f;
-    public float fireDuration = 2f;
-    private bool OnFire = false;
+    public float FireTime = 0f;  //닿았을때 처음시간 
+    public float fireDuration = 2f; // 화재발생시간 
+    private bool OnFire = false; //불이 붙었는지 여부 bool값
 
     private float hpDecreaseInterval = 60f; // HP 감소 간격 (1분)
 
